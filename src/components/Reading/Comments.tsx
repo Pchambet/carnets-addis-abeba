@@ -17,8 +17,7 @@ export default function Comments({ id, title }: { id: string; title: string }) {
         const cusdisDiv = document.createElement('div');
         cusdisDiv.id = 'cusdis_thread';
         cusdisDiv.dataset.host = 'https://cusdis.com';
-        // TODO: Replace with the user's actual App ID after they register
-        cusdisDiv.dataset.appId = 'WAITING_APP_ID';
+        cusdisDiv.dataset.appId = 'e5deb779-2d3a-4380-a2ca-bec214a584eb';
         cusdisDiv.dataset.pageId = id;
         cusdisDiv.dataset.pageUrl = `https://carnets-addis-abeba.vercel.app${pathname}`;
         cusdisDiv.dataset.pageTitle = title;
