@@ -5,6 +5,7 @@ import LightboxGallery from '@/components/Reading/LightboxGallery';
 import CreativePrompt from '@/components/Reading/CreativePrompt';
 import PullQuote from '@/components/Reading/PullQuote';
 import ReadingProgress from '@/components/Reading/ReadingProgress';
+import Comments from '@/components/Reading/Comments';
 import Link from 'next/link';
 import fs from 'fs';
 import path from 'path';
@@ -144,9 +145,12 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
                     href="mailto:claire.stellio@gmail.com?subject=En réponse à ta lettre"
                     className="inline-block border border-[var(--ochre)] text-[var(--ochre)] px-10 py-4 caption hover:bg-[var(--ochre)] hover:text-[var(--white)] transition-all duration-500 no-underline"
                 >
-                    Écrire à Claire
+                    Lui écrire un email privé
                 </a>
             </section>
+
+            {/* ── 6. Comments Section (Giscus) ── */}
+            <Comments />
 
             {/* ── Navigation ── */}
             <div className="border-t border-[var(--border)] py-12 px-6 md:px-12 text-center">
