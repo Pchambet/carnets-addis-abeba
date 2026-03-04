@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import { remarkDayHeaders } from './remarkDayHeaders';
 
 const lettersDirectory = path.join(process.cwd(), 'content/letters');
 
@@ -12,8 +13,8 @@ export interface LetterData {
     date: string;
     location?: string;
     excerpt?: string;
-    pullQuote?: string;       // Extracted from "> PQ: ..." lines in markdown
-    readTime: number;         // Estimated reading time in minutes
+    pullQuote?: string;
+    readTime: number;
     contentHtml: string;
 }
 
@@ -21,15 +22,13 @@ export function getSortedLettersData() {
     if (!fs.existsSync(lettersDirectory)) return [];
 
     const fileNames = fs.readdirSync(lettersDirectory);
-    const allLettersData = fileNames
+    return fileNames
         .filter((f) => f.endsWith('.md'))
         .map((fileName) => {
             const id = fileName.replace(/\.md$/, '');
             const fullPath = path.join(lettersDirectory, fileName);
             const fileContents = fs.readFileSync(fullPath, 'utf8');
             const matterResult = matter(fileContents);
-
-            // Compute read time (average reader: 200 words/min in French)
             const words = matterResult.content.trim().split(/\s+/).length;
             const readTime = Math.max(1, Math.round(words / 200));
 
@@ -38,12 +37,26 @@ export function getSortedLettersData() {
                 readTime,
                 ...(matterResult.data as { title: string; date: string; location?: string; excerpt?: string }),
             };
-        });
-
-    return allLettersData.sort((a, b) => (a.date < b.date ? 1 : -1));
+        })
+        .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-/** Extract the "> PQ: …" pull quote from markdown content, if present */
+/** Clean common artefacts from .docx / .pages text extraction */
+function cleanMarkdown(raw: string): string {
+    return raw
+        // RTL / LTR marks from .docx
+        .replace(/[\u200e\u200f]/g, '')
+        // Non-breaking spaces → regular space
+        .replace(/\u00a0/g, ' ')
+        // Curly apostrophes → straight (for code consistency)
+        // Keep curly quotes in text — they're beautiful
+        // Multiple blank lines → max 2
+        .replace(/\n{3,}/g, '\n\n')
+        // Trailing spaces on lines
+        .replace(/ +$/gm, '');
+}
+
+/** Extract "> PQ: …" pull quote marker from content */
 function extractPullQuote(content: string): { pullQuote?: string; cleanContent: string } {
     const pqMatch = content.match(/^>\s*PQ:\s*(.+)$/m);
     if (!pqMatch) return { cleanContent: content };
@@ -57,15 +70,21 @@ export async function getLetterData(id: string): Promise<LetterData> {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const matterResult = matter(fileContents);
 
-    // Extract pull quote before rendering HTML
-    const { pullQuote, cleanContent } = extractPullQuote(matterResult.content);
+    // 1. Clean artefacts
+    const cleaned = cleanMarkdown(matterResult.content);
 
-    // Compute read time
+    // 2. Extract pull quote
+    const { pullQuote, cleanContent } = extractPullQuote(cleaned);
+
+    // 3. Compute read time
     const words = cleanContent.trim().split(/\s+/).length;
     const readTime = Math.max(1, Math.round(words / 200));
 
-    // Render markdown to HTML
-    const processedContent = await remark().use(html).process(cleanContent);
+    // 4. Render Markdown → HTML (with day-header plugin)
+    const processedContent = await remark()
+        .use(remarkDayHeaders)   // ← transforms **Lundi** etc. into day-section HTML
+        .use(html, { sanitize: false }) // sanitize:false to allow the custom HTML
+        .process(cleanContent);
     const contentHtml = processedContent.toString();
 
     return {
