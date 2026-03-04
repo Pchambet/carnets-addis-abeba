@@ -5,6 +5,8 @@ location: "Addis-Abeba"
 excerpt: "Comment vous portez-vous depuis là-bas ? De mon côté, la vie s'installe, doucement."
 ---
 
+> PQ: Lorsque nous arrivons, le sol est tapissé de fleurs. Les sœurs en ont disposé par terre comme un feu d artice qui sent la capucine.
+
 Chers amis, chère famille, 
 
 Comment vous portez-vous ? 
