@@ -1,38 +1,56 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 
-export default function Comments() {
-    const ref = useRef<HTMLDivElement>(null);
+export default function Comments({ id, title }: { id: string; title: string }) {
+    const pathname = usePathname();
+    const wrapperRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (!ref.current || ref.current.hasChildNodes()) return;
+        if (!wrapperRef.current) return;
 
+        // Clear wrapper for client-side navigations
+        wrapperRef.current.innerHTML = '';
+
+        // 1. Create the Cusdis container
+        const cusdisDiv = document.createElement('div');
+        cusdisDiv.id = 'cusdis_thread';
+        cusdisDiv.dataset.host = 'https://cusdis.com';
+        // TODO: Replace with the user's actual App ID after they register
+        cusdisDiv.dataset.appId = 'WAITING_APP_ID';
+        cusdisDiv.dataset.pageId = id;
+        cusdisDiv.dataset.pageUrl = `https://carnets-addis-abeba.vercel.app${pathname}`;
+        cusdisDiv.dataset.pageTitle = title;
+        cusdisDiv.dataset.theme = 'light';
+        cusdisDiv.style.minHeight = '300px';
+
+        wrapperRef.current.appendChild(cusdisDiv);
+
+        // 2. Inject the script dynamically
         const script = document.createElement('script');
-        script.src = 'https://giscus.app/client.js';
+        script.src = 'https://cusdis.com/js/cusdis.es.js';
         script.async = true;
-        script.crossOrigin = 'anonymous';
+        script.defer = true;
 
-        // Giscus configuration
-        script.setAttribute('data-repo', 'Pchambet/carnets-addis-abeba');
-        script.setAttribute('data-repo-id', 'R_kgDOReFf0Q');
-        script.setAttribute('data-category', 'General');
-        script.setAttribute('data-category-id', 'DIC_kwDOReFf0c4C3q-y');
-        script.setAttribute('data-strict', '0');
-        script.setAttribute('data-reactions-enabled', '1');
-        script.setAttribute('data-emit-metadata', '0');
-        script.setAttribute('data-input-position', 'top');
-        script.setAttribute('data-theme', 'light');
-        script.setAttribute('data-lang', 'fr');
-        script.setAttribute('data-loading', 'lazy');
+        wrapperRef.current.appendChild(script);
 
-        ref.current.appendChild(script);
-    }, []);
+        return () => {
+            if (wrapperRef.current) {
+                wrapperRef.current.innerHTML = '';
+            }
+        };
+    }, [id, pathname, title]);
 
     return (
         <section className="max-w-4xl mx-auto px-6 md:px-12 py-12 border-t border-[var(--border)] mt-12 bg-white/30 rounded-3xl">
-            <h2 className="text-center text-[var(--ochre)] mb-8 text-3xl font-[family-name:var(--font-cormorant)] italic">Livre d'or & Commentaires</h2>
-            <div ref={ref} className="giscus-container" />
+            <h2 className="text-center text-[var(--ochre)] mb-8 text-3xl font-[family-name:var(--font-cormorant)] italic">
+                Livre d'or & Commentaires
+            </h2>
+            <div ref={wrapperRef} className="w-full" />
+            <p className="caption text-center mt-6 text-[var(--ink-light)] opacity-70">
+                Laissez un mot à Claire ! Pas besoin de compte, juste votre prénom.
+            </p>
         </section>
     );
 }

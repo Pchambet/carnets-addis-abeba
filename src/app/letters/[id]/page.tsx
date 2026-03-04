@@ -149,8 +149,8 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
                 </a>
             </section>
 
-            {/* ── 6. Comments Section (Giscus) ── */}
-            <Comments />
+            {/* ── 6. Comments Section (Cusdis) ── */}
+            <Comments id={letter.id} title={letter.title} />
 
             {/* ── Navigation ── */}
             <div className="border-t border-[var(--border)] py-12 px-6 md:px-12 text-center">
