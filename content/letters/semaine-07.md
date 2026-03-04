@@ -5,6 +5,8 @@ location: "Addis-Abeba"
 excerpt: "La joie ne supprime pas la peine — elle la traverse."
 ---
 
+> PQ: La joie ne supprime pas la peine — elle la traverse, l illumine, et parfois la transforme.
+
 8 - 14.12.2025 : Journal hebdomadaire depuis la Nouvelle Fleur - Rien n’efface la joie
 
 Très chers amis,

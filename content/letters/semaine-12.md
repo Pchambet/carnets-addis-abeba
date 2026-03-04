@@ -5,6 +5,8 @@ location: "Addis-Abeba"
 excerpt: "Timcat — le Baptême du Christ — et une nuit inoubliable avec le professeur Joachim."
 ---
 
+> PQ: Le temps s est arrêté. Nous sortons de là, je suis toute bouleversée. Je regarde ma montre, nous sommes restés deux heures.
+
 **Mardi**
 Un vieil homme aux longs cheveux peints d’ébène, des yeux rieurs cachés derrière de larges lunettes et une barbe hirsute ; un long manteau émeraude recouvert de perles se détache sur un pantalon blanc et des babouches rouges. Il a peut-être bien soixante-dix ans. Il serre sous son bras gauche un petit sac en cuir brodé de coquillages. Devant l’église orthodoxe de la place, il m’attend. C’est le professeur Joachim. 
  

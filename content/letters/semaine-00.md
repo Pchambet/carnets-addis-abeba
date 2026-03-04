@@ -5,6 +5,8 @@ location: "Addis-Abeba"
 excerpt: "Je vous écris ce message à l’aube de ce dimanche éthiopien où je peux savourer enfin un peu de repos."
 ---
 
+> PQ: Je danse avec la poussière. Elle se glisse dans les yeux, dans la bouche, dans les rêves. La poussière d'Addis est une familière.
+
 Chers amis, chère famille, 
 
 Comment vous portez-vous ? 

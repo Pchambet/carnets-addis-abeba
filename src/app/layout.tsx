@@ -40,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </a>
             <nav className="flex gap-8 caption text-[var(--ink-light)]">
               <a href="/">Lettres</a>
+              <a href="/galerie">Galerie</a>
               <a href="/about">À propos</a>
             </nav>
           </div>
