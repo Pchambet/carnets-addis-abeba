@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Carnets d'Addis-Abeba
 
-## Getting Started
+> *Nouvelles hebdomadaires depuis la nouvelle fleur.* — Lettres de Claire depuis Addis-Abeba.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 16** (App Router, Turbopack)
+- **TypeScript** 
+- **Tailwind CSS v4** + `@tailwindcss/typography`
+- **Markdown** (gray-matter + remark) — letters as `.md` files with YAML frontmatter
+- Hosted on **Vercel**
+
+## 3 Design Pillars
+
+| Pilier | Intention |
+|--------|-----------|
+| 🕊️ Spirituel | Lenteur, typographie aérée (Cormorant + Lora), espaces blancs |
+| 🌍 Culturel | Couleurs éthiopiennes, motifs Tibeb, invite contemplative |
+| 🤝 Solidaire | Galerie photo, carte des enfants, "Écrire à Claire" |
+
+## Structure
+
+```
+content/letters/   → Lettres en Markdown (frontmatter YAML)
+public/images/     → Photos organisées par semaine
+src/app/           → Pages Next.js (App Router)
+src/components/    → Layout/, Reading/, UI/
+src/lib/           → Markdown parser
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Développement local
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev      # → http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Ajouter une lettre
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Créer `content/letters/semaine-XX.md` avec le frontmatter suivant :
+```yaml
+---
+title: "Titre de la lettre"
+date: "YYYY-MM-DD"
+location: "Addis-Abeba"
+excerpt: "Une phrase d'accroche courte."
+---
+```
+2. Ajouter les photos dans `public/images/semaine-XX/`
+3. `git push` → déploiement automatique sur Vercel
