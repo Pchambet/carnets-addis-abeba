@@ -1,7 +1,7 @@
 import { getLetterData, getSortedLettersData } from '@/lib/letters';
 import HeroLetter from '@/components/Reading/HeroLetter';
 import TibebDivider from '@/components/UI/TibebDivider';
-import PhotoGallery from '@/components/Reading/PhotoGallery';
+import LightboxGallery from '@/components/Reading/LightboxGallery';
 import CreativePrompt from '@/components/Reading/CreativePrompt';
 import PullQuote from '@/components/Reading/PullQuote';
 import ReadingProgress from '@/components/Reading/ReadingProgress';
@@ -23,7 +23,7 @@ function getPhotosForLetter(id: string) {
         .filter(f => /\.(jpg|jpeg|png|heic|webp)$/i.test(f))
         .map(f => ({
             src: `/images/${id}/${f}`,
-            alt: f.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' '),
+            name: f.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' '),
         }));
 }
 
@@ -122,11 +122,11 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
 
             {/* ── 3. Photo Gallery with captions & credits (Priorité 1 + 2) ── */}
             {photos.length > 0 && (
-                <div className="px-6 md:px-12">
+                <div className="px-6 md:px-12 my-20">
                     {/* Section header */}
                     <p className="caption text-[var(--ochre)] text-center mb-2">Fragments du voyage</p>
-                    <p className="photo-credit text-center mb-8 pr-0">© Claire Stellio, Addis-Abéba</p>
-                    <PhotoGallery photos={photos} />
+                    <p className="photo-credit text-center mb-8 pr-0 text-[var(--ink-light)]">© Claire Stellio, Addis-Abéba</p>
+                    <LightboxGallery photos={photos} />
                 </div>
             )}
 
