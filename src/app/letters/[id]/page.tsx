@@ -141,7 +141,7 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
                     Cette lettre vous a touché ?
                 </p>
                 <a
-                    href="mailto:claire@claireaddis.fr?subject=En réponse à ta lettre"
+                    href="mailto:claire.stellio@gmail.com?subject=En réponse à ta lettre"
                     className="inline-block border border-[var(--ochre)] text-[var(--ochre)] px-10 py-4 caption hover:bg-[var(--ochre)] hover:text-[var(--white)] transition-all duration-500 no-underline"
                 >
                     Écrire à Claire

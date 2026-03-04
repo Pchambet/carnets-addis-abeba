@@ -79,7 +79,7 @@ export default function AboutPage() {
             <section className="text-center py-16 px-6 border-t border-[var(--border)]">
                 <p className="caption text-[var(--ink-light)] mb-4">Envie d'écrire à Claire ?</p>
                 <a
-                    href="mailto:claire@claireaddis.fr?subject=Je t'écris depuis ton site"
+                    href="mailto:claire.stellio@gmail.com?subject=Je t'écris depuis ton site"
                     className="inline-block border border-[var(--ochre)] text-[var(--ochre)] px-10 py-4 caption hover:bg-[var(--ochre)] hover:text-[var(--white)] transition-all duration-500 no-underline"
                 >
                     Écrire à Claire
