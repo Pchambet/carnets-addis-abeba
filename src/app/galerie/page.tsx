@@ -4,6 +4,7 @@ import path from 'path';
 import Image from 'next/image';
 import Link from 'next/link';
 import TibebDivider from '@/components/UI/TibebDivider';
+import LightboxGallery from '@/components/Reading/LightboxGallery';
 
 interface LetterWithPhotos {
     id: string;
@@ -72,26 +73,8 @@ export default function GalleriePage() {
                                 </div>
                             </div>
 
-                            {/* Photo grid */}
-                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-                                {letter.photos.map((photo, i) => (
-                                    <div
-                                        key={i}
-                                        className="relative aspect-square overflow-hidden bg-[var(--border)] cursor-zoom-in"
-                                        title={photo.name}
-                                    >
-                                        <Image
-                                            src={photo.src}
-                                            alt={photo.name}
-                                            fill
-                                            className="object-cover transition-transform duration-700 hover:scale-[1.04]"
-                                            sizes="(max-width: 768px) 50vw, 25vw"
-                                            style={{ filter: 'contrast(1.02) saturate(0.93)' }}
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-
+                            {/* Photo grid & Lightbox */}
+                            <LightboxGallery photos={letter.photos} />
                             {/* Caption */}
                             <p className="photo-credit mt-4">
                                 {letter.photos.length} photograph{letter.photos.length > 1 ? 'ies' : 'ie'} · © Claire Stellio, Addis-Abéba
