@@ -86,7 +86,7 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
                         {/* ── Close Button ── */}
                         <button
                             onClick={() => setActiveIndex(null)}
-                            className="absolute top-6 right-6 z-[110] text-white/50 hover:text-white transition-colors p-4 cursor-pointer"
+                            className="absolute top-6 right-6 z-[120] text-white/50 hover:text-white transition-colors p-4 cursor-pointer"
                             aria-label="Fermer"
                         >
                             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
