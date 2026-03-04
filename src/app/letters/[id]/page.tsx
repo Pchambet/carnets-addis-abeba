@@ -125,7 +125,7 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
                 <div className="px-6 md:px-12">
                     {/* Section header */}
                     <p className="caption text-[var(--ochre)] text-center mb-2">Fragments du voyage</p>
-                    <p className="photo-credit text-center mb-8 pr-0">© Claire Bonnet, Addis-Abéba</p>
+                    <p className="photo-credit text-center mb-8 pr-0">© Claire Stellio, Addis-Abéba</p>
                     <PhotoGallery photos={photos} />
                 </div>
             )}
