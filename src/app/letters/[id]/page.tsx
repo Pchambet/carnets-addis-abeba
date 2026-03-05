@@ -2,7 +2,6 @@ import { getLetterData, getSortedLettersData } from '@/lib/letters';
 import HeroLetter from '@/components/Reading/HeroLetter';
 import TibebDivider from '@/components/UI/TibebDivider';
 import LightboxGallery from '@/components/Reading/LightboxGallery';
-import CreativePrompt from '@/components/Reading/CreativePrompt';
 import PullQuote from '@/components/Reading/PullQuote';
 import ReadingProgress from '@/components/Reading/ReadingProgress';
 import Comments from '@/components/Reading/Comments';
@@ -132,9 +131,6 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
             )}
 
             <TibebDivider />
-
-            {/* ── 4. Creative Prompt (Culturel) ── */}
-            <CreativePrompt />
 
             {/* ── 5. Écrire à Claire CTA (Solidaire) ── */}
             <section className="text-center py-16 px-6">
