@@ -38,7 +38,7 @@ export default function AboutPage() {
                         Alors je vous souhaite un beau voyage au fil de vos lectures. Puissent-elles vous offrir une parenthèse hebdomadaire, pourquoi pas les dimanches soirs, après le flot de votre semaine, lorsqu’une nouvelle lettre s’envoie.
                     </p>
 
-                    <p className="text-[var(--ochre)] font-[family-name:var(--font-cormorant)] italic text-2xl mt-12">
+                    <p className="signature">
                         Claire
                     </p>
                 </div>

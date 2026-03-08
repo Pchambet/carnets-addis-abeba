@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, Lora, Noto_Sans_Ethiopic } from 'next/font/google';
+import { Cormorant_Garamond, Lora, Noto_Sans_Ethiopic, Sacramento } from 'next/font/google';
 import './globals.css';
 
 const cormorant = Cormorant_Garamond({
@@ -25,6 +25,13 @@ const ethiopic = Noto_Sans_Ethiopic({
   display: 'swap',
 });
 
+const signature = Sacramento({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-signature',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   title: 'La Parenthèse du Dimanche Soir',
   description: 'Nouvelles hebdomadaires depuis la nouvelle fleur — Lettres de Claire depuis Addis-Abeba.',
@@ -32,7 +39,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${cormorant.variable} ${lora.variable} ${ethiopic.variable}`}>
+    <html lang="fr" className={`${cormorant.variable} ${lora.variable} ${ethiopic.variable} ${signature.variable}`}>
       <body className="min-h-screen flex flex-col">
 
         {/* ── Header ── */}

@@ -37,6 +37,16 @@ function injectPullQuote(contentHtml: string, pullQuote: string): string {
     return parts.join('</p>');
 }
 
+/** Format "Claire" signature at the end of the content */
+function formatSignature(contentHtml: string): string {
+    // Look for "Claire" at the end, possibly wrapped in tags or preceded by spaces
+    // Handles variants like "Claire", "Claire STELLIO", "*Claire*"
+    return contentHtml.replace(
+        /<p[^>]*>(?:&nbsp;|\s)*([*_]*Claire(?:[^<]*))[*_]*<\/p>\s*$/i,
+        '<p class="signature">$1</p>'
+    );
+}
+
 export default async function LetterPage({ params }: { params: Promise<{ id: string }> }) {
     const resolvedParams = await params;
     const letter = await getLetterData(resolvedParams.id);
@@ -116,7 +126,7 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
               prose-img:w-full
               prose-img:my-12
             "
-                        dangerouslySetInnerHTML={{ __html: letter.contentHtml }}
+                        dangerouslySetInnerHTML={{ __html: formatSignature(letter.contentHtml) }}
                     />
                 </div>
             </div>
