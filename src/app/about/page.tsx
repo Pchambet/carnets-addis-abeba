@@ -3,19 +3,6 @@ import TibebDivider from '@/components/UI/TibebDivider';
 export default function AboutPage() {
     return (
         <div>
-            {/* ── Header ── */}
-            <section className="px-6 md:px-12 py-20 md:py-28 border-b border-[var(--border)]">
-                <div className="max-w-4xl mx-auto">
-                    <p className="caption text-[var(--ochre)] mb-4">La lettre</p>
-                    <h1 className="text-4xl md:text-6xl font-light leading-tight">
-                        À propos<br />
-                        <em className="text-[var(--ochre)]">de Claire.</em>
-                    </h1>
-                </div>
-            </section>
-
-            <TibebDivider />
-
             {/* ── Bio ── */}
             <article className="px-6 md:px-12 py-12">
                 <div className="reading-width mx-auto">
