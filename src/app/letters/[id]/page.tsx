@@ -70,9 +70,6 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
                             <time className="caption text-[var(--ochre)]" dateTime={letter.date}>
                                 {new Date(letter.date).toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
                             </time>
-                            <span className="ethiopic text-[var(--ochre)] opacity-70 tracking-wider">
-                                ሳምንት {letter.title.match(/Semaine\s+(\d+)/)?.[1] || ""}
-                            </span>
                             {letter.location && <span className="caption text-[var(--red)]">{letter.location}</span>}
                             <span className="read-time">⏱ {letter.readTime} min</span>
                         </div>

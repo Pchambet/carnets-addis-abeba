@@ -325,4 +325,27 @@
     font-family: var(--font-ethiopic), sans-serif;
     font-weight: 300;
   }
+
+  /* ── Signature (carnet de voyage) ── */
+  .signature {
+    font-family: var(--font-signature), cursive;
+    font-size: 1.85rem;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: 0.08em;
+    margin-top: 3rem !important;
+    margin-bottom: 1.5rem !important;
+    transform: rotate(-1.5deg);
+    filter: drop-shadow(0 1px 1px rgba(44, 34, 24, 0.08));
+  }
+
+  .signature::before {
+    content: '';
+    display: block;
+    width: 4rem;
+    height: 1px;
+    background: linear-gradient(to right, var(--ochre), transparent);
+    opacity: 0.5;
+    margin-bottom: 0.75rem;
+  }
 }
