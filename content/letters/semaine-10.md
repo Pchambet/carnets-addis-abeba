@@ -3,6 +3,7 @@ title: "La joie fait tout pousser"
 date: "2026-01-04"
 location: "Addis-Abeba"
 excerpt: "Il suffit d'un rien pour que tout refleurisse."
+heroImage: "/images/semaine-10/kere-soleil.jpg"
 ---
 
 11 – 04.01.2026 Nouvelles hebdomadaires depuis la Nouvelle Fleur
