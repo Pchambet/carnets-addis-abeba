@@ -1,22 +1,40 @@
 import { getSortedLettersData } from '@/lib/letters';
 import Link from 'next/link';
+import Image from 'next/image';
+
+const HOME_HERO_IMAGE = '/images/home-hero.jpg';
 
 export default function Home() {
     const letters = getSortedLettersData();
 
     return (
         <div>
-            {/* ── Hero / Masthead ── */}
-            <section className="px-6 md:px-12 py-24 md:py-36 border-b border-[var(--border)]">
-                <div className="max-w-4xl mx-auto">
-                    <p className="caption text-[var(--ochre)] mb-6">
+            {/* ── Hero pleine largeur (IMG_1206) ── */}
+            <section className="hero-letter border-b border-[var(--border)]">
+                <Image
+                    src={HOME_HERO_IMAGE}
+                    alt="Addis-Abeba — La Nouvelle Fleur"
+                    fill
+                    className="hero-letter-bg"
+                    priority
+                    sizes="100vw"
+                    style={{ objectFit: 'cover' }}
+                />
+                <div
+                    className="absolute inset-0 z-[1]"
+                    style={{
+                        background: 'linear-gradient(to top, rgba(20,10,5,0.85) 0%, rgba(20,10,5,0.2) 60%, transparent 100%)',
+                    }}
+                />
+                <div className="hero-letter-content">
+                    <p className="caption opacity-80 text-[var(--paper)] mb-6">
                         Addis-Abeba, Éthiopie · {new Date().getFullYear()}
                     </p>
-                    <h2 className="text-4xl md:text-6xl font-light leading-tight text-[var(--ink)] mb-10 max-w-2xl">
+                    <h2 className="text-4xl md:text-6xl font-light leading-tight mb-6 max-w-2xl" style={{ color: '#FDFAF6', textShadow: '0 2px 20px rgba(0,0,0,0.4)' }}>
                         Nouvelles hebdomadaires<br />
-                        <em className="text-[var(--ochre)]">depuis La Nouvelle Fleur</em>
+                        <em className="text-[#C9A84C]">depuis La Nouvelle Fleur</em>
                     </h2>
-                    <p className="text-lg text-[var(--ink-light)] max-w-prose leading-loose font-[family-name:var(--font-lora)]">
+                    <p className="text-lg max-w-prose leading-loose font-[family-name:var(--font-lora)] opacity-90" style={{ color: '#FDFAF6' }}>
                         Une lettre par semaine d’un voyage Éthiopien.
                     </p>
                 </div>
