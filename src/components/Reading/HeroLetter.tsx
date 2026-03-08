@@ -43,6 +43,9 @@ export default function HeroLetter({
                     <time className="caption opacity-80 text-[var(--paper)]" dateTime={date}>
                         {formattedDate}
                     </time>
+                    <span className="ethiopic text-sm opacity-60 text-[var(--paper)] tracking-wider">
+                        ሳምንት {title.match(/Semaine\s+(\d+)/)?.[1] || ""}
+                    </span>
                     {location && (
                         <span className="caption text-[#C9A84C]">{location}</span>
                     )}

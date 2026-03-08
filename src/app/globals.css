@@ -321,4 +321,8 @@
       letter-spacing: 0.1em;
     }
   }
+  .ethiopic {
+    font-family: var(--font-ethiopic), sans-serif;
+    font-weight: 300;
+  }
 }
