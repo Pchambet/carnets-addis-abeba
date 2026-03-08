@@ -1,10 +1,10 @@
-import fs from 'fs';
-import path from 'path';
-import mammoth from 'mammoth';
+const fs = require('fs');
+const path = require('path');
+const mammoth = require('mammoth');
 
 async function logDiff(id, docxRelPath) {
-  const docxPath = path.join('/Users/pierre/Desktop/Claire&Pierre', docxRelPath);
-  const mdPath = `content/letters/${id}.md`;
+  const docxPath = path.join(process.cwd(), '..', docxRelPath);
+  const mdPath = path.join(process.cwd(), 'content', 'letters', `${id}.md`);
   
   const { value: text } = await mammoth.extractRawText({ path: docxPath });
   const mdContent = fs.readFileSync(mdPath, 'utf8').split('---').slice(2).join('---').trim();

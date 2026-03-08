@@ -8,10 +8,11 @@ export default function Comments({ id, title }: { id: string; title: string }) {
     const wrapperRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (!wrapperRef.current) return;
+        const wrapper = wrapperRef.current;
+        if (!wrapper) return;
 
         // Clear wrapper for client-side navigations
-        wrapperRef.current.innerHTML = '';
+        wrapper.innerHTML = '';
 
         // 1. Create the Cusdis container
         const cusdisDiv = document.createElement('div');
@@ -19,12 +20,13 @@ export default function Comments({ id, title }: { id: string; title: string }) {
         cusdisDiv.dataset.host = 'https://cusdis.com';
         cusdisDiv.dataset.appId = 'e5deb779-2d3a-4380-a2ca-bec214a584eb';
         cusdisDiv.dataset.pageId = id;
-        cusdisDiv.dataset.pageUrl = `https://carnets-addis-abeba.vercel.app${pathname}`;
+        const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://carnets-addis-abeba.vercel.app';
+        cusdisDiv.dataset.pageUrl = `${siteUrl}${pathname}`;
         cusdisDiv.dataset.pageTitle = title;
         cusdisDiv.dataset.theme = 'light';
         cusdisDiv.style.minHeight = '300px';
 
-        wrapperRef.current.appendChild(cusdisDiv);
+        wrapper.appendChild(cusdisDiv);
 
         // 2. Inject the script dynamically
         const script = document.createElement('script');
@@ -32,19 +34,17 @@ export default function Comments({ id, title }: { id: string; title: string }) {
         script.async = true;
         script.defer = true;
 
-        wrapperRef.current.appendChild(script);
+        wrapper.appendChild(script);
 
         return () => {
-            if (wrapperRef.current) {
-                wrapperRef.current.innerHTML = '';
-            }
+            wrapper.innerHTML = '';
         };
     }, [id, pathname, title]);
 
     return (
         <section className="max-w-4xl mx-auto px-6 md:px-12 py-12 border-t border-[var(--border)] mt-12 bg-white/30 rounded-3xl">
             <h2 className="text-center text-[var(--ochre)] mb-8 text-3xl font-[family-name:var(--font-cormorant)] italic">
-                Livre d'or & Commentaires
+                Livre d&apos;or & Commentaires
             </h2>
             <div ref={wrapperRef} className="w-full" />
             <p className="caption text-center mt-6 text-[var(--ink-light)] opacity-70">

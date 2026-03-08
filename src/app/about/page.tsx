@@ -58,7 +58,7 @@ export default function AboutPage() {
                     <div>
                         <p className="caption text-[var(--red)] mb-3">🌍 Culturel</p>
                         <p className="text-[var(--ink-light)] font-[family-name:var(--font-lora)] italic text-base leading-relaxed">
-                            Partir à la rencontre d'une culture vivante, vibrante, spirituelle.
+                            Partir à la rencontre d&apos;une culture vivante, vibrante, spirituelle.
                         </p>
                     </div>
                     <div>
@@ -72,9 +72,9 @@ export default function AboutPage() {
 
             {/* ── CTA ── */}
             <section className="text-center py-16 px-6 border-t border-[var(--border)]">
-                <p className="caption text-[var(--ink-light)] mb-4">Envie d'écrire à Claire ?</p>
+                <p className="caption text-[var(--ink-light)] mb-4">Envie d&apos;écrire à Claire ?</p>
                 <a
-                    href="mailto:claire.stellio@gmail.com?subject=Je t'écris depuis ton site"
+                    href="mailto:claire.stellio@gmail.com?subject=Je t&apos;écris depuis ton site"
                     className="inline-block border border-[var(--ochre)] text-[var(--ochre)] px-10 py-4 caption hover:bg-[var(--ochre)] hover:text-[var(--white)] transition-all duration-500 no-underline"
                 >
                     Écrire à Claire

@@ -1,9 +1,9 @@
-import fs from 'fs';
-import path from 'path';
-import mammoth from 'mammoth';
+const fs = require('fs');
+const path = require('path');
+const mammoth = require('mammoth');
 
-const SRC_DIR = '/Users/pierre/Desktop/Claire&Pierre';
-const MD_DIR = 'content/letters';
+const SRC_DIR = path.join(process.cwd(), '..');
+const MD_DIR = path.join(process.cwd(), 'content', 'letters');
 
 const fileMap = {
   'semaine-00': 'Semaine_00/Danser la poussière_.docx',

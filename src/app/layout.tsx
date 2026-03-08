@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Cormorant_Garamond, Lora, Noto_Sans_Ethiopic, Sacramento } from 'next/font/google';
 import './globals.css';
 
@@ -45,16 +46,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* ── Header ── */}
         <header className="py-8 px-6 md:px-12 border-b border-[var(--border)]">
           <div className="max-w-4xl mx-auto flex justify-between items-baseline gap-6 flex-wrap">
-            <a href="/" className="no-underline hover:no-underline">
+            <Link href="/" className="no-underline hover:no-underline">
               <h1 className="text-2xl md:text-3xl font-light mt-1 text-[var(--ink)] leading-tight">
                 La Parenthèse<br />
                 <em className="text-[var(--ochre)]">du dimanche soir</em>
               </h1>
-            </a>
+            </Link>
             <nav className="flex gap-8 caption text-[var(--ink-light)]">
-              <a href="/">Lettres</a>
-              <a href="/galerie">Galerie</a>
-              <a href="/about">À propos</a>
+              <Link href="/">Lettres</Link>
+              <Link href="/galerie">Galerie</Link>
+              <Link href="/about">À propos</Link>
             </nav>
           </div>
         </header>

@@ -1,7 +1,6 @@
 import { getSortedLettersData } from '@/lib/letters';
 import fs from 'fs';
 import path from 'path';
-import Image from 'next/image';
 import Link from 'next/link';
 import TibebDivider from '@/components/UI/TibebDivider';
 import LightboxGallery from '@/components/Reading/LightboxGallery';
@@ -37,7 +36,7 @@ export default function GalleriePage() {
             {/* ── Header ── */}
             <section className="px-6 md:px-12 py-20 border-b border-[var(--border)]">
                 <div className="max-w-4xl mx-auto">
-                    <p className="caption text-[var(--ochre)] mb-4">Carnets d'Addis-Abéba</p>
+                    <p className="caption text-[var(--ochre)] mb-4">Carnets d&apos;Addis-Abéba</p>
                     <h1 className="text-4xl md:text-6xl font-light leading-tight mb-6">
                         La galerie
                     </h1>

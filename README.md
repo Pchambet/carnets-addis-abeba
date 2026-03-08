@@ -33,7 +33,16 @@ src/lib/           → Markdown parser
 ```bash
 npm install
 npm run dev      # → http://localhost:3000
+npm run lint    # → ESLint
 ```
+
+## Configuration optionnelle
+
+Créer `.env.local` si besoin (ex. autre domaine) :
+```
+NEXT_PUBLIC_SITE_URL=https://carnets-addis-abeba.vercel.app
+```
+Voir `.env.example`.
 
 ## Ajouter une lettre
 
@@ -48,3 +57,11 @@ excerpt: "Une phrase d'accroche courte."
 ```
 2. Ajouter les photos dans `public/images/semaine-XX/`
 3. `git push` → déploiement automatique sur Vercel
+
+## Scripts (dans `scripts/`)
+
+À exécuter depuis la racine du projet (`carnets-addis-abeba/`). Les DOCX doivent être dans le dossier parent (`Claire&Pierre/Semaine_XX/`).
+
+- `node scripts/sync-docx.js` — Restaure le contenu MD depuis les DOCX (fidélité stricte)
+- `node scripts/compare-docx.js` — Compare nombre de mots DOCX vs MD
+- `node scripts/debug-diff.js` — Exporte txt pour debug (semaine-00, 01, 12)

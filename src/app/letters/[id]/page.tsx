@@ -27,16 +27,6 @@ function getPhotosForLetter(id: string) {
         }));
 }
 
-/** Inject a pull quote block into the HTML after the ~3rd paragraph */
-function injectPullQuote(contentHtml: string, pullQuote: string): string {
-    const parts = contentHtml.split('</p>');
-    if (parts.length < 4) return contentHtml;
-    const insertAt = 3;
-    const pqHtml = `</p><div data-pq="${encodeURIComponent(pullQuote)}"></div>`;
-    parts[insertAt - 1] += pqHtml.replace(`</p>`, '');
-    return parts.join('</p>');
-}
-
 /** Format "Claire" signature at the end of the content */
 function formatSignature(contentHtml: string): string {
     // Look for "Claire" at the end, possibly wrapped in tags or preceded by spaces

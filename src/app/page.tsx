@@ -25,7 +25,7 @@ export default function Home() {
             {/* ── Letter List ── */}
             <section className="max-w-4xl mx-auto px-6 md:px-12 py-24">
                 {letters.length === 0 ? (
-                    <p className="text-[var(--ink-light)] italic">Aucune lettre pour l'instant.</p>
+                    <p className="text-[var(--ink-light)] italic">Aucune lettre pour l&apos;instant.</p>
                 ) : (
                     <ul className="divide-y divide-[var(--border)]">
                         {letters.map(({ id, date, title, location, excerpt }) => {

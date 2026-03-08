@@ -1,5 +1,15 @@
 import { visit } from 'unist-util-visit';
-import type { Root, Paragraph, Strong, Text, PhrasingContent } from 'mdast';
+import type { Root, Paragraph, Text } from 'mdast';
+
+/** Escape HTML special chars to prevent XSS when inserting user content */
+function escapeHtml(s: string): string {
+    return s
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
 
 // Day names in French + their English/index mapping
 const DAY_NAMES = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
@@ -41,16 +51,16 @@ export function remarkDayHeaders() {
             const datePart = tildeIdx > -1 ? rest.slice(0, tildeIdx).trim() : '';
             const descPart = tildeIdx > -1 ? rest.slice(tildeIdx + 1).trim() : rest;
 
-            // Build the HTML for the day divider
+            // Build the HTML for the day divider (escape user content to prevent XSS)
             const dayIndex = DAY_NAMES.indexOf(dayName) + 1;
             const html = [
                 `<div class="day-section" data-day="${dayIndex}">`,
                 `  <div class="day-section-rule"></div>`,
                 `  <div class="day-section-header">`,
-                `    <span class="day-name">${dayName}</span>`,
-                datePart ? `    <span class="day-date">${datePart}</span>` : '',
+                `    <span class="day-name">${escapeHtml(dayName)}</span>`,
+                datePart ? `    <span class="day-date">${escapeHtml(datePart)}</span>` : '',
                 `  </div>`,
-                descPart ? `  <p class="day-desc">${descPart}</p>` : '',
+                descPart ? `  <p class="day-desc">${escapeHtml(descPart)}</p>` : '',
                 `</div>`,
             ].filter(Boolean).join('\n');
 

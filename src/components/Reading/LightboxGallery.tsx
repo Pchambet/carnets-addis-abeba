@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -28,6 +28,14 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
         };
     }, [activeIndex]);
 
+    const handlePrev = useCallback(() => {
+        setActiveIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : photos.length - 1));
+    }, [photos.length]);
+
+    const handleNext = useCallback(() => {
+        setActiveIndex((prev) => (prev !== null && prev < photos.length - 1 ? prev + 1 : 0));
+    }, [photos.length]);
+
     // Keyboard navigation
     useEffect(() => {
         if (activeIndex === null) return;
@@ -38,15 +46,7 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
         };
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [activeIndex]);
-
-    const handlePrev = () => {
-        setActiveIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : photos.length - 1));
-    };
-
-    const handleNext = () => {
-        setActiveIndex((prev) => (prev !== null && prev < photos.length - 1 ? prev + 1 : 0));
-    };
+    }, [activeIndex, handlePrev, handleNext]);
 
     return (
         <>
