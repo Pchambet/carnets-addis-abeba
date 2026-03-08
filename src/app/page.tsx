@@ -23,7 +23,7 @@ export default function Home() {
                 <div
                     className="absolute inset-0 z-[1]"
                     style={{
-                        background: 'linear-gradient(to top, rgba(20,10,5,0.55) 0%, rgba(20,10,5,0.12) 60%, transparent 100%)',
+                        background: 'linear-gradient(to top, rgba(20,10,5,0.75) 0%, rgba(20,10,5,0.18) 60%, transparent 100%)',
                     }}
                 />
                 <div className="hero-letter-content">
