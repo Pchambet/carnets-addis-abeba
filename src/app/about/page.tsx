@@ -6,7 +6,9 @@ export default function AboutPage() {
             {/* ── Bio ── */}
             <article className="px-6 md:px-12 py-12">
                 <div className="reading-width mx-auto">
-                    <h2 className="caption text-[var(--ochre)] mb-8">Aux lecteurs</h2>
+                    <h2 className="text-4xl md:text-5xl font-[family-name:var(--font-cormorant)] font-light italic text-[var(--ochre)] mb-16 tracking-tight">
+                        Aux lecteurs
+                    </h2>
 
                     <p className="drop-cap text-[var(--ink)] font-[family-name:var(--font-lora)] leading-[2] text-lg mb-8">
                         Arrivée le 25 octobre 2025 à Addis-Abeba, capitale de l’Ethiopie, pour une mission solidaire d’un an avec l’Oeuvre-d’Orient, le désir d’écrire les désillusions et les enchantements propres aux découvertes qu’offre la singularité de ce nouveau pays, a tout de suite fait retentir son appel.
