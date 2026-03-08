@@ -56,6 +56,14 @@ export default function AboutPage() {
                     Envoyer un message
                 </a>
             </section>
+
+            {/* ── Photos / droit à l'image ── */}
+            <section className="px-6 md:px-12 py-8 border-t border-[var(--border)]">
+                <p className="text-sm text-[var(--ink-light)] font-[family-name:var(--font-lora)] leading-relaxed max-w-2xl mx-auto text-center">
+                    Ce site contient des photos de personnes rencontrées au cours de la mission. Si vous vous reconnaissez et souhaitez qu’une image soit retirée ou modifiée, vous pouvez&nbsp;
+                    <a href="mailto:claire.stellio@gmail.com?subject=Demande de retrait d'image" className="text-[var(--ochre)] hover:underline">nous contacter</a>.
+                </p>
+            </section>
         </div>
     );
 }

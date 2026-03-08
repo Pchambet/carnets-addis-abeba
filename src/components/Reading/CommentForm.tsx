@@ -40,7 +40,7 @@ export default function CommentForm({
             email: email.trim() || null,
             content: content.trim(),
             is_claire: false,
-            approved: false,
+            approved: true,
         });
 
         if (error) {
@@ -58,20 +58,20 @@ export default function CommentForm({
 
     if (status === 'success') {
         return (
-            <p className="text-sm text-[var(--ochre)] italic">
-                Merci ! Votre message sera visible après modération.
+            <p className="livre-dor-success text-[var(--ochre)] italic font-[family-name:var(--font-lora)]">
+                Merci ! Votre message est publié.
             </p>
         );
     }
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5">
             {errorMsg && (
-                <p className="text-sm text-[var(--red)]">{errorMsg}</p>
+                <p className="text-sm text-[var(--red)] font-[family-name:var(--font-lora)]">{errorMsg}</p>
             )}
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                    <label htmlFor="author" className="block caption text-[var(--ink-light)] mb-1">
+                    <label htmlFor="author" className="block caption text-[var(--ink-light)] mb-2">
                         Pseudonyme
                     </label>
                     <input
@@ -80,13 +80,13 @@ export default function CommentForm({
                         value={author}
                         onChange={(e) => setAuthor(e.target.value)}
                         placeholder="Votre nom ou pseudo"
-                        className="w-full px-4 py-3 border border-[var(--border)] bg-[var(--white)] text-[var(--ink)] font-[family-name:var(--font-lora)] rounded focus:outline-none focus:ring-1 focus:ring-[var(--ochre)]"
+                        className="livre-dor-form-input w-full px-4 py-3.5 border border-[var(--border)] bg-[var(--white)] text-[var(--ink)] font-[family-name:var(--font-lora)] rounded-sm focus:outline-none"
                         required
                         disabled={status === 'loading'}
                     />
                 </div>
                 <div>
-                    <label htmlFor="email" className="block caption text-[var(--ink-light)] mb-1">
+                    <label htmlFor="email" className="block caption text-[var(--ink-light)] mb-2">
                         Email <span className="opacity-70">(optionnel)</span>
                     </label>
                     <input
@@ -95,13 +95,13 @@ export default function CommentForm({
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="pour les notifications"
-                        className="w-full px-4 py-3 border border-[var(--border)] bg-[var(--white)] text-[var(--ink)] font-[family-name:var(--font-lora)] rounded focus:outline-none focus:ring-1 focus:ring-[var(--ochre)]"
+                        className="livre-dor-form-input w-full px-4 py-3.5 border border-[var(--border)] bg-[var(--white)] text-[var(--ink)] font-[family-name:var(--font-lora)] rounded-sm focus:outline-none"
                         disabled={status === 'loading'}
                     />
                 </div>
             </div>
             <div>
-                <label htmlFor="content" className="block caption text-[var(--ink-light)] mb-1">
+                <label htmlFor="content" className="block caption text-[var(--ink-light)] mb-2">
                     Commentaire
                 </label>
                 <textarea
@@ -110,16 +110,16 @@ export default function CommentForm({
                     onChange={(e) => setContent(e.target.value)}
                     placeholder={isReply ? 'Répondre…' : 'Écrivez votre message…'}
                     rows={isReply ? 2 : 4}
-                    className="w-full px-4 py-3 border border-[var(--border)] bg-[var(--white)] text-[var(--ink)] font-[family-name:var(--font-lora)] rounded resize-y focus:outline-none focus:ring-1 focus:ring-[var(--ochre)]"
+                    className="livre-dor-form-input w-full px-4 py-3.5 border border-[var(--border)] bg-[var(--white)] text-[var(--ink)] font-[family-name:var(--font-lora)] rounded-sm resize-y focus:outline-none leading-relaxed"
                     required
                     disabled={status === 'loading'}
                 />
             </div>
-            <div className="flex gap-3">
+            <div className="flex gap-3 pt-1">
                 <button
                     type="submit"
                     disabled={status === 'loading'}
-                    className="px-6 py-2.5 bg-[var(--ochre)] text-[var(--white)] caption hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="livre-dor-btn px-8 py-3 bg-[var(--ochre)] text-[var(--white)] caption tracking-wider disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     {status === 'loading' ? 'Envoi…' : isReply ? 'Répondre' : 'Publier'}
                 </button>
@@ -127,7 +127,7 @@ export default function CommentForm({
                     <button
                         type="button"
                         onClick={onCancel}
-                        className="px-6 py-2.5 caption text-[var(--ink-light)] hover:text-[var(--ink)] transition-colors"
+                        className="px-6 py-3 caption text-[var(--ink-light)] hover:text-[var(--ink)] transition-colors duration-200"
                     >
                         Annuler
                     </button>

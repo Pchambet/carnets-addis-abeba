@@ -76,13 +76,15 @@ export default function CommentSection({ letterId }: CommentSectionProps) {
 
     return (
         <section className="max-w-4xl mx-auto px-6 md:px-12 py-12 mt-16">
-            <h2 className="text-xl font-[family-name:var(--font-cormorant)] font-light text-[var(--ink)] mb-6">
-                Livre d&apos;or
-            </h2>
+            <div className="livre-dor">
+                <h2 className="livre-dor-title">
+                    Correspondance
+                </h2>
 
-            <CommentForm letterId={letterId} onSuccess={fetchComments} />
+                <CommentForm letterId={letterId} onSuccess={fetchComments} />
 
-            <div className="mt-12 pt-8 border-t border-[var(--border)]">
+                <div className="livre-dor-divider" />
+
                 <h3 className="caption text-[var(--ink-light)] mb-6">
                     {comments.length} message{comments.length !== 1 ? 's' : ''}
                 </h3>

@@ -600,4 +600,91 @@
     min-height: 22rem !important;
     height: 22rem !important;
   }
+
+  /* ── Livre d'or premium ── */
+  .livre-dor {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgba(184, 112, 64, 0.06);
+  }
+
+  @media (min-width: 768px) {
+    .livre-dor {
+      padding: 3rem 2.5rem;
+    }
+  }
+
+  .livre-dor-title {
+    font-family: var(--font-cormorant), serif;
+    font-size: 1.75rem;
+    font-weight: 300;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .livre-dor-subtitle {
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    letter-spacing: 0.06em;
+    margin-bottom: 2rem;
+  }
+
+  .livre-dor-form-input {
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .livre-dor-form-input:focus {
+    box-shadow: 0 0 0 1px var(--ochre);
+  }
+
+  .livre-dor-btn {
+    transition: opacity 0.25s ease, background-color 0.25s ease, transform 0.15s ease;
+  }
+
+  .livre-dor-btn:hover:not(:disabled) {
+    opacity: 1;
+    background-color: #a36234;
+  }
+
+  .livre-dor-btn:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  .livre-dor-divider {
+    height: 1px;
+    background: linear-gradient(to right, var(--ochre), var(--border), transparent);
+    opacity: 0.4;
+    margin: 2.5rem 0 1.5rem;
+  }
+
+  .livre-dor-comment {
+    transition: opacity 0.2s ease;
+  }
+
+  .livre-dor-avatar {
+    transition: transform 0.2s ease;
+  }
+
+  .livre-dor-reply-btn {
+    transition: color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .livre-dor-reply-btn:hover {
+    color: var(--ochre);
+  }
+
+  .livre-dor-reply-border {
+    border-left: 2px solid rgba(184, 112, 64, 0.35);
+  }
+
+  .livre-dor-success {
+    animation: livreDorFadeIn 0.4s ease;
+  }
+
+  @keyframes livreDorFadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 }

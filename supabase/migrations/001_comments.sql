@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS public.comments (
   email TEXT,
   content TEXT NOT NULL,
   is_claire BOOLEAN DEFAULT FALSE,
-  approved BOOLEAN DEFAULT FALSE,
+  approved BOOLEAN DEFAULT TRUE,
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
@@ -27,11 +27,7 @@ CREATE POLICY "comments_select_approved"
   ON public.comments FOR SELECT
   USING (approved = TRUE);
 
--- Politique : tout le monde peut insérer un commentaire (sera en attente de modération)
+-- Politique : tout le monde peut insérer un commentaire (publié directement)
 CREATE POLICY "comments_insert_anon"
   ON public.comments FOR INSERT
   WITH CHECK (true);
-
--- Pas de policy UPDATE pour anon : l'approbation se fait via le dashboard
--- (Table Editor → cliquer sur une ligne → cocher "approved")
--- ou via une Edge Function avec service_role plus tard

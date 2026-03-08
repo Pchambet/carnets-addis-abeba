@@ -30,43 +30,41 @@ export default function CommentItem({
     });
 
     return (
-        <div className="flex gap-4">
+        <div className="livre-dor-comment flex gap-5 py-4 first:pt-0">
             <div
-                className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-[family-name:var(--font-cormorant)] font-medium"
-                style={{
-                    backgroundColor: isClaire ? 'var(--ochre)' : 'var(--border)',
-                    color: isClaire ? 'var(--white)' : 'var(--ink-light)',
-                }}
+                className={`livre-dor-avatar flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center text-sm font-[family-name:var(--font-cormorant)] font-medium ${
+                    isClaire ? 'bg-[var(--ochre)] text-[var(--white)]' : 'bg-[var(--border)] text-[var(--ink-light)]'
+                }`}
             >
                 {initial}
             </div>
             <div className="flex-1 min-w-0">
-                <div className="flex flex-wrap items-baseline gap-2 mb-1">
+                <div className="flex flex-wrap items-baseline gap-2 mb-1.5">
                     <span
-                        className={`font-[family-name:var(--font-cormorant)] font-medium ${
+                        className={`font-[family-name:var(--font-cormorant)] text-lg font-medium ${
                             isClaire ? 'text-[var(--ochre)]' : 'text-[var(--ink)]'
                         }`}
                     >
                         {comment.author}
                     </span>
                     {isClaire && (
-                        <span className="caption text-[var(--ochre)]">Claire</span>
+                        <span className="text-xs text-[var(--gold)] font-medium tracking-wider">Claire</span>
                     )}
-                    <span className="caption text-[var(--ink-light)]">{dateStr}</span>
+                    <span className="caption text-[var(--ink-light)] opacity-90">{dateStr}</span>
                 </div>
-                <p className="font-[family-name:var(--font-lora)] text-[var(--ink)] leading-relaxed mb-3">
+                <p className="font-[family-name:var(--font-lora)] text-[var(--ink)] leading-[1.75] mb-4">
                     {comment.content}
                 </p>
                 {!showReplyForm ? (
                     <button
                         type="button"
                         onClick={() => setShowReplyForm(true)}
-                        className="caption text-[var(--ochre)] hover:underline"
+                        className="livre-dor-reply-btn caption text-[var(--ink-light)]"
                     >
                         Répondre
                     </button>
                 ) : (
-                    <div className="mt-2 pl-4 border-l-2 border-[var(--border)]">
+                    <div className="mt-3 pl-5 livre-dor-reply-border">
                         <CommentForm
                             letterId={letterId}
                             parentId={comment.id}
@@ -80,7 +78,7 @@ export default function CommentItem({
                     </div>
                 )}
                 {comment.replies && comment.replies.length > 0 && (
-                    <div className="mt-4 space-y-4 pl-4 border-l-2 border-[var(--border)]">
+                    <div className="mt-5 space-y-5 pl-5 livre-dor-reply-border">
                         {comment.replies.map((reply) => (
                             <CommentItem
                                 key={reply.id}
