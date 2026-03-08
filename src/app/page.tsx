@@ -10,7 +10,7 @@ export default function Home() {
     return (
         <div>
             {/* ── Hero pleine largeur (IMG_1206) ── */}
-            <section className="hero-letter border-b border-[var(--border)]">
+            <section className="hero-letter home-hero border-b border-[var(--border)]">
                 <Image
                     src={HOME_HERO_IMAGE}
                     alt="Addis-Abeba — La Nouvelle Fleur"
@@ -23,11 +23,11 @@ export default function Home() {
                 <div
                     className="absolute inset-0 z-[1]"
                     style={{
-                        background: 'linear-gradient(to top, rgba(20,10,5,0.85) 0%, rgba(20,10,5,0.2) 60%, transparent 100%)',
+                        background: 'linear-gradient(to top, rgba(20,10,5,0.55) 0%, rgba(20,10,5,0.12) 60%, transparent 100%)',
                     }}
                 />
                 <div className="hero-letter-content">
-                    <p className="caption opacity-80 text-[var(--paper)] mb-6">
+                    <p className="caption mb-6" style={{ color: '#FDFAF6', opacity: 0.95, textShadow: '0 1px 8px rgba(0,0,0,0.5), 0 2px 2px rgba(0,0,0,0.3)' }}>
                         Addis-Abeba, Éthiopie · {new Date().getFullYear()}
                     </p>
                     <h2 className="text-4xl md:text-6xl font-light leading-tight mb-6 max-w-2xl" style={{ color: '#FDFAF6', textShadow: '0 2px 20px rgba(0,0,0,0.4)' }}>

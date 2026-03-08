@@ -203,6 +203,10 @@
     filter: brightness(0.48) saturate(0.8);
   }
 
+  .home-hero .hero-letter-bg {
+    filter: brightness(0.72) saturate(0.95);
+  }
+
   .hero-letter-content {
     position: relative;
     z-index: 2;
