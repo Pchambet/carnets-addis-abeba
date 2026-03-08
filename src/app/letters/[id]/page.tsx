@@ -132,20 +132,7 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
 
             <TibebDivider />
 
-            {/* ── 5. Écrire à Claire CTA (Solidaire) ── */}
-            <section className="text-center py-16 px-6">
-                <p className="caption text-[var(--ink-light)] mb-4">
-                    Cette lettre vous a touché ?
-                </p>
-                <a
-                    href="mailto:claire.stellio@gmail.com?subject=En réponse à ta lettre"
-                    className="inline-block border border-[var(--ochre)] text-[var(--ochre)] px-10 py-4 caption hover:bg-[var(--ochre)] hover:text-[var(--white)] transition-all duration-500 no-underline"
-                >
-                    Lui écrire un email privé
-                </a>
-            </section>
-
-            {/* ── 6. Comments Section (Cusdis) ── */}
+            {/* ── Comments Section (Cusdis) ── */}
             <Comments id={letter.id} title={letter.title} />
 
             {/* ── Navigation ── */}

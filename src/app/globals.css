@@ -348,4 +348,13 @@
     opacity: 0.5;
     margin-bottom: 0.75rem;
   }
+
+  /* ── Cusdis: hauteur adaptée au contenu ── */
+  #cusdis_thread {
+    min-height: 22rem;
+  }
+  #cusdis_thread iframe {
+    min-height: 22rem !important;
+    height: 22rem !important;
+  }
 }
