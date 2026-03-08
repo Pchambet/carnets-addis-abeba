@@ -32,7 +32,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="py-8 px-6 md:px-12 border-b border-[var(--border)]">
           <div className="max-w-4xl mx-auto flex justify-between items-baseline gap-6 flex-wrap">
             <a href="/" className="no-underline hover:no-underline">
-              <span className="caption text-[var(--ochre)]">Nouvelles depuis la nouvelle fleur</span>
               <h1 className="text-2xl md:text-3xl font-light mt-1 text-[var(--ink)] leading-tight">
                 La Parenthèse<br />
                 <em className="text-[var(--ochre)]">du dimanche soir</em>

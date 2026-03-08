@@ -13,12 +13,11 @@ export default function Home() {
                         Addis-Abeba, Éthiopie · {new Date().getFullYear()}
                     </p>
                     <h2 className="text-4xl md:text-6xl font-light leading-tight text-[var(--ink)] mb-10 max-w-2xl">
-                        Des nouvelles hebdomadaires<br />
-                        <em className="text-[var(--ochre)]">depuis la nouvelle fleur.</em>
+                        Nouvelles hebdomadaires<br />
+                        <em className="text-[var(--ochre)]">depuis La Nouvelle Fleur</em>
                     </h2>
                     <p className="text-lg text-[var(--ink-light)] max-w-prose leading-loose font-[family-name:var(--font-lora)]">
-                        Claire s'est envolée pour un an de mission à Addis-Abeba.
-                        Chaque dimanche, elle vous envoie une lettre. Ici, prenez le temps de la lire.
+                        Une lettre par semaine d’un voyage Éthiopien.
                     </p>
                 </div>
             </section>
