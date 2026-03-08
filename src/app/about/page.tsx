@@ -19,33 +19,39 @@ export default function AboutPage() {
             {/* ── Bio ── */}
             <article className="px-6 md:px-12 py-12">
                 <div className="reading-width mx-auto">
+                    <h2 className="caption text-[var(--ochre)] mb-8">Aux lecteurs</h2>
 
                     <p className="drop-cap text-[var(--ink)] font-[family-name:var(--font-lora)] leading-[2] text-lg mb-8">
-                        Claire vit à Addis-Abeba, en Éthiopie, où elle s'est engagée comme volontaire
-                        auprès de communautés religieuses et d'enfants en difficulté. Enseignante d'anglais,
-                        musicienne de jazz, et témoin d'un quotidien à la fois lumineux et bouleversant,
-                        elle écrit depuis le terrain des chroniques qui racontent la beauté et la dureté
-                        de la vie en Éthiopie.
+                        Arrivée le 25 octobre 2025 à Addis-Abeba, capitale de l’Ethiopie, pour une mission solidaire d’un an avec l’Oeuvre-d’Orient, le désir d’écrire les désillusions et les enchantements propres aux découvertes qu’offre la singularité de ce nouveau pays, a tout de suite fait retentir son appel.
                     </p>
 
                     <p className="text-[var(--ink)] font-[family-name:var(--font-lora)] leading-[2] text-lg mb-8">
-                        Ses lettres ne sont pas des carnets de voyage ordinaires. Ce sont des fragments
-                        de vie — des rencontres avec des peintres, des soirées jazz dans des hôtels d'Addis,
-                        des prières chantées dans des chapelles, des enfants qui apprennent l'anglais avec
-                        passion, et des mourants à qui elle offre des chansons.
+                        Dès les premières heures, une plongée dans un nouveau monde s’est engagée pour s’approfondir au fil des jours.
                     </p>
 
-                    {/* Pull quote */}
-                    <blockquote className="pull-quote not-prose">
-                        &laquo;&thinsp;Je vous souhaite de saisir les joies simples que la nature ne cesse de
-                        nous proposer et le courage d'offrir un sourire à un passant solitaire.&thinsp;&raquo;
-                    </blockquote>
-
-                    <p className="text-[var(--ink)] font-[family-name:var(--font-lora)] leading-[2] text-lg">
-                        Ces chroniques sont publiées ici au fil de l'eau, telles quelles, sans filtre —
-                        comme des lettres d'une amie qui raconte sa vie loin de tout.
+                    <p className="text-[var(--ink)] font-[family-name:var(--font-lora)] leading-[2] text-lg mb-8">
+                        En commençant la mission, les épreuves du voyage, l’éloignement avec la douceur des habitudes familières et des proches s’est alors fait sentir, parfois douloureusement. Pour dépasser le chagrin, l’écriture a permis de chercher à garder un regard d’émerveillement sur les choses qui s’offrent quotidiennement.
                     </p>
 
+                    <p className="text-[var(--ink)] font-[family-name:var(--font-lora)] leading-[2] text-lg mb-8">
+                        C’est ce qui est partagé ici, de manière hebdomadaire.
+                    </p>
+
+                    <p className="text-[var(--ink)] font-[family-name:var(--font-lora)] leading-[2] text-lg mb-8">
+                        Au bout de quelques semaines, un bon ami s’est proposé de m’aider à publier ces écrits pour en garder la trace, peut-être au-delà, pour une invitation aux voyages, aux contemplations et au don de soi comme le propose cet engagement d’un an auprès d’enfants blessés.
+                    </p>
+
+                    <p className="text-[var(--ink)] font-[family-name:var(--font-lora)] leading-[2] text-lg mb-8">
+                        Ces lettres racontent les pesanteurs et les grâces qu’offrent cet engagement solidaire, les petits bonheurs ordinaires et les rencontres avec les merveilles que cette Éthiopie mystérieuse veut bien donner à voir.
+                    </p>
+
+                    <p className="text-[var(--ink)] font-[family-name:var(--font-lora)] leading-[2] text-lg mb-8">
+                        Alors je vous souhaite un beau voyage au fil de vos lectures. Puissent-elles vous offrir une parenthèse hebdomadaire, pourquoi pas les dimanches soirs, après le flot de votre semaine, lorsqu’une nouvelle lettre s’envoie.
+                    </p>
+
+                    <p className="text-[var(--ochre)] font-[family-name:var(--font-cormorant)] italic text-2xl mt-12">
+                        Claire
+                    </p>
                 </div>
             </article>
 
