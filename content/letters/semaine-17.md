@@ -2,6 +2,8 @@
 title: "Tout gagner c'est tout perdre"
 date: "2026-02-22"
 location: "Addis-Abeba"
+heroImage: "/images/semaine-17/moqwanit-bonhomme.jpg"
+heroPosition: "center 40%"
 excerpt: "Prier chaque semaine pour l'un des siens, savoir qu'ils sont 35 à faire pareil de leur côté."
 ---
 

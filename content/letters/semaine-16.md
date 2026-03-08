@@ -2,6 +2,8 @@
 title: "Lettre du cœur"
 date: "2026-02-15"
 location: "Addis-Abeba"
+heroImage: "/images/semaine-16/Conversations engagée au café avec Lamesguin avant de partir au travail_.jpg"
+heroPosition: "center 60%"
 excerpt: "Une seule promesse s’imprime sur mon coeur, aimer Hannah et parler avec elle à propos des enfants."
 ---
 

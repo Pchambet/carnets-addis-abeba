@@ -340,9 +340,118 @@
     }
   }
 
-  .hero-letter-content h1 {
+  .hero-letter-content h1,
+  .hero-letter-title {
     color: #FDFAF6;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    text-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.5),
+      0 4px 24px rgba(0, 0, 0, 0.55);
+  }
+
+  /* Fade-in subtil au chargement */
+  @keyframes heroLetterFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-letter-fade-in {
+    opacity: 0;
+    animation: heroLetterFadeIn 0.5s ease-out forwards;
+  }
+
+  .hero-letter-meta.hero-letter-fade-in {
+    animation-delay: 0s;
+  }
+
+  .hero-letter-title.hero-letter-fade-in {
+    animation-delay: 0.1s;
+  }
+
+  .hero-letter-excerpt.hero-letter-fade-in {
+    animation-delay: 0.2s;
+  }
+
+  /* Lien retour dans le hero — coin haut-gauche */
+  .hero-letter-back {
+    color: rgba(253, 250, 246, 0.9);
+  }
+
+  .hero-letter-back:hover {
+    color: var(--ochre);
+  }
+
+  /* ── Hero letter meta — premium, touche éthiopienne ── */
+  .hero-letter-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2.25rem;
+  }
+
+  /* ሳምንት 8 — semaine en amharique, badge discret */
+  .hero-letter-week {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.95;
+  }
+
+  .hero-letter-week .ethiopic {
+    font-family: var(--font-ethiopic), sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+  }
+
+  /* Date · Lieu — typo éditoriale légère */
+  .hero-letter-date-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35em;
+    font-family: var(--font-cormorant), 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: 0.97rem;
+    color: rgba(253, 250, 246, 0.92);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-letter-sep {
+    opacity: 0.5;
+    font-weight: 300;
+  }
+
+  .hero-letter-location {
+    color: var(--gold);
+  }
+
+  .hero-letter-read-time {
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    color: rgba(253, 250, 246, 0.92);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
+
+  /* Extrait hero — lisibilité maximale */
+  .hero-letter-excerpt {
+    color: #FDFAF6;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  @media (min-width: 640px) {
+    .hero-letter-week {
+      font-size: 0.78rem;
+    }
+
+    .hero-letter-date-row {
+      font-size: 1.02rem;
+    }
   }
 
   /* ── Scrollytelling Panel (Snow Fall) ─── */

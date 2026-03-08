@@ -14,6 +14,8 @@ export interface LetterData {
     location?: string;
     excerpt?: string;
     pullQuote?: string;
+    heroImage?: string;
+    heroPosition?: string; // ex: "top", "center 30%"
     readTime: number;
     contentHtml: string;
 }
@@ -35,7 +37,7 @@ export function getSortedLettersData() {
             return {
                 id,
                 readTime,
-                ...(matterResult.data as { title: string; date: string; location?: string; excerpt?: string }),
+                ...(matterResult.data as { title: string; date: string; location?: string; excerpt?: string; heroImage?: string; heroPosition?: string }),
             };
         })
         .sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -92,6 +94,6 @@ export async function getLetterData(id: string): Promise<LetterData> {
         contentHtml,
         pullQuote,
         readTime,
-        ...(matterResult.data as { title: string; date: string; location?: string; excerpt?: string }),
+        ...(matterResult.data as { title: string; date: string; location?: string; excerpt?: string; heroImage?: string; heroPosition?: string }),
     };
 }

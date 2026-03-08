@@ -2,6 +2,8 @@
 title: "Mélancolies contemplatives"
 date: "2026-03-01"
 location: "Addis-Abeba"
+heroImage: "/images/semaine-18/IMG_1729.jpg"
+heroPosition: "center 60%"
 excerpt: "Accepter les exigences que chaque jour propose, et toujours tenter de se dépasser."
 ---
 

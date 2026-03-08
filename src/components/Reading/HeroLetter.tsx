@@ -1,4 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
+
+/** ሳምንት = « semaine » en amharique */
+const ETHIOPIC_WEEK = 'ሳምንት';
 
 interface HeroLetterProps {
     title: string;
@@ -6,15 +10,24 @@ interface HeroLetterProps {
     location?: string;
     excerpt?: string;
     heroImage: string; // path relative to /public
+    heroPosition?: string; // ex: "top", "center 30%" — zone affichée (object-position)
     readTime: number;
+    letterId?: string; // ex: "semaine-08" → affiche ሳምንት 8
+}
+
+function getWeekNumber(letterId: string | undefined): number | null {
+    if (!letterId) return null;
+    const m = letterId.match(/semaine-(\d+)/i);
+    return m ? parseInt(m[1], 10) : null;
 }
 
 export default function HeroLetter({
-    title, date, location, excerpt, heroImage, readTime
+    title, date, location, excerpt, heroImage, heroPosition, readTime, letterId
 }: HeroLetterProps) {
     const formattedDate = new Date(date).toLocaleDateString('fr-FR', {
         weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
     });
+    const weekNum = getWeekNumber(letterId);
 
     return (
         <div className="hero-letter">
@@ -26,38 +39,56 @@ export default function HeroLetter({
                 className="hero-letter-bg"
                 priority
                 sizes="100vw"
-                style={{ objectFit: 'cover' }}
-            />
-
-            {/* Gradient overlay for extra text legibility */}
-            <div
-                className="absolute inset-0 z-[1]"
                 style={{
-                    background: 'linear-gradient(to top, rgba(20,10,5,0.85) 0%, rgba(20,10,5,0.2) 60%, transparent 100%)',
+                    objectFit: 'cover',
+                    objectPosition: heroPosition ?? 'center',
                 }}
             />
 
+            {/* Gradient overlay — fondu progressif (4 stops) */}
+            <div
+                className="absolute inset-0 z-[1]"
+                style={{
+                    background: 'linear-gradient(to top, rgba(18,12,8,0.9) 0%, rgba(18,12,8,0.65) 30%, rgba(18,12,8,0.3) 60%, transparent 100%)',
+                }}
+            />
+
+            {/* Lien retour — overlay coin haut-gauche */}
+            <Link
+                href="/"
+                className="hero-letter-back absolute top-6 left-6 md:top-8 md:left-8 z-10 caption no-underline transition-colors duration-250"
+            >
+                ← Toutes les lettres
+            </Link>
+
             {/* Content */}
             <div className="hero-letter-content">
-                <div className="flex flex-wrap gap-3 sm:gap-4 items-center mb-4 sm:mb-6">
-                    <time className="caption opacity-80 text-[var(--paper)]" dateTime={date}>
-                        {formattedDate}
-                    </time>
-                    {location && (
-                        <span className="caption text-[#C9A84C]">{location}</span>
+                <div className="hero-letter-meta hero-letter-fade-in">
+                    {weekNum !== null && (
+                        <span className="hero-letter-week">
+                            <span className="ethiopic">{ETHIOPIC_WEEK}</span> {weekNum}
+                        </span>
                     )}
-                    <span className="read-time" style={{ color: '#FDFAF6', borderColor: 'rgba(255,255,255,0.3)' }}>
-                        ⏱ {readTime} min
-                    </span>
+                    <div className="hero-letter-date-row">
+                        <time dateTime={date}>{formattedDate}</time>
+                        {location && (
+                            <>
+                                <span className="hero-letter-sep">·</span>
+                                <span className="hero-letter-location">{location}</span>
+                            </>
+                        )}
+                        <span className="hero-letter-sep">·</span>
+                        <span className="hero-letter-read-time">⏱ {readTime} min</span>
+                    </div>
                 </div>
 
-                <h1 className="mb-4 sm:mb-6" style={{ fontSize: 'clamp(1.5rem, 5vw, 4rem)' }}>
+                <h1 className="hero-letter-title hero-letter-fade-in mb-6 sm:mb-8" style={{ fontSize: 'clamp(2rem, 6vw, 4.5rem)' }}>
                     {title}
                 </h1>
 
                 {excerpt && (
                     <p
-                        className="text-base sm:text-lg italic opacity-85 max-w-prose leading-relaxed"
+                        className="hero-letter-excerpt hero-letter-fade-in text-base sm:text-lg italic max-w-prose leading-relaxed mt-2"
                         style={{ fontFamily: 'var(--font-lora), serif', color: '#FDFAF6' }}
                     >
                         {excerpt}
