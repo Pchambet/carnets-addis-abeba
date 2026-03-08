@@ -11,7 +11,7 @@ export default function AboutPage() {
                     </h2>
 
                     <p className="drop-cap text-[var(--ink)] font-[family-name:var(--font-lora)] leading-[2] text-lg mb-8">
-                        Arrivée le 25 octobre 2025 à Addis-Abeba, capitale de l’Ethiopie, pour une mission solidaire d’un an avec l’Oeuvre-d’Orient, le désir d’écrire les désillusions et les enchantements propres aux découvertes qu’offre la singularité de ce nouveau pays, a tout de suite fait retentir son appel.
+                        Arrivée le 25 octobre 2025 à Addis-Abéba, capitale de l’Éthiopie, pour une mission solidaire d’un an avec l’Oeuvre-d’Orient, le désir d’écrire les désillusions et les enchantements propres aux découvertes qu’offre la singularité de ce nouveau pays, a tout de suite fait retentir son appel.
                     </p>
 
                     <p className="text-[var(--ink)] font-[family-name:var(--font-lora)] leading-[2] text-lg mb-8">
@@ -64,7 +64,7 @@ export default function AboutPage() {
                     <div>
                         <p className="caption text-[var(--gold)] mb-3">🤝 Solidaire</p>
                         <p className="text-[var(--ink-light)] font-[family-name:var(--font-lora)] italic text-base leading-relaxed">
-                            Ces lettres créent un lien. Elles vous invitent à écrire à Claire, à partager.
+                            Ces lettres créent un lien. Elles vous invitent à écrire, à partager.
                         </p>
                     </div>
                 </div>
@@ -72,12 +72,12 @@ export default function AboutPage() {
 
             {/* ── CTA ── */}
             <section className="text-center py-16 px-6 border-t border-[var(--border)]">
-                <p className="caption text-[var(--ink-light)] mb-4">Envie d&apos;écrire à Claire ?</p>
+                <p className="caption text-[var(--ink-light)] mb-4">Un mot à faire passer ?</p>
                 <a
-                    href="mailto:claire.stellio@gmail.com?subject=Je t&apos;écris depuis ton site"
+                    href="mailto:claire.stellio@gmail.com?subject=Je t&apos;écris depuis le site"
                     className="inline-block border border-[var(--ochre)] text-[var(--ochre)] px-10 py-4 caption hover:bg-[var(--ochre)] hover:text-[var(--white)] transition-all duration-500 no-underline"
                 >
-                    Écrire à Claire
+                    Envoyer un message
                 </a>
             </section>
         </div>

@@ -42,7 +42,7 @@ export function getSortedLettersData() {
 }
 
 /** Clean common artefacts from .docx / .pages text extraction */
-function cleanMarkdown(raw: string): string {
+export function cleanMarkdown(raw: string): string {
     return raw
         // RTL / LTR marks from .docx
         .replace(/[\u200e\u200f]/g, '')
@@ -57,7 +57,7 @@ function cleanMarkdown(raw: string): string {
 }
 
 /** Extract "> PQ: …" pull quote marker from content */
-function extractPullQuote(content: string): { pullQuote?: string; cleanContent: string } {
+export function extractPullQuote(content: string): { pullQuote?: string; cleanContent: string } {
     const pqMatch = content.match(/^>\s*PQ:\s*(.+)$/m);
     if (!pqMatch) return { cleanContent: content };
     const pullQuote = pqMatch[1].trim();

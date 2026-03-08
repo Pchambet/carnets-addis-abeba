@@ -39,7 +39,7 @@ export default function HeroLetter({
 
             {/* Content */}
             <div className="hero-letter-content">
-                <div className="flex flex-wrap gap-4 items-center mb-6">
+                <div className="flex flex-wrap gap-3 sm:gap-4 items-center mb-4 sm:mb-6">
                     <time className="caption opacity-80 text-[var(--paper)]" dateTime={date}>
                         {formattedDate}
                     </time>
@@ -51,13 +51,13 @@ export default function HeroLetter({
                     </span>
                 </div>
 
-                <h1 className="mb-6" style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}>
+                <h1 className="mb-4 sm:mb-6" style={{ fontSize: 'clamp(1.5rem, 5vw, 4rem)' }}>
                     {title}
                 </h1>
 
                 {excerpt && (
                     <p
-                        className="text-lg italic opacity-85 max-w-prose leading-relaxed"
+                        className="text-base sm:text-lg italic opacity-85 max-w-prose leading-relaxed"
                         style={{ fontFamily: 'var(--font-lora), serif', color: '#FDFAF6' }}
                     >
                         {excerpt}

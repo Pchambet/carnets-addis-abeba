@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 interface Photo {
     src: string;
     name: string;
+    caption?: string;
 }
 
 interface LightboxGalleryProps {
@@ -51,25 +52,32 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
     return (
         <>
             {/* ── Photo Grid ── */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
                 {photos.map((photo, i) => (
-                    <div
-                        key={i}
-                        className="relative aspect-square overflow-hidden bg-[var(--border)] cursor-zoom-in group"
-                        title={photo.name}
-                        onClick={() => setActiveIndex(i)}
-                    >
-                        <Image
-                            src={photo.src}
-                            alt={photo.name}
-                            fill
-                            className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                            sizes="(max-width: 768px) 50vw, 25vw"
-                            style={{ filter: 'contrast(1.02) saturate(0.93)' }}
-                        />
-                        {/* Subtle dark overlay on hover */}
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
-                    </div>
+                    <figure key={i} className="group">
+                        <button
+                            type="button"
+                            className="relative aspect-square overflow-hidden bg-[var(--border)] cursor-zoom-in w-full text-left active:scale-[0.99] transition-transform duration-200"
+                            title={photo.caption ?? photo.name}
+                            onClick={() => setActiveIndex(i)}
+                            aria-label={`Voir la photo : ${photo.caption ?? photo.name}`}
+                        >
+                            <Image
+                                src={photo.src}
+                                alt={photo.caption ?? photo.name}
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                                sizes="(max-width: 768px) 50vw, 25vw"
+                                style={{ filter: 'contrast(1.02) saturate(0.93)' }}
+                            />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" aria-hidden />
+                        </button>
+                        {photo.caption && (
+                            <figcaption className="mt-2 text-xs text-[var(--ink-light)] italic font-[family-name:var(--font-lora)] line-clamp-2">
+                                {photo.caption}
+                            </figcaption>
+                        )}
+                    </figure>
                 ))}
             </div>
 
@@ -77,6 +85,9 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
             <AnimatePresence>
                 {activeIndex !== null && (
                     <motion.div
+                        role="dialog"
+                        aria-modal="true"
+                        aria-label="Galerie photo en plein écran"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -86,17 +97,17 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
                         {/* ── Close Button ── */}
                         <button
                             onClick={() => setActiveIndex(null)}
-                            className="absolute top-6 right-6 z-[120] text-white/50 hover:text-white transition-colors p-4 cursor-pointer"
+                            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[120] text-white/50 hover:text-white transition-colors p-3 sm:p-4 cursor-pointer rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black touch-manipulation"
                             aria-label="Fermer"
                         >
-                            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-7 h-7 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
 
                         {/* ── Next/Prev Areas ── */}
                         <button
-                            className="absolute left-0 top-0 bottom-0 w-[20vw] z-[110] flex items-center justify-start pl-6 md:pl-12 group focus:outline-none cursor-w-resize"
+                            className="absolute left-0 top-0 bottom-0 w-16 sm:w-[20vw] min-w-[48px] z-[110] flex items-center justify-start pl-2 sm:pl-6 md:pl-12 group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-inset cursor-w-resize touch-manipulation"
                             onClick={(e) => { e.stopPropagation(); handlePrev(); }}
                             aria-label="Précédent"
                         >
@@ -112,7 +123,7 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
                         </button>
 
                         <button
-                            className="absolute right-0 top-0 bottom-0 w-[20vw] z-[110] flex items-center justify-end pr-6 md:pr-12 group focus:outline-none cursor-e-resize"
+                            className="absolute right-0 top-0 bottom-0 w-16 sm:w-[20vw] min-w-[48px] z-[110] flex items-center justify-end pr-2 sm:pr-6 md:pr-12 group focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-inset cursor-e-resize touch-manipulation"
                             onClick={(e) => { e.stopPropagation(); handleNext(); }}
                             aria-label="Suivant"
                         >
@@ -129,7 +140,7 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
 
                         {/* ── Image Container ── */}
                         <div
-                            className="relative w-full h-full max-w-[90vw] max-h-[85vh] flex items-center justify-center p-4"
+                            className="relative w-full h-full max-w-[95vw] sm:max-w-[90vw] max-h-[80vh] sm:max-h-[85vh] flex items-center justify-center p-2 sm:p-4"
                             onClick={() => setActiveIndex(null)} // Click outside to close
                         >
                             <AnimatePresence mode="wait">
@@ -144,7 +155,7 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
                                 >
                                     <Image
                                         src={photos[activeIndex].src}
-                                        alt={photos[activeIndex].name}
+                                        alt={photos[activeIndex].caption ?? photos[activeIndex].name}
                                         fill
                                         className="object-contain"
                                         sizes="100vw"
@@ -154,12 +165,12 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
                             </AnimatePresence>
                         </div>
 
-                        {/* ── Caption Footer ── */}
-                        <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end text-white/50 font-[family-name:var(--font-lora)] italic pointer-events-none z-[110]">
-                            <p className="max-w-[70vw] truncate drop-shadow-md text-lg">
-                                {photos[activeIndex].name?.replace(/[-_]/g, ' ')}
+                        {/* ── Caption Footer (contexte uniquement) ── */}
+                        <div className="absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-8 flex flex-col gap-1 justify-end text-white/60 font-[family-name:var(--font-lora)] pointer-events-none z-[110]">
+                            <p className="italic text-base drop-shadow-md max-w-[70vw]">
+                                {photos[activeIndex].caption ?? photos[activeIndex].name?.replace(/[-_]/g, ' ')}
                             </p>
-                            <p className="font-sans not-italic text-sm tracking-widest uppercase drop-shadow-md text-white/40">
+                            <p className="self-end font-sans not-italic text-xs tracking-widest uppercase drop-shadow-md text-white/40 mt-1">
                                 {activeIndex + 1} / {photos.length}
                             </p>
                         </div>

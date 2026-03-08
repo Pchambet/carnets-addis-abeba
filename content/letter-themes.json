@@ -1,0 +1,21 @@
+{
+  "semaine-00": ["mission", "rencontres"],
+  "semaine-01": ["spiritualité", "mission"],
+  "semaine-02": ["mission", "solidarité"],
+  "semaine-03": ["solidarité", "mission"],
+  "semaine-04": ["spiritualité", "culture", "mission", "solidarité"],
+  "semaine-05": ["solidarité", "rencontres", "mission"],
+  "semaine-06": ["spiritualité"],
+  "semaine-07": ["spiritualité", "rencontres"],
+  "semaine-08": ["rencontres"],
+  "semaine-09": ["spiritualité", "culture", "rencontres"],
+  "semaine-10": ["mission"],
+  "semaine-11": ["spiritualité", "culture"],
+  "semaine-12": ["spiritualité", "culture", "rencontres"],
+  "semaine-13": ["mission", "rencontres"],
+  "semaine-14": ["culture", "mission", "rencontres"],
+  "semaine-15": ["culture", "rencontres", "mission"],
+  "semaine-16": ["solidarité", "mission", "spiritualité"],
+  "semaine-17": ["rencontres", "culture"],
+  "semaine-18": ["spiritualité"]
+}

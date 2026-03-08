@@ -1,67 +1,102 @@
 # Carnets d'Addis-Abeba
 
-> *Nouvelles hebdomadaires depuis la nouvelle fleur.* — Lettres de Claire depuis Addis-Abeba.
+> *Nouvelles hebdomadaires depuis la Nouvelle Fleur.* — Un carnet de voyage à Addis-Abéba.
 
 ## Stack
 
-- **Next.js 16** (App Router, Turbopack)
-- **TypeScript** 
+- **Next.js 16** (App Router, Turbopack, export statique)
+- **TypeScript**
 - **Tailwind CSS v4** + `@tailwindcss/typography`
-- **Markdown** (gray-matter + remark) — letters as `.md` files with YAML frontmatter
-- Hosted on **Vercel**
-
-## 3 Design Pillars
-
-| Pilier | Intention |
-|--------|-----------|
-| 🕊️ Spirituel | Lenteur, typographie aérée (Cormorant + Lora), espaces blancs |
-| 🌍 Culturel | Couleurs éthiopiennes, motifs Tibeb, invite contemplative |
-| 🤝 Solidaire | Galerie photo, carte des enfants, "Écrire à Claire" |
-
-## Structure
-
-```
-content/letters/   → Lettres en Markdown (frontmatter YAML)
-public/images/     → Photos organisées par semaine
-src/app/           → Pages Next.js (App Router)
-src/components/    → Layout/, Reading/, UI/
-src/lib/           → Markdown parser
-```
+- **Markdown** (gray-matter + remark) — lettres en `.md` avec frontmatter YAML
+- **Cusdis** — livre d'or / commentaires
+- **Hébergement** — Vercel
 
 ## Développement local
 
 ```bash
 npm install
-npm run dev      # → http://localhost:3000
-npm run lint    # → ESLint
+cp .env.example .env.local   # Optionnel : pour personnaliser SITE_URL
+npm run dev                   # → http://localhost:3000
 ```
 
-## Configuration optionnelle
+## Scripts
 
-Créer `.env.local` si besoin (ex. autre domaine) :
+| Commande | Description |
+|----------|-------------|
+| `npm run dev` | Serveur de développement |
+| `npm run build` | Build statique (output → `out/`) |
+| `npm run start` | Servir le build localement |
+| `npm run lint` | ESLint |
+| `npm run test` | Tests unitaires (Vitest) |
+| `npm run photos` | Pipeline complet : sync photos/vidéos → conversion HEIC → compression → légendes |
+| `npm run audit-media` | Vérifie cohérence photos/vidéos (chemins, indexation) |
+
+## Structure du projet
+
 ```
-NEXT_PUBLIC_SITE_URL=https://carnets-addis-abeba.vercel.app
+content/letters/       → Lettres en Markdown (frontmatter YAML)
+public/images/         → Photos par semaine (semaine-00/, semaine-01/, …)
+  home-hero.jpg        → Image hero page d'accueil (variantes 640w, 1024w générées)
+src/app/               → Pages Next.js (App Router)
+src/components/       → Layout, Reading, UI, Home, Map
+src/lib/               → letters, photos, themes, jardin, remarkDayHeaders
+scripts/               → sync-photos-notes, optimize-photos, extract-captions
 ```
-Voir `.env.example`.
 
-## Ajouter une lettre
+## Configuration
 
-1. Créer `content/letters/semaine-XX.md` avec le frontmatter suivant :
-```yaml
----
-title: "Titre de la lettre"
-date: "YYYY-MM-DD"
-location: "Addis-Abeba"
-excerpt: "Une phrase d'accroche courte."
----
+Copier `.env.example` vers `.env.local` et adapter :
+
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_SITE_URL` | URL publique (Vercel la définit en prod) |
+| `NEXT_PUBLIC_CUSDIS_APP_ID` | ID app Cusdis (livre d'or) |
+
+## Ajouter une nouvelle lettre
+
+1. **Créer** `content/letters/semaine-XX.md` avec le frontmatter :
+   ```yaml
+   ---
+   title: "Titre de la lettre"
+   date: "YYYY-MM-DD"
+   location: "Addis-Abeba"
+   excerpt: "Une phrase d'accroche."
+   heroImage: "/images/semaine-XX/photo.jpg"  # Optionnel
+   ---
+   ```
+
+2. **Photos** : placer les images dans `public/images/semaine-XX/`
+
+3. **Légendes** : exécuter `npm run photos` pour :
+   - Copier les photos depuis `Semaine_XX/Photos et notes à propos de la lettre/`
+   - Convertir HEIC → JPEG, optimiser (resize, compression)
+   - Extraire les légendes des photos → `captions.json`
+
+4. **Push** → déploiement automatique sur Vercel (CI : lint, test, build)
+
+→ Détails dans `docs/PROCEDURE.md`.
+
+## Pipeline photos (détail)
+
+- `sync-photos-notes.js` — Copie depuis `../Semaine_XX/Photos et notes.../` vers `public/images/semaine-XX/`
+- `optimize-photos.sh` — HEIC→JPEG, resize (max 2000px), compression (qualité 80), variantes hero responsive
+- `extract-captions.js` — Légendes depuis les noms de fichiers des photos source
+
+## Tests
+
+```bash
+npm run test        # Exécution une fois
+npm run test:watch  # Mode watch
 ```
-2. Ajouter les photos dans `public/images/semaine-XX/`
-3. `git push` → déploiement automatique sur Vercel
 
-## Scripts (dans `scripts/`)
+Tests unitaires : `letters.ts` (cleanMarkdown, extractPullQuote, getLetterData), `remarkDayHeaders`.
 
-À exécuter depuis la racine du projet (`carnets-addis-abeba/`). Les DOCX doivent être dans le dossier parent (`Claire&Pierre/Semaine_XX/`).
+## Déploiement
 
-- `node scripts/sync-docx.js` — Restaure le contenu MD depuis les DOCX (fidélité stricte)
-- `node scripts/compare-docx.js` — Compare nombre de mots DOCX vs MD
-- `node scripts/debug-diff.js` — Exporte txt pour debug (semaine-00, 01, 12)
+- **Vercel** : connecter le repo GitHub → déploiement automatique sur push
+- **CI** : `.github/workflows/ci.yml` — lint, test, build sur chaque PR/push
+
+## Docs
+
+- `docs/PROCEDURE.md` — ajouter une lettre
+- `docs/DIRECTION-ARTISTIQUE.md` — palette, ton, piliers visuels

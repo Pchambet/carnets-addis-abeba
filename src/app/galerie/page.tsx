@@ -1,6 +1,5 @@
 import { getSortedLettersData } from '@/lib/letters';
-import fs from 'fs';
-import path from 'path';
+import { getPhotosForLetter, type Photo } from '@/lib/photos';
 import Link from 'next/link';
 import TibebDivider from '@/components/UI/TibebDivider';
 import LightboxGallery from '@/components/Reading/LightboxGallery';
@@ -10,16 +9,7 @@ interface LetterWithPhotos {
     title: string;
     date: string;
     location?: string;
-    photos: { src: string; name: string }[];
-}
-
-function getPhotosForLetter(id: string) {
-    const dir = path.join(process.cwd(), 'public', 'images', id);
-    if (!fs.existsSync(dir)) return [];
-    return fs
-        .readdirSync(dir)
-        .filter(f => /\.(jpg|jpeg|png|heic|webp)$/i.test(f))
-        .map(f => ({ src: `/images/${id}/${f}`, name: f.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ') }));
+    photos: Photo[];
 }
 
 export default function GalleriePage() {
@@ -34,10 +24,10 @@ export default function GalleriePage() {
     return (
         <div>
             {/* ── Header ── */}
-            <section className="px-6 md:px-12 py-20 border-b border-[var(--border)]">
+            <section className="px-6 md:px-12 py-12 sm:py-16 md:py-20 border-b border-[var(--border)]">
                 <div className="max-w-4xl mx-auto">
                     <p className="caption text-[var(--ochre)] mb-4">Carnets d&apos;Addis-Abéba</p>
-                    <h1 className="text-4xl md:text-6xl font-light leading-tight mb-6">
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl font-light leading-tight mb-6">
                         La galerie
                     </h1>
                     <p className="text-lg text-[var(--ink-light)] font-[family-name:var(--font-lora)] italic">
@@ -48,7 +38,7 @@ export default function GalleriePage() {
             </section>
 
             {/* ── Per-semaine galleries ── */}
-            <div className="max-w-5xl mx-auto px-6 md:px-12 py-20 space-y-24">
+            <div className="max-w-5xl mx-auto px-6 md:px-12 py-12 sm:py-16 md:py-20 space-y-16 sm:space-y-24">
                 {lettersWithPhotos.map(letter => {
                     const formattedDate = new Date(letter.date).toLocaleDateString('fr-FR', {
                         month: 'long', year: 'numeric'
@@ -56,10 +46,10 @@ export default function GalleriePage() {
                     return (
                         <section key={letter.id}>
                             {/* Week header */}
-                            <div className="flex items-baseline gap-6 mb-8 pb-4 border-b border-[var(--border)]">
+                            <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-6 gap-2 mb-8 pb-4 border-b border-[var(--border)]">
                                 <Link
                                     href={`/letters/${letter.id}`}
-                                    className="text-2xl md:text-3xl font-light text-[var(--ink)] hover:text-[var(--ochre)] transition-colors duration-400 no-underline"
+                                    className="text-xl sm:text-2xl md:text-3xl font-light text-[var(--ink)] hover:text-[var(--ochre)] transition-colors duration-400 no-underline"
                                     style={{ fontFamily: 'var(--font-cormorant), serif' }}
                                 >
                                     {letter.title}

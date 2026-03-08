@@ -1,30 +1,60 @@
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { getLetterData, getSortedLettersData } from '@/lib/letters';
+import { getPhotosForLetter, getVideosForLetter } from '@/lib/photos';
 import HeroLetter from '@/components/Reading/HeroLetter';
 import TibebDivider from '@/components/UI/TibebDivider';
 import LightboxGallery from '@/components/Reading/LightboxGallery';
+import VideoSection from '@/components/Reading/VideoSection';
 import PullQuote from '@/components/Reading/PullQuote';
 import ReadingProgress from '@/components/Reading/ReadingProgress';
 import Comments from '@/components/Reading/Comments';
 import Link from 'next/link';
-import fs from 'fs';
-import path from 'path';
 
 export async function generateStaticParams() {
-    const letters = getSortedLettersData();
-    return letters.map((letter) => ({ id: letter.id }));
+    try {
+        const letters = getSortedLettersData();
+        return letters.map((letter) => ({ id: letter.id }));
+    } catch {
+        return [];
+    }
 }
 
-function getPhotosForLetter(id: string) {
-    const dir = path.join(process.cwd(), 'public', 'images', id);
-    if (!fs.existsSync(dir)) return [];
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://carnets-addis-abeba.vercel.app';
 
-    return fs
-        .readdirSync(dir)
-        .filter(f => /\.(jpg|jpeg|png|heic|webp)$/i.test(f))
-        .map(f => ({
-            src: `/images/${id}/${f}`,
-            name: f.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' '),
-        }));
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+    const { id } = await params;
+    try {
+        const letter = await getLetterData(id);
+        const photos = getPhotosForLetter(id);
+        const letterData = letter as { heroImage?: string };
+        const ogImagePath = letterData.heroImage ?? photos[0]?.src;
+        const ogImageUrl = ogImagePath ? (ogImagePath.startsWith('http') ? ogImagePath : `${SITE_URL}${ogImagePath}`) : undefined;
+        const description = letter.excerpt ?? letter.pullQuote ?? `${letter.title} — lettre depuis Addis-Abéba`;
+
+        return {
+            title: letter.title,
+            description,
+            openGraph: {
+                title: letter.title,
+                description,
+                type: 'article',
+                publishedTime: letter.date,
+                locale: 'fr_FR',
+                ...(ogImageUrl && {
+                    images: [{ url: ogImageUrl, width: 1200, height: 630, alt: letter.title }],
+                }),
+            },
+            twitter: {
+                card: 'summary_large_image',
+                title: letter.title,
+                description,
+                ...(ogImageUrl && { images: [ogImageUrl] }),
+            },
+        };
+    } catch {
+        return { title: 'Lettre' };
+    }
 }
 
 /** Format "Claire" signature at the end of the content */
@@ -39,8 +69,14 @@ function formatSignature(contentHtml: string): string {
 
 export default async function LetterPage({ params }: { params: Promise<{ id: string }> }) {
     const resolvedParams = await params;
-    const letter = await getLetterData(resolvedParams.id);
+    let letter;
+    try {
+        letter = await getLetterData(resolvedParams.id);
+    } catch {
+        notFound();
+    }
     const photos = getPhotosForLetter(resolvedParams.id);
+    const videos = getVideosForLetter(resolvedParams.id);
 
     // Determine hero image: first photo or fallback gradient
     const heroImage = photos.length > 0 ? photos[0].src : null;
@@ -60,10 +96,9 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
                     readTime={letter.readTime}
                 />
             ) : (
-                /* Fallback header without photo */
                 <header className="px-6 md:px-12 py-20 md:py-28 border-b border-[var(--border)]">
                     <div className="max-w-4xl mx-auto">
-                        <Link href="/" className="caption text-[var(--ink-light)] hover:text-[var(--ochre)] no-underline mb-12 inline-block">
+                        <Link href="/" className="caption text-[var(--ink-light)] hover:text-[var(--ochre)] no-underline mb-12 inline-block transition-colors duration-250">
                             ← Toutes les lettres
                         </Link>
                         <div className="flex flex-wrap gap-4 items-center mb-6">
@@ -81,7 +116,7 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
             {/* Back link under hero */}
             <div className="px-6 md:px-12 pt-8">
                 <div className="max-w-4xl mx-auto">
-                    <Link href="/" className="caption text-[var(--ink-light)] hover:text-[var(--ochre)] no-underline">
+                    <Link href="/" className="caption text-[var(--ink-light)] hover:text-[var(--ochre)] no-underline transition-colors duration-250">
                         ← Toutes les lettres
                     </Link>
                 </div>
@@ -92,12 +127,11 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
             {/* ── 2. Letter body with drop cap + pull quote (Priorité 1) ── */}
             <div className="px-6 md:px-12 pb-12">
                 <div className="reading-width mx-auto">
-                    {/* Pull Quote placed above body text (Priorité 1) */}
                     {letter.pullQuote && <PullQuote text={letter.pullQuote} />}
 
-                    {/* Body — drop-cap class applies ::first-letter to first <p> */}
+                    <div className="letter-body">
                     <div
-                        className="drop-cap prose prose-lg max-w-[65ch]
+                        className="drop-cap prose prose-base sm:prose-lg max-w-[65ch]
               prose-headings:font-[family-name:var(--font-cormorant)]
               prose-headings:font-light
               prose-headings:text-[var(--ink)]
@@ -115,6 +149,7 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
             "
                         dangerouslySetInnerHTML={{ __html: formatSignature(letter.contentHtml) }}
                     />
+                    </div>
                 </div>
             </div>
 
@@ -123,10 +158,15 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
             {/* ── 3. Photo Gallery with captions & credits (Priorité 1 + 2) ── */}
             {photos.length > 0 && (
                 <div className="px-6 md:px-12 my-20">
-                    {/* Section header */}
                     <p className="caption text-[var(--ochre)] text-center mb-2">Fragments du voyage</p>
                     <p className="photo-credit text-center mb-8 pr-0 text-[var(--ink-light)]">© Claire Stellio, Addis-Abéba</p>
                     <LightboxGallery photos={photos} />
+                </div>
+            )}
+
+            {videos.length > 0 && (
+                <div className="px-6 md:px-12 my-20">
+                    <VideoSection videos={videos} />
                 </div>
             )}
 
@@ -137,7 +177,7 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
 
             {/* ── Navigation ── */}
             <div className="border-t border-[var(--border)] py-12 px-6 md:px-12 text-center">
-                <Link href="/" className="caption text-[var(--ink-light)] hover:text-[var(--ochre)] no-underline">
+                <Link href="/" className="caption text-[var(--ink-light)] hover:text-[var(--ochre)] no-underline transition-colors duration-250">
                     ← Retour aux lettres
                 </Link>
             </div>

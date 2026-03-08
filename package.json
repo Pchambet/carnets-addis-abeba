@@ -5,34 +5,49 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "photos": "node scripts/sync-photos-notes.js && bash scripts/optimize-photos.sh && node scripts/extract-captions.js",
+    "audit-media": "node scripts/audit-media.js"
   },
   "dependencies": {
     "@tabler/icons-react": "^3.38.0",
     "@tailwindcss/typography": "^0.5.19",
+    "@types/leaflet": "^1.9.21",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.34.5",
     "gray-matter": "^4.0.3",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.576.0",
     "next": "16.1.6",
     "react": "19.2.3",
+    "react-cusdis": "^2.1.3",
     "react-dom": "19.2.3",
+    "react-leaflet": "^5.0.0",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "tailwind-merge": "^3.5.0",
     "unist-util-visit": "^5.1.0"
   },
+  "overrides": {
+    "react-cusdis": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    }
+  },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "mammoth": "^1.11.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "mammoth": "^1.11.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.0.18"
   }
 }
