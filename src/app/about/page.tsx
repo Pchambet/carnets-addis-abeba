@@ -38,7 +38,7 @@ export default function AboutPage() {
                         Alors je vous souhaite un beau voyage au fil de vos lectures. Puissent-elles vous offrir une parenthèse hebdomadaire, pourquoi pas les dimanches soirs, après le flot de votre semaine, lorsqu’une nouvelle lettre s’envoie.
                     </p>
 
-                    <p className="signature">
+                    <p className="signature signature-tnr">
                         Claire
                     </p>
                 </div>
@@ -46,33 +46,9 @@ export default function AboutPage() {
 
             <TibebDivider />
 
-            {/* ── Three pillars reminder ── */}
-            <section className="px-6 md:px-12 py-16">
-                <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-12">
-                    <div>
-                        <p className="caption text-[var(--ochre)] mb-3">🕊️ Spirituel</p>
-                        <p className="text-[var(--ink-light)] font-[family-name:var(--font-lora)] italic text-base leading-relaxed">
-                            Prendre le temps. Ralentir la lecture. Laisser les mots agir doucement.
-                        </p>
-                    </div>
-                    <div>
-                        <p className="caption text-[var(--red)] mb-3">🌍 Culturel</p>
-                        <p className="text-[var(--ink-light)] font-[family-name:var(--font-lora)] italic text-base leading-relaxed">
-                            Partir à la rencontre d&apos;une culture vivante, vibrante, spirituelle.
-                        </p>
-                    </div>
-                    <div>
-                        <p className="caption text-[var(--gold)] mb-3">🤝 Solidaire</p>
-                        <p className="text-[var(--ink-light)] font-[family-name:var(--font-lora)] italic text-base leading-relaxed">
-                            Ces lettres créent un lien. Elles vous invitent à écrire, à partager.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
             {/* ── CTA ── */}
             <section className="text-center py-16 px-6 border-t border-[var(--border)]">
-                <p className="caption text-[var(--ink-light)] mb-4">Un mot à faire passer ?</p>
+                <p className="caption text-[var(--ink-light)] mb-4">Envie de correspondre ?</p>
                 <a
                     href="mailto:claire.stellio@gmail.com?subject=Je t&apos;écris depuis le site"
                     className="inline-block border border-[var(--ochre)] text-[var(--ochre)] px-10 py-4 caption hover:bg-[var(--ochre)] hover:text-[var(--white)] transition-all duration-500 no-underline"

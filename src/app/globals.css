@@ -478,6 +478,11 @@
     margin-bottom: 0.75rem;
   }
 
+  /* About page : Claire en Times New Roman */
+  .signature-tnr {
+    font-family: 'Times New Roman', Times, serif;
+  }
+
   /* ── Cusdis: hauteur adaptée au contenu ── */
   #cusdis_thread {
     min-height: 22rem;
