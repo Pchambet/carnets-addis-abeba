@@ -13,6 +13,7 @@
     "audit-media": "node scripts/audit-media.js"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.98.0",
     "@tabler/icons-react": "^3.38.0",
     "@tailwindcss/typography": "^0.5.19",
     "@types/leaflet": "^1.9.21",

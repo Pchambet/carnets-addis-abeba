@@ -8,7 +8,7 @@ import LightboxGallery from '@/components/Reading/LightboxGallery';
 import VideoSection from '@/components/Reading/VideoSection';
 import PullQuote from '@/components/Reading/PullQuote';
 import ReadingProgress from '@/components/Reading/ReadingProgress';
-import Comments from '@/components/Reading/Comments';
+import CommentSection from '@/components/Reading/CommentSection';
 import Link from 'next/link';
 
 export async function generateStaticParams() {
@@ -164,8 +164,8 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
 
             <TibebDivider />
 
-            {/* ── Comments Section (Cusdis) ── */}
-            <Comments id={letter.id} title={letter.title} />
+            {/* ── Livre d'or (Supabase) ── */}
+            <CommentSection letterId={letter.id} />
 
             {/* ── Navigation ── */}
             <div className="border-t border-[var(--border)] py-12 px-6 md:px-12 text-center">
