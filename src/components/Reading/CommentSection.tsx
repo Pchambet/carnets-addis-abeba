@@ -69,8 +69,28 @@ export default function CommentSection({ letterId }: CommentSectionProps) {
     }, [letterId]);
 
     useEffect(() => {
-        fetchComments();
-    }, [fetchComments]);
+        let cancelled = false;
+        void (async () => {
+            const { data, error: err } = await supabase
+                .from('comments')
+                .select('*')
+                .eq('letter_id', letterId)
+                .eq('approved', true)
+                .order('created_at', { ascending: true });
+
+            if (cancelled) return;
+            if (err) {
+                setError(err.message);
+                setComments([]);
+            } else {
+                setComments((data as Comment[]) || []);
+            }
+            setLoading(false);
+        })();
+        return () => {
+            cancelled = true;
+        };
+    }, [letterId]);
 
     const tree = buildCommentTree(comments);
 
