@@ -1,18 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Static export — generates pure HTML/CSS/JS without any serverless functions.
-  // This removes the Vercel "max function size" constraint entirely,
-  // and deploys images via the static CDN instead.
-  output: "export",
+  // Pas d'export statique pour que /api/comment-notify (webhook Supabase → email) fonctionne.
+  // output: "export" empêche les API routes d'être déployées sur Vercel.
 
-  // next/image can't use the built-in optimization with static export.
-  // Vercel's CDN and modern browsers handle this natively.
+  // next/image sans optimisation (compatible déploiement Vercel standard)
   images: {
     unoptimized: true,
   },
 
-  // Trailing slash for clean static paths
+  // Trailing slash pour URLs propres
   trailingSlash: true,
 };
 

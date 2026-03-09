@@ -4,7 +4,7 @@
 
 ## Stack
 
-- **Next.js 16** (App Router, Turbopack, export statique)
+- **Next.js 16** (App Router, Turbopack)
 - **TypeScript**
 - **Tailwind CSS v4** + `@tailwindcss/typography`
 - **Markdown** (gray-matter + remark) — lettres en `.md` avec frontmatter YAML
@@ -24,7 +24,7 @@ npm run dev                   # → http://localhost:3000
 | Commande | Description |
 |----------|-------------|
 | `npm run dev` | Serveur de développement |
-| `npm run build` | Build statique (output → `out/`) |
+| `npm run build` | Build Next.js (déploiement Vercel avec API routes) |
 | `npm run start` | Servir le build localement |
 | `npm run lint` | ESLint |
 | `npm run test` | Tests unitaires (Vitest) |
