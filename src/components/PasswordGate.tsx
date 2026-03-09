@@ -17,11 +17,8 @@ export default function PasswordGate({ children }: { children: React.ReactNode }
 
     useEffect(() => {
         if (typeof window === 'undefined') return;
-        if (!hasGate) {
-            setUnlocked(true);
-            return;
-        }
-        setUnlocked(sessionStorage.getItem(STORAGE_KEY) === '1');
+        const value = !hasGate || sessionStorage.getItem(STORAGE_KEY) === '1';
+        queueMicrotask(() => setUnlocked(value));
     }, [hasGate]);
 
     function handleSubmit(e: React.FormEvent) {
