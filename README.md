@@ -50,6 +50,8 @@ Copier `.env.example` vers `.env.local` et adapter :
 | Variable | Description |
 |----------|-------------|
 | `NEXT_PUBLIC_SITE_URL` | URL publique (Vercel la définit en prod) |
+| `NEXT_PUBLIC_SITE_PASSWORD` | Code d'accès au site (ex: `0000`). Définir pour protéger les photos. |
+| `NEXT_PUBLIC_SITE_UNLOCKED` | `1` pour désactiver la protection (site ouvert) |
 | `NEXT_PUBLIC_CUSDIS_APP_ID` | ID app Cusdis (livre d'or) |
 
 ## Ajouter une nouvelle lettre

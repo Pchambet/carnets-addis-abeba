@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Cormorant_Garamond, Lora, Noto_Sans_Ethiopic, Sacramento } from 'next/font/google';
 import './globals.css';
+import PasswordGate from '@/components/PasswordGate';
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr" className={`${cormorant.variable} ${lora.variable} ${ethiopic.variable} ${signature.variable}`}>
       <body className="min-h-screen flex flex-col">
+        <PasswordGate>
         {/* Lien d'évitement — accessibilité clavier */}
         <a
           href="#main-content"
@@ -101,6 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             Addis-Abéba · La Nouvelle Fleur · {new Date().getFullYear()}
           </p>
         </footer>
+        </PasswordGate>
 
       </body>
     </html>
