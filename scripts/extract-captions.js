@@ -49,7 +49,8 @@ function getBasename(f) {
 
 function extractFromSource(semaineNum) {
   const pad = String(semaineNum).padStart(2, '0');
-  const dir = path.join(ROOT, `Semaine_${pad}`);
+  const baseName = pad === '19' ? 'Semaine 19' : `Semaine_${pad}`;
+  const dir = path.join(ROOT, baseName);
   const notesDir = path.join(dir, 'Photos et notes à propos de la lettre');
   const result = new Map(); // baseNameLower → { caption, sourceFile }
 
@@ -132,7 +133,7 @@ function main() {
   if (DRY_RUN) console.log('  (mode --dry-run, aucun fichier écrit)\n');
 
   let total = 0;
-  for (let i = 0; i <= 18; i++) {
+  for (let i = 0; i <= 19; i++) {
     const pad = String(i).padStart(2, '0');
     const id = `semaine-${pad}`;
     const captions = buildCaptions(i);
