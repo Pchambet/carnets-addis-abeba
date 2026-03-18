@@ -1,8 +1,7 @@
 ---
-title: "25 ans"
+title: "célébrations"
 date: "2026-01-25"
 location: "Addis-Abeba"
-excerpt: "Fêter ses 25 ans loin de chez soi, au milieu des enfants d'Alemachen."
 ---
 
 > PQ: Le vrai bonheur trouve sa source au creuset de la contemplation. Il est urgent de s’émerveiller.

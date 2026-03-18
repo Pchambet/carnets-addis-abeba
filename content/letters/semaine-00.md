@@ -9,9 +9,6 @@ excerpt: "Je vous écris ce message à l’aube de ce dimanche éthiopien où je
 
 ---
 
-> PQ: Je danse avec la poussière. Elle se glisse dans les yeux, dans la bouche, dans l’espoir. La poussière d’Addis est familière.
-
-1-26.10.2025 Mission à Addis-Abeba
 
 Chers amis, chère famille, 
 

@@ -1,11 +1,12 @@
 ---
-title: "Nouvelles depuis la nouvelle fleur"
+title: "comme un retour à la maison"
 date: "2025-12-28"
 location: "Addis-Abeba"
 excerpt: "La fin de l'année s'invite doucement."
+heroImage: "/images/semaine-09/Welcome back_.jpg"
+heroPosition: "center 40%"
 ---
 
-10 – 28.12.2025 Nouvelles hebdomadaires depuis la nouvelle fleur
 
 Très chers amis,
 

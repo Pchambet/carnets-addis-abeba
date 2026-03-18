@@ -9,9 +9,6 @@ excerpt: "Comment vous portez-vous depuis là-bas ? De mon côté, la vie s'inst
 
 ---
 
-> PQ: J’étais une étrangère et c’est en cela que je devais être respectée.
-
-2-02.11.2025 Étoiles et poussières d’Addis
 
 Chers amis, chère famille, 
 

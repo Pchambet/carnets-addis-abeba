@@ -5,8 +5,6 @@ location: "Addis-Abeba"
 excerpt: "L'amour n'est pas un sentiment, c'est une décision que l'on renouvelle chaque matin."
 ---
 
-5 - 23.11.2025 : Journal hebdomadaire depuis la Nouvelle Fleur
-
 Chers amis,
 
  Le soleil s’éteint sur cette semaine… Regardez les étoiles, ici il y en a tellement. La première qui s’allume me rappelle l’Espérance. Celle qui nous porte au-delà de nos doutes et qui fait oublier aux enfants la poussière étouffante qu’ils ont traînée sous leurs pieds tout le jour à mendier. 

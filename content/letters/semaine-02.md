@@ -5,8 +5,6 @@ location: "Addis-Abeba"
 excerpt: "Certains jours, la beauté se glisse là où on ne l'attendait pas."
 ---
 
-3 - 10.11.2025 : Selam depuis la nouvelle fleur
-
 Chers amis, 
 
  Je n’ai pas eu le temps d’écrire chaque jour cette semaine, aussi mon mail sera plus court cette fois-ci. 

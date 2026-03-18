@@ -1,10 +1,10 @@
 ---
-title: "Lettre du cœur"
+title: "Désir d’aimer"
 date: "2026-02-15"
 location: "Addis-Abeba"
 heroImage: "/images/semaine-16/Conversations engagée au café avec Lamesguin avant de partir au travail_.jpg"
 heroPosition: "center 60%"
-excerpt: "Une seule promesse s’imprime sur mon coeur, aimer Hannah et parler avec elle à propos des enfants."
+excerpt: "Depuis la cime de cet arbre, les couleurs du jour naissant viennent caresser mon regard, c’est toujours beau une ville qui se réveille"
 ---
 
 > PQ: Je vous écris à la fin d’une semaine d’une profonde intensité. Le carême s’annonce avec son lot d’épreuves et de grâces.

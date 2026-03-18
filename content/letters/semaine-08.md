@@ -2,10 +2,9 @@
 title: "Nouvelles d'un exil au Kenya"
 date: "2025-12-21"
 location: "Nairobi, Kenya"
-excerpt: "Un voyage imprévu, une nouvelle saveur de l'exil."
+excerpt: "un voyage imprévu"
 ---
 
-9 - 21.12.2025 Nouvelles d'un exil au Kenya
 
 Chers amis, 
 

@@ -33,7 +33,7 @@ export default function Home() {
                         <em className="text-[#C9A84C]">depuis La Nouvelle Fleur</em>
                     </h2>
                     <p className="text-base sm:text-lg max-w-prose leading-loose font-[family-name:var(--font-lora)] opacity-90" style={{ color: '#FDFAF6' }}>
-                        Une lettre par semaine d’un voyage Éthiopien.
+                        « Une lettre hebdomadaire d’un voyage en Éthiopie »
                     </p>
                 </div>
             </section>

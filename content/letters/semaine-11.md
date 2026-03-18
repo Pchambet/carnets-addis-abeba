@@ -2,7 +2,7 @@
 title: "Noël au café"
 date: "2026-01-11"
 location: "Addis-Abeba"
-excerpt: "Le Noël éthiopien a ses propres couleurs, ses propres parfums."
+excerpt: "L’Éthiopie se prépare à recevoir une nouvelle jeunesse par le souvenir de son Dieu fait enfant"
 ---
 
 La neige semble vous envelopper de sa fraîcheur nouvelle, et cet air pur me manque infiniment. 

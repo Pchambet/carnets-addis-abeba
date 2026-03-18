@@ -6,8 +6,6 @@ excerpt: "Il suffit d'un rien pour que tout refleurisse."
 heroImage: "/images/semaine-10/kere-soleil.jpg"
 ---
 
-11 – 04.01.2026 Nouvelles hebdomadaires depuis la Nouvelle Fleur
-
 Bien chers amis, 
 
  L’Éthiopie se prépare à recevoir une nouvelle jeunesse par le souvenir de son Dieu fait enfant. Les marchands déposent des crèches en bois devant leurs étalages et l’on découvre devant chaque maison un brave mouton attaché, sacrifié pour le dîner de Noël qui aura lieu mercredi 7 janvier. 

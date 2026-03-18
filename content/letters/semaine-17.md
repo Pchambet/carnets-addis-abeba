@@ -4,7 +4,7 @@ date: "2026-02-22"
 location: "Addis-Abeba"
 heroImage: "/images/semaine-17/moqwanit-bonhomme.jpg"
 heroPosition: "center 40%"
-excerpt: "Prier chaque semaine pour l'un des siens, savoir qu'ils sont 35 à faire pareil de leur côté."
+excerpt: "Tu étais si gourmande de la vie que tu l’as avalée avec ta mort dedans, comme ces petits enfants qui gobent le noyau d’une pêche, très vite, avant qu’on ait le temps de les avertir. » Bobin -"
 ---
 
 > PQ: Il y a des évènements qui semblent complètement absurdes si l’on ne fait pas cet effort d’accepter de tout perdre.

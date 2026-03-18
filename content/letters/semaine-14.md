@@ -1,8 +1,8 @@
 ---
-title: "Lettre de février"
+title: "jubilé d’argent"
 date: "2026-02-01"
 location: "Addis-Abeba"
-excerpt: "Peut-être qu’à cause de la présence de la misère, les belles choses semblent plus belles."
+excerpt: "Peut-être qu’à cause de la présence de la misère, les choses qui sont simplement jolies deviennent alors plus belles."
 ---
 
 > PQ: On me demande parfois la différence entre ce qu’il y a à voir en France et ce qu’il y a à voir ici. Je dirais que la grâce et les souffrances qui nous sont offertes sont finalement les mêmes. Seulement ici, elles sont peut-être tout simplement moins cachées.

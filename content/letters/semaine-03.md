@@ -5,8 +5,6 @@ location: "Addis-Abeba"
 excerpt: "Apprendre à recevoir sans choisir, et à sourire à ce qui vient."
 ---
 
-4 – 16.11.2025 : ETHIOPIA week 3
-
 Chers amis, chère famille 
 
 Mercredi 12 

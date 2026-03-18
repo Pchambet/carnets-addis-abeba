@@ -1,12 +1,9 @@
 ---
-
-
 title: "Baptisé à la source"
 date: "2026-01-18"
 location: "Addis-Abeba"
-excerpt: "Timcat — le Baptême du Christ — et une nuit inoubliable avec le professeur Joachim."
-
-
+heroImage: "/images/semaine-12/Un p’tit coup d’eau-de-vie avant de partir au travail_.jpg"
+heroPosition: "center 40%"
 ---
 
 > PQ: L’homme qui n’aime pas ne vit pas.
