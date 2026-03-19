@@ -3,7 +3,7 @@ title: "Par un jour de marché"
 date: "2026-03-08"
 location: "Addis-Abeba"
 excerpt: "Le Mercato, plus grand marché d'Afrique, nous renvoie quatre siècles en arrière."
-heroImage: "/images/semaine-19/par-un-jour-de-marche.jpg"
+heroImage: "/images/semaine-19/IMG_1889.PNG"
 heroPosition: "center 40%"
 ---
 
