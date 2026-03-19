@@ -4,7 +4,8 @@ date: "2026-03-08"
 location: "Addis-Abeba"
 excerpt: "Le Mercato, plus grand marché d'Afrique, nous renvoie quatre siècles en arrière."
 heroImage: "/images/semaine-19/IMG_1889.PNG"
-heroPosition: "center 40%"
+heroPosition: "center 100%"
+
 ---
 
 > PQ: Nous voilà renvoyés quatre siècles en arrière.

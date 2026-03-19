@@ -49,7 +49,7 @@ export default function HeroLetter({
             <div
                 className="absolute inset-0 z-[1]"
                 style={{
-                    background: 'linear-gradient(to top, rgba(18,12,8,0.9) 0%, rgba(18,12,8,0.65) 30%, rgba(18,12,8,0.3) 60%, transparent 100%)',
+                    background: 'linear-gradient(to top, rgba(18,12,8,0.7) 0%, rgba(18,12,8,0.4) 30%, rgba(18,12,8,0.15) 60%, transparent 100%)',
                 }}
             />
 
