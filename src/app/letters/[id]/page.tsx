@@ -151,7 +151,6 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
             {photos.length > 0 && (
                 <div className="px-6 md:px-12 my-20">
                     <p className="caption text-[var(--ochre)] text-center mb-2">Fragments du voyage</p>
-                    <p className="photo-credit text-center mb-8 pr-0 text-[var(--ink-light)]">© Claire Stellio, Addis-Abéba</p>
                     <LightboxGallery photos={photos} />
                 </div>
             )}

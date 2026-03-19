@@ -33,7 +33,6 @@ export default function GalleriePage() {
                     <p className="text-lg text-[var(--ink-light)] font-[family-name:var(--font-lora)] italic">
                         {totalPhotos} photographies — Addis-Abéba et au-delà.
                     </p>
-                    <p className="photo-credit mt-2">© Claire Stellio</p>
                 </div>
             </section>
 
@@ -66,7 +65,7 @@ export default function GalleriePage() {
                             <LightboxGallery photos={letter.photos} />
                             {/* Caption */}
                             <p className="photo-credit mt-4">
-                                {letter.photos.length} photograph{letter.photos.length > 1 ? 'ies' : 'ie'} · © Claire Stellio, Addis-Abéba
+                                {letter.photos.length} photograph{letter.photos.length > 1 ? 'ies' : 'ie'}
                             </p>
                         </section>
                     );
