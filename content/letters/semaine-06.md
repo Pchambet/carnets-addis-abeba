@@ -3,6 +3,8 @@ title: "Comme un veilleur attend l'aurore"
 date: "2025-12-07"
 location: "Addis-Abeba"
 excerpt: "Dans l'attente, il y a déjà quelque chose de la lumière."
+heroImage: "/images/semaine-06/IMG-20251207-WA0023_Original.JPG"
+heroPosition: "center 30%"
 ---
 
 L’Avent a commencé depuis une semaine, notre soleil blanc remplace votre neige. 
@@ -51,13 +53,14 @@ Ce weekend je me mets au dessin. Gébréyésu m’a donné trois icônes à reco
 Nous parlons de cette nouvelle semaine, des projets auprès des enfants et de nos futures peintures. Ces jours prochains seront-ils les derniers ? 
 Car oui, je n’ai aucune nouvelle encore de mon visa. Mais je veux croire qu’il viendra comme Noël finira par arriver. 
 
-               Je termine ma lettre hebdomadaire avec cette toute petite histoire.
+Je termine ma lettre hebdomadaire avec cette toute petite histoire.
 
- Dans mon cours d’amharique, mon professeur me raconte le dernier fait divers de la semaine dernière qui me semble incroyable.
+Dans mon cours d’amharique, mon professeur me raconte un fait divers de la semaine qui me semble incroyable.
 
- Un beau jour de marché, au plein cœur de la ville, un bœuf s’est échappé des mains de son bouvier pour battre le pavé. C’est alors, qu’en bas de la rue d’où le bovin grisé débouchait, un vieil homme, aveugle, faisait sonner dans une corne de chèvre le dernier mort du jour (là était sa vocation). 
-Ne voyant pas l’animal ivre, et constatant le peu d’attention que les hommes, tout à coup, lui portaient, se mit à chanter de plus belle pour bien se faire entendre. Musique bien excitante pour le bel animal… Ce dernier, oubliant son métier d’honnête laboureur, se nomma pour l’occasion « Très Fier Taureau Bravo ». 
+Un beau jour de marché, au plein cœur de la ville, un bœuf s’est échappé des mains de son bouvier pour battre le pavé. En bas de la rue d’où l’animal débouchait, un vieil homme aveugle faisait sonner, dans une corne de chèvre, le glas d’un défunt (c’était sa vocation).
 
-Grisé de liberté, la bête prit sa cible. 
+Ne voyant pas le taureau lancé, et sentant que les passants ne lui prêtaient plus attention, il s’est mis à souffler de plus belle pour se faire entendre. Musique bien excitante pour la bête… qui, oubliant son métier d’honnête laboureur, s’est nommée pour l’occasion « Très Fier Taureau Bravo ».
 
-Dans le glas de sa trompette, le vieil homme sonneur de mort, a, ce jour-là, sonné la sienne.
+Grisée de liberté, elle a pris sa cible.
+
+Dans le glas de sa trompette, ce vieil homme sonneur de mort a, ce jour-là, sonné la sienne.
