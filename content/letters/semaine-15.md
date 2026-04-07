@@ -1,5 +1,5 @@
 ---
-title: "la gulcha"
+title: "La gulcha"
 date: "2026-02-08"
 location: "Addis-Abeba"
 excerpt: "Les semaines les plus intenses sont celles où l'on a le moins de choses à raconter."

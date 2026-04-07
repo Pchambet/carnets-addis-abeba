@@ -1,5 +1,5 @@
 ---
-title: "comme un retour à la maison"
+title: "Comme un retour à la maison"
 date: "2025-12-28"
 location: "Addis-Abeba"
 excerpt: "La fin de l'année s'invite doucement."

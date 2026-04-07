@@ -1,5 +1,5 @@
 ---
-title: "jubilé d’argent"
+title: "Jubilé d’argent"
 date: "2026-02-01"
 location: "Addis-Abeba"
 excerpt: "Peut-être qu’à cause de la présence de la misère, les choses qui sont simplement jolies deviennent alors plus belles."
