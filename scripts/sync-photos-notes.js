@@ -81,7 +81,7 @@ function syncFromDir(srcDir, destDir, isVideoOnly = false) {
 }
 
 function syncSemaine(pad) {
-  const baseName = pad === '19' ? 'Semaine 19' : `Semaine_${pad}`;
+  const baseName = pad === '19' ? 'Semaine 19' : (pad === '20' || pad === '21') ? 'Semaine 20 et 21' : `Semaine_${pad}`;
   const notesDir = path.join(ROOT, baseName, 'Photos et notes à propos de la lettre');
   const semaineDir = path.join(ROOT, baseName);
   const destDir = path.join(SITE_BASE, `semaine-${pad}`);
@@ -101,7 +101,7 @@ function main() {
   console.log('\n📷 Sync Photos et notes → public/images\n');
   if (DRY_RUN) console.log('  (mode --dry-run)\n');
 
-  for (let i = 0; i <= 19; i++) {
+  for (let i = 0; i <= 21; i++) {
     const pad = String(i).padStart(2, '0');
     const result = syncSemaine(pad);
     if (result.length > 0) {
