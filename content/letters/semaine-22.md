@@ -2,7 +2,7 @@
 title: "Les eaux de Mars"
 date: "2026-03-29"
 location: "Addis-Abeba"
-heroImage: "/images/semaine-22/Photo d’affiche_.jpg"
+heroImage: "/images/semaine-22/IMG_1928.JPG"
 heroPosition: "center 50%"
 excerpt: "C'est de nouveau la même pluie que je t'ai si souvent décrite..."
 ---

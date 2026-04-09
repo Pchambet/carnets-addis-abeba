@@ -3,7 +3,7 @@ title: "Retraite en silence"
 date: "2026-04-05"
 location: "Addis-Abeba"
 heroImage: "/images/semaine-23/Photo de couverture_.jpg"
-heroPosition: "center 50%"
+heroPosition: "center 25%"
 excerpt: "Comme toujours, pour peu je sois vraiment présente intérieurement, mes prières sont exaucées..."
 ---
 
