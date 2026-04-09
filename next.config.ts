@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
 
+  // Exclusion des images lourdes du bundle serverless pour éviter la limite de 250MB
+  outputFileTracingExcludes: {
+    '*': ['public/images/**/*'],
+  },
+
   // Trailing slash pour URLs propres
   trailingSlash: true,
 };
