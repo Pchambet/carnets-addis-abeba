@@ -2,6 +2,8 @@
 title: "Apprendre à voir avec le cœur"
 date: "2025-11-30"
 location: "Addis-Abeba"
+heroImage: "/images/semaine-05/IMG_20251108_211939_855_Original.JPG"
+heroPosition: "center 50%"
 excerpt: "Le regard s'affûte quand on consent à ralentir."
 ---
 

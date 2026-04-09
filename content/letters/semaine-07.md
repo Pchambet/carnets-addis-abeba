@@ -2,6 +2,8 @@
 title: "Rien n'efface la joie"
 date: "2025-12-14"
 location: "Addis-Abeba"
+heroImage: "/images/semaine-07/IMG-20251214-WA0008_Original.JPG"
+heroPosition: "center 50%"
 excerpt: "La joie ne supprime pas la peine — elle la traverse."
 ---
 

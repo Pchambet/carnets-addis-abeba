@@ -2,6 +2,8 @@
 title: "La gulcha"
 date: "2026-02-08"
 location: "Addis-Abeba"
+heroImage: "/images/semaine-15/IMG-20251207-WA0014_Original.JPG"
+heroPosition: "center 50%"
 excerpt: "Les semaines les plus intenses sont celles où l'on a le moins de choses à raconter."
 ---
 

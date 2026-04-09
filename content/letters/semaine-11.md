@@ -2,6 +2,8 @@
 title: "Noël au café"
 date: "2026-01-11"
 location: "Addis-Abeba"
+heroImage: "/images/semaine-11/DSCF1198.JPG"
+heroPosition: "center 50%"
 excerpt: "L’Éthiopie se prépare à recevoir une nouvelle jeunesse par le souvenir de son Dieu fait enfant"
 ---
 
