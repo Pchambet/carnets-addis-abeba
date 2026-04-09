@@ -7,54 +7,40 @@ heroPosition: "center 45%"
 excerpt: "Entre pluie, mission, retraites imprévues et un chat blessé à apprivoiser, apprendre à consentir dans la paix."
 ---
 
-> PQ: Je dois être responsable de ce que j'ai apprivoisé.
+Très chers amis, 
+La saison des pluies commence à s’annoncer. Vos nuages plein de neige s’étirent vers le sud pour venir s’essorer en torrents fracassants au dessus de nos grands toits de tôles. 
 
-**Semaines 20 et 21**
+Lundi 
+ Comme à mon habitude, je retrouve les enfants qui m’apprennent encore une fois combien la vie est simple. Rien ne retient leur sourire, même s’il peut m’arriver de n’avoir rien préparé de très sérieux pour eux. Ils trouvent toujours une raison pour se réjouir. Les garçons sont dans l’excitation de chercher des réponses avant leurs camarades et les filles s’amusent à se chuchoter les solutions entre elles. 
+Le soir, je passe dans le nouveau quartier d’Addis pour rencontrer un entrepreneur-barista-musiciens sur les conseils d’Abba Philippe, prieur des frères de la communauté des Frères de St Jean d’Addis. Cet entrepreneur s’appelle Fili, il a voyagé partout dans le monde. Marié à une fille Chachamané, Rastafari jusqu’au bout des cheveux, ils ont construit ensemble un café solidaire. Ayant importé de Turquie deux grandes mouleuses à grains, ces machines leur promettent l’abondance jusqu’à la fin de leurs jours. De fait, ce sont les seules mouleuses à grains pour le café qui existent dans le pays. Tous les baristas d’Addis viennent faire moudre et torréfier leurs grains ici. Fili me fait visiter sa boutique et l’école qu’il a ouverte pour enseigner aux jeunes l’art de la confection de la meilleure boisson et les notions de base pour ouvrir un commerce. Je me retrouve finalement chez lui, grande maison d’artiste qui sent bon les encens et garde imprégnée dans ses murs les échos des improvisations que les musiciens de passage viennent composer à peu près chaque soir. L’un des amis avec qui je suis présente déclare au grand Fili que je suis musicienne. Fili me demande alors de venir chanter un soir dans son café. J’accepte le pari, seulement si tout l’argent récolté est donné aux enfants d’Alemachen. Les dés sont jetés, me voilà embarquée dans un très grand projet.
 
-Très chers amis,
 
-La saison des pluies commence à s'annoncer. Vos nuages pleins de neige s'étirent vers le sud pour venir s'essorer en torrents fracassants au-dessus de nos grands toits de tôles.
+Mardi 
+ Les cours de français s’enchaînent régulièrement. Mes étudiants kenyans ont été rejoints par une jeune femme, Betty, qui elle est éthiopienne, et qui fait ma grande joie car elle m’offre l’occasion de rencontrer une semblable féminine, ce qui est plutôt rare. Betty, de son vrai nom, s’appelle Betlehem. Elle est née chez les sœurs de Mère Theresa. Orpheline de naissance, elle a grandi chez elles. Sa maman était sidéenne. Betty porte aujourd’hui les traces de cette maladie, mais des traitements lui permettent de vivre tout à fait normalement. Pourtant, malgré sa beauté singulière et sa joie pétillante, elle souffre de ne rencontrer personne à cause du mauvais regard qui plane encore sur cette maladie. 
 
-**Lundi**
 
-Comme à mon habitude, je retrouve les enfants qui m'apprennent encore une fois combien la vie est simple. Rien ne retient leur sourire, même quand je n'ai rien préparé de très sérieux pour eux. Les garçons s'excitent à chercher des réponses avant leurs camarades et les filles s'amusent à se chuchoter les solutions entre elles.
+Mercredi  
 
-Le soir, je passe dans le nouveau quartier d'Addis pour rencontrer, sur les conseils d'Abba Philippe, un entrepreneur-barista-musicien: Fili. Avec sa femme, ils ont construit un café solidaire et une école pour former les jeunes aux métiers du café. Je me retrouve finalement chez lui, dans une grande maison d'artiste qui sent les encens et où les musiciens de passage viennent improviser. L'un des amis présents annonce que je suis musicienne: Fili me propose alors de venir chanter un soir dans son café. J'accepte, à condition que l'argent récolté soit donné aux enfants d'Alemachen.
+Les conséquences de la guerre en Iran commencent à se faire sentir. Le gouvernement conseille aux citoyens de modérer leurs trajets en voiture et d’utiliser le vélo au maximum. Père Mathewos rentre d’un voyage à la campagne dans l’ouest du pays. Il était allé pour enterrer son oncle. Le voyage du retour a pris trois jours au lieu d’une dizaine d’heures. Même au marché noir, les réserves de fioul commencent à manquer. Abba a pu négocier pour un plein au bout de 48 heures, à un prix trois fois au-dessus de la moyenne. Je l’ai retrouvé ce matin avec son petit air joyeux. Il ne semble pas le moindre du monde affecté par la situation, mais sans doute d'une manière extérieure. J’ai le sentiment quelque part qu’il a déjà consenti aux difficultés économiques qui ne sont que croissantes depuis déjà six mois. Comme tout le monde savait qu’Abba avait perdu un proche, nous avons dans la foulée reçu à peu près toute la communauté catholique d’Addis, débarquée à l’improviste pour venir consoler le Père. Cette tradition touchante me fait songer à la façon dont nous avons trop oublié en France de prendre soin de ceux qui sont dans le chagrin. Spontanément, simplement, juste par élan d’amour, sans se soucier de déranger, prétexte que l’on use trop souvent. C’est une chose que je me promets de rapporter de ce pays lorsque je rentrerai. 
+En arrivant à la maison, je découvre sous le camion de ma cour, une chatte misérable qui miaule à la mort. Elle s’est traînée à l’ombre de la vieille Toyota, complètement mutilée, pour calmer sa douleur. Les chiens des gardes l’ont attaquée cette nuit, alors qu’elle traversait notre cour… Aucune des sœurs ne peut s’occuper d’elle. Je parviens à la faire sortir et à la nettoyer. Elle se laisse complètement faire. Sa colonne semble brisée, elle est paralysée à partir du milieu du ventre jusqu’aux bout des pattes arrières. Nous lui confectionnons un petit coin tranquille dans le cellier avec les sœurs. Elle dévore tout ce qu’on lui donne. La pauvre petite est rachitique, j’espère qu’elle survivra… Nous verrons bien. 
+Le soir, après la répétition hebdomadaire à l’école d’art avec le groupe de jazz, je pars dîner dans la famille d’Yshak. Sa mère est heureuse de cuisiner pour une française. Malgré son « broken english » comme elle ne se lasse de dire et mes trois mots d’amharique, nous n’arrêtons pas de rire, surtout à propos du surnom de son fils qui se fait appeler « Pouppi » par sa petite nièce. Au moment du café, sa mère me dit que si j’ai envie d’inviter des amis, la maison est ouverte. Mandéfrot vient alors pour dîner. Je l’ai appelé lui parce que je sais qu’il ne mange pas tous les soirs. Joie pour lui, et pour moi, de faire se rencontrer deux amis si doués. Le sculpteur et le musicien s’apprivoisent, moi je montre des photos de la France à la maman d’Yshak. Puis, je pars avec les deux artistes dans les sous-sols d’un grand hôtel pour écouter un concert d’éthio-jazz jusqu’au lendemain matin.   
 
-**Mardi**
+Jeudi 
+Cette journée est bien pesante. J’ai très peu dormi à cause des nombreuses sorties de la semaine et ne me trouve pas en grande forme. La journée doit pour autant se passer au ministère de l’Immigration pour envoyer cette demande finale d’autorisation de séjourner dans le pays. La facture de 500 dollars ne peut pas être évitée. Pour ultime blague, la case que je dois cocher pour indiquer mon statut d’étrangère porte le nom d’Alien. Je ris, cela me semble tellement gros. 
+Je pars ensuite à la veillée de prière œcuménique organisée par les protestants de l’église allemande d’Addis. La veillée se termine par un heureux concert dont l’esprit joyeux se poursuit jusque dans la grande maison-musée du professeur Joachim, autour d’un feu préparé par Lamesguin. Mes deux amis français chantent trois merveilleux psaumes pour la plus grande joie de nos hôtes accompagnée des aboiements de la chienne du professeur.
 
-Les cours de français s'enchaînent. Mes étudiants kenyans ont été rejoints par Betty, une jeune Éthiopienne qui me fait une grande joie. De son vrai nom Betlehem, elle a grandi chez les sœurs de Mère Teresa après avoir été orpheline dès la naissance. Malgré sa beauté et sa joie pétillante, elle souffre encore du regard posé sur la maladie qu'elle porte.
+Vendredi 
+La ville est déserte, c’est l’Aïd et comme chaque fête religieuse en Éthiopie, qu’elle soit chrétienne ou musulmane, le jour est férié. Lorsque j’arrive, les enfants regardent et chantent les chansons religieuses qui passent à la télé. Qu’ils soient de cette confession ou non, tous les enfants se réjouissent avec ceux qui célèbrent ce jour. 
+Cet après-midi-là juste avant de partir, j’appelle une de mes amies qui attend de donner la vie depuis déjà huit jours. Les enfants s’excitent de voir que mon amie est enceinte, mimant tous son gros ventre, lui envoyant des embrassades à travers mon écran minuscule. Quelques minutes après avoir raccroché, elle partait pour la maternité… 
+La petite chatte dont je dois prendre soin va mieux mais elle est incontinente. Je réalise sa dépendance, et moi, je dois être responsable de ce que j’ai apprivoisé. C’est une épreuve difficile, je réalise combien prendre soin d’un animal, et qui plus est malade, nécessite un certain luxe. Ici, les chats vivent et meurent dans la rue.   
 
-**Mercredi**
+Samedi 
+ Ce jour-là, je m’apprête à retrouver les frères de la communauté de St Jean pour suivre une retraite dans une petite ville entourée de sept lacs, située au nord d’Addis. J’ai réussi à embarquer Yishak et Betty. Le voyage est heureux jusqu’à ce que les frères m’apprennent que s’ils m’ont fait venir, c’est pour que je m’occupe de tous les enfants des parents qui vont suivre leurs enseignements. La plaie… Je ne m’attendais pas à cela. Et le fait d’être prise au dépourvu si près de l’évènement m’irrite particulièrement. Je commence à avoir un vrai besoin de me retirer dans le silence intérieur d’une petite chapelle, et je me sens honteuse pour mes deux amis qui vont se retrouver à devoir animer une journée entière pour des petits enfants, alors qu’ils s’attendaient à entrer dans l’intériorité d’une retraite. Mais l’enthousiasme de Betty et le grand calme d’Yishak m’aident à choisir de consentir à la mission avec une certaine joie. Et en effet, lorsque les petits arrivent, j’oublie mes frustrations et tout se déroule dans les jeux simples et le rire des enfants. L’après-midi, lorsque les parents récupèrent leurs trésors, je me carapate avec la jolie Betty pour aller me baigner entre deux nénuphars dans l’un des lacs qui entourent le village. Yishak nous regarde d’un œil inquiet et, ne sachant pas nager, se bouche les narines à chacun de nos plongeons.
 
-Les conséquences de la guerre en Iran commencent à se faire sentir ici. Le gouvernement conseille de limiter les trajets en voiture. Le fioul manque, même au marché noir, et les déplacements deviennent laborieux.
 
-Le même jour, je découvre dans notre cour une chatte gravement blessée, mutilée par les chiens des gardes. Aucune des sœurs ne peut s'en occuper. Je la nettoie, nous lui préparons un coin dans le cellier, et je prie pour qu'elle survive.
+Ce soir-là, j’emmène Sixte et Augustin visiter Hamere Brehan, l’école d’iconographie que fréquente Gébréyésu.  Nous apprenons encore des choses bien surprenantes sur l’art éthiopien, notamment le fait que les saints sont toujours représentés de face, et les pécheurs de profil parce qu’ils ne sont pas tout à fait « entiers ». Nous découvrons aussi tout en admiration, la façon dont sont confectionnées les croix, d’abord dessinées sur du papier, puis modelées dans des plaques de cire, qui sont ensuite coincées entre deux blocs d’argile, pour être enfin plongées dans un grand four artisanal. Lorsque la coque d’argile est assez chaude, la croix en cire se met à fondre à l’intérieur, laissant un espace au centre du moule formant le dessin du bijou. Le bronze, l’argent ou l’or y est alors fondu. Le moule est ensuite brisé pour laisser apparaître la forme unique d’une croix, qui sera de ce fait jamais vraiment pareille que sa suivante puisque son moule n’a été confectionné que pour elle. 
 
-Le soir, après la répétition hebdomadaire à l'école d'art avec le groupe de jazz, je dîne dans la famille d'Yshak. Nous rions beaucoup malgré nos langues approximatives. Puis je pars avec des amis écouter un concert d'éthio-jazz jusque tard dans la nuit.
-
-**Jeudi**
-
-Journée pesante: peu de sommeil, puis ministère de l'Immigration pour finaliser ma demande de séjour. La facture de 500 dollars est inévitable. Pour ultime blague, la case que je dois cocher pour mon statut d'étrangère porte le nom d'"Alien".
-
-Le soir, je vais à une veillée de prière œcuménique organisée par les protestants allemands d'Addis. La soirée se prolonge dans la maison-musée du professeur Joachim, autour d'un feu, puis en musique.
-
-**Vendredi**
-
-La ville est déserte: c'est l'Aïd, jour férié. Les enfants regardent des chants religieux à la télévision, et tous se réjouissent, qu'ils soient de cette confession ou non.
-
-Ma petite chatte va un peu mieux, mais elle est incontinente. Je découvre sa dépendance et la difficulté concrète de prendre soin d'un animal malade ici, où les chats vivent et meurent souvent dans la rue.
-
-**Samedi**
-
-Je pars retrouver les frères de Saint-Jean pour une retraite dans une ville entourée de lacs au nord d'Addis. J'ai embarqué Yishak et Betty. Arrivée là-bas, j'apprends qu'on m'a fait venir pour garder les enfants pendant que leurs parents suivent les enseignements. Je me sens prise au dépourvu, mais l'enthousiasme de Betty et le calme d'Yishak m'aident à consentir. Finalement, les jeux simples et le rire des petits transforment la journée.
-
-Le soir, j'emmène Sixte et Augustin visiter Hamere Brehan, l'école d'iconographie de Gébréyésu. Nous découvrons encore la richesse de l'art éthiopien, notamment le savoir-faire patient de fabrication des croix en cire, argile et métal fondu.
-
-**Dimanche**
-
-En arrivant au cellier, je mesure encore la charge que représente ce chat apprivoisé: vais-je tenir dans la durée? est-ce raisonnable? que vais-je faire d'elle maintenant qu'elle m'a été confiée?
-
-Elle s'endort en ronronnant sur ma jupe, complètement épuisée par la douche que j'ai dû lui donner. Si vous avez des conseils, j'en serai bien heureuse.
-
-Ce petit chat m'oblige à rentrer tôt et à me lever avant les sœurs pour assainir le cellier. Ce qui n'est peut-être pas si mal. Chez nous, c'est seulement la mi-carême, et l'enchaînement éprouvant de ces événements m'invite à ralentir pour continuer dans la paix les combats intérieurs des prochaines semaines.
+Dimanche 
+Ce matin, lorsque j’arrive dans le cellier pour dire bonjour au chat, je réalise vraiment la charge que représente cet animal apprivoisé. Vais-je avoir la force de m’en occuper longtemps ? Est-ce bien raisonnable de continuer à nourrir un chat incontinent qui ne peut même pas sortir puisque les chiens rôdent dans la cour ? Qu’est-ce que je vais en faire maintenant qu’elle m’a été donnée ? Je ne sais pas. La voilà qui s’est endormie en ronronnant sur ma jupe, complètement éprouvée par la douche que j’ai dû lui donner. 
+Si vous avez des conseils, j’en serai bien heureuse… 
+Ce petit chat m’oblige à rentrer tôt le soir et à me lever avant les sœurs pour désencombrer l’air du cellier des mauvaises odeurs. Ce qui n’est peut-être pas si mal. Chez nous, c’est seulement la mi-carême et l’enchaînement éprouvant de tous ces évènements m’invite à ralentir pour continuer dans la paix ces vingt prochains jours de combats intérieurs. 

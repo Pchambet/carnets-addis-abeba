@@ -5,12 +5,7 @@ location: "Addis-Abeba"
 excerpt: "Le Mercato, plus grand marché d'Afrique, nous renvoie quatre siècles en arrière."
 heroImage: "/images/semaine-19/IMG_1889.PNG"
 heroPosition: "center 100%"
-
 ---
-
-> PQ: Nous voilà renvoyés quatre siècles en arrière.
-
-**Samedi**
 
 Samedi, Lamesguin me donne rendez-vous dans une petite ruelle. Nous voulons voir le Mercato qui se trouve être le plus grand marché d'Afrique.
 Je reconnais de loin sa démarche paisible et ses longues rastas noires. Il ressemble à un félin tranquille qui fait danser sa crinière. Avant que nous partions visiter la grande foire, il souhaite me présenter à l'un de ses amis, paysan guragué qui a rapporté hier des couteaux à la ville. Je prends son pas tranquille et nous nous dirigeons vers le sud du quartier.
