@@ -1,5 +1,5 @@
 ---
-title: "Retraite en silence"
+title: "Hosanna !"
 date: "2026-04-05"
 location: "Addis-Abeba"
 heroImage: "/images/semaine-23/Photo de couverture_.jpg"
