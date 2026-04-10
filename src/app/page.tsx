@@ -1,5 +1,6 @@
 import { getSortedLettersData } from '@/lib/letters';
 import Timeline from '@/components/Home/Timeline';
+import Image from 'next/image';
 
 export default function Home() {
     const letters = getSortedLettersData();
@@ -8,14 +9,13 @@ export default function Home() {
         <div>
             {/* ── Hero pleine largeur, responsive (IMG_1206) ── */}
             <section className="hero-letter home-hero border-b border-[var(--border)]">
-                <img
+                <Image
                     src="/images/home-hero.jpg"
-                    srcSet="/images/home-hero-640.jpg 640w, /images/home-hero-1024.jpg 1024w, /images/home-hero.jpg 2000w"
-                    sizes="100vw"
                     alt="Addis-Abéba — La Nouvelle Fleur"
                     className="hero-letter-bg"
-                    loading="eager"
-                    fetchPriority="high"
+                    priority
+                    fill
+                    sizes="100vw"
                     style={{ objectFit: 'cover' }}
                 />
                 <div

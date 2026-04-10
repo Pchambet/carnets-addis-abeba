@@ -80,9 +80,9 @@ describe('getLetterData', () => {
     expect(data.readTime).toBeGreaterThanOrEqual(1);
   });
 
-  it('extracts pull quote when present (semaine-00)', async () => {
-    const data = await getLetterData('semaine-00');
-    expect(data.pullQuote).toContain('poussière');
+  it('extracts pull quote when present (semaine-15)', async () => {
+    const data = await getLetterData('semaine-15');
+    expect(data.pullQuote).toContain('grâce');
   });
 
   it('includes day-section HTML for letters with **Lundi** etc', async () => {
