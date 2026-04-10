@@ -3,6 +3,8 @@ title: "L'émerveillement du simple"
 date: "2025-11-09"
 location: "Addis-Abeba"
 excerpt: "Certains jours, la beauté se glisse là où on ne l'attendait pas."
+heroImage: "/images/semaine-02/emerveillement-du-simple.png"
+heroPosition: "center 20%"
 ---
 
 Chers amis, 

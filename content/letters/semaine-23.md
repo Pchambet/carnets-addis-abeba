@@ -4,7 +4,7 @@ date: "2026-04-05"
 location: "Addis-Abeba"
 heroImage: "/images/semaine-23/Photo de couverture_.jpg"
 heroPosition: "center 25%"
-excerpt: "Comme toujours, pour peu je sois vraiment présente intérieurement, mes prières sont exaucées..."
+excerpt: "Comme toujours, pour peu que je sois vraiment présente intérieurement, mes prières sont exaucées..."
 ---
 
 Chers amis, 
@@ -27,7 +27,7 @@ Dimanche, c’est le jour des Rameaux. La messe en rite Guèze dure plus de troi
 
 Alors que vous vous réjouissez du fleurissement de Pâques et de la joie du printemps, nous entrons dans l’intériorité de la semaine sainte propre à l'Eglise orthodoxe. 
 
-Comme toujours, pour peu je sois vraiment présente intérieurement, mes prières sont exaucées. Cette semaine, je n’aurai jamais autant vu la nature, et là était l’un de mes plus grands désirs. Tout est question de patience… Comme dirait Paul Morand (que je n’ai pas lu) : « Le temps ne respecte pas ce qui se fait sans lui ». 
+Comme toujours, pour peu que je sois vraiment présente intérieurement, mes prières sont exaucées. Cette semaine, je n’aurai jamais autant vu la nature, et là était l’un de mes plus grands désirs. Tout est question de patience… Comme dirait Paul Morand (que je n’ai pas lu) : « Le temps ne respecte pas ce qui se fait sans lui ». 
 
 Dans l’attente de vous conter ce que j'aurai vécu cette prochaine semaine !
 
