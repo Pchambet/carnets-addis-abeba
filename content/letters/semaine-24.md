@@ -3,7 +3,7 @@ title: "Alléluia !"
 date: "2026-04-12"
 location: "Addis-Abeba"
 heroImage: "/images/semaine-24/❤️.jpg"
-heroPosition: "center 40%"
+heroPosition: "center 10%"
 excerpt: "Le temps qui me semblait si long car dépourvu de sens, prend une toute nouvelle forme..."
 ---
 
