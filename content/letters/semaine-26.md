@@ -29,17 +29,17 @@ Ce jour-là, une de mes amies de France a donné la vie à son premier enfant. C
 
 À cause du manque d’essence il y a de moins en moins de transports en commun disponibles dans la ville. Ce matin, un tas de monde se presse à l’intérieur du bus, si bien que nous nous retrouvons serrés les uns contre les autres, incapables de nous tenir à quoi que ce soit, les bras plaqués contre le corps. Mais la situation fait rire les filles. Devant leur insouciance, j’apprends à recevoir ce qui vient avec plus de simplicité. 
 
-En rentrant, les filles sont occupées à préparer la maison à l’occasion de la réunion des sœurs de la communauté. J’accompagne alors Kere faire la lessive en déversant des litres de javel pour rendre les nappes parfaitement blanches… Façon de faire à l’Éthiopienne. Le mystère des chemises immaculées des travailleurs qui vivent dans la poussière et que je vois passer dans la rue chaque matin est enfin élucidé. Nous terminerons ce jour en bataille joyeuse de mousse à savon. 
+En rentrant, les filles sont occupées à préparer la maison à l’occasion de la réunion des sœurs de la communauté. J’accompagne alors Kere faire la lessive en déversant des litres de javel pour rendre les nappes parfaitement blanches… Façon de faire à l’éthiopienne. Le mystère des chemises immaculées des travailleurs qui vivent dans la poussière et que je vois passer dans la rue chaque matin est enfin élucidé. Nous terminerons ce jour en bataille joyeuse de mousse à savon. 
 
 Alors que je reprise ma jupe ce soir, Kere vient s’assoir à côté de moi toute gênée pour me dire un secret. Elle m’avoue que lorsque je porte des robes, on devine la forme de mes dessous. En Éthiopie, toutes les femmes portent des leggings ou des pantalons légers sous leur jupe, pour éviter le risque qu’on devine la forme de leur culotte. J’éclate de rire en la remerciant, un peu consternée qu’elle ait attendu six mois pour m’en faire prendre conscience. 
  
 **Vendredi**
 
-Ce matin, je souris en passant devant le travail d’Alia, une petite nouvelle qui a remplit sa feuille d’exercices complètement à l’envers. Elle a juste recopié les mots au tableau sans rien comprendre. Il faudrait que je sois plus attentive à la manière dont les enfants écrivent leur leçons et dont ils la comprennent. 
+Ce matin, je souris en passant devant le travail d’Alia, une petite nouvelle qui a rempli sa feuille d’exercices complètement à l’envers. Elle a juste recopié les mots au tableau sans rien comprendre. Il faudrait que je sois plus attentive à la manière dont les enfants écrivent leur leçon et la comprennent. 
 
 Cet après-midi, je retrouve les pères de St Jean pour discuter avec l’un d’eux. C’est la moitié de la mission et j’ai besoin de faire le point. Je réalise que ces six premiers mois m’ont permis de vivre de très belles rencontres, notamment la dernière grâce à l’aumônerie de l’université. De plus, la liberté que les sœurs me laissent vis-à-vis d’elles me donne à présent le désir de m’engager davantage dans la vie communautaire. Ça sera certainement un défi, mais c’est un bon travail de volonté que de choisir d’aimer aussi passer du temps avec ces petites sœurs qui me nourrissent et me logent si charitablement. 
  
-Ce soir donc, je reste prendre un verre avec elles qui ont fait du Bordé, sorte de boisson alcoolisée traditionnelle dont la texture est très épaisse, un peu comme du gruau, fabriquée à partir de farine d’orge fermenté. Très vite la boisson leur monte à la tête et comme tout ce qui est fermenté donne des gazes, la suite de la soirée est un peu déjantée. En tout cas, l’atmosphère avec les sœurs se détend bien... Péter un coup a aussi ses vertus…
+Ce soir donc, je reste prendre un verre avec elles qui ont fait du Bordé, sorte de boisson alcoolisée traditionnelle dont la texture est très épaisse, un peu comme du gruau, fabriquée à partir de farine d’orge fermenté. Très vite la boisson leur monte à la tête et comme tout ce qui est fermenté donne des gaz, la suite de la soirée est un peu déjantée. En tout cas, l’atmosphère avec les sœurs se détend bien... Péter un coup a aussi ses vertus…
  
 **Samedi**
  
@@ -51,8 +51,8 @@ En parlant d’odeur et d’ail, j’ai acheté des baskets de contrefaçon au m
  
 Ce dimanche, les sœurs fêtent l’inauguration d’une de leurs maisons. Je les accompagne, mais la journée me semble interminable. C’est dur d’être présente dans ce genre d’évènement. Alors que je commence à me demander ce que je fais ici, j’essaie de choisir d’être vraiment là, et comme à chaque fois, cette décision ouvre à de belles rencontres. 
  
-Je vous confie le petit Oda, un des enfants d’Alemachen qui est parti en urgence à l’hôpital à cause d’un problème intestinal. Vous savez, les soins dispensée ici ne sont pas aussi performants que chez nous. J’espère de tout mon coeur qu’il s’en sortira bien.
+Je vous confie le petit Oda, un des enfants d’Alemachen qui est parti en urgence à l’hôpital à cause d’un problème intestinal. Vous savez, les soins dispensés ici ne sont pas aussi performants que chez nous. J’espère de tout mon coeur qu’il s’en sortira bien.
 
-Je pense bien à vous 
-À la semaine prochaine 
+Je pense bien à vous. 
+À la semaine prochaine, 
 Claire 
