@@ -2,7 +2,7 @@
 title: "Souffle de Liberté"
 date: "2026-05-03"
 location: "Addis-Abeba"
-heroImage: "/images/semaine-27/❤️ Répet.jpg"
+heroImage: "/images/semaine-27/repet-coeur.jpg"
 heroPosition: "center"
 excerpt: "Puisque la moitié de mon séjour s’est écoulé, la perspective de ma mission s’inverse : je ne compte plus les mois passés, mais ceux qui me restent à partager."
 ---
