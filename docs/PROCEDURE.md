@@ -14,6 +14,7 @@ Un petit guide pour publier une lettre sur le site.
    - `content/letters/semaine-XX.md`
    - Frontmatter : title, date, location, excerpt
    - Optionnel : `heroImage` pour l'image de partage
+   - **⚠️ RÈGLE D'OR :** Transcrire le texte avec une fidélité ABSOLUE. Ne rien reformuler, ne pas changer la structure ni les mots de l'auteur (voir `docs/REGLE_DE_TRANSCRIPTION.md`).
 
 2. **Photos et vidéos**
    ```bash

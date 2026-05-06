@@ -1,0 +1,5 @@
+# Transcription
+- ALWAYS maintain ABSOLUTE fidelity to the author's original Word/DOCX files when creating or updating markdown letters in `content/letters/`.
+- DO NOT reformulate sentences, DO NOT "improve" the style, DO NOT change vocabulary.
+- Transcribe word-for-word. Keep the author's exact punctuation, formatting (if they don't bold days of the week, don't bold them), and subtleties.
+- The voice and emotion of the author are paramount. Read `docs/REGLE_DE_TRANSCRIPTION.md` before making any markdown integration.
