@@ -33,9 +33,11 @@ En levant les yeux, mon regard tombe sur un tableau accroché dans la réception
 
 Sois gardienne de tes frères, mais pas pour toi. Et ça, c’est encore tout un chemin.
 
-**Jeudi ~ et vendredi**
+**Jeudi**
 
 Ces deux autres jours, je les passe dans mon lit parce que la sœur supérieure me demande de ne pas aller donner mes cours à droite à gauche et de rester dormir. Je ne me rends même pas vraiment compte que je suis fatiguée. Ça m’énerve de rester, j’ai toujours le sentiment de ne rien faire. Je cherche encore mon équilibre… Le chemin vers l’unification de soi est un long fleuve… Et pas toujours tellement tranquille. Enfin, j’en profite pour écrire et pour penser en profondeur. C’est l’occasion de résoudre les dernières questions qui me trottent dans la tête. 
+
+**Vendredi**
 
 J’appelle une amie qui m’annonce être amoureuse. Cet évènement me fait tout drôle. Après les deux naissances des bébés de mes copines et puis cette dernière nouvelle, je réalise que nos vies tournent et se dessinent. Ces éclats de l’amour dans le cœur de mes amies font grandir mes désirs…
 
