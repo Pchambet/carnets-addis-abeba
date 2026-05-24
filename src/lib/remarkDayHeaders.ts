@@ -13,7 +13,7 @@ function escapeHtml(s: string): string {
 
 // Day names in French + their English/index mapping
 const DAY_NAMES = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
-const DAY_RE = new RegExp(`^(${DAY_NAMES.join('|')}(?:\\s+et\\s+[a-zA-Zéû]+)?)(.*)?$`);
+const DAY_RE = new RegExp(`^((?:${DAY_NAMES.join('|')})(?:\\s+et\\s+[a-zA-Zéû]+)?)(.*)?$`);
 
 /**
  * remarkDayHeaders — Remark plugin
