@@ -3,7 +3,7 @@ title: "Persévérance heureuse"
 date: "2026-05-10"
 location: "Addis-Abeba"
 heroImage: "/images/semaine-28/rehan-fenet-biniam-et-lidia.jpg"
-heroPosition: "center 25%"
+heroPosition: "center 35%"
 excerpt: "Ce lundi à Alemachen c’est Ayantu qui m’accueille, petite fille que l’on croyait muette mais qui, depuis deux semaines, ne fait que nous parler. Sans doute se sent-elle assez aimée pour s’ouvrir enfin au monde."
 ---
 
