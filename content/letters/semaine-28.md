@@ -7,13 +7,13 @@ heroPosition: "center 25%"
 excerpt: "Ce lundi à Alemachen c’est Ayantu qui m’accueille, petite fille que l’on croyait muette mais qui, depuis deux semaines, ne fait que nous parler. Sans doute se sent-elle assez aimée pour s’ouvrir enfin au monde."
 ---
 
-Lundi
+**Lundi**
 
 Ce lundi à Alemachen c’est Ayantu qui m’accueille, petite fille que l’on croyait muette mais qui, depuis deux semaines, ne fait que nous parler. Sans doute se sent-elle assez aimée pour s’ouvrir enfin au monde. On ne cesse de se faire des grimaces, quelque chose s’est libéré en elle et ce rayon de soleil donnera le ton à la semaine. 
 
 Cet après-midi avec les petits on ne travaille pas trop pour une fois. On regarde le match pendant que les filles me font des tresses. Les enfants me demandent plus de moments comme ça. Moi aussi j’aimerais bien. Mais je sais que la saveur qu’ont les évènements particuliers trouve son secret dans le fait qu’ils restent exceptionnels.
 
-Mardi
+**Mardi**
 
 Nous nous retrouvons chez Yishak afin de répéter pour le concert. Nos réalisations prennent forme, c’est bon d’être témoin de l’unification de notre groupe, notre complicité s’harmonise et la qualité de nos musiques avec. Nous restons déjeuner chez lui, sa mère me fait toujours autant rire, j’apprends qu’elle était leadeuse d’un groupe de foot dans son village quand elle était plus jeune. Ça ne m’étonne pas, elle a fort caractère.
 
@@ -23,7 +23,7 @@ Biruk et Rehan me rejoignent et m’emmènent dans un café étudiant pour retro
 
 Le soleil se couche, il fait tinter ses rayons d’or sur les flaques de la dernière pluie ; je raccompagne Rehan à son taxi, Biruk me raccompagne au mien, la journée était belle. Pleine de richesse et d’amitié.
 
-Mercredi :
+**Mercredi**
 
 C’est le jour où nous emmenons les enfants à l’hôpital. Nous resterons jusqu’à seize heures coincés à la clinique en raison du nombre de patients, ce qui nous oblige à sauter le repas de midi. Les services de soin distribuent des paquets de biscuits aux enfants pour qu’ils supportent un peu la faim. J’avais reçu ce matin-là le message d’un ami qui m’avait lancé cette belle question : « Moins on a, plus on partage n’est-ce pas ? » et de fait, j’en ai fait ce jour-là l’expérience… Pour mon plus grand étonnement, chaque enfant m’a donné un biscuit de son paquet, si bien que je me suis retrouvée avec plus à offrir que chacun d’eux.
 
@@ -33,13 +33,15 @@ En levant les yeux, mon regard tombe sur un tableau accroché dans la réception
 
 Sois gardienne de tes frères, mais pas pour toi. Et ça, c’est encore tout un chemin.
 
-Jeudi et vendredi
+**Jeudi ~ et vendredi**
 
 Ces deux autres jours, je les passe dans mon lit parce que la sœur supérieure me demande de ne pas aller donner mes cours à droite à gauche et de rester dormir. Je ne me rends même pas vraiment compte que je suis fatiguée. Ça m’énerve de rester, j’ai toujours le sentiment de ne rien faire. Je cherche encore mon équilibre… Le chemin vers l’unification de soi est un long fleuve… Et pas toujours tellement tranquille. Enfin, j’en profite pour écrire et pour penser en profondeur. C’est l’occasion de résoudre les dernières questions qui me trottent dans la tête. 
 
 J’appelle une amie qui m’annonce être amoureuse. Cet évènement me fait tout drôle. Après les deux naissances des bébés de mes copines et puis cette dernière nouvelle, je réalise que nos vies tournent et se dessinent. Ces éclats de l’amour dans le cœur de mes amies font grandir mes désirs…
 
-Samedi, je me réveille en parfaite forme après ces deux jours de confinement. À six heures du matin, on se réunit avec les filles de la maison pour se faire toutes belles. Aujourd’hui, c’est une double fête ! Nous célébrons la Nativité de la Vierge et Sainte Louise de Marillac, fondatrice de leur communauté.
+**Samedi**
+
+Je me réveille en parfaite forme après ces deux jours de confinement. À six heures du matin, on se réunit avec les filles de la maison pour se faire toutes belles. Aujourd’hui, c’est une double fête ! Nous célébrons la Nativité de la Vierge et Sainte Louise de Marillac, fondatrice de leur communauté.
 
 Nous sautons toutes joyeuses dans un taxi qui nous emmène en direction de la cathédrale. Endroit où je n’étais encore jamais allée. Une grande église de style européen se dresse devant nous, lieu qui me semble tout de suite familier. Bien que la messe soit en rite guèze, je me laisse porter, si bien que je m’évanouis à moitié à cause de la chaleur. Là, je me laisse porter par Kere qui me traine dans le clocher pour que je reprenne mes esprits… La vue est magnifique. Je resterai là-haut secouée par le vent à côté du carillonneur qui fera sonner les cloches deux fois. Musique qui se fait rare ici et qui me ramène à vous l’espace d’un moment.
 
