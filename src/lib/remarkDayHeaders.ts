@@ -13,7 +13,7 @@ function escapeHtml(s: string): string {
 
 // Day names in French + their English/index mapping
 const DAY_NAMES = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
-const DAY_RE = new RegExp(`^(${DAY_NAMES.join('|')})(.*)?$`);
+const DAY_RE = new RegExp(`^(${DAY_NAMES.join('|')}(?:\\s+et\\s+[a-zA-Zéû]+)?)(.*)?$`);
 
 /**
  * remarkDayHeaders — Remark plugin
@@ -51,8 +51,10 @@ export function remarkDayHeaders() {
             const datePart = tildeIdx > -1 ? rest.slice(0, tildeIdx).trim() : '';
             const descPart = tildeIdx > -1 ? rest.slice(tildeIdx + 1).trim() : rest;
 
-            // Build the HTML for the day divider (escape user content to prevent XSS)
-            const dayIndex = DAY_NAMES.indexOf(dayName) + 1;
+            // Compute day index from the first word (e.g. "Jeudi" from "Jeudi et vendredi")
+            const firstDay = dayName.split(' ')[0];
+            const normalizedFirstDay = firstDay.charAt(0).toUpperCase() + firstDay.slice(1).toLowerCase();
+            const dayIndex = DAY_NAMES.indexOf(normalizedFirstDay) + 1;
             const html = [
                 `<div class="day-section" data-day="${dayIndex}">`,
                 `  <div class="day-section-rule"></div>`,
