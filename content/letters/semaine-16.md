@@ -23,7 +23,7 @@ Je pars enseigner le français à mes étudiants Kényans. L’ambiance y est bi
 
 Après le travail, je rejoins les copains du groupe pour préparer notre prochain concert. Cet espace d’enthousiasme, de beauté et de liberté totale au coeur de cette semaine est une vivante cicatrisation de l’âme. J’avais besoin de liberté, d’expression et de beauté. Quelque chose se soigne à l’intérieur. 
 
-**Mercredi** 
+**Mercredi**
 
 C’est un grand jour de fête au centre. Aujourd’hui, nous n’allons pas à l’hôpital. Les enfants restent pour célèbrer la semaine nationale du handicap. Le père Mathewos m’a demandé de venir tôt pour préparer la fête. Lorsque j’arrive pour proposer mon aide, personne ne veut que je mette la main à la pâte, ce n’est pas à moi d’aider… Comme d’habitude. Rencontre délicate entre deux culture où l’une témoigne son amour par les services rendus et l’autre par le repos qu’elle permet à ses ôtes. Comme je n’ai rien préparé pour les enfants, on fais des jeux de société, mais je culpabilise à mort et j’ai l’impression de ne faire que de ‘l’occupationnel’ alors qu’ils manquent déjà terriblement d’éducation. Difficile encore une fois d’accueillir ma frustration et de faire avec le réel. Accepter l’imprévu, quel plaie quand on a une volonté et des attentes luisantes… Je sais à ce moment là qu’il faut que j’apprenne à me désarmer, la prière du patriarche Athénagoras remonte à ma mémoire, je vous invite à la lire. 
 

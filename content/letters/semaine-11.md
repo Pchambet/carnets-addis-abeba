@@ -15,13 +15,13 @@ La neige semble vous envelopper de sa fraîcheur nouvelle, et cet air pur me man
 
  Alors ce soir, je dresse à nouveau ma plume et je tente de vous décrire la beauté de cette semaine, qui n’a cessé de jouer à cache-cache entre grandes journées de fêtes et moments passagers de doutes. 
 
- Lundi 
+**Lundi**
 
  La classe avec les enfants commence à prendre bonne forme. J’ai découvert une méthodologie nouvelle qui correspond davantage aux élèves. J’accompagne chaque mot d’un geste, ce qui leur permet d’associer une image avec une parole et leur facilite la compréhension et la mémorisation. Aussi, avec l’aide d’Hannah, d’Abba et de Nati, nous avons concocté un tout nouveau programme qui désormais propose aux enfants des cours d’anglais cinq fois par semaine et de langue locale trois fois par semaine. L’inverse serait mieux, mais difficile pour moi de leur apprendre l’amharique… Lorsqu’on persévère, on arrive à de belles choses. Ce jour-là, nous disons au revoir à Frowot et à Yohannis qui doivent partir à l’hôpital pour leur opération finale. Quelle déception que cette nouvelle tant attendue tombe la semaine de Noël et de l’Epiphanie, tellement intensément célébrée ici. Mais pas d’autre choix que d’accepter. Les enfants attendent leur place depuis des mois. Nous leur promettons de les appeler pour Noël.
 
  En rentrant de l’école, les rues sont pleines de bœufs, de moutons et de poules qui sont vendues pour Noël. Dans ce charivari et ce désordre amusant je rentre à la maison, découvrant désarmée un pauvre petit mouton attaché à la porte de la buanderie, broutant innocemment de l’herbe fraîche, loin d’imaginer qu’il sera dévoré dans deux jours… « sans autre forme de procès ». Ça me fait penser à cette fable de La Fontaine que papa me récitait petite. 
 
- Mardi 
+**Mardi**
 
  C’est la veille de Noël, le mouton pleure au fond de notre jardin, je n’ai pas le courage d’aller voir ce qu’il se passe. J’essaie de proposer mon aide aux sœurs, mais ici, quand on aime, on demande à l’invité de ne rien faire. Je suis encore une invitée pour elles. Alors je reste assise à les voir affairées à la cuisine. Frustration pour moi de ne pas être autorisée à mettre la main à la pâte… Je leur dis que chez nous, aider est un langage d’amour. Mais les sœurs me disent que j’ai le poing trop faible pour les aider à découper la viande. J’essaie de ne pas le prendre mal et pars me préparer bredouille pour la veillée du soir. 
 
@@ -39,7 +39,7 @@ La neige semble vous envelopper de sa fraîcheur nouvelle, et cet air pur me man
 
  La soirée se finit trop tard pour ne pas m’inquiéter de trouver un taxi en ce jour de Noël où le monde est en célébration. Heureusement, ceux qui sont musulmans travaillent ce jour-là. Je bénis le monsieur qui vient me ramener chez moi. Et pour ajouter de la joie au bonheur de ce jour, il m’offre le trajet. 
 
- Jeudi 
+**Jeudi**
 
  Ce jour est un jour de vacances ! Je reste auprès de mes petites sœurs. J’arrive en cuisine et attrape un couteau pour préparer les légumes. Cette fois elles me laissent faire, elles ont compris que je fais ça par amour. 
 
@@ -57,19 +57,19 @@ Lamesguin gambade comme une gazelle entre les grands rochers. Nous avons peine �
 
  Cette journée se termine heureuse auprès des sœurs qui préparent un festin typique de la région de Gondar, de l’agneau au gingembre, au piment vert et au chili, le tout enveloppé dans de l'ingéra qu’il faut manger bouillant. 
 
- Vendredi 
+**Vendredi**
 
  Ce jour-là, les enfants sont excités comme je n’avais jamais vu ! Ils ont dû manger beaucoup trop de sucre ces derniers jours… Et pour moi, le mouton de la veille se venge sur mon estomac. Impossible de tenir les enfants en place pour cette matinée de classe. Et je manque de patience. Nous terminons les cours dehors ce qui nous aide un peu à donner la fin du meilleur de nous-mêmes… 
 
  Ce soir-là, je m’en vais chez les Frères de St Jean pour répéter le chant qu’ils m’ont demandé de faire pour la fête de leur communauté qui aura lieu demain. 
 
- Samedi 
+**Samedi**
 
  100 personnes sont attendues pour la fête. La messe en rite Guèze ce jour-là me paraît bien longue. La poésie de ces moments commence à s’échapper et laisse place à un profond ennui... Aussi, il commence à faire extrêmement froid les matins à Addis, et dans mes petites sandales, je crains de finir les trois heures de célébration les pieds glacés jusqu’aux os… Heureusement, Domitille me prête son écharpe pour que j’improvise des chaussettes au milieu de l’homélie du prêtre qui dure 45 minutes. 
 
  Cette après-midi, je laisse mes entrailles mourir et revenir à elles… Le fantôme du mouton que j’ai osé manger ne me laisse pas tranquille. 
 
- Dimanche 
+**Dimanche**
 
  Je me réveille bien tard et me traîne à la messe. Je n’ai pas le courage de suivre une troisième messe en rite guèze. Je rejoins l’église française. La chorale me semble tellement familière. Je redécouvre la beauté de la liturgie latine, de ses paroles dans ma langue maternelle qui résonnent à mon esprit. 
 

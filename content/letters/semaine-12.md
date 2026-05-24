@@ -8,7 +8,7 @@ heroPosition: "center 40%"
 
 > PQ: L’homme qui n’aime pas ne vit pas.
 
-Mardi
+**Mardi**
 
  
 
@@ -36,11 +36,11 @@ Le jeune artiste sculpteur auprès de qui je suis assise dans ce taxi bien usé,
 
  
 
-**Mercredi
+**Mercredi**
 
  
 
- À six heures le lendemain, le petit me réveille. Comme il fait vraiment froid, nous faisons vite une toilette à l’eau claire et prenons notre temps pour un bon bain de soleil. Des enfants nous rejoignent. J’improvise un petit cours d’anglais au milieu de la rue en faisant des calculs avec des morceaux de papier. Le prêtre ne veut pas nous laisser partir avant que nous prenions un café. Mais prendre un café ne se fait pas comme chez nous en France. D’abord il faut trouver du bois et puis faire un bon feu, torréfier les grains, les moudre et puis faire bouillir l’eau pour enfin faire infuser le café. Ce savoir-faire ne peut pas se bâcler. **
+ À six heures le lendemain, le petit me réveille. Comme il fait vraiment froid, nous faisons vite une toilette à l’eau claire et prenons notre temps pour un bon bain de soleil. Des enfants nous rejoignent. J’improvise un petit cours d’anglais au milieu de la rue en faisant des calculs avec des morceaux de papier. Le prêtre ne veut pas nous laisser partir avant que nous prenions un café. Mais prendre un café ne se fait pas comme chez nous en France. D’abord il faut trouver du bois et puis faire un bon feu, torréfier les grains, les moudre et puis faire bouillir l’eau pour enfin faire infuser le café. Ce savoir-faire ne peut pas se bâcler.
 
 Au bout d’une petite heure, le café est fin prêt. Mais nous ne partirons pas sans prendre un verre de tej et d’eau-de-vie avec un morceau d’ingéra. Puisqu’ils sont orthodoxes, après les fêtes il y a un temps de jeûne. Et aussi, deux fois par semaine, même en temps ordinaire. Ce matin, nous sommes mercredi et c’est un jour de jeûne. Mais comme ils savent que je suis catholique, je vois qu’ils me réchauffent la viande pour mon petit déjeuner. C’est la première fois que je parviens à négocier pour qu’ils me servent de la même manière que les autres. La viande est alors gardée pour un jour suivant. Il se fait déjà trop tard pour être à l’heure au travail. J’appelle la mission pour expliquer mon retard, ce qui n’alarme personne. Professeur Joachim ce matin ne pourra pas honorer son cours, mais l’idée de prévenir ses élèves ne lui viendra qu’en fin de matinée. 
 
@@ -58,11 +58,11 @@ Arrivés à la ville, nous nous quittons tous les trois, épuisés mais ravis d�
 
  
 
-**Jeudi
+**Jeudi**
 
  
 
- Jeudi c’est l’anniversaire de Domitille, missionnaire de l’OEuvre d’Orient qui partage sa mission avec Erwan, également en mission. Je pars les retrouver chez les Mères de Thérèsa où ils œuvrent auprès des enfants en situation de handicap mental. Domitille me fait visiter l’endroit. Il y a deux maisons qui accueillent les petits orphelins. Certains peuvent aller à l’école, d’autres restent la journée dans leur chaise roulante, qui, pour la plupart, n’est pas bien adaptée à la forme de leur corps. Je m’en vais avec Domitille chercher les quatre filles qui peuvent suivre l’école pour l’heure du déjeuner. Après leur repas qu’elles apprennent à manger seules comme elles savent bien faire, (l’une avec une cuillère qu’elle tient avec ses orteils), nous prenons un moment pour jouer toutes ensemble. Je n’oublierai pas ce moment de partage et le sourire des fillettes. Nous les couchons pour la sieste et partons célébrer l’anniversaire de Domitille auprès des Petites Soeurs de Jésus qui habitent plus haut. Comme elles aiment Domitille et qu’elles la connaissent bien, elles lui ont préparé les quatre plats qu’elle préfère, mais les quatre en même temps. Sœur Monique, rencontrée au début de ma mission, qui, à l’âge de 25 ans est arrivée en Éthiopie pour tout donner à ce pays, est maintenant très âgée et laisse sa mémoire la quitter. Nous lui chantons des chansons françaises accompagnées de ma guitare. Monique semble reconnaître les musiques et ce moment lui donne de la joie, qui fait tout autant la nôtre. **
+ Jeudi c’est l’anniversaire de Domitille, missionnaire de l’OEuvre d’Orient qui partage sa mission avec Erwan, également en mission. Je pars les retrouver chez les Mères de Thérèsa où ils œuvrent auprès des enfants en situation de handicap mental. Domitille me fait visiter l’endroit. Il y a deux maisons qui accueillent les petits orphelins. Certains peuvent aller à l’école, d’autres restent la journée dans leur chaise roulante, qui, pour la plupart, n’est pas bien adaptée à la forme de leur corps. Je m’en vais avec Domitille chercher les quatre filles qui peuvent suivre l’école pour l’heure du déjeuner. Après leur repas qu’elles apprennent à manger seules comme elles savent bien faire, (l’une avec une cuillère qu’elle tient avec ses orteils), nous prenons un moment pour jouer toutes ensemble. Je n’oublierai pas ce moment de partage et le sourire des fillettes. Nous les couchons pour la sieste et partons célébrer l’anniversaire de Domitille auprès des Petites Soeurs de Jésus qui habitent plus haut. Comme elles aiment Domitille et qu’elles la connaissent bien, elles lui ont préparé les quatre plats qu’elle préfère, mais les quatre en même temps. Sœur Monique, rencontrée au début de ma mission, qui, à l’âge de 25 ans est arrivée en Éthiopie pour tout donner à ce pays, est maintenant très âgée et laisse sa mémoire la quitter. Nous lui chantons des chansons françaises accompagnées de ma guitare. Monique semble reconnaître les musiques et ce moment lui donne de la joie, qui fait tout autant la nôtre.
 
  
 
@@ -74,19 +74,19 @@ En me couchant ce soir, j’ai au cœur le rire des enfants des Sœurs de Mère 
 
  
 
-**Vendredi
+**Vendredi**
 
  
 
- Vendredi, les enfants sont tout excités pour célébrer Timcat qui aura lieu bientôt. La classe se fait difficile mais l’organisation que l’on a travaillé ces derniers jours nous permet d’avancer malgré tout. Le plus dur finalement est de m’entendre avec Nati qui ne partage pas la même vision sur la mission et l’éducation des enfants. Peut-être que le plus dur dans l’enseignement n’est, en fait, pas les jeunes, mais ceux avec qui l’on doit coopérer pour s’accorder sur le ton de l’éducation proposée. Nous prenons le temps de discuter pour remettre les priorités en place et voir comment nous pouvons nous mettre d’accord sur la manière d’être aux côtés des enfants. **
+ Vendredi, les enfants sont tout excités pour célébrer Timcat qui aura lieu bientôt. La classe se fait difficile mais l’organisation que l’on a travaillé ces derniers jours nous permet d’avancer malgré tout. Le plus dur finalement est de m’entendre avec Nati qui ne partage pas la même vision sur la mission et l’éducation des enfants. Peut-être que le plus dur dans l’enseignement n’est, en fait, pas les jeunes, mais ceux avec qui l’on doit coopérer pour s’accorder sur le ton de l’éducation proposée. Nous prenons le temps de discuter pour remettre les priorités en place et voir comment nous pouvons nous mettre d’accord sur la manière d’être aux côtés des enfants.
 
  
 
-**Samedi
+**Samedi**
 
  
 
- Aujourd’hui, c’est samedi. La ville s’habille de fête pour le Baptême du Christ. Je retourne à Alemachen pour aider les filles à bien prendre leur douche. Désormais, je viendrai deux, trois fois par semaine pour doucher les enfants parce qu’ils ont besoin d’aide, au moins d’indications verbales pour se laver correctement. **
+ Aujourd’hui, c’est samedi. La ville s’habille de fête pour le Baptême du Christ. Je retourne à Alemachen pour aider les filles à bien prendre leur douche. Désormais, je viendrai deux, trois fois par semaine pour doucher les enfants parce qu’ils ont besoin d’aide, au moins d’indications verbales pour se laver correctement.
 
  
 
@@ -98,11 +98,11 @@ En me couchant ce soir, j’ai au cœur le rire des enfants des Sœurs de Mère 
 
  
 
-**Dimanche
+**Dimanche**
 
  
 
- Le lendemain, tout habillés de blanc, Hannah, Nati et leur famille m’emmènent avec eux pour célébrer Timcat. Le Baptême du Christ. La rue est en couleurs, de grandes croix en bois sont dressées sur la route et d’ immenses tableaux, représentant le Christ, les Saints et tous les anges, ouvrent sous le ciel bleu, une nouvelle cathédrale au milieu de la ville. Des quatre points cardinaux défilent des fidèles tout habillés de blanc jusqu’au cœur de la Place. Ils sortent de leurs églises, transportant avec eux les tables de la loi symbolisant l’Alliance. Vivante Apocalypse, une foule d’hommes et de femmes défilent dans leurs habits de coton, avançant en chantant des hymnes de louanges tout en réjouissances. Les tambours battent leur plein et les trompettes font éclater leur voix. Les grelots nous chuchotent le battement d’ailes des anges, et la voix nasillarde des chantres des Eglises accélère sa cadence pour entraîner la foule. **
+ Le lendemain, tout habillés de blanc, Hannah, Nati et leur famille m’emmènent avec eux pour célébrer Timcat. Le Baptême du Christ. La rue est en couleurs, de grandes croix en bois sont dressées sur la route et d’ immenses tableaux, représentant le Christ, les Saints et tous les anges, ouvrent sous le ciel bleu, une nouvelle cathédrale au milieu de la ville. Des quatre points cardinaux défilent des fidèles tout habillés de blanc jusqu’au cœur de la Place. Ils sortent de leurs églises, transportant avec eux les tables de la loi symbolisant l’Alliance. Vivante Apocalypse, une foule d’hommes et de femmes défilent dans leurs habits de coton, avançant en chantant des hymnes de louanges tout en réjouissances. Les tambours battent leur plein et les trompettes font éclater leur voix. Les grelots nous chuchotent le battement d’ailes des anges, et la voix nasillarde des chantres des Eglises accélère sa cadence pour entraîner la foule.
 
  
 
@@ -122,11 +122,11 @@ Avez-vous vu les films de Miyazaki ? Le château ambulant ? La chambre d’Hauru
 
  
 
-**Lundi
+**Lundi**
 
  
 
- Lundi, il est 5h et demie. Je me lève engourdie par la froideur de la nuit. Professeur Joachim m’attend dans le salon avec un thé qu’il a préparé avant que nous partions. Ce matin, il est tout de blanc vêtu. La rue se tinte de doré et le soleil s’étire. La rue est silencieuse et parfumée d’encens. **
+ Lundi, il est 5h et demie. Je me lève engourdie par la froideur de la nuit. Professeur Joachim m’attend dans le salon avec un thé qu’il a préparé avant que nous partions. Ce matin, il est tout de blanc vêtu. La rue se tinte de doré et le soleil s’étire. La rue est silencieuse et parfumée d’encens.
 
  
 

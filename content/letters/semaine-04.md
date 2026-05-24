@@ -13,7 +13,7 @@ La pauvreté est partout, mais elle révèle bien des choses qui ne doivent pas 
 
 Puisqu’ici les gens souffrent, ils ne cessent de se donner de patientes consolations. Puisqu’ils n’ont pas d’argent, ils ne refusent jamais la saveur d’un bout de pain donné. Puisqu’ici il y a la guerre, ils savent le parfum de la paix et se la donnent souvent. Puisqu’on ne sait rien pour demain, aujourd’hui est un moment de fête. Le meilleur se révèle à la lumière de son contraire. Si la rue est sale, la tige qui longe le mur comme un lézard d’émeraude m’apparaît si jolie au milieu des carcasses et des chiens. Ce n’est qu’une fleur de capucine, mais sa beauté se dévoile à la lumière des contrastes qui l’environnent. 
 
- Lundi 
+**Lundi**
 
  J’achève les démarches de renouvellement de mon visa. La journée est à l’épreuve d’une administration véritablement complexe, si elle n’est corrompue. Je m’abandonne à ce que me disent les gens, piétinant pendant près d’une journée au ministère, trouant mon porte-monnaie, balancée d’une pièce à l’autre jusqu’à ce qu’enfin l’étape suivante soit celle de la sortie. Je sors de cet endroit complètement épuisée. Pour la première fois, j’ai le sentiment de devoir vivre dans l’urgence ces quatre prochains jours ici. Je ne sais pas si je recevrai mon visa, il ne me reste peut-être plus que la fin de semaine. 
 

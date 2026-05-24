@@ -22,7 +22,7 @@ Vivre la mission avec des amis change la couleur du quotidien. Lundi, Nati m’a
 
  Ce soir-là, je m’en vais me ressourcer chez les Frères de St Jean. Je me repose sur la mélodie de leurs psaumes et le silence propre au monastère situé au pied de la forêt d’Entoto. Je ne dois pas laisser couler mon Espérance. Et là, au creux de leur chapelle je fais ce vœu de ne plus être inquiète et de vivre chaque instant tel qu’il m’est donné. Il va falloir que je quitte l’Ethiopie pour renouveler mon visa. Mais où ? Rentrer en France coûte tellement cher… 
 
- Mardi
+**Mardi**
 
  Comme c’est mardi et que j’ai du temps le matin, je rejoins Gébréyésu pour notre premier cours de peinture. Je découvre son atelier au milieu d’un petit hameau de plusieurs maisons encadré d’une enceinte. Au milieu de sa cour, grimpe un magnifique rosier et deux jolis coqs se pavanent en joyeuse parade jusque dans sa petite maisonnette. Il n’y a qu’une pièce. Les murs sont bariolés de peintures et décorés de toutes ses œuvres. Il n’a pas de chevalet. Il peint debout en accrochant au mur ses toiles blanches à sa hauteur. Un canapé dans le coin de la pièce lui sert de lit quand il est trop tard pour retourner là où il vit au milieu de la nuit. Une bibliothèque de livres d’art repose sur son bureau et une collection de pinceaux sommeille sur le buffet, impatients d’être chatouillés pour une nouvelle promenade en couleurs. 
 
@@ -42,13 +42,13 @@ Sur le palier se présente un petit homme, les cheveux en bataille et la peau su
 
  À défaut de pouvoir voyager au-delà des collines de la ville, nous avons bien voyagé ce soir-là. 
 
- Mercredi 
+**Mercredi**
 
  Nous emmenons à l’hôpital cinq petits garçons. Je reste avec Biniam, le petit de cinq ans arrivé la semaine dernière depuis Lalibela. Lorsque je l’aide à retirer son pantalon, je découvre qu’il n’a pas de caleçon… Je lui demande ce qu’il a fait de sa culotte, tout rouge il me dit qu’il n’en a pas. Étonnée, je discute avec ma collègue d’Alemachen, et j’apprends aujourd’hui que les enfants n’ont que deux slips par semaine, s’ils ont la chance d’en avoir. 
 
  Biniam se fait plâtrer par les docteurs. Secoué par toutes ces aventures, difficile pour lui de retenir ses larmes. Je lui dessine un lion aussi féroce que possible sur sa gambette plâtrée, tentant de lui rendre un petit peu de fierté. 
 
- Jeudi 
+**Jeudi**
 
  Je découvre l’angoisse de l’incertitude à ne pas savoir de quoi sera fait son lendemain. Je m’en retourne aux bureaux de l’immigration… S’il me faut sortir du pays, il me faut un visa pour celui que j’irai visiter, puis un nouveau pour retourner en Éthiopie en attendant de recevoir l’ultime visa de travail.
 
@@ -62,7 +62,7 @@ Ce jour-là, tout semble me faire douter. L’Œuvre d’Orient ne répond pas, 
 
  Ce soir-là, je pars retrouver des amis chrétiens pour une veillée œcuménique. Leur amour partagé remet mon cœur dans l’ordre des choses. Si moi je doute, eux ont la foi. Ils m’invitent à relativiser. Tous ont la paix et m’invitent à trouver la vraie joie dans l’instant. 
 
- Samedi 
+**Samedi**
 
  Hannah et Nati m’invitent dans un café au sud de la capitale. Nous parlons des projets des enfants. D’abord, négocier avec Abba pour que les petits prennent plus de douches et voir comment nous pourrions aider. Hannah va demander à ses amis un soutien pour les culottes. En nous renseignant, un nouveau bazar aura lieu au mois de janvier. Nous nous coordonnons pour que cette fois, les enfants puissent y trouver leur place. Nous partageons d’autres projets que j’espère vous présenter plus tard. 
 

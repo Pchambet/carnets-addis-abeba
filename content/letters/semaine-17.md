@@ -9,7 +9,7 @@ excerpt: "Tu étais si gourmande de la vie que tu l’as avalée avec ta mort de
 
 > PQ: Il y a des évènements qui semblent complètement absurdes si l’on ne fait pas cet effort d’accepter de tout perdre.
 
-**Lundi** 
+**Lundi**
 
 L'année dernière avec les amis de notre promotion, nous avons décidé de prier chaque semaine pour l'un de nous. Cette semaine, j’étais l'heureuse élue. Savoir que 35 de mes amis ont posé une bougie, un souhait ou un regard vers ce que je suis pour mon élévation, m’a donné du courage. 
  
@@ -22,7 +22,7 @@ Pour leur cours de français, les sœurs m’ont demandé de leur apprendre deux
 Pour l’anniversaire d’un ami, je réalise une longue vidéo jusqu’à 2 heures du matin pour tenter de rassembler tous nos souvenirs et être à l’heure pour le jour J. Le lendemain, je découvre que j’ai une semaine d’avance sur sa date d’anniversaire. 
 Mais il n’y a rien de mieux que d’accepter des choses au seul motif que cela nous déplaît. Ça aide à vouloir les choses comme elles arrivent. Consentir à ce qu’on a pas choisi. Forme de jeûne avant le jour. Une belle préparation au carême… 
 
-**Mardi** 
+**Mardi**
 
 Ce matin, je prends un bus pour me rendre au travail. Il est complètement bondé. C’est souvent comme ça ici. Un monsieur attrape mon sac et le pose sur ses genoux, pour m’aider. Peu de personnes discutent, c’est très tranquille, les gens sortent de leurs rêves pour se rendre docilement au travail. Je rigole avec mes amis et des personnes prennent part à nos conversations. C’est drôle comme ici les gens ont le sens de la communauté. Ce gars qui a pris mon sac ne m’adresse pas la parole puisqu’il ne parle pas anglais, mais il fait ça pour m’aider, comme l’évidence d’un devoir. Et ces gens qui ont pris part à nos échanges ne se font pas rejeter parce qu’une conversation amorcée dans un bus regarde tout le monde. 
  
@@ -35,7 +35,7 @@ Je pars ensuite à l’Alliance française pour trouver des manuels de préparat
  
 Je retrouve mes quatre élèves kényans pour leur cours de français. Les deux heures passent bien vite, je m’amuse tellement avec eux. Ce sont des amis qui ont envie d’apprendre et c’est un bonheur de vivre ça. Je rentre à pied à la maison depuis la forêt d’Entoto ce jour là. La marche est longue mais c’est un bain de jouvence dans le foisonnement de ce monde si différent. Des enfants s’amusent à me suivre en riant, j’achète un petit pain au sésame et un panier de prunes que je savoure en marchant. Le soleil d’Addis se couche avec sa lumière dorée et les chiens se réveillent. 
 
-**Mercredi** 
+**Mercredi**
 
 Les orthodoxes ont commencé le carême lundi, vous mercredi, les musulmans le ramadan jeudi et nous attendons mercredi prochain. Je poursuis mes luttes intérieures. 
 Ce jour-là, je lis cette parole d’Etty dans son journal : “Si la paix s’installe un jour, elle ne pourra être authentique que si chaque individu fait d’abord la paix en soi-même.” 
@@ -52,7 +52,7 @@ Je suis allée lire et tenter de travailler un peu ce matin à l'Alliance franç
  
 Autoportrait au radiateur ! Je lis, souvent un frisson m'émoustille, je ris, je pose le livre et je savoure, et puis je recommence. 
  
-**Vendredi** 
+**Vendredi**
 
 Ce matin nous nous donnons à fond avec Hannah pour ajuster nos exercices aux enfants. Nous ne restons que deux heures, à midi j’ai organisé un repas d’au revoir avec mes profs au restaurant. Le moment est heureux, comme le carême a commencé pour les orthodoxes, les restaurants proposent des plats exclusivement vegan. Je n’ai jamais aussi bien mangé. 
  
@@ -64,11 +64,11 @@ Je reçois le triste appel de la sœur supérieure des sœurs de Mère Thérèza
 
 J’accompagne Anania dans un hôtel où il donne avec trois potes un concert de jazz. Je suis basculée dans un monde qui contraste bien trop fort avec ma mission. Un verre de rouge à la main, accoudée au bar, je les écoute et je les dessine. Ils me feront chanter une chanson en amharique pour les clients du restaurant. 
  
-**Samedi** 
+**Samedi**
 
 Je suis malade comme je ne l’ai jamais été, comme souvent quand je mange dehors… La nausée me colle au cœur, mon corps me fait endurer le châtiment de mes excès jusqu’au soir avant de me délivrer. Heureusement, j’aurai reçu ce jour les lettres de quatre femmes amies. Reçues deux mois après leur expédition, je savoure la lecture de leurs profonds messages. Vous ne pouvez pas imaginer le sourire reçu, inestimable présent que ces mots tout pétillants de joie dans ma langue maternelle et qui me rappellent heureuse qu’il y a au bout du monde des amis très précieux avec un cœur fidèle.
 
-**Dimanche** 
+**Dimanche**
 
 Les sœurs apprenant que ma nuit s’est passée à proférer mes entrailles m’ont choyé comme un chaton. Je prends ce dimanche matin pour vous écrire cette nouvelle lettre avec un bol de mixtures dont j’ignore la recette que je dois boire lentement avec un thermos d’eau chaude et du jus de citron. 
 Je retrouve à midi mes amis St Cyrien qui me requinquent un peu avec un déjeuner français. Nous répétons les chansons que nous offrirons aux patients. 
