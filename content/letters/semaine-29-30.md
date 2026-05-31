@@ -2,7 +2,7 @@
 title: "ሕይወት ጣፋጭ ናት ( la vie est douce )"
 date: "2026-05-24"
 location: "Addis-Abeba"
-heroImage: "/images/semaine-29-30/dans-les-jardins-de-l-universite.jpg"
+heroImage: "/images/semaine-29-30/concert.jpg"
 heroPosition: "center"
 excerpt: "Je suis installée à la petite table du salon entre Amour et Patience ( le nom des postulantes ) qui se disputent joyeusement les dernières gouttes de confiture d’orange."
 ---
