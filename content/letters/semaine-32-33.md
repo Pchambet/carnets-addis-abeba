@@ -33,7 +33,7 @@ Lorsque je suis venue leur donner leur cours hebdomadaire, les Kenyans étaient 
 
 **Mercredi**
 
-Les enfants se sont essayés au nouveau jeu de société dont un amie m’avait suggéré l’idée. Les petits sont restés concentrés pendant une heure à faire avancer leurs pions sur le jeu de l’oie que nous avions peint ensemble. Le bonheur des élèves était à son comble.
+Les enfants se sont essayés au nouveau jeu de société dont une amie m’avait suggéré l’idée. Les petits sont restés concentrés pendant une heure à faire avancer leurs pions sur le jeu de l’oie que nous avions peint ensemble. Le bonheur des élèves était à son comble.
 
 En arrivant au travail ce jour-là, un petit colis nous attendait devant la classe. Les enfants avaient hâte que j’arrive pour découvrir la surprise. Au fond d’un petit carton, trois minuscules chatons nous dévisageaient avec leurs yeux tout ronds. Les enfants étaient tout attendris et la journée s’est terminée en bataille de caresses, course à la ficelle et cache-cache dans les hautes herbes.
 

@@ -55,8 +55,8 @@ Les soeurs de Mère Thérèsa sont sorties dans la rue appeler les enfants. Des 
 
 **Dimanche**
 
-J’ai découvert la forêt de l’ambassade de France. Elle abrite un grand bois, dans lesquels des oiseaux s’enivrent à offrir des louanges et dont les arbres, en réponses, répandent dans l’air des parfums que j’ignorais encore.
+J’ai découvert la forêt de l’ambassade de France. Elle abrite un grand bois dans lequel des oiseaux s’enivrent à offrir des louanges et dont les arbres, en réponses, répandent dans l’air des parfums que j’ignorais encore.
 
 Pour la remise de diplôme de Mandéfrot le sculpteur, nous sommes allés faire des chansons dans son petit atelier avec sa mère et puis Thomas le violoniste. Assis au milieu de ses sculptures, nous avons griffonné par terre le plan de notre prochain voyage dans son village à Arba-Minch.
 
-Cette semaine s’achève avec l’arrivée de trois jolies lettres, cinq mois en retard. Elles se sont fait désirées et leur contenu n’est plus d’actualité. Pourtant, l’élan à l’origine de leur écriture n’a pas de temporalité ; elles en demeurent intensément vivantes.
+Cette semaine s’achève avec l’arrivée de trois jolies lettres, cinq mois en retard. Elles se sont fait désirer et leur contenu n’est plus d’actualité. Pourtant, l’élan à l’origine de leur écriture n’a pas de temporalité ; elles en demeurent intensément vivantes.
