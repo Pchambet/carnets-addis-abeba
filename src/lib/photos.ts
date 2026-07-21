@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { getBlurDataURL } from './blur';
+import { getImageData } from './blur';
 
 export interface PhotoCaption {
     caption?: string;
@@ -11,6 +11,8 @@ export interface Photo {
     name: string;
     caption?: string;
     blurDataURL?: string;
+    width?: number;
+    height?: number;
 }
 
 function getPhotoCaptions(letterId: string): Record<string, PhotoCaption> {
@@ -68,8 +70,13 @@ export async function getPhotosForLetter(id: string): Promise<Photo[]> {
         };
     });
 
-    return Promise.all(photos.map(async (photo) => ({
-        ...photo,
-        blurDataURL: await getBlurDataURL(photo.src)
-    })));
+    return Promise.all(photos.map(async (photo) => {
+        const data = await getImageData(photo.src);
+        return {
+            ...photo,
+            blurDataURL: data.blurDataURL,
+            width: data.width,
+            height: data.height
+        };
+    }));
 }
