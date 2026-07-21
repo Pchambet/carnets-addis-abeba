@@ -33,6 +33,7 @@ async function optimizeImages() {
             
             // Traiter avec sharp
             const optimizedBuffer = await sharp(imageBuffer)
+                .rotate() // Applique la rotation EXIF automatiquement avant de supprimer les métadonnées
                 .resize({
                     width: 1600,
                     withoutEnlargement: true, // Ne pas agrandir les petites images
