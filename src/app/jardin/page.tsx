@@ -6,46 +6,55 @@ export default function JardinPage() {
   const counts = getThemeLetterCounts();
 
   return (
-    <div>
-      {/* ── Header ── */}
-      <section className="px-6 md:px-12 py-20 border-b border-[var(--border)]">
-        <div className="max-w-3xl mx-auto">
-          <p className="caption text-[var(--ochre)] mb-4">Carnets d&apos;Addis-Abéba</p>
-          <h1 className="text-4xl md:text-5xl font-[family-name:var(--font-cormorant)] font-light italic text-[var(--ink)] mb-6 tracking-tight">
-            Le jardin
-          </h1>
-          <p className="text-lg text-[var(--ink-light)] font-[family-name:var(--font-lora)] leading-relaxed italic">
-            Une autre façon de parcourir les lettres.
-          </p>
-          <p className="mt-4 text-[var(--ink-light)] font-[family-name:var(--font-lora)] leading-relaxed">
-            Parcourir les lettres autrement, selon ce qui vous attire.
-          </p>
+    <div className="min-h-screen bg-[var(--white)]">
+      {/* ── Le Porche ── */}
+      <section className="px-6 md:px-12 pt-32 pb-24 md:pt-48 md:pb-32 flex flex-col items-center justify-center text-center min-h-[70vh]">
+        <h1 className="text-5xl md:text-7xl font-[family-name:var(--font-cormorant)] font-light italic text-[var(--ink)] mb-12 tracking-tight">
+          L&apos;Hortus Conclusus
+        </h1>
+        <p className="text-xl md:text-2xl text-[var(--ink-light)] font-[family-name:var(--font-cormorant)] italic font-light max-w-2xl leading-relaxed">
+          "Entrez ici comme on entre en soi-même."
+        </p>
+        <p className="mt-8 text-[var(--ink-light)] font-[family-name:var(--font-lora)] max-w-xl mx-auto leading-loose">
+          Le jardin est un espace clos, protégé du tumulte. 
+          Prenez le temps d'y flâner, de suivre une allée selon l'attrait du moment, 
+          et de contempler ces lettres autrement.
+        </p>
+        <div className="mt-16 animate-bounce">
+          <span className="text-[var(--ochre)] opacity-60">↓</span>
         </div>
       </section>
 
-      {/* ── Grille des thèmes ── */}
-      <section className="max-w-5xl mx-auto px-6 md:px-12 py-16">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {THEMES.map((theme) => {
+      {/* ── Les Allées (Navigation organique) ── */}
+      <section className="max-w-4xl mx-auto px-6 md:px-12 pb-32">
+        <div className="flex flex-col gap-16 md:gap-24">
+          {THEMES.map((theme, i) => {
             const n = counts[theme.slug] ?? 0;
             if (n === 0) return null;
 
+            // Alternating alignment for organic feel
+            const alignment = i % 2 === 0 ? 'md:items-start' : 'md:items-end md:text-right';
+
             return (
-              <Link
-                key={theme.slug}
-                href={`/jardin/${theme.slug}`}
-                className="group no-underline hover:no-underline block p-6 rounded-lg border border-[var(--border)] bg-[var(--white)]/50 hover:border-[var(--ochre)] hover:bg-[var(--white)]/80 transition-all duration-300"
-              >
-                <h2 className="text-xl font-[family-name:var(--font-cormorant)] font-light text-[var(--ink)] group-hover:text-[var(--ochre)] transition-colors mb-2">
-                  {theme.label}
-                </h2>
-                <p className="text-sm text-[var(--ink-light)] font-[family-name:var(--font-lora)] leading-relaxed mb-4 line-clamp-2">
-                  {theme.description}
-                </p>
-                <span className="caption text-[var(--ochre)]">
-                  {n} lettre{n > 1 ? 's' : ''} →
-                </span>
-              </Link>
+              <div key={theme.slug} className={`flex flex-col ${alignment}`}>
+                <Link
+                  href={`/jardin/${theme.slug}`}
+                  className="group block max-w-xl no-underline"
+                >
+                  <h2 className="text-3xl md:text-4xl font-[family-name:var(--font-cormorant)] font-light text-[var(--ink)] group-hover:text-[var(--ochre)] transition-colors duration-500 mb-4">
+                    {theme.label}
+                  </h2>
+                  <p className="text-lg text-[var(--ink-light)] font-[family-name:var(--font-lora)] leading-relaxed mb-6 opacity-80">
+                    {theme.description}
+                  </p>
+                  <div className="flex items-center gap-4 transition-all duration-500 group-hover:gap-6">
+                    <span className="w-12 h-[1px] bg-[var(--ochre)] opacity-40"></span>
+                    <span className="caption text-[var(--ochre)] tracking-widest">
+                      {n} lettre{n > 1 ? 's' : ''}
+                    </span>
+                  </div>
+                </Link>
+              </div>
             );
           })}
         </div>

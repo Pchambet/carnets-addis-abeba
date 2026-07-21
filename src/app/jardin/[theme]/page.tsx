@@ -32,31 +32,38 @@ export default async function ThemePage({ params }: PageProps) {
   const letters = getLettersForTheme(theme);
 
   return (
-    <div>
-      {/* ── Header ── */}
-      <section className="px-6 md:px-12 py-12 border-b border-[var(--border)]">
-        <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-[var(--white)]">
+      {/* ── Sas de Décompression (Header immersif) ── */}
+      <section className="px-6 md:px-12 pt-32 pb-24 border-b border-[var(--border)] min-h-[60vh] flex flex-col justify-center text-center relative overflow-hidden">
+        <div className="max-w-3xl mx-auto relative z-10">
           <Link
             href="/jardin"
-            className="caption text-[var(--ochre)] hover:underline inline-block mb-6 transition-all duration-250"
+            className="caption text-[var(--ochre)] hover:underline inline-block mb-12 transition-all duration-250 opacity-80"
           >
-            ← Retour au jardin
+            ← Retour au jardin clos
           </Link>
-          <h1 className="text-3xl md:text-4xl font-[family-name:var(--font-cormorant)] font-light italic text-[var(--ink)] mb-2">
+          <h1 className="text-4xl md:text-6xl font-[family-name:var(--font-cormorant)] font-light italic text-[var(--ink)] mb-8 tracking-tight">
             {def.label}
           </h1>
-          <p className="text-[var(--ink-light)] font-[family-name:var(--font-lora)]">
+          <p className="text-xl md:text-2xl text-[var(--ink-light)] font-[family-name:var(--font-lora)] font-light leading-relaxed italic max-w-2xl mx-auto">
             {def.description}
           </p>
         </div>
+        
+        {/* Subtle decorative element */}
+        <div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-px h-24 bg-gradient-to-t from-[var(--ochre)] to-transparent opacity-30"></div>
       </section>
 
-      {/* ── Liste des lettres ── */}
-      <section className="max-w-4xl mx-auto px-6 md:px-12 py-16">
+      {/* ── Liste contemplative des lettres ── */}
+      <section className="max-w-3xl mx-auto px-6 md:px-12 py-24">
         {letters.length === 0 ? (
-          <p className="text-[var(--ink-light)] italic">Aucune lettre pour ce thème.</p>
+          <div className="text-center">
+            <p className="text-[var(--ink-light)] font-[family-name:var(--font-lora)] italic text-lg">
+              Ce chemin est encore vierge.
+            </p>
+          </div>
         ) : (
-          <ul>
+          <ul className="flex flex-col gap-16">
             {letters.map((letter) => {
               const formattedDate = new Date(letter.date).toLocaleDateString('fr-FR', {
                 year: 'numeric',
@@ -65,19 +72,21 @@ export default async function ThemePage({ params }: PageProps) {
               });
 
               return (
-                <li key={letter.id} className="border-b border-[var(--border)] last:border-b-0">
+                <li key={letter.id} className="group relative">
                   <Link
                     href={`/letters/${letter.id}`}
-                    className="block py-10 no-underline hover:no-underline group transition-colors duration-250"
+                    className="block no-underline hover:no-underline transition-all duration-500"
                   >
-                    <time className="caption text-[var(--ink-light)]" dateTime={letter.date}>
-                      {formattedDate}
-                    </time>
-                    <h2 className="text-xl md:text-2xl font-[family-name:var(--font-cormorant)] font-light text-[var(--ink)] group-hover:text-[var(--ochre)] transition-colors mt-2">
-                      {letter.title}
-                    </h2>
+                    <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mb-4">
+                      <time className="caption text-[var(--ochre)] opacity-80 shrink-0" dateTime={letter.date}>
+                        {formattedDate}
+                      </time>
+                      <h2 className="text-2xl md:text-3xl font-[family-name:var(--font-cormorant)] font-light text-[var(--ink)] group-hover:text-[var(--ochre)] transition-colors">
+                        {letter.title}
+                      </h2>
+                    </div>
                     {letter.excerpt && (
-                      <p className="text-[var(--ink-light)] font-[family-name:var(--font-lora)] italic mt-2 line-clamp-2">
+                      <p className="text-[var(--ink-light)] font-[family-name:var(--font-lora)] leading-relaxed italic md:pl-[calc(4rem+2vw)]">
                         « {letter.excerpt} »
                       </p>
                     )}

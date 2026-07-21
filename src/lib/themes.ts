@@ -10,29 +10,29 @@ export interface ThemeDef {
 
 export const THEMES: ThemeDef[] = [
   {
-    slug: "spiritualité",
-    label: "Spiritualité",
-    description: "Prière, messe, fêtes liturgiques, Taizé.",
+    slug: "desert-et-grace",
+    label: "Le Désert et la Grâce",
+    description: "Le silence, le dépouillement, la prière intime, et l'irruption soudaine de Dieu.",
   },
   {
-    slug: "mission",
-    label: "Mission",
-    description: "Les sœurs, les enfants, le centre, l’école.",
+    slug: "lien-a-l-autre",
+    label: "Le Lien à l'Autre",
+    description: "Les visages, l'hospitalité éthiopienne, le rattachement social et amoureux.",
   },
   {
-    slug: "solidarité",
-    label: "Solidarité",
-    description: "Partage, générosité, entraide.",
+    slug: "epreuve-deracinement",
+    label: "L'Épreuve du Déracinement",
+    description: "Le choc de l'imprévu, l'apprentissage de la vulnérabilité : désapprendre à faire.",
   },
   {
-    slug: "culture",
-    label: "Culture",
-    description: "Traditions éthiopiennes, arts, coutumes.",
+    slug: "visage-du-christ",
+    label: "Le Visage du Christ",
+    description: "La charité incarnée. Les œuvres de miséricorde auprès des pauvres et des mourants.",
   },
   {
-    slug: "rencontres",
-    label: "Rencontres",
-    description: "Amis, familles, ailleurs.",
+    slug: "poetique-du-quotidien",
+    label: "Poétique du Quotidien",
+    description: "La contemplation de la beauté, les semences du Verbe, et les miracles ordinaires.",
   },
 ];
 

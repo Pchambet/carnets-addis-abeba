@@ -1,23 +1,91 @@
 {
-  "semaine-00": ["mission", "rencontres"],
-  "semaine-01": ["spiritualité", "mission"],
-  "semaine-02": ["mission", "solidarité"],
-  "semaine-03": ["solidarité", "mission"],
-  "semaine-04": ["spiritualité", "culture", "mission", "solidarité"],
-  "semaine-05": ["solidarité", "rencontres", "mission"],
-  "semaine-06": ["spiritualité"],
-  "semaine-07": ["spiritualité", "rencontres"],
-  "semaine-08": ["rencontres"],
-  "semaine-09": ["spiritualité", "culture", "rencontres"],
-  "semaine-10": ["mission"],
-  "semaine-11": ["spiritualité", "culture"],
-  "semaine-12": ["spiritualité", "culture", "rencontres"],
-  "semaine-13": ["mission", "rencontres"],
-  "semaine-14": ["culture", "mission", "rencontres"],
-  "semaine-15": ["culture", "rencontres", "mission"],
-  "semaine-16": ["solidarité", "mission", "spiritualité"],
-  "semaine-17": ["rencontres", "culture"],
-  "semaine-18": ["spiritualité"],
-  "semaine-19": ["culture", "rencontres"],
-  "semaine-20": ["mission", "spiritualité", "rencontres"]
+  "semaine-00": [
+    "epreuve-deracinement",
+    "lien-a-l-autre"
+  ],
+  "semaine-01": [
+    "desert-et-grace",
+    "epreuve-deracinement"
+  ],
+  "semaine-02": [
+    "epreuve-deracinement",
+    "visage-du-christ"
+  ],
+  "semaine-03": [
+    "visage-du-christ",
+    "epreuve-deracinement"
+  ],
+  "semaine-04": [
+    "desert-et-grace",
+    "poetique-du-quotidien",
+    "epreuve-deracinement",
+    "visage-du-christ"
+  ],
+  "semaine-05": [
+    "visage-du-christ",
+    "lien-a-l-autre",
+    "epreuve-deracinement"
+  ],
+  "semaine-06": [
+    "desert-et-grace"
+  ],
+  "semaine-07": [
+    "desert-et-grace",
+    "lien-a-l-autre"
+  ],
+  "semaine-08": [
+    "lien-a-l-autre"
+  ],
+  "semaine-09": [
+    "desert-et-grace",
+    "poetique-du-quotidien",
+    "lien-a-l-autre"
+  ],
+  "semaine-10": [
+    "epreuve-deracinement"
+  ],
+  "semaine-11": [
+    "desert-et-grace",
+    "poetique-du-quotidien"
+  ],
+  "semaine-12": [
+    "desert-et-grace",
+    "poetique-du-quotidien",
+    "lien-a-l-autre"
+  ],
+  "semaine-13": [
+    "epreuve-deracinement",
+    "lien-a-l-autre"
+  ],
+  "semaine-14": [
+    "poetique-du-quotidien",
+    "epreuve-deracinement",
+    "lien-a-l-autre"
+  ],
+  "semaine-15": [
+    "poetique-du-quotidien",
+    "lien-a-l-autre",
+    "epreuve-deracinement"
+  ],
+  "semaine-16": [
+    "visage-du-christ",
+    "epreuve-deracinement",
+    "desert-et-grace"
+  ],
+  "semaine-17": [
+    "lien-a-l-autre",
+    "poetique-du-quotidien"
+  ],
+  "semaine-18": [
+    "desert-et-grace"
+  ],
+  "semaine-19": [
+    "poetique-du-quotidien",
+    "lien-a-l-autre"
+  ],
+  "semaine-20": [
+    "epreuve-deracinement",
+    "desert-et-grace",
+    "lien-a-l-autre"
+  ]
 }
