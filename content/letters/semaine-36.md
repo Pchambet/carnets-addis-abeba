@@ -16,10 +16,7 @@ Je poursuis mes lectures et récite des histoires à haute voix pour m’endormi
 **Mercredi**
 
 Les enfants m’ont accueillie avec une immense tendresse lorsqu’ils m’ont vue venir. Ils s’étaient inquiétés de mon absence. Leur bienveillance, toute offerte et désintéressée vient souvent me rejoindre au cœur, là où se joue l’essentiel. Nos liens en deviennent plus profonds et cela donne une lumière nouvelle à nos jeux et nos échanges.
-
-**Aujourd'hui**
-
-Dans la rue, en rentrant du travail, j’ai croisé un cordonnier. Il est là depuis le début mais cette fois il m’a saluée. Je suis donc passée le voir et j’ai admiré longtemps sa façon très agile de se mettre à l’ouvrage. Je me suis assise sur une petite pierre pour parler avec lui du pays d’où je viens. A un moment, Il a posé son marteau puis a sorti tout un tas de semelles. Il a saisi mon pied, tout délicatement, puis a retiré ma chaussure pour prendre ma mesure. Il m’a demandé quelle sandale me plaisait le plus. Après avoir choisi, il m’a donné son prix. Quelques négociations plus tard, nous en avons conclu. J’irai récupérer mes sandales éthiopiennes la semaine prochaine.
+Dans la rue, en rentrant du travail aujourd’hui, j’ai croisé un cordonnier. Il est là depuis le début mais cette fois il m’a saluée. Je suis donc passée le voir et j’ai admiré longtemps sa façon très agile de se mettre à l’ouvrage. Je me suis assise sur une petite pierre pour parler avec lui du pays d’où je viens. A un moment, Il a posé son marteau puis a sorti tout un tas de semelles. Il a saisi mon pied, tout délicatement, puis a retiré ma chaussure pour prendre ma mesure. Il m’a demandé quelle sandale me plaisait le plus. Après avoir choisi, il m’a donné son prix. Quelques négociations plus tard, nous en avons conclu. J’irai récupérer mes sandales éthiopiennes la semaine prochaine.
 
 **Vendredi**
 
