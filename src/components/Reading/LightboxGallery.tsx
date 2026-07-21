@@ -9,10 +9,8 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Captions from "yet-another-react-lightbox/plugins/captions";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 
 export interface Photo {
@@ -66,7 +64,7 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
         width: p.width || 800,
         height: p.height || 600,
         alt: p.caption ?? p.name,
-        title: p.caption ?? p.name,
+        // On supprime la propriété title pour que YARL n'affiche pas la barre grise en haut
         description: p.caption,
         blurDataURL: p.blurDataURL
     }));
@@ -88,7 +86,8 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
                 open={index >= 0}
                 index={index}
                 close={() => setIndex(-1)}
-                plugins={[Fullscreen, Slideshow, Thumbnails, Zoom, Captions]}
+                // On a retiré le plugin Thumbnails
+                plugins={[Fullscreen, Slideshow, Zoom, Captions]}
                 animation={{ fade: 300, swipe: 250 }}
                 carousel={{ finite: false }}
                 render={{
