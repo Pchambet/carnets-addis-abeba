@@ -3,15 +3,21 @@
     "theme": "desert-et-grace",
     "questions": [
       {
+        "id": "q1",
         "question": "Fuyez-vous le silence ou l'espérez-vous comme le lieu d'une rencontre inattendue ?",
+        "reponse": "Le silence effraie souvent car il nous renvoie à notre propre vide. Pourtant, dans ces carnets, c'est au cœur de l'attente et de l'aridité que la rencontre véritable se produit.",
         "letters": ["semaine-06", "semaine-01"]
       },
       {
+        "id": "q2",
         "question": "Le dépouillement de vos sécurités vous angoisse-t-il ou vous libère-t-il ?",
+        "reponse": "Perdre ses repères est une épreuve douloureuse. Claire expérimente comment cette perte de contrôle devient peu à peu le berceau d'une liberté inouïe.",
         "letters": ["semaine-04", "semaine-07"]
       },
       {
+        "id": "q3",
         "question": "Avez-vous déjà ressenti l'irruption de la grâce au cœur de l'aridité ou de l'attente ?",
+        "reponse": "La grâce ne prévient pas. Elle surgit souvent là où l'on n'a plus rien à offrir, transfigurant un instant de fatigue en une éternité joyeuse.",
         "letters": ["semaine-11", "semaine-18"]
       }
     ]
@@ -20,15 +26,21 @@
     "theme": "lien-a-l-autre",
     "questions": [
       {
+        "id": "q4",
         "question": "Avez-vous déjà été intimement transformé par l'hospitalité d'un étranger ?",
+        "reponse": "Être accueilli sans rien avoir à prouver bouleverse notre rapport au monde. C'est dans le don gratuit d'un repas ou d'un sourire que l'on se découvre frères.",
         "letters": ["semaine-00", "semaine-07"]
       },
       {
+        "id": "q5",
         "question": "Quel visage a récemment bouleversé vos certitudes ou éveillé votre compassion ?",
+        "reponse": "Certains regards nous obligent à baisser les armes. Devant la vulnérabilité d'un visage, tous nos grands discours s'effondrent pour laisser place à l'amour en acte.",
         "letters": ["semaine-05", "semaine-09"]
       },
       {
+        "id": "q6",
         "question": "Comment vivez-vous le détachement lorsque l'amour ou l'amitié vous lient si fortement à l'autre ?",
+        "reponse": "Aimer intensément sans posséder est le paradoxe de la mission. Les lettres témoignent de ces déchirements qui dilatent pourtant le cœur.",
         "letters": ["semaine-12", "semaine-15"]
       }
     ]
@@ -37,15 +49,21 @@
     "theme": "epreuve-deracinement",
     "questions": [
       {
+        "id": "q7",
         "question": "Acceptez-vous de perdre vos repères habituels pour vous découvrir vous-même ?",
+        "reponse": "Le choc culturel est un miroir sans concession. Il nous dépouille de nos certitudes occidentales pour révéler la nudité de notre être.",
         "letters": ["semaine-00", "semaine-01"]
       },
       {
+        "id": "q8",
         "question": "Avez-vous déjà fait l'expérience de votre propre vulnérabilité comme d'une force nouvelle ?",
+        "reponse": "Nous croyons devoir être forts pour aider. Mais c'est précisément dans notre impuissance assumée que le lien authentique se tisse.",
         "letters": ["semaine-02", "semaine-03"]
       },
       {
+        "id": "q9",
         "question": "Que vous reste-t-il de plus précieux lorsque vous ne pouvez plus « faire », mais seulement « être » ?",
+        "reponse": "La maladie ou l'incompréhension nous condamnent parfois à l'inaction. Reste alors la simple présence, silencieuse et aimante, qui accomplit l'essentiel.",
         "letters": ["semaine-04", "semaine-10"]
       }
     ]
@@ -54,15 +72,21 @@
     "theme": "visage-du-christ",
     "questions": [
       {
+        "id": "q10",
         "question": "Avez-vous déjà reconnu une présence transcendante dans les traits d'une personne souffrante ?",
+        "reponse": "Le mystère chrétien s'incarne dans la chair blessée. Servir le plus petit, c'est s'agenouiller devant la majesté de Dieu caché.",
         "letters": ["semaine-02", "semaine-03"]
       },
       {
+        "id": "q11",
         "question": "La miséricorde est-elle pour vous un acte de foi quotidien ou une évidence humaine face à la pauvreté ?",
+        "reponse": "La compassion humaine trouve sa limite ; la miséricorde, elle, puise à une source infinie pour aimer l'inacceptable.",
         "letters": ["semaine-04", "semaine-05"]
       },
       {
+        "id": "q12",
         "question": "Comment accompagnez-vous ou regardez-vous ceux qui se trouvent au bord de la vie ou de la mort ?",
+        "reponse": "Se tenir au chevet de ceux qui partent n'est pas un acte de désespoir, mais le témoignage ultime que la vie, jusqu'à son dernier souffle, est sacrée.",
         "letters": ["semaine-16"]
       }
     ]
@@ -71,15 +95,21 @@
     "theme": "poetique-du-quotidien",
     "questions": [
       {
+        "id": "q13",
         "question": "Prenez-vous le temps de contempler la beauté cachée dans les détails les plus insignifiants de vos journées ?",
+        "reponse": "Il suffit souvent d'un rayon de lumière, d'un vêtement coloré ou d'un chant d'oiseau pour que la trivialité de l'existence soit soudainement transfigurée.",
         "letters": ["semaine-04", "semaine-09"]
       },
       {
+        "id": "q14",
         "question": "Où trouvez-vous des traces d'éternité et de poésie au milieu de vos routines quotidiennes ?",
+        "reponse": "Le rituel du café, le balayage d'une cour, les jeux des enfants : la poésie n'est pas une fuite, c'est l'art d'habiter le présent avec intensité.",
         "letters": ["semaine-11", "semaine-12"]
       },
       {
+        "id": "q15",
         "question": "Avez-vous déjà été surpris par un « miracle ordinaire » qui a illuminé et changé votre regard sur le monde ?",
+        "reponse": "L'émerveillement est une discipline spirituelle. Il exige d'ouvrir les yeux pour voir les petits miracles que la grâce parsème sous nos pas.",
         "letters": ["semaine-14", "semaine-15"]
       }
     ]
