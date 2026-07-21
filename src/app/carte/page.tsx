@@ -13,6 +13,25 @@ export default function CartePage() {
   const center = getMapCenter();
   const zoom = getMapZoom();
 
+  // Ajout des points fixes
+  const allLocations = [
+    ...locations,
+    {
+      name: "Annecy (Maison de Claire)",
+      lat: 45.8992,
+      lng: 6.1294,
+      zoom: 11,
+      letterIds: [],
+    },
+    {
+      name: "Paris (Pierre)",
+      lat: 48.8566,
+      lng: 2.3522,
+      zoom: 11,
+      letterIds: [],
+    },
+  ];
+
   return (
     <div>
       <section className="px-6 md:px-12 py-20 border-b border-[var(--border)]">
@@ -28,7 +47,7 @@ export default function CartePage() {
       </section>
 
       <section className="max-w-5xl mx-auto px-6 md:px-12 py-16">
-        <LetterMapWrapper locations={locations} center={center} zoom={zoom} />
+        <LetterMapWrapper locations={allLocations} center={center} zoom={zoom} />
 
         {locations.length > 0 && (
           <div className="mt-12 space-y-6">

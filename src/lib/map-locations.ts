@@ -40,9 +40,9 @@ export function getLocationsWithLetters(
 }
 
 export function getMapCenter(): [number, number] {
-  return [6, 38]; // Entre Addis et Nairobi
+  return [25, 20]; // Centre entre la France et l'Éthiopie
 }
 
 export function getMapZoom(): number {
-  return 4; // Vue régionale Afrique de l'Est
+  return 3; // Vue globale Europe - Afrique de l'Est
 }
