@@ -1,9 +1,11 @@
 import { getSortedLettersData } from '@/lib/letters';
 import Timeline from '@/components/Home/Timeline';
 import Image from 'next/image';
+import { getBlurDataURL } from '@/lib/blur';
 
-export default function Home() {
+export default async function Home() {
     const letters = getSortedLettersData();
+    const heroBlurDataURL = await getBlurDataURL('/images/home-hero.jpg');
 
     return (
         <div>
@@ -16,6 +18,8 @@ export default function Home() {
                     priority
                     fill
                     sizes="100vw"
+                    placeholder={heroBlurDataURL ? "blur" : "empty"}
+                    blurDataURL={heroBlurDataURL}
                     style={{ objectFit: 'cover' }}
                 />
                 <div

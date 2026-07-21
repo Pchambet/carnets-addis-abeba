@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     const { id } = await params;
     try {
         const letter = await getLetterData(id);
-        const photos = getPhotosForLetter(id);
-        const ogImagePath = letter.heroImage ?? photos[0]?.src;
+        const photos = await getPhotosForLetter(id);
+        const ogImagePath = letter.heroImage ?? (photos.length > 0 ? photos[0].src : undefined);
         const ogImageUrl = ogImagePath ? (ogImagePath.startsWith('http') ? ogImagePath : `${SITE_URL}${ogImagePath}`) : undefined;
         const description = letter.excerpt ?? letter.pullQuote ?? `${letter.title} — lettre depuis Addis-Abéba`;
 
@@ -74,11 +74,12 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
     } catch {
         notFound();
     }
-    const photos = getPhotosForLetter(resolvedParams.id);
+    const photos = await getPhotosForLetter(resolvedParams.id);
     const videos = getVideosForLetter(resolvedParams.id);
 
     // Hero image : heroImage du frontmatter en priorité, sinon 1ère photo
     const heroImage = letter.heroImage ?? (photos.length > 0 ? photos[0].src : null);
+    const heroBlurDataURL = letter.heroBlurDataURL ?? (photos.length > 0 ? photos[0].blurDataURL : undefined);
 
     return (
         <article>
@@ -92,6 +93,7 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
                     location={letter.location}
                     excerpt={letter.excerpt}
                     heroImage={heroImage}
+                    heroBlurDataURL={heroBlurDataURL}
                     heroPosition={letter.heroPosition}
                     readTime={letter.readTime}
                     letterId={resolvedParams.id}

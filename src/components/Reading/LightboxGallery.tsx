@@ -4,10 +4,11 @@ import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
-interface Photo {
+export interface Photo {
     src: string;
     name: string;
     caption?: string;
+    blurDataURL?: string;
 }
 
 interface LightboxGalleryProps {
@@ -68,6 +69,8 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                                 sizes="(max-width: 768px) 50vw, 25vw"
+                                placeholder={photo.blurDataURL ? "blur" : "empty"}
+                                blurDataURL={photo.blurDataURL}
                                 style={{ filter: 'contrast(1.02) saturate(0.93)' }}
                             />
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" aria-hidden />

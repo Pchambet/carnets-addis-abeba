@@ -10,6 +10,7 @@ interface HeroLetterProps {
     location?: string;
     excerpt?: string;
     heroImage: string; // path relative to /public
+    heroBlurDataURL?: string; // base64 blur for smooth loading
     heroPosition?: string; // ex: "top", "center 30%" — zone affichée (object-position)
     readTime: number;
     letterId?: string; // ex: "semaine-08" → affiche ሳምንት 8
@@ -22,7 +23,7 @@ function getWeekNumber(letterId: string | undefined): number | null {
 }
 
 export default function HeroLetter({
-    title, date, location, excerpt, heroImage, heroPosition, readTime, letterId
+    title, date, location, excerpt, heroImage, heroBlurDataURL, heroPosition, readTime, letterId
 }: HeroLetterProps) {
     const formattedDate = new Date(date).toLocaleDateString('fr-FR', {
         weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
@@ -39,6 +40,8 @@ export default function HeroLetter({
                 className="hero-letter-bg"
                 priority
                 sizes="100vw"
+                placeholder={heroBlurDataURL ? "blur" : "empty"}
+                blurDataURL={heroBlurDataURL}
                 style={{
                     objectFit: 'cover',
                     objectPosition: heroPosition ?? 'center',

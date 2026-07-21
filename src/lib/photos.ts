@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { getBlurDataURL } from './blur';
 
 export interface PhotoCaption {
     caption?: string;
@@ -9,6 +10,7 @@ export interface Photo {
     src: string;
     name: string;
     caption?: string;
+    blurDataURL?: string;
 }
 
 function getPhotoCaptions(letterId: string): Record<string, PhotoCaption> {
@@ -48,7 +50,7 @@ export function getVideosForLetter(id: string): Video[] {
 }
 
 /** Returns photos for a letter, with caption metadata from captions.json */
-export function getPhotosForLetter(id: string): Photo[] {
+export async function getPhotosForLetter(id: string): Promise<Photo[]> {
     const dir = path.join(process.cwd(), 'public', 'images', id);
     if (!fs.existsSync(dir)) return [];
 
@@ -57,7 +59,7 @@ export function getPhotosForLetter(id: string): Photo[] {
         .filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f))
         .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
 
-    return files.map((f) => {
+    const photos = files.map((f) => {
         const meta = captions[f] || captions[f.toLowerCase()];
         return {
             src: `/images/${id}/${f}`,
@@ -65,4 +67,9 @@ export function getPhotosForLetter(id: string): Photo[] {
             caption: meta?.caption,
         };
     });
+
+    return Promise.all(photos.map(async (photo) => ({
+        ...photo,
+        blurDataURL: await getBlurDataURL(photo.src)
+    })));
 }

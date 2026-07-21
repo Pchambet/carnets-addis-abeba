@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 import { remarkDayHeaders } from './remarkDayHeaders';
+import { getBlurDataURL } from './blur';
 
 const lettersDirectory = path.join(process.cwd(), 'content/letters');
 
@@ -16,6 +17,7 @@ export interface LetterData {
     pullQuote?: string;
     heroImage?: string;
     heroPosition?: string; // ex: "top", "center 30%"
+    heroBlurDataURL?: string;
     readTime: number;
     contentHtml: string;
 }
@@ -89,11 +91,14 @@ export async function getLetterData(id: string): Promise<LetterData> {
         .process(cleanContent);
     const contentHtml = processedContent.toString();
 
+    const data = matterResult.data as any;
+
     return {
         id,
         contentHtml,
         pullQuote,
         readTime,
-        ...(matterResult.data as { title: string; date: string; location?: string; excerpt?: string; heroImage?: string; heroPosition?: string }),
+        heroBlurDataURL: await getBlurDataURL(data.heroImage),
+        ...data,
     };
 }

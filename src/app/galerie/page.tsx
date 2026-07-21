@@ -12,12 +12,13 @@ interface LetterWithPhotos {
     photos: Photo[];
 }
 
-export default function GalleriePage() {
+export default async function GalleriePage() {
     const letters = getSortedLettersData();
 
-    const lettersWithPhotos: LetterWithPhotos[] = letters
-        .map(l => ({ ...l, photos: getPhotosForLetter(l.id) }))
-        .filter(l => l.photos.length > 0);
+    const lettersWithPhotosRaw = await Promise.all(
+        letters.map(async (l) => ({ ...l, photos: await getPhotosForLetter(l.id) }))
+    );
+    const lettersWithPhotos: LetterWithPhotos[] = lettersWithPhotosRaw.filter(l => l.photos.length > 0);
 
     const totalPhotos = lettersWithPhotos.reduce((sum, l) => sum + l.photos.length, 0);
 
