@@ -44,7 +44,7 @@ function NextJsImage(
                 alt={alt}
                 title={title}
                 sizes={sizes}
-                className={`${className} transition-transform duration-700 group-hover:scale-[1.02]`}
+                className={`object-cover ${className} transition-transform duration-700 group-hover:scale-[1.02]`}
                 placeholder={(photo as any).blurDataURL ? "blur" : "empty"}
                 blurDataURL={(photo as any).blurDataURL}
                 style={{ ...style, filter: 'contrast(1.02) saturate(0.93)' }}

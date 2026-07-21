@@ -33,6 +33,12 @@ export async function getImageData(imagePath: string | null | undefined): Promis
         
         const metadata = await image.metadata();
         
+        // Swap width and height if EXIF orientation is 5, 6, 7, or 8
+        const orientation = metadata.orientation || 1;
+        const isSwapped = orientation >= 5;
+        const visualWidth = isSwapped ? metadata.height : metadata.width;
+        const visualHeight = isSwapped ? metadata.width : metadata.height;
+
         const resizedBuffer = await image
             .resize(10)
             .jpeg({ quality: 20 })
@@ -40,8 +46,8 @@ export async function getImageData(imagePath: string | null | undefined): Promis
             
         const data: ImageData = {
             blurDataURL: `data:image/jpeg;base64,${resizedBuffer.toString('base64')}`,
-            width: metadata.width,
-            height: metadata.height
+            width: visualWidth,
+            height: visualHeight
         };
         
         imageCache.set(imagePath, data);
