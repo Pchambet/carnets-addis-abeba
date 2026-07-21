@@ -2,9 +2,9 @@
 title: "Les quarante sources"
 date: "2026-07-19"
 location: "Arba-Minch"
-heroImage: "/images/semaine-37-38/img-2835.jpg"
+heroImage: "/images/semaine-37-38/coeur-37-38.jpg"
 heroPosition: "center"
-excerpt: "Ce soir-là de la semaine dernière, j’arrive chez Yishak avec mon sac de voyage. Emma et Eliab sont là, les petits enfants d’Atété..."
+excerpt: "L’eau y est si pure que nous pouvons la boire au creux d’une feuille de taro dont la singularité est d’être imperméable. Creuset végétal où perle une goutte d’eau, éphémère diamant qui s’offre à notre soif."
 ---
 
 **Mercredi**
