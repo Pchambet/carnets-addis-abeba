@@ -6,7 +6,7 @@ export default function JardinPage() {
   const counts = getThemeLetterCounts();
 
   return (
-    <div className="min-h-screen bg-[var(--white)]">
+    <div className="min-h-screen">
       {/* ── Le Porche ── */}
       <section className="px-6 md:px-12 pt-32 pb-24 md:pt-48 md:pb-32 flex flex-col items-center justify-center text-center min-h-[70vh]">
         <h1 className="text-5xl md:text-7xl font-[family-name:var(--font-cormorant)] font-light italic text-[var(--ink)] mb-12 tracking-tight">

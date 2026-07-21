@@ -51,7 +51,7 @@ export default async function ThemePage({ params }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-[var(--white)]">
+    <div className="min-h-screen">
       {/* ── Sas de Décompression (Header immersif) ── */}
       <section className="px-6 md:px-12 pt-32 pb-24 border-b border-[var(--border)] min-h-[50vh] flex flex-col justify-center text-center relative overflow-hidden">
         <div className="max-w-3xl mx-auto relative z-10">

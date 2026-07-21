@@ -44,8 +44,8 @@ export default function InteractiveJourney({ questions, letters }: InteractiveJo
     <div className="w-full relative min-h-[50vh]">
       {/* ── Vue 1 : Liste des questions ── */}
       <div 
-        className={`transition-all duration-700 ease-in-out absolute w-full top-0 left-0
-          ${activeQuestion ? 'opacity-0 pointer-events-none translate-y-8 blur-sm' : 'opacity-100 translate-y-0'}
+        className={`transition-all duration-700 ease-in-out w-full
+          ${activeQuestion ? 'opacity-0 pointer-events-none absolute top-0 left-0 translate-y-8 blur-sm z-0' : 'opacity-100 translate-y-0 relative z-10'}
         `}
       >
         <div className="text-center mb-16">
@@ -75,7 +75,7 @@ export default function InteractiveJourney({ questions, letters }: InteractiveJo
       {/* ── Vue 2 : Détail de la question (Révélation) ── */}
       <div 
         className={`transition-all duration-700 ease-in-out w-full
-          ${activeQuestion ? 'opacity-100 translate-y-0 relative z-10' : 'opacity-0 pointer-events-none translate-y-8 absolute top-0 left-0'}
+          ${activeQuestion ? 'opacity-100 translate-y-0 relative z-10' : 'opacity-0 pointer-events-none absolute top-0 left-0 translate-y-8 z-0'}
         `}
       >
         {activeQuestion && (
