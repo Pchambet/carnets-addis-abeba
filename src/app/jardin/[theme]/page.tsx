@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import fs from 'fs';
+import path from 'path';
 import { THEMES, getThemeBySlug } from '@/lib/themes';
 import { getLettersForTheme } from '@/lib/jardin';
+import InteractiveJourney from '@/components/Reading/InteractiveJourney';
 
 interface PageProps {
   params: Promise<{ theme: string }>;
@@ -31,10 +34,26 @@ export default async function ThemePage({ params }: PageProps) {
 
   const letters = getLettersForTheme(theme);
 
+  // Load questions for the theme
+  let questions = [];
+  try {
+    const journeyPath = path.join(process.cwd(), 'content/parcours-initiatique.json');
+    if (fs.existsSync(journeyPath)) {
+      const raw = fs.readFileSync(journeyPath, 'utf8');
+      const data = JSON.parse(raw);
+      const themeData = data.find((d: any) => d.theme === theme);
+      if (themeData) {
+        questions = themeData.questions;
+      }
+    }
+  } catch (e) {
+    console.error('Error loading journey data', e);
+  }
+
   return (
     <div className="min-h-screen bg-[var(--white)]">
       {/* ── Sas de Décompression (Header immersif) ── */}
-      <section className="px-6 md:px-12 pt-32 pb-24 border-b border-[var(--border)] min-h-[60vh] flex flex-col justify-center text-center relative overflow-hidden">
+      <section className="px-6 md:px-12 pt-32 pb-24 border-b border-[var(--border)] min-h-[50vh] flex flex-col justify-center text-center relative overflow-hidden">
         <div className="max-w-3xl mx-auto relative z-10">
           <Link
             href="/jardin"
@@ -54,48 +73,9 @@ export default async function ThemePage({ params }: PageProps) {
         <div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-px h-24 bg-gradient-to-t from-[var(--ochre)] to-transparent opacity-30"></div>
       </section>
 
-      {/* ── Liste contemplative des lettres ── */}
-      <section className="max-w-3xl mx-auto px-6 md:px-12 py-24">
-        {letters.length === 0 ? (
-          <div className="text-center">
-            <p className="text-[var(--ink-light)] font-[family-name:var(--font-lora)] italic text-lg">
-              Ce chemin est encore vierge.
-            </p>
-          </div>
-        ) : (
-          <ul className="flex flex-col gap-16">
-            {letters.map((letter) => {
-              const formattedDate = new Date(letter.date).toLocaleDateString('fr-FR', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              });
-
-              return (
-                <li key={letter.id} className="group relative">
-                  <Link
-                    href={`/letters/${letter.id}`}
-                    className="block no-underline hover:no-underline transition-all duration-500"
-                  >
-                    <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mb-4">
-                      <time className="caption text-[var(--ochre)] opacity-80 shrink-0" dateTime={letter.date}>
-                        {formattedDate}
-                      </time>
-                      <h2 className="text-2xl md:text-3xl font-[family-name:var(--font-cormorant)] font-light text-[var(--ink)] group-hover:text-[var(--ochre)] transition-colors">
-                        {letter.title}
-                      </h2>
-                    </div>
-                    {letter.excerpt && (
-                      <p className="text-[var(--ink-light)] font-[family-name:var(--font-lora)] leading-relaxed italic md:pl-[calc(4rem+2vw)]">
-                        « {letter.excerpt} »
-                      </p>
-                    )}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        )}
+      {/* ── Parcours Initiatique Intéractif ── */}
+      <section className="px-6 md:px-12 py-24">
+        <InteractiveJourney questions={questions} letters={letters} />
       </section>
     </div>
   );

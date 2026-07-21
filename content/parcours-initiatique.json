@@ -1,0 +1,87 @@
+[
+  {
+    "theme": "desert-et-grace",
+    "questions": [
+      {
+        "question": "Fuyez-vous le silence ou l'espérez-vous comme le lieu d'une rencontre inattendue ?",
+        "letters": ["semaine-06", "semaine-01"]
+      },
+      {
+        "question": "Le dépouillement de vos sécurités vous angoisse-t-il ou vous libère-t-il ?",
+        "letters": ["semaine-04", "semaine-07"]
+      },
+      {
+        "question": "Avez-vous déjà ressenti l'irruption de la grâce au cœur de l'aridité ou de l'attente ?",
+        "letters": ["semaine-11", "semaine-18"]
+      }
+    ]
+  },
+  {
+    "theme": "lien-a-l-autre",
+    "questions": [
+      {
+        "question": "Avez-vous déjà été intimement transformé par l'hospitalité d'un étranger ?",
+        "letters": ["semaine-00", "semaine-07"]
+      },
+      {
+        "question": "Quel visage a récemment bouleversé vos certitudes ou éveillé votre compassion ?",
+        "letters": ["semaine-05", "semaine-09"]
+      },
+      {
+        "question": "Comment vivez-vous le détachement lorsque l'amour ou l'amitié vous lient si fortement à l'autre ?",
+        "letters": ["semaine-12", "semaine-15"]
+      }
+    ]
+  },
+  {
+    "theme": "epreuve-deracinement",
+    "questions": [
+      {
+        "question": "Acceptez-vous de perdre vos repères habituels pour vous découvrir vous-même ?",
+        "letters": ["semaine-00", "semaine-01"]
+      },
+      {
+        "question": "Avez-vous déjà fait l'expérience de votre propre vulnérabilité comme d'une force nouvelle ?",
+        "letters": ["semaine-02", "semaine-03"]
+      },
+      {
+        "question": "Que vous reste-t-il de plus précieux lorsque vous ne pouvez plus « faire », mais seulement « être » ?",
+        "letters": ["semaine-04", "semaine-10"]
+      }
+    ]
+  },
+  {
+    "theme": "visage-du-christ",
+    "questions": [
+      {
+        "question": "Avez-vous déjà reconnu une présence transcendante dans les traits d'une personne souffrante ?",
+        "letters": ["semaine-02", "semaine-03"]
+      },
+      {
+        "question": "La miséricorde est-elle pour vous un acte de foi quotidien ou une évidence humaine face à la pauvreté ?",
+        "letters": ["semaine-04", "semaine-05"]
+      },
+      {
+        "question": "Comment accompagnez-vous ou regardez-vous ceux qui se trouvent au bord de la vie ou de la mort ?",
+        "letters": ["semaine-16"]
+      }
+    ]
+  },
+  {
+    "theme": "poetique-du-quotidien",
+    "questions": [
+      {
+        "question": "Prenez-vous le temps de contempler la beauté cachée dans les détails les plus insignifiants de vos journées ?",
+        "letters": ["semaine-04", "semaine-09"]
+      },
+      {
+        "question": "Où trouvez-vous des traces d'éternité et de poésie au milieu de vos routines quotidiennes ?",
+        "letters": ["semaine-11", "semaine-12"]
+      },
+      {
+        "question": "Avez-vous déjà été surpris par un « miracle ordinaire » qui a illuminé et changé votre regard sur le monde ?",
+        "letters": ["semaine-14", "semaine-15"]
+      }
+    ]
+  }
+]
