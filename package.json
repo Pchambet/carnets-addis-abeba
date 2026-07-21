@@ -10,7 +10,8 @@
     "start": "next start",
     "lint": "eslint .",
     "photos": "node scripts/sync-photos-notes.js && bash scripts/optimize-photos.sh && node scripts/extract-captions.js",
-    "audit-media": "node scripts/audit-media.js"
+    "audit-media": "node scripts/audit-media.js",
+    "optimize": "node scripts/optimize-images.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.98.0",
@@ -47,7 +48,9 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "glob": "^13.0.6",
     "mammoth": "^1.11.0",
+    "sharp": "^0.35.3",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^4.0.18"
