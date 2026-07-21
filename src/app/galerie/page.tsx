@@ -64,10 +64,6 @@ export default async function GalleriePage() {
 
                             {/* Photo grid & Lightbox */}
                             <LightboxGallery photos={letter.photos} />
-                            {/* Caption */}
-                            <p className="photo-credit mt-4">
-                                {letter.photos.length} photograph{letter.photos.length > 1 ? 'ies' : 'ie'}
-                            </p>
                         </section>
                     );
                 })}

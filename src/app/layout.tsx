@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Cormorant_Garamond, Lora, Noto_Sans_Ethiopic, Sacramento } from 'next/font/google';
 import './globals.css';
 import PasswordGate from '@/components/PasswordGate';
+import SiteHeader from '@/components/Layout/SiteHeader';
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -67,27 +68,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Aller au contenu
         </a>
 
-        {/* ── Header ── */}
-        <header className="py-8 px-6 md:px-12 border-b border-[var(--border)]">
-          <div className="max-w-4xl mx-auto flex justify-between items-baseline gap-6 flex-wrap">
-            <Link href="/" className="no-underline hover:no-underline block transition-opacity duration-250 hover:opacity-80">
-              <h1 className="text-2xl md:text-3xl font-normal sm:font-light mt-1 text-[var(--ink)] leading-tight">
-                La Parenthèse<br />
-                <em className="text-[var(--ochre)]">du dimanche soir</em>
-              </h1>
-            </Link>
-            <nav className="flex gap-5 sm:gap-8 caption text-[var(--ink-light)] flex-wrap" aria-label="Navigation principale">
-              <Link href="/" className="transition-colors duration-250 hover:text-[var(--ochre)]">Lettres</Link>
-              <Link href="/jardin" className="transition-colors duration-250 hover:text-[var(--ochre)]">Jardin</Link>
-              <Link href="/carte" className="transition-colors duration-250 hover:text-[var(--ochre)]">Carte</Link>
-              <Link href="/galerie" className="transition-colors duration-250 hover:text-[var(--ochre)]">Galerie</Link>
-              <Link href="/about" className="transition-colors duration-250 hover:text-[var(--ochre)]">À propos</Link>
-            </nav>
-          </div>
-        </header>
+        <SiteHeader />
 
         {/* ── Main ── */}
-        <main id="main-content" className="flex-1" tabIndex={-1}>
+        <main id="main-content" className="flex-1 pt-32 sm:pt-40" tabIndex={-1}>
           {children}
         </main>
 
