@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -8,7 +8,7 @@ export default function SiteHeader() {
     const pathname = usePathname();
     const [isVisible, setIsVisible] = useState(true);
     const [isAtTop, setIsAtTop] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
+    const lastScrollY = useRef(0);
 
     const controlNavbar = useCallback(() => {
         if (typeof window !== 'undefined') {
@@ -22,7 +22,7 @@ export default function SiteHeader() {
             }
 
             // Hide/Show based on scroll direction
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
                 // Scrolling down -> hide
                 setIsVisible(false);
             } else {
@@ -30,13 +30,13 @@ export default function SiteHeader() {
                 setIsVisible(true);
             }
 
-            setLastScrollY(currentScrollY);
+            lastScrollY.current = currentScrollY;
         }
-    }, [lastScrollY]);
+    }, []);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            window.addEventListener('scroll', controlNavbar);
+            window.addEventListener('scroll', controlNavbar, { passive: true });
             return () => {
                 window.removeEventListener('scroll', controlNavbar);
             };

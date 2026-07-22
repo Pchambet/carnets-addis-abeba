@@ -56,8 +56,17 @@ export default function InteractiveJourney({ questions, letters }: InteractiveJo
 
         <div className="flex flex-col gap-6 md:gap-8 max-w-4xl mx-auto">
           {questions.map((q) => (
-            <button
+            <div
               key={q.id}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  window.scrollTo({ top: window.scrollY + 200, behavior: 'smooth' });
+                  setActiveQuestion(q);
+                }
+              }}
               onClick={() => {
                 window.scrollTo({ top: window.scrollY + 200, behavior: 'smooth' });
                 setActiveQuestion(q);
@@ -67,7 +76,7 @@ export default function InteractiveJourney({ questions, letters }: InteractiveJo
               <h3 className="text-2xl md:text-3xl font-[family-name:var(--font-cormorant)] font-light text-[var(--ink)] leading-snug group-hover:text-[var(--ochre)] transition-colors duration-500">
                 {q.question}
               </h3>
-            </button>
+            </div>
           ))}
         </div>
       </div>

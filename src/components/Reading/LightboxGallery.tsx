@@ -37,6 +37,14 @@ function NextJsImage(
             style={{ width: "100%", position: "relative", aspectRatio: `${width} / ${height}` }} 
             className="group cursor-zoom-in"
             onClick={onClick}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    onClick?.(e as any);
+                }
+            }}
         >
             <Image
                 fill
@@ -63,7 +71,7 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
         src: p.src,
         width: p.width || 800,
         height: p.height || 600,
-        alt: p.caption ?? p.name,
+        alt: p.caption ? p.caption : "",
         // On supprime la propriété title pour que YARL n'affiche pas la barre grise en haut
         description: p.caption,
         blurDataURL: p.blurDataURL
