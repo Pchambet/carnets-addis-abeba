@@ -16,9 +16,8 @@ export default function JardinPage() {
           "Entrez ici comme on entre en soi-même."
         </p>
         <p className="mt-8 text-[var(--ink-light)] font-[family-name:var(--font-lora)] max-w-xl mx-auto leading-loose">
-          Le jardin est un espace clos, protégé du tumulte. 
-          Prenez le temps d'y flâner, de suivre une allée selon l'attrait du moment, 
-          et de contempler ces lettres autrement.
+          Invitation à la promenade au jardin intérieur. 
+          Choisissez une allée, ouvrez vos sens à l’émerveillement en vous interrogeant.
         </p>
         <div className="mt-16 animate-bounce">
           <span className="text-[var(--ochre)] opacity-60">↓</span>

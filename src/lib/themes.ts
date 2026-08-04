@@ -17,7 +17,7 @@ export const THEMES: ThemeDef[] = [
   {
     slug: "lien-a-l-autre",
     label: "Le Lien à l'Autre",
-    description: "Les visages, l'hospitalité éthiopienne, le rattachement social et amoureux.",
+    description: "Les visages, l'hospitalité éthiopienne, le rattachement social et amical.",
   },
   {
     slug: "epreuve-deracinement",
@@ -27,7 +27,7 @@ export const THEMES: ThemeDef[] = [
   {
     slug: "visage-du-christ",
     label: "Le Visage du Christ",
-    description: "La charité incarnée. Les œuvres de miséricorde auprès des pauvres et des mourants.",
+    description: "La rencontre de cet Autre en soi révélée par le don",
   },
   {
     slug: "poetique-du-quotidien",
