@@ -1,5 +1,5 @@
 ---
-title: "La mission dans le Sud"
+title: "Cap Sud"
 date: "2026-08-02"
 location: "Hawassa & Miki"
 heroImage: "/images/semaine-39-40/IMG-20260725-WA0128_Original.JPG"
