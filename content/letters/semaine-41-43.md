@@ -9,7 +9,7 @@ Chers amis,
 
 Voilà la lettre de ces trois dernières semaines.
 
-Il y a deux semaines, je suis allée acheter un sac chez un maroquinier. L’artisan s’appelle Fitsum. J’ai eue l’occasion de visiter son atelier et d’y revenir, sur son invitation. La semaine passée, j’ai pris la journée pour le regarder faire. Après m’avoir expliqué comment il procédait, il a tiré d’un tas de cuirs un petit morceau qu’il m’a donné à travailler. J’ai passé la matinée à la machine pour tenter de coudre des lignes droites. Une fois le geste plus ou moins acquis, il m’a fait dessiner le patron d’un portefeuille. Finalement, à la fin de la journée, j’avais achevé un joli petit ouvrage.
+Il y a deux semaines, je suis allée acheter un sac chez un maroquinier. L’artisan s’appelle Fitsum. J’ai eu l’occasion de visiter son atelier et d’y revenir, sur son invitation. La semaine passée, j’ai pris la journée pour le regarder faire. Après m’avoir expliqué comment il procédait, il a tiré d’un tas de cuirs un petit morceau qu’il m’a donné à travailler. J’ai passé la matinée à la machine pour tenter de coudre des lignes droites. Une fois le geste plus ou moins acquis, il m’a fait dessiner le patron d’un portefeuille. Finalement, à la fin de la journée, j’avais achevé un joli petit ouvrage.
 
 Le jeudi suivant, j’y suis retournée. Fitsum m’attendait avec le patron d’une petite pochette. Comme il avait des choses à faire, il m’a laissée seule à l’atelier. À son retour, deux heures plus tard, j’étais sur le point de partir. J’avais raté toutes les coutures, reprisé n’importe comment et tenté de recommencer en refaisant un patron dont les dimensions étaient trop petites.
 

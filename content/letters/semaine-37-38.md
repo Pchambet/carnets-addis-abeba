@@ -95,7 +95,7 @@ Les femmes préparent du « tela », sorte de bière locale qu’elles font mijo
 
 **Dimanche**
 
-Je me lève en silence pour rejoindre Manda. Ce matin, nous partons à six heures rejoindre une foule de fidèles orthodoxes venus de la vallée pour rejoindre en pèlerinage le monastère Zigiti Abune Gebremenfes Kidus à l’occasion de la saint Pierre et Paul. Dans le car, les gens chantent des chansons religieuses. Des flics nous arrêtent à peu près tous les trois kilomètres pour nous demander combien nous avons payé nos places. Du fait de la fête, les chauffeurs en ont tous profité pour doubler les prix de la montée. Mais comme tout le monde est pressé d’arriver à l’église, personne ne dit rien et le chauffeur s’en remet plein les poches.
+Je me lève en silence pour retrouver Manda. Ce matin, nous partons à six heures accompagner une foule de fidèles orthodoxes venus de la vallée pour rejoindre en pèlerinage le monastère Zigiti Abune Gebremenfes Kidus à l’occasion de la saint Pierre et Paul. Dans le car, les gens chantent des chansons religieuses. Des flics nous arrêtent à peu près tous les trois kilomètres pour nous demander combien nous avons payé nos places. Du fait de la fête, les chauffeurs en ont tous profité pour doubler les prix de la montée. Mais comme tout le monde est pressé d’arriver à l’église, personne ne dit rien et le chauffeur s’en remet plein les poches.
 
 Arrivés au sommet, il y a beaucoup trop de monde pour accéder à l’église. Nous sommes des milliers. La liturgie est magnifique, pleine de ces bougies de cire orange et de voiles en coton blanc. Je me laisse bercer par les chants monocordes… Aussi, nous nous trouvons dans le village d’enfance d’Aboulé. Il m’emmène sur le lieu de sa naissance et nous rendons visite à son oncle qui possède l’unique boucherie du village. Sa tante tient une taverne où nous nous réfugions pour manger une assiette de bœuf cru mijoté dans du beurre.
 
@@ -121,11 +121,11 @@ Nous partons avec Mandéfrot à la recherche des crocodiles près des marais du 
 
 Lorsque nous arrivons, les parents de Mandéfrot sont désolés. L’argent que les convives ont offert est bien en-deçà de ce qu’ils avaient imaginé. Ils ont voulu sortir les grands moyens pour célébrer leur fils, ce qu’Aboulé n’avait jamais demandé, et voilà qu’ils se trouvent embarrassés. Mandéfrot les rassure et nous nous arrangeons. Je discute longuement avec mon ami qui se demande si vraiment ses parents ont organisé cette fête pour lui ou bien pour soigner leur statut social.
 
-Le soleil se couche, c’est notre dernier soir. Aboulé m’emmène dire au-revoir à l’un de ses bons amis, un peintre qui me fait visiter son atelier. Le plafond est calciné. Un jour, il a mis feu à sa maison pris par une forte colère. En souvenir de notre passage, je gribouille un dessin sur son mur. Nous nous arrêtons pour boire une soupe de poisson et offrons nos derniers au-revoir à la ville qui s’éteint.
+Le soleil se couche, c’est notre dernier soir. Aboulé m’emmène dire au revoir à l’un de ses bons amis, un peintre qui me fait visiter son atelier. Le plafond est calciné. Un jour, il a mis feu à sa maison pris par une forte colère. En souvenir de notre passage, je gribouille un dessin sur son mur. Nous nous arrêtons pour boire une soupe de poisson et offrons nos derniers au revoir à la ville qui s’éteint.
 
-Pour nos dernières heures ici, nous achetons des bières et faisons un grand feu dans la maison d’Imma, la vielle femme rencontrée le vendredi soir précédent. Les amis de Mandéfrot viennent alors nous rejoindre et nous partageons ces derniers moments ensemble. Sidney me raconte combien ce genre de moments paisibles autour d’un feu sont rares ici et que la vie sans travail est infiniment dure. Nous parlons pendant longtemps de la persévérance, encore, et il me lira un poème.
+Pour nos dernières heures ici, nous achetons des bières et faisons un grand feu dans la maison d’Imma, la vieille femme rencontrée le vendredi soir précédent. Les amis de Mandéfrot viennent alors nous rejoindre et nous partageons ces derniers moments ensemble. Sidney me raconte combien ce genre de moments paisibles autour d’un feu sont rares ici et que la vie sans travail est infiniment dure. Nous parlons pendant longtemps de la persévérance, encore, et il me lira un poème.
 
-Nous adressons nos derniers au-revoir au village, à la famille et aux amis, puis nous nous envolons attraper notre car.
+Nous adressons nos derniers au revoir au village, à la famille et aux amis, puis nous nous envolons attraper notre car.
 
 Au bout de quelques heures, lorsque le jour se lève, le moteur se met à tousser violemment. Nous attendons la matinée sur le bord de la route. Les personnes commencent à s’énerver, le chauffeur ne veut pas nous rembourser. Finalement, un petit bus de ville accepte de nous ramener à la capitale. Les sièges sont durs et le moteur est moins puissant, nous sommes secoués dans tous les sens, mais l’ambiance me plaît. Nous avons le temps de savourer les paysages.
 
@@ -133,4 +133,4 @@ Mandéfrot dessine, il me raconte qu’il a dû travailler pendant trois jours s
 
 Voilà donc les aventures qui ont accompagné ces derniers jours.
 
-Avec les enfants, nous nous sommes retrouvés comme si nous faisions partie de la même famille. Beaucoup de nouveaux sont arrivés pendant mon absence. Il y a du travail. Mais la semaine prochaine, je repars déjà pour une nouvelle mission dans un petit village au sud, avec les frères de St Jean.
+Avec les enfants, nous nous sommes retrouvés comme si nous faisions partie de la même famille. Beaucoup de nouveaux sont arrivés pendant mon absence. Il y a du travail. Mais la semaine prochaine, je repars déjà pour une nouvelle mission dans un petit village au Sud, avec les frères de St Jean.
