@@ -1,7 +1,7 @@
 ---
 title: "Ascensions"
 date: "2026-08-26"
-location: "Shashamané & Mont Hambaricho"
+location: "Mont Hambaricho"
 heroImage: "/images/semaine-41-43/coeur-41-43.jpg"
 ---
 
