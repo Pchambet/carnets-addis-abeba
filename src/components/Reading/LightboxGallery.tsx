@@ -15,6 +15,7 @@ import "yet-another-react-lightbox/plugins/captions.css";
 
 export interface Photo {
     src: string;
+    thumbSrc?: string;
     name: string;
     caption?: string;
     blurDataURL?: string;
@@ -48,7 +49,7 @@ function NextJsImage(
         >
             <Image
                 fill
-                src={photo.src}
+                src={(photo as any).thumbSrc || photo.src}
                 alt={alt}
                 title={title}
                 sizes={sizes}
@@ -74,7 +75,8 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
         alt: p.caption ? p.caption : "",
         // On supprime la propriété title pour que YARL n'affiche pas la barre grise en haut
         description: p.caption,
-        blurDataURL: p.blurDataURL
+        blurDataURL: p.blurDataURL,
+        thumbSrc: p.thumbSrc
     }));
 
     if (photos.length === 0) return null;

@@ -15,7 +15,10 @@ set -euo pipefail
 DRY_RUN=false
 [[ "${1:-}" == "--dry-run" ]] && DRY_RUN=true
 
-IMAGES_DIR="public/images"
+IMAGES_DIR="${1:-public/images}"
+if [[ "$IMAGES_DIR" == "--dry-run" ]]; then
+  IMAGES_DIR="public/images"
+fi
 MAX_WIDTH=2000
 JPEG_QUALITY=80
 
@@ -64,6 +67,18 @@ find "$IMAGES_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png
     run sips --resampleWidth "$MAX_WIDTH" "$img" 2>/dev/null
   fi
   ((resized++)) || true
+done
+
+echo ""
+echo "▶ Étape 2.5 : Génération des miniatures (-thumb) pour la grille"
+find "$IMAGES_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) ! -iname "*-thumb.*" ! -iname "home-hero-*.jpg" | while read -r img; do
+  ext="${img##*.}"
+  base="${img%.*}"
+  thumb="${base}-thumb.${ext}"
+  if [[ ! -f "$thumb" ]]; then
+    log "↘ thumb : $(basename "$thumb")"
+    run sips -s format jpeg -s formatOptions 70 --resampleWidth 600 "$img" --out "$thumb" 2>/dev/null || true
+  fi
 done
 
 echo ""
