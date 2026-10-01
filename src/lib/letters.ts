@@ -21,7 +21,6 @@ export interface LetterData extends LetterFrontmatter {
     id: string;
     pullQuote?: string;
     heroBlurDataURL?: string;
-    readTime: number;
     contentHtml: string;
 }
 
@@ -34,10 +33,6 @@ export function weekLabel(id: string): string | null {
     if (!m) return null;
     const first = String(parseInt(m[1], 10));
     return m[2] ? `${first}–${parseInt(m[2], 10)}` : first;
-}
-
-function computeReadTime(text: string): number {
-    return Math.max(1, Math.round(text.trim().split(/\s+/).length / 200));
 }
 
 export function getSortedLettersData() {
@@ -54,7 +49,6 @@ export function getSortedLettersData() {
             return {
                 ...(matterResult.data as LetterFrontmatter),
                 id,
-                readTime: computeReadTime(extractPullQuote(cleanMarkdown(matterResult.content)).cleanContent),
             };
         })
         .sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -109,7 +103,6 @@ export async function getLetterData(id: string): Promise<LetterData> {
         id,
         contentHtml,
         pullQuote,
-        readTime: computeReadTime(cleanContent),
         heroBlurDataURL: await getBlurDataURL(data.heroImage),
     };
 }

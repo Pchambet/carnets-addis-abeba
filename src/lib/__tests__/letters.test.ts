@@ -67,15 +67,12 @@ describe('getSortedLettersData', () => {
     }
   });
 
-  it('each letter has id, title, date, readTime', () => {
+  it('each letter has id, title, date', () => {
     const letters = getSortedLettersData();
     for (const letter of letters) {
       expect(letter).toHaveProperty('id');
       expect(letter).toHaveProperty('title');
       expect(letter).toHaveProperty('date');
-      expect(letter).toHaveProperty('readTime');
-      expect(typeof letter.readTime).toBe('number');
-      expect(letter.readTime).toBeGreaterThanOrEqual(1);
     }
   });
 });
@@ -87,7 +84,6 @@ describe('getLetterData', () => {
     expect(data.title).toBeDefined();
     expect(data.date).toBeDefined();
     expect(data.contentHtml).toContain('Claire');
-    expect(data.readTime).toBeGreaterThanOrEqual(1);
   });
 
   it('extracts pull quote when present (semaine-15)', async () => {

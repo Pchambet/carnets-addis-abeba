@@ -12,6 +12,13 @@
     --gold: #C9A84C;
     --border: #D4CFC8;
     --white: #F8F6F3;
+    --header-offset: 6rem;
+  }
+
+  @media (min-width: 640px) {
+    :root {
+      --header-offset: 10rem;
+    }
   }
 }
 
@@ -138,6 +145,17 @@
 
 /* ─── Composants (sous les utilitaires Tailwind : une classe utilitaire les surcharge) ── */
 @layer components {
+  /* Hauteur réservée sous l'en-tête fixe */
+  .site-main {
+    padding-top: var(--header-offset);
+  }
+
+  /* Page à photo plein écran : elle démarre tout en haut, sous l'en-tête transparent
+     (le défilement automatique de Next.js à l'arrivée tombe alors pile en haut) */
+  .site-main:has([data-immersive-hero]) {
+    padding-top: 0;
+  }
+
   /* Grille commune : en-tête, titres de page, pied de page */
   .site-container {
     width: 100%;
@@ -294,17 +312,6 @@
   }
 
   /* ── Read Time Badge ──────────────────── */
-  .read-time {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    border: 1px solid var(--border);
-    padding: 0.3rem 0.9rem;
-  }
 
   /* ── Hero Full-Bleed (Time/NatGeo) ────── */
   .hero-letter {
@@ -328,6 +335,21 @@
     width: 100%;
     height: 100%;
     filter: brightness(0.48) saturate(0.8);
+  }
+
+  /* Entrée d'une lettre : la photo occupe tout l'écran, sous l'en-tête transparent */
+  .hero-immersive {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  /* Le texte ne remonte jamais sous l'en-tête, même sur un écran bas */
+  .hero-immersive .hero-letter-content {
+    padding-top: calc(var(--header-offset) + 1rem);
+  }
+
+  .hero-immersive .hero-letter-bg {
+    filter: saturate(0.95);
   }
 
   .home-hero .hero-letter-bg {
@@ -406,11 +428,11 @@
 
   /* ሳምንት 8 — semaine en amharique, badge discret */
   .hero-letter-week {
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gold);
-    opacity: 0.95;
+    color: #FDFAF6;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
   }
 
   .hero-letter-week .ethiopic {
@@ -428,20 +450,15 @@
     font-family: var(--font-cormorant), 'Times New Roman', serif;
     font-weight: 400;
     font-size: 0.97rem;
-    color: rgba(253, 250, 246, 0.92);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    color: #FDFAF6;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
   }
 
   .hero-letter-location {
-    color: var(--gold);
+    color: #FDFAF6;
+    font-style: italic;
   }
 
-  .hero-letter-read-time {
-    font-size: 0.82rem;
-    letter-spacing: 0.08em;
-    color: rgba(253, 250, 246, 0.92);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
-  }
 
   /* Extrait hero — lisibilité maximale */
   .hero-letter-excerpt {
@@ -451,7 +468,7 @@
 
   @media (min-width: 640px) {
     .hero-letter-week {
-      font-size: 0.78rem;
+      font-size: 0.9rem;
     }
 
     .hero-letter-date-row {
@@ -678,4 +695,22 @@
     from { opacity: 0; transform: translateY(4px); }
     to { opacity: 1; transform: translateY(0); }
   }
+}
+
+/* ─── En-tête transparent au-dessus d'une photo plein écran ───
+   Hors couche (« unlayered ») pour primer sur les utilitaires Tailwind de l'en-tête. */
+body:has([data-immersive-hero]) header[data-transparent="true"] {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+body:has([data-immersive-hero]) header[data-transparent="true"] :is(a, button, span, em) {
+  color: #FDFAF6;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65);
+}
+
+body:has([data-immersive-hero]) header[data-transparent="true"] [aria-current="page"] > span {
+  background-color: #FDFAF6;
 }

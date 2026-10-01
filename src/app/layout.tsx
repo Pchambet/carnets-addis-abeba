@@ -72,7 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteHeader />
 
         {/* ── Main ── */}
-        <main id="main-content" className="flex-1 pt-24 sm:pt-40" tabIndex={-1}>
+        <main id="main-content" className="site-main flex-1" tabIndex={-1}>
           {children}
         </main>
 

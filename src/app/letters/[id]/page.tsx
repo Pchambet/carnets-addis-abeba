@@ -103,7 +103,6 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
                     heroImage={heroImage}
                     heroBlurDataURL={heroBlurDataURL}
                     heroPosition={letter.heroPosition}
-                    readTime={letter.readTime}
                     letterId={resolvedParams.id}
                 />
             ) : (
@@ -117,7 +116,6 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
                                 {new Date(letter.date).toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
                             </time>
                             {letter.location && <span className="caption text-[var(--red)]">{letter.location}</span>}
-                            <span className="read-time">{letter.readTime} min de lecture</span>
                         </div>
                         <h1 className="mb-6">{letter.title}</h1>
                     </div>
@@ -127,7 +125,7 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
             <TibebDivider />
 
             {/* ── 2. Letter body with drop cap + pull quote (Priorité 1) ── */}
-            <div className="px-6 md:px-12 pb-12">
+            <div id="lettre" className="px-6 md:px-12 pb-12 scroll-mt-8">
                 <div className="reading-width mx-auto">
                     {letter.pullQuote && <PullQuote text={letter.pullQuote} />}
 

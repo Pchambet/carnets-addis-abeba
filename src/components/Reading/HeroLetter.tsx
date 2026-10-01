@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { ETHIOPIC_WEEK, weekLabel } from '@/lib/letters';
 
 
@@ -11,12 +10,11 @@ interface HeroLetterProps {
     heroImage: string; // path relative to /public
     heroBlurDataURL?: string; // base64 blur for smooth loading
     heroPosition?: string; // ex: "top", "center 30%" — zone affichée (object-position)
-    readTime: number;
     letterId?: string; // ex: "semaine-08" → affiche ሳምንት 8
 }
 
 export default function HeroLetter({
-    title, date, location, excerpt, heroImage, heroBlurDataURL, heroPosition, readTime, letterId
+    title, date, location, excerpt, heroImage, heroBlurDataURL, heroPosition, letterId
 }: HeroLetterProps) {
     const formattedDate = new Date(date).toLocaleDateString('fr-FR', {
         weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
@@ -24,7 +22,7 @@ export default function HeroLetter({
     const week = letterId ? weekLabel(letterId) : null;
 
     return (
-        <div className="hero-letter">
+        <div className="hero-letter hero-immersive" data-immersive-hero>
             {/* Background image — full bleed, darkened */}
             <Image
                 src={heroImage}
@@ -41,23 +39,16 @@ export default function HeroLetter({
                 }}
             />
 
-            {/* Gradient overlay — fondu progressif (4 stops) */}
+            {/* Voiles : en haut pour l'en-tête transparent, en bas pour le titre ; le centre de la photo reste intact */}
             <div
                 className="absolute inset-0 z-[1]"
                 style={{
-                    background: 'linear-gradient(to top, rgba(18,12,8,0.7) 0%, rgba(18,12,8,0.4) 30%, rgba(18,12,8,0.15) 60%, transparent 100%)',
+                    background: 'linear-gradient(to bottom, rgba(18,12,8,0.6) 0%, rgba(18,12,8,0.25) 14%, transparent 30%), linear-gradient(to top, rgba(18,12,8,0.88) 0%, rgba(18,12,8,0.6) 30%, rgba(18,12,8,0.2) 55%, transparent 72%)',
                 }}
             />
 
             {/* Content */}
             <div className="hero-letter-content site-container">
-                <Link
-                    href="/"
-                    className="hero-letter-back caption inline-block mb-10 no-underline transition-colors duration-250"
-                >
-                    ← Toutes les lettres
-                </Link>
-
                 <div className="hero-letter-meta hero-letter-fade-in">
                     {week && (
                         <span className="hero-letter-week">
@@ -67,7 +58,6 @@ export default function HeroLetter({
                     <div className="hero-letter-date-row gap-x-4">
                         <time dateTime={date}>{formattedDate}</time>
                         {location && <span className="hero-letter-location">{location}</span>}
-                        <span className="hero-letter-read-time">{readTime} min de lecture</span>
                     </div>
                 </div>
 
@@ -83,6 +73,10 @@ export default function HeroLetter({
                         {excerpt}
                     </p>
                 )}
+
+                <a href="#lettre" className="hero-letter-back caption inline-block mt-10 no-underline transition-colors duration-250">
+                    Commencer la lecture ↓
+                </a>
             </div>
         </div>
     );

@@ -32,6 +32,7 @@ export default function SiteHeader() {
             lastScrollY.current = y;
         };
         window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll(); // position restaurée par le navigateur (rechargement, ancre)
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
@@ -47,6 +48,7 @@ export default function SiteHeader() {
 
     return (
         <header
+            data-transparent={isAtTop && !menuOpen}
             className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ease-in-out ${
                 isVisible || menuOpen ? 'translate-y-0' : '-translate-y-full'
             } ${
