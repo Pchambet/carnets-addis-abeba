@@ -13,7 +13,7 @@ export default function JardinPage() {
           L&apos;Hortus Conclusus
         </h1>
         <p className="text-xl md:text-2xl text-[var(--ink-light)] font-[family-name:var(--font-cormorant)] italic font-light max-w-2xl leading-relaxed">
-          "Entrez ici comme on entre en soi-même."
+          &quot;Entrez ici comme on entre en soi-même.&quot;
         </p>
         <p className="mt-8 text-[var(--ink-light)] font-[family-name:var(--font-lora)] max-w-xl mx-auto leading-loose">
           Invitation à la promenade au jardin intérieur. 

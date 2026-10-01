@@ -8,18 +8,25 @@ import { getBlurDataURL } from './blur';
 
 const lettersDirectory = path.join(process.cwd(), 'content/letters');
 
-export interface LetterData {
-    id: string;
+interface LetterFrontmatter {
     title: string;
     date: string;
     location?: string;
     excerpt?: string;
-    pullQuote?: string;
     heroImage?: string;
     heroPosition?: string; // ex: "top", "center 30%"
+}
+
+export interface LetterData extends LetterFrontmatter {
+    id: string;
+    pullQuote?: string;
     heroBlurDataURL?: string;
     readTime: number;
     contentHtml: string;
+}
+
+function computeReadTime(text: string): number {
+    return Math.max(1, Math.round(text.trim().split(/\s+/).length / 200));
 }
 
 export function getSortedLettersData() {
@@ -33,13 +40,10 @@ export function getSortedLettersData() {
             const fullPath = path.join(lettersDirectory, fileName);
             const fileContents = fs.readFileSync(fullPath, 'utf8');
             const matterResult = matter(fileContents);
-            const words = matterResult.content.trim().split(/\s+/).length;
-            const readTime = Math.max(1, Math.round(words / 200));
-
             return {
+                ...(matterResult.data as LetterFrontmatter),
                 id,
-                readTime,
-                ...(matterResult.data as { title: string; date: string; location?: string; excerpt?: string; heroImage?: string; heroPosition?: string }),
+                readTime: computeReadTime(extractPullQuote(cleanMarkdown(matterResult.content)).cleanContent),
             };
         })
         .sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -80,25 +84,21 @@ export async function getLetterData(id: string): Promise<LetterData> {
     // 2. Extract pull quote
     const { pullQuote, cleanContent } = extractPullQuote(cleaned);
 
-    // 3. Compute read time
-    const words = cleanContent.trim().split(/\s+/).length;
-    const readTime = Math.max(1, Math.round(words / 200));
-
-    // 4. Render Markdown → HTML (with day-header plugin)
+    // 3. Render Markdown → HTML (with day-header plugin)
     const processedContent = await remark()
         .use(remarkDayHeaders)   // ← transforms **Lundi** etc. into day-section HTML
         .use(html, { sanitize: false }) // sanitize:false to allow the custom HTML
         .process(cleanContent);
     const contentHtml = processedContent.toString();
 
-    const data = matterResult.data as any;
+    const data = matterResult.data as LetterFrontmatter;
 
     return {
+        ...data,
         id,
         contentHtml,
         pullQuote,
-        readTime,
+        readTime: computeReadTime(cleanContent),
         heroBlurDataURL: await getBlurDataURL(data.heroImage),
-        ...data,
     };
 }

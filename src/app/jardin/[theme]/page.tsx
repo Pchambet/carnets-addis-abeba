@@ -1,9 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import fs from 'fs';
-import path from 'path';
 import { THEMES, getThemeBySlug } from '@/lib/themes';
-import { getLettersForTheme } from '@/lib/jardin';
+import { getJourneyQuestions, getLettersForTheme } from '@/lib/jardin';
 import InteractiveJourney from '@/components/Reading/InteractiveJourney';
 
 interface PageProps {
@@ -34,21 +32,7 @@ export default async function ThemePage({ params }: PageProps) {
 
   const letters = getLettersForTheme(theme);
 
-  // Load questions for the theme
-  let questions = [];
-  try {
-    const journeyPath = path.join(process.cwd(), 'content/parcours-initiatique.json');
-    if (fs.existsSync(journeyPath)) {
-      const raw = fs.readFileSync(journeyPath, 'utf8');
-      const data = JSON.parse(raw);
-      const themeData = data.find((d: any) => d.theme === theme);
-      if (themeData) {
-        questions = themeData.questions;
-      }
-    }
-  } catch (e) {
-    console.error('Error loading journey data', e);
-  }
+  const questions = getJourneyQuestions(theme);
 
   return (
     <div className="min-h-screen">

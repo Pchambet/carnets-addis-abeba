@@ -3,6 +3,7 @@ import path from 'path';
 import { getSortedLettersData } from './letters';
 
 const themesPath = path.join(process.cwd(), 'content/letter-themes.json');
+const journeyPath = path.join(process.cwd(), 'content/parcours-initiatique.json');
 
 export type LetterThemeMap = Record<string, string[]>;
 
@@ -34,4 +35,22 @@ export function getThemeLetterCounts(): Record<string, number> {
     }
   }
   return counts;
+}
+
+export interface JourneyQuestion {
+  id: string;
+  question: string;
+  reponse: string;
+  letters: string[];
+}
+
+interface ThemeJourney {
+  theme: string;
+  questions: JourneyQuestion[];
+}
+
+export function getJourneyQuestions(themeSlug: string): JourneyQuestion[] {
+  if (!fs.existsSync(journeyPath)) return [];
+  const journeys = JSON.parse(fs.readFileSync(journeyPath, 'utf8')) as ThemeJourney[];
+  return journeys.find((j) => j.theme === themeSlug)?.questions ?? [];
 }

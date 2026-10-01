@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { Cormorant_Garamond, Lora, Noto_Sans_Ethiopic, Sacramento } from 'next/font/google';
 import './globals.css';
 import PasswordGate from '@/components/PasswordGate';

@@ -2,13 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-
-interface Question {
-  id: string;
-  question: string;
-  reponse: string;
-  letters: string[];
-}
+import type { JourneyQuestion as Question } from '@/lib/jardin';
 
 interface Letter {
   id: string;
@@ -50,7 +44,7 @@ export default function InteractiveJourney({ questions, letters }: InteractiveJo
       >
         <div className="text-center mb-16">
           <p className="text-lg md:text-xl text-[var(--ink-light)] font-[family-name:var(--font-lora)] italic">
-            Qu'est-ce qui résonne en vous aujourd'hui ?
+            Qu&apos;est-ce qui résonne en vous aujourd&apos;hui ?
           </p>
         </div>
 
