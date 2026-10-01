@@ -17,7 +17,7 @@ Décisions de Pierre : pas de YouTube (le « cassé » était la CI) ; Supabase 
 | 6 — Performance | ✅ 136 miniatures manquantes, 17 affiches vidéo, 1 MP4 rendu lisible en streaming. Galerie mesurée : déjà chargée à la demande (10 images au premier affichage) → inchangée |
 | 7 — Historique git | ⏭️ conservé (option C) ; il ne grossit plus inutilement (plus de recompression en boucle) |
 | 8 — Documentation | ✅ README, `PROCEDURE.md`, `SUPABASE-LIVRE-OR.md` |
-| 9 — Design (revue UI/UX) | ✅ menu mobile (débordait), grille commune (en-tête, titres, pied de page), accueil avec photo et semaine en amharique par lettre, lettre précédente/suivante, carte cadrée sur tous les lieux, sommaire de la galerie, contrastes et noms accessibles (axe : 0 violation hors 1 cas restant à vérifier), typographie française dans le Jardin |
+| 9 — Design (revue UI/UX) | ✅ menu mobile (débordait), grille commune (en-tête, titres, pied de page), accueil avec photo et semaine en amharique par lettre, lettre précédente/suivante, carte cadrée sur tous les lieux, sommaire de la galerie, contrastes et noms accessibles (axe en prod, mobile : 0 violation sur les 8 écrans), typographie française dans le Jardin |
 
 ## Ce qu'est le projet
 
