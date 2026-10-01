@@ -1,62 +1,36 @@
-# Supabase — Correspondance (commentaires)
+# Supabase — Correspondance (livre d'or)
 
-## 1. Créer la table et les politiques RLS
+Projet Supabase `carnets-addis-abeba` (offre gratuite, région eu-west-1). Une seule table : `public.comments`.
 
-1. Va sur [supabase.com](https://supabase.com) → ton projet **carnets-addis-abeba**
-2. Menu gauche : **SQL Editor** → **New query**
-3. Copie-colle le contenu de `supabase/migrations/001_comments.sql`
-4. Clique sur **Run** (ou Cmd+Enter)
+## Comment ça marche
 
-La table `comments` et les politiques RLS sont créées.
+1. Le formulaire d'une lettre insère un commentaire avec la clé publique (anon) : `letter_id`, `parent_id`, `author`, `email` (optionnel), `content`. Rien d'autre n'est modifiable depuis le navigateur : `is_claire` vaut `false` et `approved` vaut `true` par défaut.
+2. Le site relit les commentaires approuvés **sans la colonne `email`**, qui n'est jamais lisible depuis le navigateur.
+3. Le webhook `comment-notify` (Database → Webhooks) appelle `https://carnets-addis-abeba.vercel.app/api/comment-notify/` (**avec le slash final**, sinon redirection 308 non suivie) en envoyant le secret dans l'en-tête `Authorization`. La route envoie un email à Claire via Resend.
+4. Un cron Vercel quotidien (`vercel.json` → `/api/keep-alive/`) fait une lecture légère pour que le projet gratuit ne soit plus mis en pause pour inactivité (c'était arrivé en 2026 : livre d'or hors service).
 
-## 2. Variables d'environnement
+## Migrations (`supabase/migrations/`)
 
-Les variables sont dans `.env.local` (déjà configuré avec ton projet) :
+| Fichier | Contenu |
+|---|---|
+| `001_comments.sql` | Table, index, RLS |
+| `002_comment_webhook.sql` | Alternative pg_net (non utilisée en prod : le webhook a été créé depuis le Dashboard) |
+| `003_approved_by_default.sql` | Publication directe |
+| `004_harden_comments.sql` | Droits par colonne (email illisible, `is_claire`/`approved` non modifiables), longueurs bornées, URL du webhook corrigée |
 
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+À appliquer dans l'ordre (SQL Editor, ou MCP Supabase).
 
-Pour Vercel/production : ajoute ces variables dans les paramètres du projet.
+## Variables d'environnement (Vercel)
 
-## 3. Commentaires et modération
+| Variable | Rôle |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Accès public à la table |
+| `RESEND_API_KEY` | Envoi des emails |
+| `CLAIRE_EMAIL` | Destinataire des notifications |
+| `COMMENT_WEBHOOK_SECRET` | **Obligatoire** : même valeur que l'en-tête `Authorization` du webhook ; sans lui la route répond 401 |
+| `RESEND_FROM` | Optionnel. Sans domaine vérifié chez Resend, l'expéditeur `onboarding@resend.dev` ne livre **qu'à l'adresse du compte Resend** : `CLAIRE_EMAIL` doit alors être cette adresse |
 
-Les commentaires sont **publiés directement** (pas de modération obligatoire). Si tu dois masquer un message :
-1. Supabase → **Table Editor** → **comments**
-2. Clique sur la ligne → décoche **approved** → Save
+## Modération
 
-**Pour les réponses de Claire :** coche **is_claire** sur ses messages pour le badge et le style.
-
----
-
-## 4. Notification email à Claire (optionnel)
-
-À chaque nouveau commentaire, Claire peut recevoir un email de notification.
-
-### Prérequis
-
-1. **[Resend](https://resend.com)** : crée un compte, vérifie ton domaine (ou utilise `onboarding@resend.dev` pour les tests), récupère une API key.
-2. Variables d'environnement sur **Vercel** :
-   - `RESEND_API_KEY` — clé API Resend
-   - `CLAIRE_EMAIL` — email de Claire (ex. `claire.stellio@gmail.com`)
-   - `COMMENT_WEBHOOK_SECRET` (optionnel) — secret partagé pour sécuriser le webhook
-   - `RESEND_FROM` (optionnel) — expéditeur, ex. `Carnets <noreply@tondomaine.com>`
-
-### Option A : Dashboard Supabase (recommandé)
-
-1. Supabase → **Database** → **Webhooks** → **Create a new hook**
-2. Nom : `comment-notify`
-3. Table : `public.comments`
-4. Events : cocher **Insert**
-5. Type : **HTTP Request**
-6. URL : `https://carnets-addis-abeba.vercel.app/api/comment-notify`
-7. Headers : ajouter `Authorization: Bearer TON_COMMENT_WEBHOOK_SECRET` (si tu as configuré `COMMENT_WEBHOOK_SECRET`)
-8. Create webhook
-
-### Option B : Migration SQL (trigger pg_net)
-
-Exécute `supabase/migrations/002_comment_webhook.sql` dans le SQL Editor. Le trigger appelle l’API à chaque INSERT sur `comments`.
-
-Pour ajouter le secret (recommandé en prod) :
-```sql
-ALTER DATABASE postgres SET app.comment_webhook_secret = 'ton-secret';
-```
+- Masquer un message : Table Editor → `comments` → décocher `approved`.
+- Réponse de Claire : l'écrire depuis le site puis cocher `is_claire` sur sa ligne (badge et style).

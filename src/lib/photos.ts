@@ -28,6 +28,7 @@ function getPhotoCaptions(letterId: string): Record<string, PhotoCaption> {
 
 export interface Video {
   src: string;
+  poster?: string;
   name: string;
   caption?: string;
 }
@@ -44,8 +45,10 @@ export function getVideosForLetter(id: string): Video[] {
 
   return files.map((f) => {
     const meta = captions[f] || captions[f.toLowerCase()];
+    const poster = `${f.replace(/\.[^.]+$/, '')}-poster.jpg`;
     return {
       src: `/images/${id}/${f}`,
+      poster: fs.existsSync(path.join(dir, poster)) ? `/images/${id}/${poster}` : undefined,
       name: meta?.caption ?? f.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' '),
       caption: meta?.caption,
     };
@@ -59,19 +62,20 @@ export async function getPhotosForLetter(id: string): Promise<Photo[]> {
 
     const captions = getPhotoCaptions(id);
     const files = fs.readdirSync(dir)
-        .filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f) && !/-thumb\.(jpg|jpeg|png|webp)$/i.test(f))
+        .filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f) && !/-(thumb|poster)\.(jpg|jpeg|png|webp)$/i.test(f))
         .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
 
     const photos = files.map((f) => {
         const meta = captions[f] || captions[f.toLowerCase()];
         const ext = path.extname(f);
         const basename = path.basename(f, ext);
-        const thumbFilename = `${basename}-thumb${ext}`;
-        const hasThumb = fs.existsSync(path.join(dir, thumbFilename));
-        
+        // Miniature générée par scripts/media.mjs (même extension que l'original, ou .jpg)
+        const thumbFilename = [`${basename}-thumb${ext}`, `${basename}-thumb.jpg`]
+            .find((t) => fs.existsSync(path.join(dir, t)));
+
         return {
             src: `/images/${id}/${f}`,
-            thumbSrc: hasThumb ? `/images/${id}/${thumbFilename}` : undefined,
+            thumbSrc: thumbFilename ? `/images/${id}/${thumbFilename}` : undefined,
             name: meta?.caption ?? f.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' '),
             caption: meta?.caption,
         };

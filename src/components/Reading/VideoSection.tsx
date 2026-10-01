@@ -1,10 +1,6 @@
 'use client';
 
-interface Video {
-  src: string;
-  name: string;
-  caption?: string;
-}
+import type { Video } from '@/lib/photos';
 
 interface VideoSectionProps {
   videos: Video[];
@@ -26,6 +22,7 @@ export default function VideoSection({ videos }: VideoSectionProps) {
           <figure key={i} className={isMulti ? 'min-w-0' : undefined}>
             <video
               src={video.src}
+              poster={video.poster}
               controls
               playsInline
               className="w-full rounded-lg border border-[var(--border)] bg-black/5 aspect-video object-contain"

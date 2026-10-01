@@ -1,104 +1,56 @@
 # Carnets d'Addis-Abeba
 
-> *Nouvelles hebdomadaires depuis la Nouvelle Fleur.* — Un carnet de voyage à Addis-Abéba.
+> *Nouvelles hebdomadaires depuis la Nouvelle Fleur.* — Les lettres de Claire depuis Addis-Abéba.
+
+https://carnets-addis-abeba.vercel.app
 
 ## Stack
 
-- **Next.js 16** (App Router, Turbopack)
-- **TypeScript**
-- **Tailwind CSS v4** + `@tailwindcss/typography`
-- **Markdown** (gray-matter + remark) — lettres en `.md` avec frontmatter YAML
-- **Cusdis** — livre d'or / commentaires
-- **Hébergement** — Vercel
+- **Next.js 16** (App Router, pages générées au build), **TypeScript**, **Tailwind CSS 4**
+- **Markdown** (gray-matter + remark) — une lettre = `content/letters/semaine-XX.md`
+- **Supabase** — livre d'or ; **Resend** — email à Claire pour chaque message
+- **Vercel** — hébergement, déployé à chaque push sur `main`
 
-## Développement local
+## Développement
 
 ```bash
 npm install
-cp .env.example .env.local   # Optionnel : pour personnaliser SITE_URL
-npm run dev                   # → http://localhost:3000
+cp .env.example .env.local   # puis renseigner les valeurs
+npm run dev                  # http://localhost:3000
 ```
 
-## Scripts
+| Commande | Rôle |
+|---|---|
+| `npm run dev` / `build` / `start` | Next.js |
+| `npm run lint`, `npm test` | ESLint, Vitest (code + cohérence du contenu) |
+| `npm run add-letter -- "<dossier source>" semaine-XX` | Importe photos, vidéos et texte d'une lettre |
+| `npm run media` | Crée miniatures et affiches manquantes |
 
-| Commande | Description |
-|----------|-------------|
-| `npm run dev` | Serveur de développement |
-| `npm run build` | Build Next.js (déploiement Vercel avec API routes) |
-| `npm run start` | Servir le build localement |
-| `npm run lint` | ESLint |
-| `npm run test` | Tests unitaires (Vitest) |
-| `npm run photos` | Pipeline complet : sync photos/vidéos → conversion HEIC → compression → légendes |
-| `npm run audit-media` | Vérifie cohérence photos/vidéos (chemins, indexation) |
+Définition de fini : `npm run lint && npm test && npm run build` (c'est aussi la CI GitHub).
 
-## Structure du projet
+## Structure
 
 ```
-content/letters/       → Lettres en Markdown (frontmatter YAML)
-public/images/         → Photos par semaine (semaine-00/, semaine-01/, …)
-  home-hero.jpg        → Image hero page d'accueil (variantes 640w, 1024w générées)
-src/app/               → Pages Next.js (App Router)
-src/components/       → Layout, Reading, UI, Home, Map
-src/lib/               → letters, photos, themes, jardin, remarkDayHeaders
-scripts/               → sync-photos-notes, optimize-photos, extract-captions
+content/letters/          lettres Markdown (frontmatter YAML)
+content/letter-themes.json        lettre → thèmes du Jardin
+content/parcours-initiatique.json questions du Jardin par thème
+public/images/semaine-XX/ photos (+ -thumb), vidéos (+ -poster), captions.json
+src/app/                  pages : accueil, lettres, galerie, jardin, carte, à propos ; api/comment-notify, api/keep-alive
+src/lib/                  lettres, photos, jardin, thèmes, lieux de la carte
+scripts/media.mjs         import et dérivés des médias
+supabase/migrations/      schéma et règles du livre d'or
 ```
-
-## Configuration
-
-Copier `.env.example` vers `.env.local` et adapter :
-
-| Variable | Description |
-|----------|-------------|
-| `NEXT_PUBLIC_SITE_URL` | URL publique (Vercel la définit en prod) |
-| `NEXT_PUBLIC_SITE_PASSWORD` | Code d'accès au site (ex: `0000`). Définir pour protéger les photos. |
-| `NEXT_PUBLIC_SITE_UNLOCKED` | `1` pour désactiver la protection (site ouvert) |
-| `NEXT_PUBLIC_CUSDIS_APP_ID` | ID app Cusdis (livre d'or) |
-
-## Ajouter une nouvelle lettre
-
-1. **Créer** `content/letters/semaine-XX.md` avec le frontmatter :
-   ```yaml
-   ---
-   title: "Titre de la lettre"
-   date: "YYYY-MM-DD"
-   location: "Addis-Abeba"
-   excerpt: "Une phrase d'accroche."
-   heroImage: "/images/semaine-XX/photo.jpg"  # Optionnel
-   ---
-   ```
-
-2. **Photos** : placer les images dans `public/images/semaine-XX/`
-
-3. **Légendes** : exécuter `npm run photos` pour :
-   - Copier les photos depuis `Semaine_XX/Photos et notes à propos de la lettre/`
-   - Convertir HEIC → JPEG, optimiser (resize, compression)
-   - Extraire les légendes des photos → `captions.json`
-
-4. **Push** → déploiement automatique sur Vercel (CI : lint, test, build)
-
-→ Détails dans `docs/PROCEDURE.md`.
-
-## Pipeline photos (détail)
-
-- `sync-photos-notes.js` — Copie depuis `../Semaine_XX/Photos et notes.../` vers `public/images/semaine-XX/`
-- `optimize-photos.sh` — HEIC→JPEG, resize (max 2000px), compression (qualité 80), variantes hero responsive
-- `extract-captions.js` — Légendes depuis les noms de fichiers des photos source
-
-## Tests
-
-```bash
-npm run test        # Exécution une fois
-npm run test:watch  # Mode watch
-```
-
-Tests unitaires : `letters.ts` (cleanMarkdown, extractPullQuote, getLetterData), `remarkDayHeaders`.
 
 ## Déploiement
 
-- **Vercel** : connecter le repo GitHub → déploiement automatique sur push
-- **CI** : `.github/workflows/ci.yml` — lint, test, build sur chaque PR/push
+`git push` sur `main` → Vercel (projet `carnets-addis-abeba`) build et met en ligne. La CI (`.github/workflows/ci.yml`) vérifie en parallèle mais ne bloque pas Vercel.
+
+Variables d'environnement : voir `.env.example` et `docs/SUPABASE-LIVRE-OR.md`.
 
 ## Docs
 
 - `docs/PROCEDURE.md` — ajouter une lettre
+- `docs/REGLE_DE_TRANSCRIPTION.md` — fidélité au texte de Claire
+- `docs/SUPABASE-LIVRE-OR.md` — livre d'or et notifications
 - `docs/DIRECTION-ARTISTIQUE.md` — palette, ton, piliers visuels
+- `docs/PLAN.md` — plan d'amélioration (octobre 2026)

@@ -2,6 +2,22 @@
 
 > Diagnostic du 2026-10-01. Chaque constat ci-dessous a été vérifié (commande, prod, ou lecture du code) sauf mention contraire.
 
+## Avancement (2026-10-01)
+
+Décisions de Pierre : pas de YouTube (le « cassé » était la CI) ; Supabase gratuit conservé ; **repo public conservé** (donc pas de vrai mot de passe serveur : le code d'accès reste un simple filtre) ; historique git conservé tel quel (rien perdu).
+
+| Phase | État |
+|---|---|
+| 0 — CI au vert | ✅ lint corrigé, Node 24, actions v7, `CLAUDE.md` |
+| 1 — Livre d'or | ✅ Supabase restauré, migration 004 appliquée, webhook corrigé, cron keep-alive. ⏳ Reste à vérifier : réception réelle de l'email par Claire (secret et expéditeur Resend non vérifiables sans envoyer un vrai message) |
+| 2 — Vie privée | ✅ réduit au choix « repo public » : `noindex`, sitemap supprimé, email de Claire retiré de `.env.example`, `.docx` retiré de `public/` |
+| 3 — Simplifier | ✅ 7 dépendances, Cusdis, scripts et fichiers morts, 3 branches fusionnées supprimés |
+| 4 — Ajout d'une lettre | ✅ `npm run add-letter` / `npm run media` (`scripts/media.mjs`) + tests de cohérence du contenu |
+| 5 — Contenu | ✅ 4 lieux ajoutés à la carte ; thèmes du Jardin proposés pour 22 → 44 — **à relire par Claire**. Parcours initiatique : questions toujours limitées aux lettres ≤ 18 |
+| 6 — Performance | ✅ 136 miniatures manquantes, 17 affiches vidéo, 1 MP4 rendu lisible en streaming. Galerie mesurée : déjà chargée à la demande (10 images au premier affichage) → inchangée |
+| 7 — Historique git | ⏭️ conservé (option C) ; il ne grossit plus inutilement (plus de recompression en boucle) |
+| 8 — Documentation | ✅ README, `PROCEDURE.md`, `SUPABASE-LIVRE-OR.md` |
+
 ## Ce qu'est le projet
 
 Site Next.js 16 (App Router, Tailwind 4) qui publie les lettres hebdomadaires de Claire depuis Addis-Abeba : 37 lettres Markdown (`content/letters/`), ~800 photos et 17 vidéos (`public/images/semaine-XX/`), galerie, carte (Leaflet), « Jardin » thématique, livre d'or (Supabase + email Resend).

@@ -592,15 +592,6 @@
     font-family: 'Times New Roman', Times, serif;
   }
 
-  /* ── Cusdis: hauteur adaptée au contenu ── */
-  #cusdis_thread {
-    min-height: 22rem;
-  }
-  #cusdis_thread iframe {
-    min-height: 22rem !important;
-    height: 22rem !important;
-  }
-
   /* ── Livre d'or premium ── */
   .livre-dor {
     background: var(--white);
