@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { getSortedLettersData } from '@/lib/letters';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
 type SupabaseInsertPayload = {
   type: 'INSERT';
@@ -22,15 +24,12 @@ type SupabaseInsertPayload = {
 
 export async function POST(request: NextRequest) {
   const webhookSecret = process.env.COMMENT_WEBHOOK_SECRET;
-  if (webhookSecret) {
-    const authHeader = request.headers.get('authorization');
-    const token = authHeader?.replace(/^Bearer\s+/i, '');
-    if (token !== webhookSecret) {
-      return NextResponse.json(
-        { error: 'Unauthorized' },
-        { status: 401 }
-      );
-    }
+  const token = request.headers.get('authorization')?.replace(/^Bearer\s+/i, '');
+  if (!webhookSecret || token !== webhookSecret) {
+    return NextResponse.json(
+      { error: 'Unauthorized' },
+      { status: 401 }
+    );
   }
 
   if (!process.env.RESEND_API_KEY || !process.env.CLAIRE_EMAIL) {
@@ -66,16 +65,8 @@ export async function POST(request: NextRequest) {
   const letterId = record.letter_id;
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL || 'https://carnets-addis-abeba.vercel.app';
-  const letterUrl = `${siteUrl}/letters/${letterId}`;
-
-  let letterTitle = letterId;
-  try {
-    const letters = getSortedLettersData();
-    const letter = letters.find((l) => l.id === letterId);
-    if (letter?.title) letterTitle = letter.title;
-  } catch {
-    // ignore
-  }
+  const letterUrl = `${siteUrl}/letters/${letterId}/`;
+  const letterTitle = getLetterTitle(letterId);
 
   const isReply = !!record.parent_id;
   const subject = isReply
@@ -131,6 +122,15 @@ export async function POST(request: NextRequest) {
   }
 
   return NextResponse.json({ ok: true });
+}
+
+/** Title from the letter's frontmatter, falling back to its id. */
+function getLetterTitle(letterId: string): string {
+  if (!/^semaine-[\d-]+$/.test(letterId)) return letterId;
+  const file = path.join(process.cwd(), 'content', 'letters', `${letterId}.md`);
+  if (!fs.existsSync(file)) return letterId;
+  const { title } = matter(fs.readFileSync(file, 'utf8')).data as { title?: string };
+  return title || letterId;
 }
 
 function escapeHtml(s: string): string {

@@ -43,6 +43,8 @@ export const metadata: Metadata = {
   },
   description: 'Une lettre par semaine depuis Addis-Abéba — Nouvelles hebdomadaires d\'un voyage en Éthiopie.',
   metadataBase: new URL(siteUrl),
+  // Site personnel partagé par lien : pas d'indexation par les moteurs de recherche
+  robots: { index: false, follow: false },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',

@@ -11,6 +11,8 @@ import ReadingProgress from '@/components/Reading/ReadingProgress';
 import CommentSection from '@/components/Reading/CommentSection';
 import Link from 'next/link';
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     try {
         const letters = getSortedLettersData();

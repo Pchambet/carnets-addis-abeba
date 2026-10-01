@@ -13,6 +13,10 @@ const nextConfig: NextConfig = {
   outputFileTracingExcludes: {
     '*': ['public/images/**/*'],
   },
+  // Le titre de la lettre dans l'email de notification est lu depuis le Markdown
+  outputFileTracingIncludes: {
+    '/api/comment-notify': ['./content/letters/**/*'],
+  },
 
   // Trailing slash pour URLs propres
   trailingSlash: true,

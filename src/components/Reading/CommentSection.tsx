@@ -46,51 +46,44 @@ function buildCommentTree(comments: Comment[]): Comment[] {
     return roots;
 }
 
+/** Public columns only: commenters' emails are never readable from the browser. */
+const PUBLIC_COLUMNS = 'id, letter_id, parent_id, author, content, is_claire, approved, created_at';
+
+function loadComments(letterId: string) {
+    return supabase
+        .from('comments')
+        .select(PUBLIC_COLUMNS)
+        .eq('letter_id', letterId)
+        .eq('approved', true)
+        .order('created_at', { ascending: true })
+        .returns<Comment[]>();
+}
+
 export default function CommentSection({ letterId }: CommentSectionProps) {
     const [comments, setComments] = useState<Comment[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    const fetchComments = useCallback(async () => {
-        const { data, error: err } = await supabase
-            .from('comments')
-            .select('*')
-            .eq('letter_id', letterId)
-            .eq('approved', true)
-            .order('created_at', { ascending: true });
-
-        if (err) {
-            setError(err.message);
-            setComments([]);
-        } else {
-            setComments((data as Comment[]) || []);
-        }
+    const applyResult = useCallback((data: Comment[] | null, err: { message: string } | null) => {
+        setError(err ? err.message : null);
+        setComments(err ? [] : data ?? []);
         setLoading(false);
-    }, [letterId]);
+    }, []);
+
+    const fetchComments = useCallback(async () => {
+        const { data, error: err } = await loadComments(letterId);
+        applyResult(data, err);
+    }, [letterId, applyResult]);
 
     useEffect(() => {
         let cancelled = false;
-        void (async () => {
-            const { data, error: err } = await supabase
-                .from('comments')
-                .select('*')
-                .eq('letter_id', letterId)
-                .eq('approved', true)
-                .order('created_at', { ascending: true });
-
-            if (cancelled) return;
-            if (err) {
-                setError(err.message);
-                setComments([]);
-            } else {
-                setComments((data as Comment[]) || []);
-            }
-            setLoading(false);
-        })();
+        void loadComments(letterId).then(({ data, error: err }) => {
+            if (!cancelled) applyResult(data, err);
+        });
         return () => {
             cancelled = true;
         };
-    }, [letterId]);
+    }, [letterId, applyResult]);
 
     const tree = buildCommentTree(comments);
 

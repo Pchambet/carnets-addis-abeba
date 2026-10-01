@@ -39,8 +39,6 @@ export default function CommentForm({
             author: author.trim(),
             email: email.trim() || null,
             content: content.trim(),
-            is_claire: false,
-            approved: true,
         });
 
         if (error) {
