@@ -1,5 +1,5 @@
 ---
-title: "L'avant-dernière lettre"
+title: "Kafa, terre de café"
 date: "2026-09-11"
 location: "Addis-Abeba & Shishinda"
 heroImage: "/images/semaine-44/coeur.jpg"

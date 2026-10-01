@@ -41,7 +41,7 @@
         "id": "q4",
         "question": "Avez-vous déjà été intimement transformé par l’hospitalité d’un étranger ?",
         "reponse": "Être accueilli sans rien avoir à prouver bouleverse notre rapport au monde. C’est dans le don gratuit d’un repas ou d’un sourire que l’on se découvre frères.",
-        "letters": ["semaine-00", "semaine-07", "semaine-37-38", "semaine-41-43"]
+        "letters": ["semaine-00", "semaine-07", "semaine-37-38", "semaine-41-43", "semaine-45"]
       },
       {
         "id": "q5",
@@ -106,7 +106,7 @@
         "id": "q22",
         "question": "Comment garder un cœur sensible face à la violence et à l’impuissance ?",
         "reponse": "À force de côtoyer la mort et la misère, le cœur risque l’indifférence. Consoler, rester présent et, comme l’ami peintre, transfigurer l’horreur en beauté, c’est refuser que l’impuissance ait le dernier mot.",
-        "letters": ["semaine-22", "semaine-34-35"]
+        "letters": ["semaine-22", "semaine-34-35", "semaine-45"]
       },
       {
         "id": "q23",
@@ -164,7 +164,7 @@
         "id": "q14",
         "question": "Où trouvez-vous des traces d’éternité et de poésie au milieu de vos routines quotidiennes ?",
         "reponse": "Le rituel du café, le balayage d’une cour, les jeux des enfants : la poésie n’est pas une fuite, c’est l’art d’habiter le présent avec intensité.",
-        "letters": ["semaine-11", "semaine-12", "semaine-29-30", "semaine-31"]
+        "letters": ["semaine-11", "semaine-12", "semaine-29-30", "semaine-31", "semaine-45"]
       },
       {
         "id": "q15",

@@ -23,6 +23,7 @@ const LOCATIONS: Record<string, MapLocation> = {
   'Miki': { name: 'Meki', lat: 8.15, lng: 38.817, zoom: 11 },
   'Mont Hambaricho': { name: 'Mont Hambaricho', lat: 7.27, lng: 37.86, zoom: 11 },
   'Shishinda': { name: 'Shishinda', lat: 7.283, lng: 35.867, zoom: 11 },
+  'Pays gouragué': { name: 'Pays gouragué', lat: 8.0, lng: 37.915, zoom: 11 },
 };
 
 /** Lieux cités par une lettre : "Hawassa & Miki" → ["Hawassa", "Miki"] */
