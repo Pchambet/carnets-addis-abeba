@@ -12,17 +12,17 @@ export const THEMES: ThemeDef[] = [
   {
     slug: "desert-et-grace",
     label: "Le Désert et la Grâce",
-    description: "Le silence, le dépouillement, la prière intime, et l'irruption soudaine de Dieu.",
+    description: "Le silence, le dépouillement, la prière intime, et l’irruption soudaine de Dieu.",
   },
   {
     slug: "lien-a-l-autre",
-    label: "Le Lien à l'Autre",
-    description: "Les visages, l'hospitalité éthiopienne, le rattachement social et amical.",
+    label: "Le Lien à l’Autre",
+    description: "Les visages, l’hospitalité éthiopienne, le rattachement social et amical.",
   },
   {
     slug: "epreuve-deracinement",
-    label: "L'Épreuve du Déracinement",
-    description: "Le choc de l'imprévu, l'apprentissage de la vulnérabilité : désapprendre à faire.",
+    label: "L’Épreuve du Déracinement",
+    description: "Le choc de l’imprévu, l’apprentissage de la vulnérabilité : désapprendre à faire.",
   },
   {
     slug: "visage-du-christ",

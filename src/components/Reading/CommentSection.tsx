@@ -102,7 +102,7 @@ export default function CommentSection({ letterId }: CommentSectionProps) {
                     {comments.length} message{comments.length !== 1 ? 's' : ''}
                 </h3>
                 {loading ? (
-                    <p className="caption text-[var(--ink-light)] opacity-70">
+                    <p className="caption text-[var(--ink-light)]">
                         Chargement…
                     </p>
                 ) : error ? (

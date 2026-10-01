@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { ETHIOPIC_WEEK, weekLabel } from '@/lib/letters';
 
-/** ሳምንት = « semaine » en amharique */
-const ETHIOPIC_WEEK = 'ሳምንት';
 
 interface HeroLetterProps {
     title: string;
@@ -16,19 +15,13 @@ interface HeroLetterProps {
     letterId?: string; // ex: "semaine-08" → affiche ሳምንት 8
 }
 
-function getWeekNumber(letterId: string | undefined): number | null {
-    if (!letterId) return null;
-    const m = letterId.match(/semaine-(\d+)/i);
-    return m ? parseInt(m[1], 10) : null;
-}
-
 export default function HeroLetter({
     title, date, location, excerpt, heroImage, heroBlurDataURL, heroPosition, readTime, letterId
 }: HeroLetterProps) {
     const formattedDate = new Date(date).toLocaleDateString('fr-FR', {
         weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
     });
-    const weekNum = getWeekNumber(letterId);
+    const week = letterId ? weekLabel(letterId) : null;
 
     return (
         <div className="hero-letter">
@@ -56,36 +49,29 @@ export default function HeroLetter({
                 }}
             />
 
-            {/* Lien retour — overlay coin haut-gauche */}
-            <Link
-                href="/"
-                className="hero-letter-back absolute top-6 left-6 md:top-8 md:left-8 z-10 caption no-underline transition-colors duration-250"
-            >
-                ← Toutes les lettres
-            </Link>
-
             {/* Content */}
-            <div className="hero-letter-content">
+            <div className="hero-letter-content site-container">
+                <Link
+                    href="/"
+                    className="hero-letter-back caption inline-block mb-10 no-underline transition-colors duration-250"
+                >
+                    ← Toutes les lettres
+                </Link>
+
                 <div className="hero-letter-meta hero-letter-fade-in">
-                    {weekNum !== null && (
+                    {week && (
                         <span className="hero-letter-week">
-                            <span className="ethiopic">{ETHIOPIC_WEEK}</span> {weekNum}
+                            <span className="ethiopic">{ETHIOPIC_WEEK}</span> {week}
                         </span>
                     )}
-                    <div className="hero-letter-date-row">
+                    <div className="hero-letter-date-row gap-x-4">
                         <time dateTime={date}>{formattedDate}</time>
-                        {location && (
-                            <>
-                                <span className="hero-letter-sep">·</span>
-                                <span className="hero-letter-location">{location}</span>
-                            </>
-                        )}
-                        <span className="hero-letter-sep">·</span>
-                        <span className="hero-letter-read-time">⏱ {readTime} min</span>
+                        {location && <span className="hero-letter-location">{location}</span>}
+                        <span className="hero-letter-read-time">{readTime} min de lecture</span>
                     </div>
                 </div>
 
-                <h1 className="hero-letter-title hero-letter-fade-in mb-6 sm:mb-8" style={{ fontSize: 'clamp(2rem, 6vw, 4.5rem)' }}>
+                <h1 className="hero-letter-title hero-letter-fade-in max-w-4xl mb-6 sm:mb-8" style={{ fontSize: 'clamp(2rem, 6vw, 4.5rem)' }}>
                     {title}
                 </h1>
 

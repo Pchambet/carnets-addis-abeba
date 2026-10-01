@@ -53,11 +53,3 @@ export function getLocationsWithLetters(
     letterIds,
   }));
 }
-
-export function getMapCenter(): [number, number] {
-  return [25, 20]; // Centre entre la France et l'Éthiopie
-}
-
-export function getMapZoom(): number {
-  return 3; // Vue globale Europe - Afrique de l'Est
-}

@@ -82,7 +82,12 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
         <div className="my-8">
             <RowsPhotoAlbum
                 photos={galleryPhotos}
-                render={{ image: NextJsImage }}
+                render={{
+                    image: NextJsImage,
+                    button: (props, { photo, index }) => (
+                        <button {...props} aria-label={photo.alt ? `Agrandir : ${photo.alt}` : `Agrandir la photo ${index + 1}`} />
+                    ),
+                }}
                 targetRowHeight={300}
                 spacing={12}
                 onClick={({ index }) => setIndex(index)}

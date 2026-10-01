@@ -2,6 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import { getImageData } from './blur';
 
+const PUBLIC_DIR = path.join(process.cwd(), 'public');
+const IMAGES_DIR = path.join(PUBLIC_DIR, 'images');
+
 export interface PhotoCaption {
     caption?: string;
 }
@@ -17,7 +20,7 @@ export interface Photo {
 }
 
 function getPhotoCaptions(letterId: string): Record<string, PhotoCaption> {
-    const file = path.join(process.cwd(), 'public', 'images', letterId, 'captions.json');
+    const file = path.join(IMAGES_DIR, letterId, 'captions.json');
     if (!fs.existsSync(file)) return {};
     try {
         return JSON.parse(fs.readFileSync(file, 'utf8')) as Record<string, PhotoCaption>;
@@ -35,7 +38,7 @@ export interface Video {
 
 /** Returns videos for a letter (mov, mp4, webm in public/images/{id}/) */
 export function getVideosForLetter(id: string): Video[] {
-  const dir = path.join(process.cwd(), 'public', 'images', id);
+  const dir = path.join(IMAGES_DIR, id);
   if (!fs.existsSync(dir)) return [];
 
   const captions = getPhotoCaptions(id);
@@ -57,7 +60,7 @@ export function getVideosForLetter(id: string): Video[] {
 
 /** Returns photos for a letter, with caption metadata from captions.json */
 export async function getPhotosForLetter(id: string): Promise<Photo[]> {
-    const dir = path.join(process.cwd(), 'public', 'images', id);
+    const dir = path.join(IMAGES_DIR, id);
     if (!fs.existsSync(dir)) return [];
 
     const captions = getPhotoCaptions(id);
@@ -90,4 +93,25 @@ export async function getPhotosForLetter(id: string): Promise<Photo[]> {
             height: data.height
         };
     }));
+}
+
+/**
+ * Vignette d'une lettre pour les listes : miniature de l'image hero, sinon de la première photo.
+ */
+export function getLetterCover(id: string, heroImage?: string): string | undefined {
+    const dir = path.join(IMAGES_DIR, id);
+    let src = heroImage;
+    if (!src && fs.existsSync(dir)) {
+        const first = fs.readdirSync(dir)
+            .filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f) && !/-(thumb|poster)\./i.test(f))
+            .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))[0];
+        if (first) src = `/images/${id}/${first}`;
+    }
+    if (!src) return undefined;
+
+    const file = path.join(PUBLIC_DIR, src);
+    const ext = path.extname(file);
+    const base = file.slice(0, -ext.length);
+    const thumb = [`${base}-thumb${ext}`, `${base}-thumb.jpg`].find((t) => fs.existsSync(t));
+    return thumb ? src.slice(0, -path.basename(file).length) + path.basename(thumb) : src;
 }

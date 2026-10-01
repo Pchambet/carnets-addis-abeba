@@ -7,11 +7,9 @@ import type { Map as LeafletMap } from 'leaflet';
 
 interface LetterMapProps {
   locations: LocationWithLetters[];
-  center: [number, number];
-  zoom: number;
 }
 
-export default function LetterMap({ locations, center, zoom }: LetterMapProps) {
+export default function LetterMap({ locations }: LetterMapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -22,14 +20,16 @@ export default function LetterMap({ locations, center, zoom }: LetterMapProps) {
 
     import('leaflet').then((L) => {
       if (cancelled || !containerRef.current) return;
-      map = L.default.map(containerRef.current).setView(center, zoom);
+      map = L.default.map(containerRef.current);
+      // Cadre tous les lieux (France et Éthiopie) quelle que soit la taille d'écran
+      map.fitBounds(L.default.latLngBounds(locations.map(({ lat, lng }) => [lat, lng])), { padding: [24, 24] });
 
       L.default.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       }).addTo(map);
 
       const icon = L.default.divIcon({
-        html: '<span style="width:12px;height:12px;background:#B87040;border:2px solid #F8F6F3;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.3);display:block;margin:-6px 0 0 -6px"></span>',
+        html: '<span style="width:12px;height:12px;background:#8F5229;border:2px solid #F8F6F3;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.3);display:block;margin:-6px 0 0 -6px"></span>',
         className: '',
         iconSize: [12, 12],
         iconAnchor: [6, 6],
@@ -39,7 +39,7 @@ export default function LetterMap({ locations, center, zoom }: LetterMapProps) {
         const count = letterIds.length;
         const label = count > 1 ? `${name} (${count} lettres)` : name;
 
-        L.default.marker([lat, lng], { icon })
+        L.default.marker([lat, lng], { icon, title: label, alt: label })
           .addTo(map!)
           .bindPopup(`<strong>${label}</strong>`);
       });
@@ -49,12 +49,12 @@ export default function LetterMap({ locations, center, zoom }: LetterMapProps) {
       cancelled = true;
       map?.remove();
     };
-  }, [locations, center, zoom]);
+  }, [locations]);
 
   return (
     <div
       ref={containerRef}
-      className="w-full h-[400px] rounded-lg overflow-hidden border border-[var(--border)] [&_.leaflet-container]:z-0"
+      className="w-full h-[420px] md:h-[520px] rounded-lg overflow-hidden border border-[var(--border)] [&_.leaflet-container]:z-0"
     />
   );
 }

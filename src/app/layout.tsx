@@ -38,7 +38,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://carnets-addis-abeba
 
 export const metadata: Metadata = {
   title: {
-    default: 'La Parenthèse du Dimanche Soir',
+    default: 'La Parenthèse du dimanche soir',
     template: '%s — La Parenthèse du dimanche soir',
   },
   description: 'Une lettre par semaine depuis Addis-Abéba — Nouvelles hebdomadaires d\'un voyage en Éthiopie.',
@@ -72,21 +72,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteHeader />
 
         {/* ── Main ── */}
-        <main id="main-content" className="flex-1 pt-32 sm:pt-40" tabIndex={-1}>
+        <main id="main-content" className="flex-1 pt-24 sm:pt-40" tabIndex={-1}>
           {children}
         </main>
 
         {/* ── Footer ── */}
-        <footer className="mt-32 py-16 border-t border-[var(--border)] text-center">
-          <div className="flex justify-center gap-3 mb-6">
-            {/* Tibeb-inspired triple dot motif */}
-            <div className="w-2 h-2 rotate-45 bg-[var(--ochre)] opacity-60"></div>
-            <div className="w-2 h-2 rotate-45 bg-[var(--red)] opacity-60"></div>
-            <div className="w-2 h-2 rotate-45 bg-[var(--gold)] opacity-60"></div>
+        <footer className="mt-24 py-14 border-t border-[var(--border)]">
+          <div className="site-container flex flex-col items-center gap-5 text-center">
+            {/* Motif tibeb : ocre, rouge, or */}
+            <div className="flex gap-3" aria-hidden="true">
+              <span className="w-2 h-2 rotate-45 bg-[var(--ochre)] opacity-60" />
+              <span className="w-2 h-2 rotate-45 bg-[var(--red)] opacity-60" />
+              <span className="w-2 h-2 rotate-45 bg-[var(--gold)] opacity-60" />
+            </div>
+            <p className="font-[family-name:var(--font-cormorant)] italic text-lg text-[var(--ink-light)]">
+              Depuis Addis-Abéba, la Nouvelle Fleur
+            </p>
           </div>
-          <p className="caption text-[var(--ink-light)]">
-            Addis-Abéba · La Nouvelle Fleur · {new Date().getFullYear()}
-          </p>
         </footer>
         </PasswordGate>
 

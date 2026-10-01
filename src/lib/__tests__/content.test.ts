@@ -57,8 +57,12 @@ describe('jardin', () => {
             expect(themeSlugs.has(journey.theme), journey.theme).toBe(true);
             for (const id of journey.questions.flatMap((q) => q.letters)) {
                 expect(letterIds.has(id), `${journey.theme}: ${id}`).toBe(true);
+                expect(themeMap[id], `${id} answers a question of ${journey.theme}`).toContain(journey.theme);
             }
         }
+        const answered = new Set(journeys.flatMap((j) => j.questions.flatMap((q) => q.letters)));
+        const missing = [...letterIds].filter((id) => !answered.has(id));
+        expect(missing, 'add them to a question of content/parcours-initiatique.json').toEqual([]);
     });
 });
 

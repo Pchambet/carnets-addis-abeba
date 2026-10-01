@@ -79,6 +79,12 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
     const photos = await getPhotosForLetter(resolvedParams.id);
     const videos = getVideosForLetter(resolvedParams.id);
 
+    // Lettres voisines dans l'ordre du voyage (la liste est triée de la plus récente à la plus ancienne)
+    const allLetters = getSortedLettersData();
+    const index = allLetters.findIndex((l) => l.id === letter.id);
+    const previous = allLetters[index + 1];
+    const next = index > 0 ? allLetters[index - 1] : undefined;
+
     // Hero image : heroImage du frontmatter en priorité, sinon 1ère photo
     const heroImage = letter.heroImage ?? (photos.length > 0 ? photos[0].src : null);
     const heroBlurDataURL = letter.heroBlurDataURL ?? (photos.length > 0 ? photos[0].blurDataURL : undefined);
@@ -111,7 +117,7 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
                                 {new Date(letter.date).toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
                             </time>
                             {letter.location && <span className="caption text-[var(--red)]">{letter.location}</span>}
-                            <span className="read-time">⏱ {letter.readTime} min</span>
+                            <span className="read-time">{letter.readTime} min de lecture</span>
                         </div>
                         <h1 className="mb-6">{letter.title}</h1>
                     </div>
@@ -170,12 +176,27 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
             {/* ── Livre d'or (Supabase) ── */}
             <CommentSection letterId={letter.id} />
 
-            {/* ── Navigation ── */}
-            <div className="border-t border-[var(--border)] py-12 px-6 md:px-12 text-center">
-                <Link href="/" className="caption text-[var(--ink-light)] hover:text-[var(--ochre)] no-underline transition-colors duration-250">
-                    ← Retour aux lettres
-                </Link>
-            </div>
+            {/* ── Navigation entre les lettres ── */}
+            <nav aria-label="Lettres voisines" className="border-t border-[var(--border)] py-12">
+                <div className="site-container grid gap-8 sm:grid-cols-2">
+                    {previous ? (
+                        <Link href={`/letters/${previous.id}`} className="group no-underline hover:no-underline">
+                            <span className="caption block mb-2">← Lettre précédente</span>
+                            <span className="font-[family-name:var(--font-cormorant)] text-2xl text-[var(--ink)] group-hover:text-[var(--ochre)] transition-colors duration-250">
+                                {previous.title}
+                            </span>
+                        </Link>
+                    ) : <span />}
+                    {next && (
+                        <Link href={`/letters/${next.id}`} className="group no-underline hover:no-underline sm:text-right">
+                            <span className="caption block mb-2">Lettre suivante →</span>
+                            <span className="font-[family-name:var(--font-cormorant)] text-2xl text-[var(--ink)] group-hover:text-[var(--ochre)] transition-colors duration-250">
+                                {next.title}
+                            </span>
+                        </Link>
+                    )}
+                </div>
+            </nav>
         </article>
     );
 }

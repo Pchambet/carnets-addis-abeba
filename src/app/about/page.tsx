@@ -6,9 +6,9 @@ export default function AboutPage() {
             {/* ── Bio ── */}
             <article className="px-6 md:px-12 py-12">
                 <div className="reading-width mx-auto">
-                    <h2 className="text-4xl md:text-5xl font-[family-name:var(--font-cormorant)] font-light italic text-[var(--ochre)] mb-16 tracking-tight">
+                    <h1 className="text-4xl md:text-5xl font-[family-name:var(--font-cormorant)] font-light italic text-[var(--ochre)] mb-16 tracking-tight">
                         Aux lecteurs
-                    </h2>
+                    </h1>
 
                     <p className="drop-cap text-[var(--ink)] font-[family-name:var(--font-lora)] leading-[2] text-lg mb-8">
                         Arrivée le 25 octobre 2025 à Addis-Abéba, capitale de l’Éthiopie, pour une mission solidaire d’un an avec l’Oeuvre-d’Orient, le désir d’écrire les désillusions et les enchantements propres aux découvertes qu’offre la singularité de ce nouveau pays, a tout de suite fait retentir son appel.
@@ -64,7 +64,7 @@ export default function AboutPage() {
             <section className="px-6 md:px-12 py-8 border-t border-[var(--border)]">
                 <p className="text-sm text-[var(--ink-light)] font-[family-name:var(--font-lora)] leading-relaxed max-w-2xl mx-auto text-center">
                     Ce site contient des photos de personnes rencontrées au cours de la mission. Si vous vous reconnaissez et souhaitez qu’une image soit retirée ou modifiée, vous pouvez&nbsp;
-                    <a href="mailto:claire.stellio@gmail.com?subject=Demande de retrait d'image" className="text-[var(--ochre)] hover:underline">nous contacter</a>.
+                    <a href="mailto:claire.stellio@gmail.com?subject=Demande de retrait d'image" className="text-[var(--ochre)] underline underline-offset-2">nous contacter</a>.
                 </p>
             </section>
         </div>

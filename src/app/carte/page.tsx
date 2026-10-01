@@ -1,17 +1,12 @@
 import Link from 'next/link';
 import { getSortedLettersData } from '@/lib/letters';
-import {
-  getLocationsWithLetters,
-  getMapCenter,
-  getMapZoom,
-} from '@/lib/map-locations';
+import { getLocationsWithLetters } from '@/lib/map-locations';
 import LetterMapWrapper from '@/components/Map/LetterMapWrapper';
+import PageHeader from '@/components/Layout/PageHeader';
 
 export default function CartePage() {
   const letters = getSortedLettersData();
   const locations = getLocationsWithLetters(letters);
-  const center = getMapCenter();
-  const zoom = getMapZoom();
 
   // Ajout des points fixes
   const allLocations = [
@@ -34,20 +29,12 @@ export default function CartePage() {
 
   return (
     <div>
-      <section className="px-6 md:px-12 py-20 border-b border-[var(--border)]">
-        <div className="max-w-3xl mx-auto">
-          <p className="caption text-[var(--ochre)] mb-4">Carnets d&apos;Addis-Abéba</p>
-          <h1 className="text-4xl md:text-5xl font-[family-name:var(--font-cormorant)] font-light italic text-[var(--ink)] mb-6 tracking-tight">
-            La carte
-          </h1>
-          <p className="text-lg text-[var(--ink-light)] font-[family-name:var(--font-lora)] leading-relaxed">
-            Où les lettres ont été écrites.
-          </p>
-        </div>
-      </section>
+      <PageHeader title="La carte">
+        <p>Où les lettres ont été écrites, d’Addis-Abéba aux routes du Sud.</p>
+      </PageHeader>
 
-      <section className="max-w-5xl mx-auto px-6 md:px-12 py-16">
-        <LetterMapWrapper locations={allLocations} center={center} zoom={zoom} />
+      <section className="site-container py-16">
+        <LetterMapWrapper locations={allLocations} />
 
         {locations.length > 0 && (
           <div className="mt-12 space-y-6">
@@ -71,8 +58,9 @@ export default function CartePage() {
                           href={`/letters/${id}`}
                           className="text-[var(--ink)] hover:text-[var(--ochre)] transition-colors duration-250"
                         >
-                          {letter.title} — {date}
+                          {letter.title}
                         </Link>
+                        <span className="text-[var(--ink-light)] text-sm ml-3">{date}</span>
                       </li>
                     );
                   })}

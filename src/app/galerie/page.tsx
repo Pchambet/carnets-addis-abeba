@@ -2,6 +2,7 @@ import { getSortedLettersData } from '@/lib/letters';
 import { getPhotosForLetter, type Photo } from '@/lib/photos';
 import Link from 'next/link';
 import TibebDivider from '@/components/UI/TibebDivider';
+import PageHeader from '@/components/Layout/PageHeader';
 import LightboxGallery from '@/components/Reading/LightboxGallery';
 
 interface LetterWithPhotos {
@@ -24,27 +25,36 @@ export default async function GalleriePage() {
 
     return (
         <div>
-            {/* ── Header ── */}
-            <section className="px-6 md:px-12 py-12 sm:py-16 md:py-20 border-b border-[var(--border)]">
-                <div className="max-w-4xl mx-auto">
-                    <p className="caption text-[var(--ochre)] mb-4">Carnets d&apos;Addis-Abéba</p>
-                    <h1 className="text-3xl sm:text-4xl md:text-6xl font-light leading-tight mb-6">
-                        La galerie
-                    </h1>
-                    <p className="text-lg text-[var(--ink-light)] font-[family-name:var(--font-lora)] italic">
-                        {totalPhotos} photographies — Addis-Abéba et au-delà.
-                    </p>
-                </div>
-            </section>
+            <PageHeader title="La galerie">
+                <p>{totalPhotos} photographies, lettre après lettre.</p>
+            </PageHeader>
+
+            {/* ── Sommaire : aller directement aux photos d'une lettre ── */}
+            <nav aria-label="Lettres de la galerie" className="site-container pt-10">
+                <details className="group">
+                    <summary className="caption cursor-pointer text-[var(--ochre)] w-fit">
+                        Aller directement à une lettre
+                    </summary>
+                    <ul className="mt-6 grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3 font-[family-name:var(--font-lora)]">
+                        {lettersWithPhotos.map((letter) => (
+                            <li key={letter.id}>
+                                <a href={`#${letter.id}`} className="text-[var(--ink-light)] hover:text-[var(--ochre)] no-underline">
+                                    {letter.title}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </details>
+            </nav>
 
             {/* ── Per-semaine galleries ── */}
-            <div className="max-w-5xl mx-auto px-6 md:px-12 py-12 sm:py-16 md:py-20 space-y-16 sm:space-y-24">
+            <div className="site-container py-12 sm:py-16 md:py-20 space-y-16 sm:space-y-24">
                 {lettersWithPhotos.map(letter => {
                     const formattedDate = new Date(letter.date).toLocaleDateString('fr-FR', {
                         month: 'long', year: 'numeric'
                     });
                     return (
-                        <section key={letter.id}>
+                        <section key={letter.id} id={letter.id} className="scroll-mt-28">
                             {/* Week header */}
                             <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-6 gap-2 mb-8 pb-4 border-b border-[var(--border)]">
                                 <Link

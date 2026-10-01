@@ -44,7 +44,7 @@ export default function InteractiveJourney({ questions, letters }: InteractiveJo
       >
         <div className="text-center mb-16">
           <p className="text-lg md:text-xl text-[var(--ink-light)] font-[family-name:var(--font-lora)] italic">
-            Qu&apos;est-ce qui résonne en vous aujourd&apos;hui ?
+            Qu’est-ce qui résonne en vous aujourd’hui ?
           </p>
         </div>
 
@@ -67,9 +67,9 @@ export default function InteractiveJourney({ questions, letters }: InteractiveJo
               }}
               className="text-left p-8 md:p-12 border border-[var(--border)] hover:border-[var(--ochre)]/50 hover:bg-[var(--ochre)]/5 transition-all duration-500 rounded-sm group cursor-pointer bg-[var(--white)] shadow-sm hover:shadow-md"
             >
-              <h3 className="text-2xl md:text-3xl font-[family-name:var(--font-cormorant)] font-light text-[var(--ink)] leading-snug group-hover:text-[var(--ochre)] transition-colors duration-500">
+              <h2 className="text-2xl md:text-3xl font-[family-name:var(--font-cormorant)] font-light text-[var(--ink)] leading-snug group-hover:text-[var(--ochre)] transition-colors duration-500">
                 {q.question}
-              </h3>
+              </h2>
             </div>
           ))}
         </div>
@@ -91,9 +91,9 @@ export default function InteractiveJourney({ questions, letters }: InteractiveJo
             </button>
 
             <div className="mb-16">
-              <h3 className="text-3xl md:text-4xl font-[family-name:var(--font-cormorant)] font-light italic text-[var(--ochre)] leading-snug mb-8">
+              <h2 className="text-3xl md:text-4xl font-[family-name:var(--font-cormorant)] font-light italic text-[var(--ochre)] leading-snug mb-8">
                 « {activeQuestion.question} »
-              </h3>
+              </h2>
               
               <div className="pl-6 border-l border-[var(--ochre)]/30">
                 <p className="text-lg md:text-xl text-[var(--ink)] font-[family-name:var(--font-lora)] leading-relaxed italic">
@@ -127,12 +127,12 @@ export default function InteractiveJourney({ questions, letters }: InteractiveJo
                         className="block no-underline hover:no-underline transition-all duration-500 bg-[var(--white)] border border-[var(--border)] hover:border-[var(--ochre)]/50 p-6 md:p-10 rounded-sm shadow-sm hover:shadow-md"
                       >
                         <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-4">
-                          <time className="caption text-[var(--ochre)] opacity-80 shrink-0" dateTime={letter.date}>
+                          <time className="caption text-[var(--ochre)] shrink-0" dateTime={letter.date}>
                             {formattedDate}
                           </time>
-                          <h4 className="text-2xl md:text-3xl font-[family-name:var(--font-cormorant)] font-light text-[var(--ink)] group-hover:text-[var(--ochre)] transition-colors">
+                          <h3 className="text-2xl md:text-3xl font-[family-name:var(--font-cormorant)] font-light text-[var(--ink)] group-hover:text-[var(--ochre)] transition-colors">
                             {letter.title}
-                          </h4>
+                          </h3>
                         </div>
                         {letter.excerpt && (
                           <p className="text-[var(--ink-light)] font-[family-name:var(--font-lora)] leading-relaxed italic md:pl-[calc(4rem+1vw)]">

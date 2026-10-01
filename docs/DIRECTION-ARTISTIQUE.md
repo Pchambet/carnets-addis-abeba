@@ -10,7 +10,7 @@ Le site raconte un voyage. Addis-Abéba, la Nouvelle Fleur, est au centre — pa
 
 | Pilier | Couleur | Intention |
 |--------|---------|-----------|
-| **Spirituel** | ochre (#B87040) | Lenteur, respiration. Typo aérée, espaces blancs. Prendre le temps de lire. |
+| **Spirituel** | ochre (#8F5229) | Lenteur, respiration. Typo aérée, espaces blancs. Prendre le temps de lire. |
 | **Culturel** | rouge (#8B1A1A) | Rencontre d’une culture vivante. Motifs éthiopiens, palette du pays. |
 | **Solidaire** | or (#C9A84C) | Lien, partage. Les lettres invitent à écrire, à s’ouvrir. |
 
@@ -19,7 +19,7 @@ Le site raconte un voyage. Addis-Abéba, la Nouvelle Fleur, est au centre — pa
 - **Paper** — #E8E6E1 (fond principal, ton chaud)
 - **Ink** — #2C2218 (texte)
 - **Ink light** — #5A5048 (texte secondaire)
-- **Ochre** — #B87040 (accents, liens, surlignage)
+- **Ochre** — #8F5229 (accents, liens, surlignage ; assombri pour un contraste lisible ≥ 4,5:1 sur le fond)
 - **Red** — #8B1A1A (accents culturels)
 - **Gold** — #C9A84C (accents, motifs)
 - **White** — #F8F6F3 (surfaces claires)

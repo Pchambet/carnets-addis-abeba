@@ -10,10 +10,10 @@ export default function JardinPage() {
       {/* ── Le Porche ── */}
       <section className="px-6 md:px-12 pt-32 pb-24 md:pt-48 md:pb-32 flex flex-col items-center justify-center text-center min-h-[70vh]">
         <h1 className="text-5xl md:text-7xl font-[family-name:var(--font-cormorant)] font-light italic text-[var(--ink)] mb-12 tracking-tight">
-          L&apos;Hortus Conclusus
+          L’Hortus Conclusus
         </h1>
         <p className="text-xl md:text-2xl text-[var(--ink-light)] font-[family-name:var(--font-cormorant)] italic font-light max-w-2xl leading-relaxed">
-          &quot;Entrez ici comme on entre en soi-même.&quot;
+          « Entrez ici comme on entre en soi-même. »
         </p>
         <p className="mt-8 text-[var(--ink-light)] font-[family-name:var(--font-lora)] max-w-xl mx-auto leading-loose">
           Invitation à la promenade au jardin intérieur. 
@@ -43,7 +43,7 @@ export default function JardinPage() {
                   <h2 className="text-3xl md:text-4xl font-[family-name:var(--font-cormorant)] font-light text-[var(--ink)] group-hover:text-[var(--ochre)] transition-colors duration-500 mb-4">
                     {theme.label}
                   </h2>
-                  <p className="text-lg text-[var(--ink-light)] font-[family-name:var(--font-lora)] leading-relaxed mb-6 opacity-80">
+                  <p className="text-lg text-[var(--ink-light)] font-[family-name:var(--font-lora)] leading-relaxed mb-6">
                     {theme.description}
                   </p>
                   <div className="flex items-center gap-4 transition-all duration-500 group-hover:gap-6">

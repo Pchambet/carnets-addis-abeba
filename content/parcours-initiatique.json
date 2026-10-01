@@ -4,21 +4,33 @@
     "questions": [
       {
         "id": "q1",
-        "question": "Fuyez-vous le silence ou l'espérez-vous comme le lieu d'une rencontre inattendue ?",
-        "reponse": "Le silence effraie souvent car il nous renvoie à notre propre vide. Pourtant, dans ces carnets, c'est au cœur de l'attente et de l'aridité que la rencontre véritable se produit.",
-        "letters": ["semaine-06", "semaine-01"]
+        "question": "Fuyez-vous le silence ou l’espérez-vous comme le lieu d’une rencontre inattendue ?",
+        "reponse": "Le silence effraie souvent car il nous renvoie à notre propre vide. Pourtant, dans ces carnets, c’est au cœur de l’attente et de l’aridité que la rencontre véritable se produit.",
+        "letters": ["semaine-01", "semaine-06", "semaine-23"]
       },
       {
         "id": "q2",
         "question": "Le dépouillement de vos sécurités vous angoisse-t-il ou vous libère-t-il ?",
-        "reponse": "Perdre ses repères est une épreuve douloureuse. Pourtant, la perte de contrôle peut devenir peu à peu le berceau d'une étonnante liberté.",
-        "letters": ["semaine-04", "semaine-07"]
+        "reponse": "Perdre ses repères est une épreuve douloureuse. Pourtant, la perte de contrôle peut devenir peu à peu le berceau d’une étonnante liberté.",
+        "letters": ["semaine-04", "semaine-07", "semaine-22"]
       },
       {
         "id": "q3",
-        "question": "Avez-vous déjà ressenti l'irruption de la grâce au cœur de l'aridité ou de l'attente ?",
-        "reponse": "La grâce ne prévient pas. Elle surgit souvent là où l'on n'a plus rien à offrir, transfigurant un instant de fatigue en une éternité joyeuse.",
-        "letters": ["semaine-11", "semaine-18"]
+        "question": "Avez-vous déjà ressenti l’irruption de la grâce au cœur de l’aridité ou de l’attente ?",
+        "reponse": "La grâce ne prévient pas. Elle surgit souvent là où l’on n’a plus rien à offrir, transfigurant un instant de fatigue en une éternité joyeuse.",
+        "letters": ["semaine-11", "semaine-18", "semaine-24"]
+      },
+      {
+        "id": "q16",
+        "question": "Savez-vous consentir à ce que vous n’avez pas choisi ?",
+        "reponse": "L’imprévu irrite, la solitude imposée pèse. Pourtant, choisir d’accueillir ce qui arrive plutôt que de le subir ouvre souvent un chemin de paix inattendu.",
+        "letters": ["semaine-20", "semaine-24"]
+      },
+      {
+        "id": "q17",
+        "question": "Vous êtes-vous déjà laissé bouleverser par la foi de ceux qui n’ont presque rien ?",
+        "reponse": "Des moines à genoux sur la terre, de jeunes paysans prosternés avant l’aube, une religieuse qui bâtit avec presque rien : leur foi nue donne tout et vit d’un miracle constant.",
+        "letters": ["semaine-23", "semaine-39-40"]
       }
     ]
   },
@@ -27,21 +39,39 @@
     "questions": [
       {
         "id": "q4",
-        "question": "Avez-vous déjà été intimement transformé par l'hospitalité d'un étranger ?",
-        "reponse": "Être accueilli sans rien avoir à prouver bouleverse notre rapport au monde. C'est dans le don gratuit d'un repas ou d'un sourire que l'on se découvre frères.",
-        "letters": ["semaine-00", "semaine-07"]
+        "question": "Avez-vous déjà été intimement transformé par l’hospitalité d’un étranger ?",
+        "reponse": "Être accueilli sans rien avoir à prouver bouleverse notre rapport au monde. C’est dans le don gratuit d’un repas ou d’un sourire que l’on se découvre frères.",
+        "letters": ["semaine-00", "semaine-07", "semaine-37-38", "semaine-41-43"]
       },
       {
         "id": "q5",
         "question": "Quel visage a récemment bouleversé vos certitudes ou éveillé votre compassion ?",
-        "reponse": "Certains regards nous obligent à baisser les armes. Devant la vulnérabilité d'un visage, tous nos grands discours s'effondrent pour laisser place à l'amour en acte.",
-        "letters": ["semaine-05", "semaine-09"]
+        "reponse": "Certains regards nous obligent à baisser les armes. Devant la vulnérabilité d’un visage, tous nos grands discours s’effondrent pour laisser place à l’amour en acte.",
+        "letters": ["semaine-05", "semaine-09", "semaine-13", "semaine-29-30"]
       },
       {
         "id": "q6",
-        "question": "Comment vivez-vous le détachement lorsque l'amour ou l'amitié vous lient si fortement à l'autre ?",
+        "question": "Comment vivez-vous le détachement lorsque l’amour ou l’amitié vous lient si fortement à l’autre ?",
         "reponse": "Aimer intensément sans posséder est le paradoxe de la mission. Les lettres témoignent de ces déchirements qui dilatent pourtant le cœur.",
-        "letters": ["semaine-12", "semaine-15"]
+        "letters": ["semaine-12", "semaine-15", "semaine-25", "semaine-39-40", "semaine-44"]
+      },
+      {
+        "id": "q18",
+        "question": "Lorsque vous recevez beaucoup, sentez-vous naître le désir de vous donner à votre tour ?",
+        "reponse": "Le confort comblé peut sonner creux. C’est souvent auprès de ceux qui ont le moins que l’on apprend le partage : un accueil plus grand que ce qu’on apporte, un biscuit tendu par chaque enfant.",
+        "letters": ["semaine-08", "semaine-26", "semaine-28"]
+      },
+      {
+        "id": "q19",
+        "question": "Quelles amitiés vous ont été données là où vous ne les attendiez pas ?",
+        "reponse": "Une postulante qui réclame une histoire, des étudiants qui parlent de leur foi, des musiciens qui jouent ensemble : les liens se tissent lentement. Et l’amitié se reconnaît alors à la qualité de ses silences.",
+        "letters": ["semaine-17", "semaine-27", "semaine-28", "semaine-34-35"]
+      },
+      {
+        "id": "q20",
+        "question": "Avez-vous déjà trouvé, loin des vôtres, une famille qui vous adopte ?",
+        "reponse": "Une mère qui ouvre sa maison, une table où l’on vous retient, des amis qui viennent à votre chevet : certains foyers vous font une place sans qu’il faille la demander. On y découvre que l’essentiel demeure au cœur des liens.",
+        "letters": ["semaine-20", "semaine-24", "semaine-31", "semaine-32-33", "semaine-36"]
       }
     ]
   },
@@ -56,15 +86,33 @@
       },
       {
         "id": "q8",
-        "question": "Avez-vous déjà fait l'expérience de votre propre vulnérabilité comme d'une force nouvelle ?",
-        "reponse": "Nous croyons devoir être forts pour aider. Mais c'est précisément dans notre impuissance assumée que le lien authentique se tisse.",
+        "question": "Avez-vous déjà fait l’expérience de votre propre vulnérabilité comme d’une force nouvelle ?",
+        "reponse": "Nous croyons devoir être forts pour aider. Mais c’est précisément dans notre impuissance assumée que le lien authentique se tisse.",
         "letters": ["semaine-02", "semaine-03"]
       },
       {
         "id": "q9",
         "question": "Que vous reste-t-il de plus précieux lorsque vous ne pouvez plus « faire », mais seulement « être » ?",
-        "reponse": "La maladie ou l'incompréhension nous condamnent parfois à l'inaction. Reste alors la simple présence, silencieuse et aimante, qui accomplit l'essentiel.",
-        "letters": ["semaine-04", "semaine-10"]
+        "reponse": "La maladie ou l’incompréhension nous condamnent parfois à l’inaction. Reste alors la simple présence, silencieuse et aimante, qui accomplit l’essentiel.",
+        "letters": ["semaine-04", "semaine-10", "semaine-26", "semaine-28"]
+      },
+      {
+        "id": "q21",
+        "question": "Que faites-vous de vos échecs : une défaite ou un apprentissage ?",
+        "reponse": "Il y a des jours d’initiatives échouées et de coutures ratées. Refaire n’est pas un drame : avec de la patience et une main qui vous aide, le courage revient.",
+        "letters": ["semaine-13", "semaine-41-43"]
+      },
+      {
+        "id": "q22",
+        "question": "Comment garder un cœur sensible face à la violence et à l’impuissance ?",
+        "reponse": "À force de côtoyer la mort et la misère, le cœur risque l’indifférence. Consoler, rester présent et, comme l’ami peintre, transfigurer l’horreur en beauté, c’est refuser que l’impuissance ait le dernier mot.",
+        "letters": ["semaine-22", "semaine-34-35"]
+      },
+      {
+        "id": "q23",
+        "question": "Savez-vous renoncer à vos attentes pour accueillir ce qui vous est réellement demandé ?",
+        "reponse": "Les fêtes rêvées s’effacent, l’utilité espérée ne vient pas. Réévaluer ses attentes et s’en détacher, c’est se rendre libre pour les besoins réels de ceux qui sont là.",
+        "letters": ["semaine-24", "semaine-27", "semaine-34-35"]
       }
     ]
   },
@@ -73,21 +121,33 @@
     "questions": [
       {
         "id": "q10",
-        "question": "Avez-vous déjà reconnu une présence transcendante dans les traits d'une personne souffrante ?",
-        "reponse": "Le mystère chrétien s'incarne dans la chair blessée. Servir le plus petit, c'est s'agenouiller devant la majesté de Dieu caché.",
+        "question": "Avez-vous déjà reconnu une présence transcendante dans les traits d’une personne souffrante ?",
+        "reponse": "Le mystère chrétien s’incarne dans la chair blessée. Servir le plus petit, c’est s’agenouiller devant la majesté de Dieu caché.",
         "letters": ["semaine-02", "semaine-03"]
       },
       {
         "id": "q11",
         "question": "La miséricorde est-elle pour vous un acte de foi quotidien ou une évidence humaine face à la pauvreté ?",
-        "reponse": "La compassion humaine trouve sa limite ; la miséricorde, elle, puise à une source infinie pour aimer l'inacceptable.",
+        "reponse": "La compassion humaine trouve sa limite ; la miséricorde, elle, puise à une source infinie pour aimer l’inacceptable.",
         "letters": ["semaine-04", "semaine-05"]
       },
       {
         "id": "q12",
-        "question": "Comment accompagner ou regarder ceux qui se trouvent à l’épreuve de leur derniers jours ?",
-        "reponse": "Se tenir au chevet de ceux qui partent n'est pas un acte de désespoir, mais le témoignage ultime que la vie, jusqu'à son dernier souffle, est sacrée.",
-        "letters": ["semaine-16"]
+        "question": "Comment accompagner ou regarder ceux qui se trouvent à l’épreuve de leurs derniers jours ?",
+        "reponse": "Se tenir au chevet de ceux qui partent n’est pas un acte de désespoir, mais le témoignage ultime que la vie, jusqu’à son dernier souffle, est sacrée.",
+        "letters": ["semaine-16", "semaine-22", "semaine-39-40"]
+      },
+      {
+        "id": "q24",
+        "question": "Servez-vous les autres pour eux-mêmes, ou pour ce qu’ils vous rendent ?",
+        "reponse": "Il est facile de se prendre pour un sauveur. Le Christ n’a pas lavé les pieds de ses disciples pour être aimé en retour, mais pour montrer l’exemple : servir les plus petits, sans se chercher soi-même.",
+        "letters": ["semaine-28"]
+      },
+      {
+        "id": "q25",
+        "question": "Que faites-vous des dons que vous avez reçus ?",
+        "reponse": "Se savoir profondément aimé révèle que l’on a quelque chose d’unique à apporter au monde. Cultiver ce que l’on a reçu et le faire fructifier devient alors une responsabilité, à vivre humblement.",
+        "letters": ["semaine-39-40"]
       }
     ]
   },
@@ -97,20 +157,32 @@
       {
         "id": "q13",
         "question": "Prenez-vous le temps de contempler la beauté cachée dans les détails les plus insignifiants de vos journées ?",
-        "reponse": "Il suffit souvent d'un rayon de lumière, d'un vêtement coloré ou d'un chant d'oiseau pour que la trivialité de l'existence soit soudainement transfigurée.",
-        "letters": ["semaine-04", "semaine-09"]
+        "reponse": "Il suffit souvent d’un rayon de lumière, d’un vêtement coloré ou d’un chant d’oiseau pour que la trivialité de l’existence soit soudainement transfigurée.",
+        "letters": ["semaine-04", "semaine-09", "semaine-19", "semaine-32-33", "semaine-36"]
       },
       {
         "id": "q14",
-        "question": "Où trouvez-vous des traces d'éternité et de poésie au milieu de vos routines quotidiennes ?",
-        "reponse": "Le rituel du café, le balayage d'une cour, les jeux des enfants : la poésie n'est pas une fuite, c'est l'art d'habiter le présent avec intensité.",
-        "letters": ["semaine-11", "semaine-12"]
+        "question": "Où trouvez-vous des traces d’éternité et de poésie au milieu de vos routines quotidiennes ?",
+        "reponse": "Le rituel du café, le balayage d’une cour, les jeux des enfants : la poésie n’est pas une fuite, c’est l’art d’habiter le présent avec intensité.",
+        "letters": ["semaine-11", "semaine-12", "semaine-29-30", "semaine-31"]
       },
       {
         "id": "q15",
         "question": "Avez-vous déjà été surpris par un « miracle ordinaire » qui a illuminé et changé votre regard sur le monde ?",
-        "reponse": "L'émerveillement est une discipline spirituelle. Il exige d'ouvrir les yeux pour voir les petits miracles que la grâce parsème sous nos pas.",
-        "letters": ["semaine-14", "semaine-15"]
+        "reponse": "L’émerveillement est une discipline spirituelle. Il exige d’ouvrir les yeux pour voir les petits miracles que la grâce parsème sous nos pas.",
+        "letters": ["semaine-14", "semaine-15", "semaine-17"]
+      },
+      {
+        "id": "q26",
+        "question": "La nature vous parle-t-elle encore de ce qui vous dépasse ?",
+        "reponse": "Une goutte d’eau au creux d’une feuille, des oiseaux sortis d’un conte, un orage où l’on dit que Dieu est proche : la création se donne comme un cadeau à qui sait la recevoir.",
+        "letters": ["semaine-23", "semaine-34-35", "semaine-37-38", "semaine-41-43", "semaine-44"]
+      },
+      {
+        "id": "q27",
+        "question": "Quelle beauté aimeriez-vous transmettre à ceux qui viendront après vous ?",
+        "reponse": "Des chansons composées entre amis, des contes reçus de la bouche d’un conteur, un livre façonné à plusieurs mains : ce qui nous a émerveillés ne demande qu’à être offert à son tour.",
+        "letters": ["semaine-32-33", "semaine-36", "semaine-41-43", "semaine-44"]
       }
     ]
   }

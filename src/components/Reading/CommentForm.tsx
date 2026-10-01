@@ -85,7 +85,7 @@ export default function CommentForm({
                 </div>
                 <div>
                     <label htmlFor="email" className="block caption text-[var(--ink-light)] mb-2">
-                        Email <span className="opacity-70">(optionnel)</span>
+                        Email <span className="normal-case">(facultatif)</span>
                     </label>
                     <input
                         id="email"
@@ -117,7 +117,7 @@ export default function CommentForm({
                 <button
                     type="submit"
                     disabled={status === 'loading'}
-                    className="livre-dor-btn px-8 py-3 bg-[var(--ochre)] text-[var(--white)] caption tracking-wider disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="livre-dor-btn px-8 py-3 bg-[var(--ochre)] enabled:hover:bg-[#7A4522] text-[var(--white)] caption tracking-wider disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     {status === 'loading' ? 'Envoi…' : isReply ? 'Répondre' : 'Publier'}
                 </button>

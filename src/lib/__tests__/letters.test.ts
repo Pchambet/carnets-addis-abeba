@@ -1,10 +1,20 @@
 import { describe, it, expect } from 'vitest';
 import {
+  weekLabel,
   cleanMarkdown,
   extractPullQuote,
   getSortedLettersData,
   getLetterData,
 } from '../letters';
+
+describe('weekLabel', () => {
+  it('formats single and double weeks', () => {
+    expect(weekLabel('semaine-08')).toBe('8');
+    expect(weekLabel('semaine-44')).toBe('44');
+    expect(weekLabel('semaine-29-30')).toBe('29–30');
+    expect(weekLabel('autre')).toBeNull();
+  });
+});
 
 describe('cleanMarkdown', () => {
   it('removes RTL/LTR marks', () => {

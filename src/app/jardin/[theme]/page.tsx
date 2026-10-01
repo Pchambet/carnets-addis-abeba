@@ -41,7 +41,7 @@ export default async function ThemePage({ params }: PageProps) {
         <div className="max-w-3xl mx-auto relative z-10">
           <Link
             href="/jardin"
-            className="caption text-[var(--ochre)] hover:underline inline-block mb-12 transition-all duration-250 opacity-80"
+            className="caption text-[var(--ochre)] hover:underline inline-block mb-12 transition-all duration-250"
           >
             ← Retour au jardin clos
           </Link>

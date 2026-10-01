@@ -25,6 +25,17 @@ export interface LetterData extends LetterFrontmatter {
     contentHtml: string;
 }
 
+/** ሳምንት = « semaine » en amharique */
+export const ETHIOPIC_WEEK = 'ሳምንት';
+
+/** Numéro de semaine affiché : "semaine-29-30" → "29–30", "semaine-08" → "8" */
+export function weekLabel(id: string): string | null {
+    const m = id.match(/^semaine-(\d+)(?:-(\d+))?$/);
+    if (!m) return null;
+    const first = String(parseInt(m[1], 10));
+    return m[2] ? `${first}–${parseInt(m[2], 10)}` : first;
+}
+
 function computeReadTime(text: string): number {
     return Math.max(1, Math.round(text.trim().split(/\s+/).length / 200));
 }

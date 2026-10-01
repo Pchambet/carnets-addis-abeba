@@ -50,7 +50,7 @@ export default function CommentItem({
                     {isClaire && (
                         <span className="text-xs text-[var(--gold)] font-medium tracking-wider">Claire</span>
                     )}
-                    <span className="caption text-[var(--ink-light)] opacity-90">{dateStr}</span>
+                    <span className="caption text-[var(--ink-light)]">{dateStr}</span>
                 </div>
                 <p className="font-[family-name:var(--font-lora)] text-[var(--ink)] leading-[1.75] mb-4">
                     {comment.content}

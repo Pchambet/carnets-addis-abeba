@@ -13,10 +13,11 @@ Décisions de Pierre : pas de YouTube (le « cassé » était la CI) ; Supabase 
 | 2 — Vie privée | ✅ réduit au choix « repo public » : `noindex`, sitemap supprimé, email de Claire retiré de `.env.example`, `.docx` retiré de `public/` |
 | 3 — Simplifier | ✅ 7 dépendances, Cusdis, scripts et fichiers morts, 3 branches fusionnées supprimés |
 | 4 — Ajout d'une lettre | ✅ `npm run add-letter` / `npm run media` (`scripts/media.mjs`) + tests de cohérence du contenu |
-| 5 — Contenu | ✅ 4 lieux ajoutés à la carte ; thèmes du Jardin proposés pour 22 → 44 — **à relire par Claire**. Parcours initiatique : questions toujours limitées aux lettres ≤ 18 |
+| 5 — Contenu | ✅ 4 lieux ajoutés à la carte ; thèmes du Jardin pour 22 → 44 (validés par Pierre) ; parcours initiatique étendu à toutes les lettres (27 questions), vérifié par les tests |
 | 6 — Performance | ✅ 136 miniatures manquantes, 17 affiches vidéo, 1 MP4 rendu lisible en streaming. Galerie mesurée : déjà chargée à la demande (10 images au premier affichage) → inchangée |
 | 7 — Historique git | ⏭️ conservé (option C) ; il ne grossit plus inutilement (plus de recompression en boucle) |
 | 8 — Documentation | ✅ README, `PROCEDURE.md`, `SUPABASE-LIVRE-OR.md` |
+| 9 — Design (revue UI/UX) | ✅ menu mobile (débordait), grille commune (en-tête, titres, pied de page), accueil avec photo et semaine en amharique par lettre, lettre précédente/suivante, carte cadrée sur tous les lieux, sommaire de la galerie, contrastes et noms accessibles (axe : 0 violation hors 1 cas restant à vérifier), typographie française dans le Jardin |
 
 ## Ce qu'est le projet
 

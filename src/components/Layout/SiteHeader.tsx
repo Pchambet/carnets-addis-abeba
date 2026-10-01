@@ -1,107 +1,104 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
+const NAV_LINKS = [
+    { name: 'Lettres', href: '/' },
+    { name: 'Galerie', href: '/galerie' },
+    { name: 'Jardin', href: '/jardin' },
+    { name: 'Carte', href: '/carte' },
+    { name: 'À propos', href: '/about' },
+];
+
+function isActive(pathname: string, href: string): boolean {
+    return href === '/' ? pathname === '/' || pathname.startsWith('/letters') : pathname.startsWith(href);
+}
 
 export default function SiteHeader() {
     const pathname = usePathname();
     const [isVisible, setIsVisible] = useState(true);
     const [isAtTop, setIsAtTop] = useState(true);
+    const [menuOpen, setMenuOpen] = useState(false);
     const lastScrollY = useRef(0);
 
-    const controlNavbar = useCallback(() => {
-        if (typeof window !== 'undefined') {
-            const currentScrollY = window.scrollY;
-
-            // Define "at top" state for glassmorphism
-            if (currentScrollY < 10) {
-                setIsAtTop(true);
-            } else {
-                setIsAtTop(false);
-            }
-
-            // Hide/Show based on scroll direction
-            if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-                // Scrolling down -> hide
-                setIsVisible(false);
-            } else {
-                // Scrolling up -> show
-                setIsVisible(true);
-            }
-
-            lastScrollY.current = currentScrollY;
-        }
+    // Masqué en descendant, réaffiché en remontant
+    useEffect(() => {
+        const onScroll = () => {
+            const y = window.scrollY;
+            setIsAtTop(y < 10);
+            setIsVisible(y <= lastScrollY.current || y <= 100);
+            lastScrollY.current = y;
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
+    // Menu mobile : se ferme avec Échap ou au choix d'un lien
     useEffect(() => {
-        if (typeof window !== 'undefined') {
-            window.addEventListener('scroll', controlNavbar, { passive: true });
-            return () => {
-                window.removeEventListener('scroll', controlNavbar);
-            };
-        }
-    }, [controlNavbar]);
+        if (!menuOpen) return;
+        const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setMenuOpen(false);
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, [menuOpen]);
 
-    const navLinks = [
-        { name: 'Lettres', href: '/' },
-        { name: 'Galerie', href: '/galerie' },
-        { name: 'Jardin', href: '/jardin' },
-        { name: 'Carte', href: '/carte' },
-        { name: 'À propos', href: '/about' },
-    ];
+    const solid = !isAtTop || menuOpen;
 
     return (
-        <header 
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out py-6 md:py-8 px-6 md:px-12 border-b ${
-                isVisible ? 'translate-y-0' : '-translate-y-full'
+        <header
+            className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ease-in-out ${
+                isVisible || menuOpen ? 'translate-y-0' : '-translate-y-full'
             } ${
-                isAtTop 
-                    ? 'bg-[#f7f5f0]/95 backdrop-blur-none border-[var(--border)] sm:bg-transparent sm:border-transparent' 
-                    : 'bg-[#f7f5f0]/80 backdrop-blur-md border-[var(--border)] shadow-sm'
+                solid
+                    ? 'bg-[var(--white)]/90 backdrop-blur-md border-[var(--border)] shadow-sm'
+                    : 'bg-[var(--white)]/90 border-[var(--border)] sm:bg-transparent sm:border-transparent'
             }`}
         >
-            <div className="max-w-4xl mx-auto flex justify-between items-baseline gap-6 flex-col sm:flex-row">
+            <div className="site-container flex justify-between items-center gap-6 py-4 sm:py-7">
                 <Link href="/" className="no-underline hover:no-underline block transition-opacity duration-250 hover:opacity-80 shrink-0">
-                    <h1 className="text-2xl md:text-3xl font-normal sm:font-light mt-1 text-[var(--ink)] leading-tight">
+                    <span className="block font-[family-name:var(--font-cormorant)] text-xl sm:text-3xl font-normal sm:font-light text-[var(--ink)] leading-tight">
                         La Parenthèse<br />
                         <em className="text-[var(--ochre)]">du dimanche soir</em>
-                    </h1>
+                    </span>
                 </Link>
 
-                {/* Mobile scrollable nav wrapper */}
-                <nav 
-                    className="flex gap-5 sm:gap-8 caption text-[var(--ink-light)] w-full sm:w-auto overflow-x-auto overflow-y-hidden scrollbar-hide pb-2 sm:pb-0"
-                    aria-label="Navigation principale"
-                >
-                    {navLinks.map((link) => {
-                        // Check active state
-                        // Special case for '/' since it matches all paths if we just use startsWith
-                        const isActive = link.href === '/' 
-                            ? pathname === '/' 
-                            : pathname.startsWith(link.href) && link.href !== '/';
+                <nav aria-label="Navigation principale">
+                    <button
+                        type="button"
+                        className="sm:hidden caption text-[var(--ink)] px-3 py-2 -mr-3"
+                        aria-expanded={menuOpen}
+                        aria-controls="site-menu"
+                        onClick={() => setMenuOpen((open) => !open)}
+                    >
+                        {menuOpen ? 'Fermer' : 'Menu'}
+                    </button>
 
-                        return (
-                            <Link 
-                                key={link.href} 
-                                href={link.href} 
-                                className={`relative transition-colors duration-250 whitespace-nowrap px-1 py-1 ${
-                                    isActive 
-                                        ? 'text-[var(--ochre)] font-medium' 
-                                        : 'hover:text-[var(--ochre)] opacity-80 hover:opacity-100'
-                                }`}
-                            >
-                                {link.name}
-                                {/* Active indicator underline */}
-                                {isActive && (
-                                    <span 
-                                        className="absolute left-0 right-0 bottom-0 h-[1px] bg-[var(--ochre)] rounded-full"
-                                        aria-hidden="true"
-                                    />
-                                )}
-                            </Link>
-                        );
-                    })}
+                    <ul
+                        id="site-menu"
+                        className={`${menuOpen ? 'flex' : 'hidden'} sm:flex absolute sm:static left-0 right-0 top-full flex-col sm:flex-row gap-0 sm:gap-8 bg-[var(--white)] sm:bg-transparent border-b sm:border-0 border-[var(--border)] px-6 pb-4 sm:p-0`}
+                    >
+                        {NAV_LINKS.map((link) => {
+                            const active = isActive(pathname, link.href);
+                            return (
+                                <li key={link.href}>
+                                    <Link
+                                        href={link.href}
+                                        aria-current={active ? 'page' : undefined}
+                                        onClick={() => setMenuOpen(false)}
+                                        className={`caption relative block whitespace-nowrap py-3 sm:py-1 sm:px-1 no-underline border-b sm:border-0 border-[var(--border)] transition-colors duration-250 ${
+                                            active ? 'text-[var(--ochre)]' : 'text-[var(--ink-light)] hover:text-[var(--ochre)]'
+                                        }`}
+                                    >
+                                        {link.name}
+                                        {active && (
+                                            <span className="hidden sm:block absolute left-0 right-0 bottom-0 h-px bg-[var(--ochre)]" aria-hidden="true" />
+                                        )}
+                                    </Link>
+                                </li>
+                            );
+                        })}
+                    </ul>
                 </nav>
             </div>
         </header>
