@@ -5,6 +5,7 @@ import { getSortedLettersData } from '../letters';
 import { getLetterThemeMap } from '../jardin';
 import { THEMES } from '../themes';
 import { isKnownLocation, splitLocation } from '../map-locations';
+import { findThumb, getLetterCover, getVideosForLetter, listFiles } from '../photos';
 
 // Cohérence du contenu : tout ce qu'il faut compléter à la main quand une lettre est ajoutée.
 
@@ -67,6 +68,32 @@ describe('jardin', () => {
 });
 
 describe('media', () => {
+    // Noms exacts (casse comprise) : le serveur de production y est sensible, pas le disque du Mac
+    const existsExactly = (url: string) => {
+        const file = path.join(process.cwd(), 'public', decodeURI(url));
+        const names = fs.readdirSync(path.dirname(file)).map((f) => f.normalize('NFC'));
+        return names.includes(path.basename(file).normalize('NFC'));
+    };
+
+    it.each(letters.map((l) => [l.id, l] as const))('%s: cover thumbnail exists with its exact name', (id, letter) => {
+        const cover = getLetterCover(id, letter.heroImage);
+        if (cover) expect(existsExactly(cover), cover).toBe(true);
+    });
+
+    it.each(letters.map((l) => [l.id] as const))('%s: every photo has a thumbnail with its exact name', (id) => {
+        const files = listFiles(path.join(imagesDir, id));
+        const photos = [...files.values()].filter((f) => /\.(jpe?g|png|webp)$/i.test(f) && !/-(thumb|poster)\./i.test(f));
+        for (const photo of photos) {
+            const thumb = findThumb(files, photo);
+            expect(thumb, `${photo}: run npm run media`).toBeTruthy();
+            expect(existsExactly(`/images/${id}/${thumb}`), `${id}/${thumb}`).toBe(true);
+        }
+    });
+
+    it.each(letters.map((l) => [l.id] as const))('%s: every video has a poster', (id) => {
+        for (const video of getVideosForLetter(id)) expect(video.poster, video.src).toBeTruthy();
+    });
+
     it('public/images only holds web media', () => {
         const stray = fs.readdirSync(imagesDir, { recursive: true, encoding: 'utf8' })
             .filter((f) => fs.statSync(path.join(imagesDir, f)).isFile())

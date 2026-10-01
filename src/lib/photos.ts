@@ -36,22 +36,41 @@ export interface Video {
   caption?: string;
 }
 
+/**
+ * Fichiers d'un dossier, indexés par nom normalisé (NFC). La comparaison reste exacte
+ * (casse comprise) comme sur le serveur, et indépendante de la normalisation Unicode du Mac.
+ */
+export function listFiles(dir: string): Map<string, string> {
+    if (!fs.existsSync(dir)) return new Map();
+    return new Map(fs.readdirSync(dir).map((f) => [f.normalize('NFC'), f]));
+}
+
+/** Miniature générée par scripts/media.mjs : même extension que l'original, ou .jpg */
+export function findThumb(files: Map<string, string>, filename: string): string | undefined {
+    const ext = path.extname(filename);
+    const base = ext ? filename.slice(0, -ext.length) : filename;
+    return [`${base}-thumb${ext}`, `${base}-thumb.jpg`]
+        .map((t) => files.get(t.normalize('NFC')))
+        .find(Boolean);
+}
+
 /** Returns videos for a letter (mov, mp4, webm in public/images/{id}/) */
 export function getVideosForLetter(id: string): Video[] {
   const dir = path.join(IMAGES_DIR, id);
   if (!fs.existsSync(dir)) return [];
 
   const captions = getPhotoCaptions(id);
-  const files = fs.readdirSync(dir)
+  const names = listFiles(dir);
+  const files = [...names.values()]
     .filter((f) => /\.(mov|mp4|webm)$/i.test(f))
     .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
 
   return files.map((f) => {
     const meta = captions[f] || captions[f.toLowerCase()];
-    const poster = `${f.replace(/\.[^.]+$/, '')}-poster.jpg`;
+    const poster = names.get(`${f.replace(/\.[^.]+$/, '')}-poster.jpg`.normalize('NFC'));
     return {
       src: `/images/${id}/${f}`,
-      poster: fs.existsSync(path.join(dir, poster)) ? `/images/${id}/${poster}` : undefined,
+      poster: poster ? `/images/${id}/${poster}` : undefined,
       name: meta?.caption ?? f.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' '),
       caption: meta?.caption,
     };
@@ -64,17 +83,14 @@ export async function getPhotosForLetter(id: string): Promise<Photo[]> {
     if (!fs.existsSync(dir)) return [];
 
     const captions = getPhotoCaptions(id);
-    const files = fs.readdirSync(dir)
+    const names = listFiles(dir);
+    const files = [...names.values()]
         .filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f) && !/-(thumb|poster)\.(jpg|jpeg|png|webp)$/i.test(f))
         .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
 
     const photos = files.map((f) => {
         const meta = captions[f] || captions[f.toLowerCase()];
-        const ext = path.extname(f);
-        const basename = path.basename(f, ext);
-        // Miniature générée par scripts/media.mjs (même extension que l'original, ou .jpg)
-        const thumbFilename = [`${basename}-thumb${ext}`, `${basename}-thumb.jpg`]
-            .find((t) => fs.existsSync(path.join(dir, t)));
+        const thumbFilename = findThumb(names, f);
 
         return {
             src: `/images/${id}/${f}`,
@@ -99,19 +115,16 @@ export async function getPhotosForLetter(id: string): Promise<Photo[]> {
  * Vignette d'une lettre pour les listes : miniature de l'image hero, sinon de la première photo.
  */
 export function getLetterCover(id: string, heroImage?: string): string | undefined {
-    const dir = path.join(IMAGES_DIR, id);
     let src = heroImage;
-    if (!src && fs.existsSync(dir)) {
-        const first = fs.readdirSync(dir)
+    if (!src) {
+        const first = [...listFiles(path.join(IMAGES_DIR, id)).values()]
             .filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f) && !/-(thumb|poster)\./i.test(f))
             .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))[0];
         if (first) src = `/images/${id}/${first}`;
     }
     if (!src) return undefined;
 
-    const file = path.join(PUBLIC_DIR, src);
-    const ext = path.extname(file);
-    const base = file.slice(0, -ext.length);
-    const thumb = [`${base}-thumb${ext}`, `${base}-thumb.jpg`].find((t) => fs.existsSync(t));
-    return thumb ? src.slice(0, -path.basename(file).length) + path.basename(thumb) : src;
+    const dir = path.dirname(src);
+    const thumb = findThumb(listFiles(path.join(PUBLIC_DIR, dir)), path.basename(src));
+    return thumb ? `${dir}/${thumb}` : src;
 }

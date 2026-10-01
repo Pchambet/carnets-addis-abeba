@@ -18,8 +18,8 @@ export default async function Home() {
 
     return (
         <div>
-            {/* ── Hero pleine largeur, responsive (IMG_1206) ── */}
-            <section className="hero-letter home-hero border-b border-[var(--border)]">
+            {/* ── Entrée du site : la photo en plein écran, sous l'en-tête transparent ── */}
+            <section className="hero-letter hero-immersive" data-immersive-hero>
                 <Image
                     src="/images/home-hero.jpg"
                     alt="Addis-Abéba — La Nouvelle Fleur"
@@ -34,11 +34,11 @@ export default async function Home() {
                 <div
                     className="absolute inset-0 z-[1]"
                     style={{
-                        background: 'linear-gradient(to top, rgba(20,10,5,0.75) 0%, rgba(20,10,5,0.18) 60%, transparent 100%)',
+                        background: 'linear-gradient(to bottom, rgba(18,12,8,0.6) 0%, rgba(18,12,8,0.25) 14%, transparent 30%), linear-gradient(to top, rgba(18,12,8,0.85) 0%, rgba(18,12,8,0.5) 30%, rgba(18,12,8,0.15) 55%, transparent 72%)',
                     }}
                 />
                 <div className="hero-letter-content site-container">
-                    <h1 className="text-3xl sm:text-5xl md:text-6xl font-light leading-tight mb-6 max-w-3xl" style={{ color: '#FDFAF6', textShadow: '0 2px 20px rgba(0,0,0,0.4)' }}>
+                    <h1 className="text-3xl sm:text-5xl md:text-6xl font-light leading-tight mb-6 max-w-3xl" style={{ color: '#FDFAF6', textShadow: '0 2px 4px rgba(0,0,0,0.5), 0 4px 24px rgba(0,0,0,0.55)' }}>
                         Nouvelles hebdomadaires<br />
                         <em className="text-[var(--gold)]">depuis la Nouvelle Fleur</em>
                     </h1>
@@ -47,11 +47,14 @@ export default async function Home() {
                             {letters.length} lettres d’Addis-Abéba, {journeySpan(letters)}.
                         </p>
                     )}
+                    <a href="#lettres" className="hero-letter-back caption inline-block mt-10 no-underline transition-colors duration-250">
+                        Lire les lettres ↓
+                    </a>
                 </div>
             </section>
 
             {/* ── Timeline des lettres ── */}
-            <section className="site-container py-16 md:py-24">
+            <section id="lettres" className="site-container py-16 md:py-24 scroll-mt-8">
                 <Timeline letters={letters} />
             </section>
         </div>

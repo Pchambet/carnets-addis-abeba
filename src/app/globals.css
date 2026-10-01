@@ -352,10 +352,6 @@
     filter: saturate(0.95);
   }
 
-  .home-hero .hero-letter-bg {
-    filter: brightness(0.58) saturate(0.88);
-  }
-
   /* Contenu du hero, aligné sur .site-container (padding horizontal) */
   .hero-letter-content {
     position: relative;
