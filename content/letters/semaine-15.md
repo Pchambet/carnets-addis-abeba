@@ -4,7 +4,7 @@ date: "2026-02-08"
 location: "Addis-Abeba"
 heroImage: "/images/semaine-15/IMG-20251207-WA0014_Original.JPG"
 heroPosition: "center 50%"
-excerpt: "Les semaines les plus intenses sont celles où l'on a le moins de choses à raconter."
+excerpt: "Les semaines les plus intenses semblent être celles où l’on a le moins de choses à dire."
 ---
 
 > PQ: En vérité, quand on regarde au fond des choses, tout n’est que grâce.

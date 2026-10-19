@@ -17,19 +17,15 @@ Il va falloir quitter ce qui a été construit ici et puis s’ouvrir à quelque
 
 Trois évènements sont venus faire fleurir ces trois dernières semaines. Je dis fleurir, parce que c’est Nouvel An ce soir, et que pour célébrer cette journée, les personnes décorent la façade de leur maison et les boucles de leurs cheveux avec de petites marguerites jaunes. Elles sont le symbole d’Addis-Abeba, ville dont le nom signifie « la Nouvelle Fleur ». L’emplacement d’Addis aurait été choisi par l’impératrice Taïtou, épouse de Ménélik II, en raison de la beauté de ce plateau couvert de jolis *Bidens* jaunes.
 
----
-
 La première fleur donc, c’est l’arrivée de Larissa. Une amie de promotion, rencontrée l’année dernière à Philanthropos. Sa venue me fait du bien. Sa présence témoigne de son amitié et c’est une chose qui, en soi, me touche particulièrement. Aussi, sa venue me sort de moi-même et c’est bon aussi, après un an passé plus ou moins « seule ». Avoir une amie qui me renvoie mon reflet, me rend service pour faire le point sur ce que je suis devenue cette année. Enfin, elle me donne l’élan pour vivre à fond ces derniers jours. Je lui montre tout ce que j’ai aimé, tout ceux que j’ai aimés surtout, et on fait tout ce que je n’ai pas eu l’audace de faire toute seule ces derniers mois. C’est grisant. J’aime bien.
 
 On a entamé un super projet. Je vous en avais donné l’avant-goût dans ma dernière lettre, alors voilà, je vous explique. Vous vous en souvenez, je m’intéresse beaucoup aux contes. Les enfants d’Alémachen m’ont donné envie de raconter des histoires. Grâce à Daniel, le conteur que j’ai rencontré dernièrement, j’ai réécrit trois contes et une légende éthiopienne ; inventé un poème et une petite histoire locale. Larissa est relieuse d’art, je l’ai fait venir avec du matériel. Demain, on commence à écrire le livre. La semaine prochaine, on ira faire illustrer les contes par Gébréyésus et Mandefrot, mes amis peintres. On terminera le travail chez Fitsum, le maroquinier, pour qu’il nous aide à faire la couverture.
 
 Ce petit ouvrage est merveilleux à faire ensemble. C’est un peu le produit d’une année passée ici, qui aura réuni les compétences de beaucoup d’amis. Daniel va venir à Alémachen lire aux enfants les histoires. J’espère que si j’ai des enfants un jour, ils apprécieront ce recueil. C’est un peu en pensant à eux que je fais ça.
 
----
-
 Trois jours après l’arrivée de Larissa, le Père Mathewos a perdu son cousin, renversé par un motard. Abba préparait son voyage pour se rendre dans sa famille, et puis il a pensé à nous.
 
-— « *Claire, tu ne voudrais pas m’accompagner pour ce voyage ? Ça serait l’occasion de découvrir Shishinda, la ville où je suis né.* » Ça faisait un an qu’il me parlait de son village, des aventures de son enfance dans ce pays où coulent le miel et le café.
+\- « *Claire, tu ne voudrais pas m’accompagner pour ce voyage ? Ça serait l’occasion de découvrir Shishinda, la ville où je suis né.* » Ça faisait un an qu’il me parlait de son village, des aventures de son enfance dans ce pays où coulent le miel et le café.
 
 Je lui ai dit que Larissa était à peine arrivée, que je ne pouvais pas la laisser seule. Il l’a invitée. C’est ainsi que nous avons pu bénéficier d’un voyage extraordinaire de trois jours dans la jungle, assises en tailleur dans la remorque du pick-up du padre Mathewos, les cheveux au vent et le sourire aux lèvres. Voilà la deuxième fleur.
 
@@ -56,8 +52,6 @@ Finalement, chacun se met à parler doucement. On aborde les souvenirs heureux d
 Nous sortons. Il est midi et Abba a du monde à voir. De retour au village, il est de coutume d’aller saluer chaque membre de la famille. Alors le ballet des repas s’engage. Nous aurons fait quatre maisons.
 
 Voilà quelques esquisses de ce dernier voyage qui nous aura transportées bien au-delà de ce que nous aurions pu imaginer.
-
----
 
 Au retour, la ville s’est habillée de jaune pour le nouvel an. Chaque façade d’immeuble est décorée de fleurs et de draps couleur soleil. Voilà la dernière fleur.
 

@@ -2,9 +2,9 @@
 title: "Tout gagner c'est tout perdre"
 date: "2026-02-22"
 location: "Addis-Abeba"
-heroImage: "/images/semaine-17/moqwanit-bonhomme.jpg"
+heroImage: "/images/semaine-17/Moqwanit qui dessine un bonhomme « in front of the house ».jpg"
 heroPosition: "center 40%"
-excerpt: "Tu étais si gourmande de la vie que tu l’as avalée avec ta mort dedans, comme ces petits enfants qui gobent le noyau d’une pêche, très vite, avant qu’on ait le temps de les avertir. » Bobin -"
+excerpt: "Consentir à ce qu’on a pas choisi. Forme de jeûne avant le jour. Une belle préparation au carême…"
 ---
 
 > PQ: Il y a des évènements qui semblent complètement absurdes si l’on ne fait pas cet effort d’accepter de tout perdre.
@@ -19,12 +19,12 @@ Ce soir, les sœurs fabriquent des chapelets, je me joins à elles pour les aide
 
 Pour leur cours de français, les sœurs m’ont demandé de leur apprendre deux prières. Je les traduis, en français et prends soin de les écrire bien au propre à la main. Mais elles ne parviennent pas à me lire évidemment, pourquoi n'ais-je pensé à les taper tout simplement à l’ordinateur ? 
  
-Pour l’anniversaire d’un ami, je réalise une longue vidéo jusqu’à 2 heures du matin pour tenter de rassembler tous nos souvenirs et être à l’heure pour le jour J. Le lendemain, je découvre que j’ai une semaine d’avance sur sa date d’anniversaire. 
+Pour l’anniversaire d’un ami, je réalisé une longue vidéo jusqu’à 2 heures du matin pour tenter de rassembler tous nos souvenirs et être à l’heure pour le jour J. Le lendemain, je découvre que j’ai une semaine d’avance sur sa date d’anniversaire. 
 Mais il n’y a rien de mieux que d’accepter des choses au seul motif que cela nous déplaît. Ça aide à vouloir les choses comme elles arrivent. Consentir à ce qu’on a pas choisi. Forme de jeûne avant le jour. Une belle préparation au carême… 
 
 **Mardi**
 
-Ce matin, je prends un bus pour me rendre au travail. Il est complètement bondé. C’est souvent comme ça ici. Un monsieur attrape mon sac et le pose sur ses genoux, pour m’aider. Peu de personnes discutent, c’est très tranquille, les gens sortent de leurs rêves pour se rendre docilement au travail. Je rigole avec mes amis et des personnes prennent part à nos conversations. C’est drôle comme ici les gens ont le sens de la communauté. Ce gars qui a pris mon sac ne m’adresse pas la parole puisqu’il ne parle pas anglais, mais il fait ça pour m’aider, comme l’évidence d’un devoir. Et ces gens qui ont pris part à nos échanges ne se font pas rejeter parce qu’une conversation amorcée dans un bus regarde tout le monde. 
+Ce matin, je prends un bus pour me rendre au travail. Il est complètement bondé. C’est souvent comme ça ici. Un monsieur attrape mon sac et le pose sur ses genoux, pour m’aider. Peu de personnes discutent, c’est très tranquille, les gens sortent de leurs rêves pour se rendre docilement au travail. Je rigole avec mes amis et des personnes prennent part à nos conversations. C’est drôle comme ici les gens ont le sens de la communauté. Ce gars qui a pris mon sac ne m’adresse pas la parole puisqu’il ne parle pas anglais, mais il fait ça pour m’aider, comme l’évidence d’un devoir. Et ces gens qui ont pris part à nos échanges ne se font pas rejeter parce qu’une conversation qui amorcée dans un bus regarde tout le monde. 
  
 J’arrive chez les sœurs de Mère Thérèza pour leur livrer la supplication que la jeune femme de la lettre précédente a écrite, suppliant de leur offrir une place pour son fils. Sœur Joie, une sœur française, m’accueille avec son sourire immense. Elle ne me promet rien pour cette femme mais m’assure de faire lire la lettre à la sœur supérieure et de me donner des nouvelles dans la semaine. Nous échangeons longtemps sur la condition de vie des enfants dont elles s’occupent.  
 Je rejoins mon ami peintre pour prendre un café avec lui. Ça fait un mois qu’on ne s’était pas vus. Les nouvelles s’envolent, il va bientôt se marier. Ils ont vraiment très peu d’argent et leur rêve de s’unir dans leur région natale ne pourra jamais se faire à cause de la guerre. Il devront se marier à Addis. Je lui propose de chanter pour ce beau jour, ça me ferait tellement plaisir. La proposition ne se fait pas redire. Pour me faire une surprise, il m’emmène dans son atelier me montrer ses dernières peintures. Je reste fascinée devant le portrait de deux amis qu’il a peint pour leur dire au-revoir et honorer leur voyage en Ethiopie. C’est Yolande et Baptiste. Ils sont absolument magnifiques, leur portrait m’émeut aux larmes parce que Gébréyésu les a peints par amour et cela se perçoit.

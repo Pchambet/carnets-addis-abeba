@@ -2,7 +2,7 @@
 title: "Comme un retour à la maison"
 date: "2025-12-28"
 location: "Addis-Abeba"
-excerpt: "La fin de l'année s'invite doucement."
+excerpt: "Dans ce sentiment parfumé de retour à la maison, je m’endors dans la paix de passer Noël ici."
 heroImage: "/images/semaine-09/Welcome back_.jpg"
 heroPosition: "center 40%"
 ---
@@ -25,6 +25,7 @@ Lundi, je reprends l’avion pour Addis-Abeba. 
  Nous nous donnons alors la mission d’étudier à partir de cette semaine les différentes étapes du développement de l’enfant, et de nous plonger dans les programmes de l’Education nationale pour connaître les objectifs d’apprentissage propres à leurs différents niveaux. 
 
  Mardi matin,
+
 Je m’empresse de rejoindre les enfants. Quel bonheur de se retrouver… Eux aussi m’ont préparé des surprises. Tous ces cadeaux de Noël marqués par la tendresse des sœurs, de mes amis et des enfants parachèvent ce sentiment de tout donner pour la mission. 
 
  Mercredi, c’est la veille de Noël. Mais en Ethiopie rien n’annonce ce grand jour de joie car le calendrier liturgique est décalé de deux semaines. 
@@ -43,7 +44,7 @@ Le matin, j’accompagne les enfants à l’hôpital. 
 
  La nuit passe, sans surprises.
 
- À l’aurore de Noël, après la messe des bergers, je relis devant la crèche le court message d’un ami de France : « Un nouveau-né, emmailloté dans une mangeoire, avec un peu de paille comme couchette. Rien de plus simple pour le Fils de Dieu. La paille récoltée dans l’été n’a plus son précieux fruit. Le blé est sans doute déjà en pain pour combler la faim de l’homme. Et voici que Jésus est déposé sur cette paille, afin de redonner du fruit à ce que l’on croyait stérile. » 
+ À l’aurore de Noël, après la messe des bergers, je relis devant la crèche le court message d’un ami de France : « *Un nouveau-né, emmailloté dans une mangeoire, avec un peu de paille comme couchette. Rien de plus simple pour le Fils de Dieu. La paille récoltée dans l’été n’a plus son précieux fruit. Le blé est sans doute déjà en pain pour combler la faim de l’homme. Et voici que Jésus est déposé sur cette paille, afin de redonner du fruit à ce que l’on croyait stérile.* » 
 
  Au fond de la petite crèche qu’ont confectionnée les frères, je regarde ce petit bout d’homme en me demandant à quoi ce fruit nouveau m’invite à renouveler chez moi. 
 
@@ -60,6 +61,7 @@ Le matin, j’accompagne les enfants à l’hôpital. 
  Ce weekend, je me plonge dans l’étude du développement des enfants et des méthodes d’enseignement d’une langue étrangère. Si vous avez des conseils…
 
 Merci pour tous ceux, et surtout les plus seuls, qui m’ont portée dans leur cœur pendant ces jours de fête et qui le font encore. 
+
 Ce que vous faites est tellement beau. 
 
  Je vous embrasse 

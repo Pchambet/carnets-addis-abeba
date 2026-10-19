@@ -4,7 +4,7 @@ date: "2026-03-22"
 location: "Addis-Abeba"
 heroImage: "/images/semaine-20/Professeur Joachim dans son jardin, Mélania et les garçons_.jpg"
 heroPosition: "center 45%"
-excerpt: "Entre pluie, mission, retraites imprévues et un chat blessé à apprivoiser, apprendre à consentir dans la paix."
+excerpt: "Chez nous, c’est seulement la mi-carême et l’enchaînement éprouvant de tous ces évènements m’invite à ralentir pour continuer dans la paix ces vingt prochains jours de combats intérieurs."
 ---
 
 Très chers amis, 

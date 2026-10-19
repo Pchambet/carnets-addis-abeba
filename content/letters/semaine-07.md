@@ -4,12 +4,11 @@ date: "2025-12-14"
 location: "Addis-Abeba"
 heroImage: "/images/semaine-07/IMG-20251214-WA0008_Original.JPG"
 heroPosition: "center 50%"
-excerpt: "La joie ne supprime pas la peine — elle la traverse."
+excerpt: "Si moi je doute, eux ont la foi. Ils m’invitent à relativiser. Tous ont la paix et m’invitent à trouver la vraie joie dans l’instant."
 ---
 
-> PQ: La joie ne supprime pas la peine — elle la traverse, l illumine, et parfois la transforme.
-
 Très chers amis,
+
 Comment vous portez-vous ? 
 
 Vivre la mission avec des amis change la couleur du quotidien. Lundi, Nati m’accompagne au travail et essaye de me faire rire devant ma tronche déprimée. 
@@ -68,6 +67,7 @@ Ce jour-là, tout semble me faire douter. L’Œuvre d’Orient ne répond pas, 
 
  
 **Dimanche**
+
  Ce dimanche c’est Gaodete, le dimanche de la joie. Je retrouve le gospel de la communauté française. Quel bonheur de chanter dans ma langue et de danser à la messe pour la gloire de Dieu. 
 
  Avec un frère de la communauté de St Jean et un de ses amis, nous nous envolons sur les collines d’Entoto. Cette montagne surplombe la ville à 3400 mètres. Nous prenons de la hauteur, des personnes vivent encore dans la forêt dans des cabanes de tôles. Les gens ne nous regardent pas de la même manière. La pauvreté est criante ici. Arrivés de l’autre côté de la montagne, la plaine s’ouvre à perte de vue devant nous, la forêt d’eucalyptus se détache sur un paysage de campagne où le rythme de la vie semble avoir perdu cinquante ans. En bas de la vallée, on aperçoit des troupeaux de vaches conduits par des enfants, de jolies musiques montent tinter joyeusement à nos oreilles… Cette paix me repose. 

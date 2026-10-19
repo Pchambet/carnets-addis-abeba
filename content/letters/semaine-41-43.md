@@ -17,7 +17,7 @@ Découragée, j’avais déjà tout rangé. J’étais décidée à rentrer pour
 
 Mais Fitsum a regardé mon travail avec attendrissement et a simplement dit :
 
-— « C’est du bon travail. Allez, on reprend ça ensemble. »
+\- « C’est du bon travail. Allez, on reprend ça ensemble. »
 
 Il a décousu mes erreurs, re-dessiné le patron et m’a accompagnée pour les coutures. Vers dix-sept heures, comme nous n’avions toujours pas déjeuné, nous nous sommes installés pour manger un bout dans un café. Il s’est mis à rire, se rappelant ma mine défaite, le matin même, au moment de son retour à l’atelier. « Ma pauvre, tu t’es vite découragée. Les hommes n’ont plus de patience, ils veulent tout tout de suite… Toi qui travailles avec les jeunes, tu dois bien le savoir. C’est pourtant seulement comme ça que l’on apprend les choses. »
 
@@ -89,6 +89,7 @@ Demain, nous fêterons l’Assomption, une semaine après vous. Ces deux derniè
 La vie est belle, il fait toujours très froid et le temps est à la pluie. Mais chaque journée nous offre au moins une heure de soleil, ce qui permet au linge de sécher doucement.
 
 Merci encore pour votre lecture qui me pousse à écrire. 
+
 Prenez soin de vous et goûtez à fond ces derniers jours de vacances. 
 
 À très bientôt

@@ -32,10 +32,13 @@ J’anime l’adoration avec le père Antoine pour les petits enfants. Cela fais
 Les Pères m’invitent à venir déjeuner chez eux. Au prieuré, je rencontre tout un tas de familles éthiopiennes venues suivre un enseignement sur la sexualité. Je reste l’après-midi avec eux pour un temps de questions-réponses. Certaines femmes ne savaient pas que si leur corps se met à saigner une fois par mois, ce n’est pas parce qu’elles sont malades… Et si, elles, l’ignorent, qu’en est-il de leurs maris ?!
  
 Je décide de marcher un peu jusqu’à ce qu’une terrible pluie s’annonce. J’ai juste le temps d’acheter un parapluie avant que des trombes d’eau inondent toute la ville. À un tournant, un jeune homme se réfugie sous mon parapluie pour marcher avec moi. Je ne le remets pas tout de suite… J’éclate de rire lorsque je reconnais ce gars du groupe de jeunes de l’université avec qui je n’avais encore jamais parlé. Drôle de visite improvisée sous mon ombrelle ! Je ne me rappelle pas son prénom en amharique, mais je sais qu’en français il signifie « Bonheur ». 
+
 On se met à sauter dans les flaques et à danser sous la pluie. Nos pas nous mènent jusqu’au couvent des sœurs de Mère Thérèza où nous retrouvons Thomas pour rire avec les orphelins. La journée se termine dans un café étudiant à nous amuser des cinquante universitaires complètement excités devant la minuscule télé qui diffuse le match…  
 
 Quelle belle semaine :) 
 
 PS. En y repensant, je prends conscience du fait que l'épisode du parapluie manque de contextualisation pour être bien compris.
+
 J'ai en effet omis quelques détails qui permettront de mieux situer le type de relation que je cultive avec les copains de l'université. J'observe un énorme décalage entre les Éthiopiens de la campagne et ceux de la ville, et notamment entre les orthodoxes et les catholiques qui ne reçoivent pas les mêmes enseignements. De plus, les étudiants de l'université d'Addis-Abeba sont, pour la plupart, issus de familles hyper privilégiées (université devenue payante en 2023) donc, très éduqués. Parmi eux, les catholiques que je fréquente sont encore différents car nourris par les enseignements des pères de St Jean, eux-mêmes Français. Ils suivent un programme qui s'appelle "l'école de vie", conceptualisé en France. 
+
 Les jeunes de mon groupe sont donc très "occidentalisés".

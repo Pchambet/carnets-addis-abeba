@@ -2,7 +2,7 @@
 title: "Choisir de tout aimer"
 date: "2025-11-23"
 location: "Addis-Abeba"
-excerpt: "L'amour n'est pas un sentiment, c'est une décision que l'on renouvelle chaque matin."
+excerpt: "Si l’amour est un choix, les sentiments suivent, et de cette semaine je ne garde que les souvenirs amoureux de chaque rencontre."
 ---
 
 Chers amis,
@@ -26,6 +26,7 @@ Puisqu’ici les gens souffrent, ils ne cessent de se donner de patientes consol
  Il vient d’une famille pauvre de la campagne, à l’ouest de l’Ethiopie. Ses parents sont paysans et orthodoxes. Je vais vous conter son histoire. 
 
  Très pratiquant, le père de ce garçon l’emmenait tous les dimanches à l’église. Là, il a découvert la singularité de ces visages divins que révèlent les icônes, la finesse des enluminures florales qui rampent sur les murs comme des serpent dorés et la beauté par laquelle l’homme peut parler de Dieu à travers la peinture. 
+
 Fasciné, pendant les longues heures de la prière du dimanche, il a commencé à recopier le Christ et la Sainte Vierge, les saints et tous ces anges semblant danser autour de lui. Ce petit bout de peintre a aiguisé son désir au pied de cette petite église. Puis, à quatorze ans, il est tombé amoureux. Un jeune cœur amoureux n’est retenu par rien. C’est là qu’il s’est mis à peindre pour elle, chaque jour et chaque fois un peu mieux. À la sortie de son école, il l’attendait avec un croquis sur le cœur. Le jour où il a dû choisir l’école de son avenir, en cachette il a demandé une place à l’université d’art moderne de la capitale. En cachette, parce que dans son village personne ne souhaite à son enfant de devenir peintre. Personne même ne sait que l’on peut en faire un métier. Le jeune homme a dit alors à ses parents qu’il s’était inscrit dans une fac d’ingénieur… Lorsque les résultats sont arrivés, au sommet de sa joie, il avait été accepté à l’école d’art d’Addis-Abeba. Prétextant à ses parents que malheureusement son premier choix n’avait pas été retenu, le voilà parti à l’aube de son plus grand bonheur. Pendant trois ans il ne rentre plus au village, ne dors que quelques heures et ne regarde les femmes que pour apprendre à les peindre et se payer son pain en les dessinant pour trois sous. Il peint, il peint, il peint des chevaux pour danser sa liberté, et des visages qui savent mieux que les mots hurler la tristesse des rêves émiettés des enfants de son peuple. Et lui, il s’accroche à son pinceau comme si c’était son cœur. 
 
  Son nom, c’est Gébréyésu. En Amharique ça veut dire « serviteur de Jésus ». Au-delà de sa vie donnée pour la peinture, il y a ce Christ, qui, par Son Amour lui offre le désir de peindre, encore plus fort, encore plus passionnément et cette fois-ci, pour offrir au monde la Beauté qui lui vient lorsqu’il prie son Dieu. 

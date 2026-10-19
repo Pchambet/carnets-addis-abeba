@@ -1,11 +1,12 @@
 import fs from 'fs';
 import path from 'path';
+import matter from 'gray-matter';
 import { describe, expect, it } from 'vitest';
 import { getSortedLettersData } from '../letters';
-import { getLetterThemeMap } from '../jardin';
+import { getLetterThemeMap, getThemeLetterCounts } from '../jardin';
 import { THEMES } from '../themes';
 import { isKnownLocation, splitLocation } from '../map-locations';
-import { findThumb, getLetterCover, getVideosForLetter, listFiles } from '../photos';
+import { findThumb, getLetterCover, getVideosForLetter, listFiles, listMedia } from '../photos';
 
 // Cohérence du contenu : tout ce qu'il faut compléter à la main quand une lettre est ajoutée.
 
@@ -24,6 +25,17 @@ describe('letters', () => {
     it.each(letters.map((l) => [l.id, l.location] as const))('%s: every place is on the map', (_, location) => {
         for (const place of splitLocation(location)) {
             expect(isKnownLocation(place), `add "${place}" to src/lib/map-locations.ts`).toBe(true);
+        }
+    });
+
+    // Extrait et citation mise en avant s'affichent entre guillemets : ce sont les mots exacts de Claire
+    it.each(letters.map((l) => [l.id] as const))('%s: excerpt and pull quote are quoted word for word', (id) => {
+        const { content, data } = matter(fs.readFileSync(path.join(process.cwd(), 'content', 'letters', `${id}.md`), 'utf8'));
+        const flat = (s: string) => s.replace(/\*+/g, '').replace(/[\s ]+/g, ' ').trim();
+        const pq = content.match(/^>\s*PQ:\s*(.+)$/m)?.[1];
+        const body = flat(content.replace(/^>\s*PQ:.*$/m, ''));
+        for (const quote of [data.excerpt, pq].filter(Boolean)) {
+            expect(body, `${id}: « ${quote} »`).toContain(flat(quote));
         }
     });
 
@@ -61,6 +73,10 @@ describe('jardin', () => {
                 expect(themeMap[id], `${id} answers a question of ${journey.theme}`).toContain(journey.theme);
             }
         }
+        for (const journey of journeys) {
+            const reachable = new Set(journey.questions.flatMap((q) => q.letters));
+            expect(getThemeLetterCounts()[journey.theme], `${journey.theme}: count shown on /jardin`).toBe(reachable.size);
+        }
         const answered = new Set(journeys.flatMap((j) => j.questions.flatMap((q) => q.letters)));
         const missing = [...letterIds].filter((id) => !answered.has(id));
         expect(missing, 'add them to a question of content/parcours-initiatique.json').toEqual([]);
@@ -82,7 +98,7 @@ describe('media', () => {
 
     it.each(letters.map((l) => [l.id] as const))('%s: every photo has a thumbnail with its exact name', (id) => {
         const files = listFiles(path.join(imagesDir, id));
-        const photos = [...files.values()].filter((f) => /\.(jpe?g|png|webp)$/i.test(f) && !/-(thumb|poster)\./i.test(f));
+        const photos = listMedia(files);
         for (const photo of photos) {
             const thumb = findThumb(files, photo);
             expect(thumb, `${photo}: run npm run media`).toBeTruthy();
@@ -92,6 +108,17 @@ describe('media', () => {
 
     it.each(letters.map((l) => [l.id] as const))('%s: every video has a poster', (id) => {
         for (const video of getVideosForLetter(id)) expect(video.poster, video.src).toBeTruthy();
+    });
+
+    it.each(letters.map((l) => [l.id] as const))('%s: every caption names an existing file', (id) => {
+        const file = path.join(imagesDir, id, 'captions.json');
+        if (!fs.existsSync(file)) return;
+        const files = listFiles(path.join(imagesDir, id));
+        for (const name of Object.keys(JSON.parse(fs.readFileSync(file, 'utf8')))) {
+            // NFC comme les chemins de git : sur Vercel (Linux), une clé NFD ne trouverait pas son fichier
+            expect(name, `${id}/captions.json: key must be NFC`).toBe(name.normalize('NFC'));
+            expect(files.has(name.normalize('NFC')), `${id}/captions.json: ${name}`).toBe(true);
+        }
     });
 
     it('public/images only holds web media', () => {

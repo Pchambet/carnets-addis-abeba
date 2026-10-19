@@ -2,7 +2,7 @@
 title: "La joie fait tout pousser"
 date: "2026-01-04"
 location: "Addis-Abeba"
-excerpt: "Il suffit d'un rien pour que tout refleurisse."
+excerpt: "Que cette nouvelle année s’ouvre sur un terreau de joie ! La joie fait tout pousser."
 heroImage: "/images/semaine-10/kere-soleil.jpg"
 ---
 
@@ -34,7 +34,9 @@ Une pauvre fille dans l’agonie de ses dernières heures gisait dans un lit au 
  Au matin de cette nouvelle année, j’ai compris une chose. Peu importe ce que l’on vit, l’important c’est de savoir où l’on va et comment on y va. 
 
  Alors, où tu vas ? - Vers l’Amour. 
+
  Et comment ? - En aimant. 
+
  Mais qu’est-ce que c’est aimer ? - C’est s’oublier. C’est s’oublier et tourner son regard vers l’autre. Et c’est en s’oubliant qu’alors on se retrouve. 
 
  Il va y avoir encore mille choses à vivre :) 

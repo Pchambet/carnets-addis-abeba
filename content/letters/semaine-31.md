@@ -33,13 +33,9 @@ Il aura fallu sept mois pour que je réalise que ce qui fonctionne avec mes étu
 
 Les enfants m’accueillent avec cette fois la joie d’avoir un nouvel accessoire à chaparder. Ils s’amusent au parachute avec mon parapluie et cela leur suffit pour animer leurs occupations pendant que je prépare la classe. Cela vient en contraste avec la dernière encyclique du pape sur l'utilisation de l’IA et qui a occupé ma semaine. En les regardant jouer, je saisis à quel point une beauté réside dans la curiosité qu’ont les enfants et l’urgence qu’il y a à ne pas la laisser mourir.
 
-**Samedi**
+Samedi, alors que je passais devant la maison de la famille d’Yishak, je suis entrée faire un coucou. « Cinq minutes » ai-je dit. Mais nous nous sommes lancés dans un débat bien engagé, rejoints, par le beau-frère d’Yishak qui passait aussi par là. Atété qui était partie au marché s’est trouvée tellement contente lorsqu’elle nous a découverts à bavarder dans son salon, qu’elle nous a fait du café, puis nous a demandé de rester pour le repas. L’après-midi s’est poursuivie en chansons comme d’habitude, avec Atété qui dansait. Finalement, Yishak et Abebech m’ont appris à faire du Chiro, plat de base en Éthiopie dont je ne pouvais ignorer la recette encore plus longtemps. Avant que le match France-Angleterre ne commence, je suis rentrée à la maison. Lorsque le foot est diffusé à Addis, les gens deviennent complètement fous. Mais avant mon départ, Yishak me promet qu’on ira avec le groupe vivre l’ambiance au cœur d’un bar.
 
-Alors que je passais devant la maison de la famille d’Yishak, je suis entrée faire un coucou. « Cinq minutes » ai-je dit. Mais nous nous sommes lancés dans un débat bien engagé, rejoints, par le beau-frère d’Yishak qui passait aussi par là. Atété qui était partie au marché s’est trouvée tellement contente lorsqu’elle nous a découverts à bavarder dans son salon, qu’elle nous a fait du café, puis nous a demandé de rester pour le repas. L’après-midi s’est poursuivie en chansons comme d’habitude, avec Atété qui dansait. Finalement, Yishak et Abebech m’ont appris à faire du Chiro, plat de base en Éthiopie dont je ne pouvais ignorer la recette encore plus longtemps. Avant que le match France-Angleterre ne commence, je suis rentrée à la maison. Lorsque le foot est diffusé à Addis, les gens deviennent complètement fous. Mais avant mon départ, Yishak me promet qu’on ira avec le groupe vivre l’ambiance au cœur d’un bar.
-
-**Dimanche**
-
-C’est la Pentecôte. Les petites sœurs ont organisé une grande fête. La journée est pleine de fleurs et se termine encore une fois avec du mouton. Nous partons bronzer avec les filles et la pluie nous surprend. Voilà que la lettre retrouve ses premières lignes et il y a une fuite d’eau dans mon plafond. Je dois vous laisser là.
+Ce dimanche, c’est la Pentecôte. Les petites sœurs ont organisé une grande fête. La journée est pleine de fleurs et se termine encore une fois avec du mouton. Nous partons bronzer avec les filles et la pluie nous surprend. Voilà que la lettre retrouve ses premières lignes et il y a une fuite d’eau dans mon plafond. Je dois vous laisser là.
 
 À la semaine prochaine ! 
 

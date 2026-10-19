@@ -39,9 +39,7 @@ Ces deux autres jours, je les passe dans mon lit parce que la sœur supérieure 
 
 J’appelle une amie qui m’annonce être amoureuse. Cet évènement me fait tout drôle. Après les deux naissances des bébés de mes copines et puis cette dernière nouvelle, je réalise que nos vies tournent et se dessinent. Ces éclats de l’amour dans le cœur de mes amies font grandir mes désirs…
 
-**Samedi**
-
-Je me réveille en parfaite forme après ces deux jours de confinement. À six heures du matin, on se réunit avec les filles de la maison pour se faire toutes belles. Aujourd’hui, c’est une double fête ! Nous célébrons la Nativité de la Vierge et Sainte Louise de Marillac, fondatrice de leur communauté.
+Samedi, je me réveille en parfaite forme après ces deux jours de confinement. À six heures du matin, on se réunit avec les filles de la maison pour se faire toutes belles. Aujourd’hui, c’est une double fête ! Nous célébrons la Nativité de la Vierge et Sainte Louise de Marillac, fondatrice de leur communauté.
 
 Nous sautons toutes joyeuses dans un taxi qui nous emmène en direction de la cathédrale. Endroit où je n’étais encore jamais allée. Une grande église de style européen se dresse devant nous, lieu qui me semble tout de suite familier. Bien que la messe soit en rite guèze, je me laisse porter, si bien que je m’évanouis à moitié à cause de la chaleur. Là, je me laisse porter par Kere qui me traine dans le clocher pour que je reprenne mes esprits… La vue est magnifique. Je resterai là-haut secouée par le vent à côté du carillonneur qui fera sonner les cloches deux fois. Musique qui se fait rare ici et qui me ramène à vous l’espace d’un moment.
 

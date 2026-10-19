@@ -6,8 +6,6 @@ heroImage: "/images/semaine-12/Un p’tit coup d’eau-de-vie avant de partir au
 heroPosition: "center 40%"
 ---
 
-> PQ: L’homme qui n’aime pas ne vit pas.
-
 **Mardi**
 
  

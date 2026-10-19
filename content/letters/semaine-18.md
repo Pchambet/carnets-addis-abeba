@@ -4,7 +4,7 @@ date: "2026-03-01"
 location: "Addis-Abeba"
 heroImage: "/images/semaine-18/IMG_1729.jpg"
 heroPosition: "center 60%"
-excerpt: "Accepter les exigences que chaque jour propose, et toujours tenter de se dépasser."
+excerpt: "Cette semaine je m’accroche à la mission pour accepter les exigences que chaque jour propose et toujours tenter de me désencombrer de moi."
 ---
 
 > PQ: Je ne sais pas si l’on peut tout contempler, mais elle fait pousser le bonheur.

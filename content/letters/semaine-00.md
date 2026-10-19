@@ -4,7 +4,7 @@
 title: "Mission à Addis-Abeba"
 date: "2025-10-26"
 location: "Addis-Abeba"
-excerpt: "Je vous écris ce message à l’aube de ce dimanche éthiopien où je peux savourer enfin un peu de repos."
+excerpt: "Je vous écris ce message à l’aube de ce dimanche éthiopien où je peux savourer enfin un peu de repos après ces trois journées intenses."
 
 
 ---

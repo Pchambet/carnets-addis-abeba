@@ -7,9 +7,7 @@ heroPosition: "center"
 excerpt: "L’eau y est si pure que nous pouvons la boire au creux d’une feuille de taro dont la singularité est d’être imperméable. Creuset végétal où perle une goutte d’eau, éphémère diamant qui s’offre à notre soif."
 ---
 
-**Mercredi**
-
-Ce soir-là de la semaine dernière, j’arrive chez Yishak avec mon sac de voyage. Emma et Eliab sont là, les petits enfants d’Atété, qui s’amusent à jouer à saute-mouton sur les coussins du salon, au grand désespoir de leur grand-mère. Ils m’accueillent en sauts de puces faisant du canapé leur meilleur trampoline. A mon plus grand bonheur, Atété en profite pour me laisser ses petits monstres et s’échappe dans sa cuisine. Subitement, une coupure de courant nous surprend dans nos jeux. Marka nous installe une petite torche solaire qui se transforme en projecteur. S’invitent alors des ombres merveilleuses que les enfants inventent en faisant danser leurs petits doigts vivants dans la lumière. Le salon se remplit mystérieusement d’oiseaux, de crocodiles et de sorcières extraordinaires…
+Mercredi soir de la semaine dernière, j’arrive chez Yishak avec mon sac de voyage. Emma et Eliab sont là, les petits enfants d’Atété, qui s’amusent à jouer à saute-mouton sur les coussins du salon, au grand désespoir de leur grand-mère. Ils m’accueillent en sauts de puces faisant du canapé leur meilleur trampoline. A mon plus grand bonheur, Atété en profite pour me laisser ses petits monstres et s’échappe dans sa cuisine. Subitement, une coupure de courant nous surprend dans nos jeux. Marka nous installe une petite torche solaire qui se transforme en projecteur. S’invitent alors des ombres merveilleuses que les enfants inventent en faisant danser leurs petits doigts vivants dans la lumière. Le salon se remplit mystérieusement d’oiseaux, de crocodiles et de sorcières extraordinaires…
 
 Ainsi commence ce voyage dans la ville des quarante rivières.
 
@@ -41,9 +39,7 @@ Ce soir-là, à la maison, les filles font cuire de l’ingéra au feu de bois j
 
 La petite maison de terre s’endort en paix cette nuit-là.
 
-**Vendredi**
-
-Après un petit déjeuner en famille accompagnée de quelques curieux du village, nous nous préparons pour une journée dans la jungle. Après que les filles se sont amusées à me coiffer, nous partons, calés dans le badjadj, traverser des forêts d’acacias et de caféiers sauvages en direction d’un lac.
+Vendredi, après un petit déjeuner en famille accompagnée de quelques curieux du village, nous nous préparons pour une journée dans la jungle. Après que les filles se sont amusées à me coiffer, nous partons, calés dans le badjadj, traverser des forêts d’acacias et de caféiers sauvages en direction d’un lac.
 
 Au bout d’un petit désert de cactus, les eaux bleues du lac Chamo viennent lécher les bords d’un rivage habité de pêcheurs. Nous garons le badjadj sur la plage et sortons contempler le lac. Des dizaines de marabouts se promènent paisiblement dans l’eau, attendant que les pêcheurs leur jettent des carcasses de poissons-chats ou de bagrus. Nous échangeons avec Petros, un pêcheur qui répare ses filets endommagés par sa rencontre nocturne avec un crocodile qui a emporté avec lui le tiers de sa récente pêche.
 
@@ -71,9 +67,7 @@ De retour à la maison, nous trouvons Ayantu recroquevillée par terre, se tenan
 
 Après une heure de consolation, je m’endors auprès des petites sœurs comme la veille, mais, cette fois-ci, avec le bébé. Ayantu me l’a laissé.
 
-**Samedi**
-
-Ce matin, je me réveille par les sanglots du bébé qui a faim. La maison est déjà bien active. Les femmes préparent de l’ingéra et me donnent l’occasion de m’y essayer. La galette est ratée, mais les femmes se la partagent en riant de mes efforts. Je ne parle pas la même langue mais je chéris leur accueil qui me fait sentir si bien.
+Samedi matin, je me réveille par les sanglots du bébé qui a faim. La maison est déjà bien active. Les femmes préparent de l’ingéra et me donnent l’occasion de m’y essayer. La galette est ratée, mais les femmes se la partagent en riant de mes efforts. Je ne parle pas la même langue mais je chéris leur accueil qui me fait sentir si bien.
 
 Manda est assis avec son groupe de copains. Aujourd’hui, nous partons dans les montagnes rencontrer le chef d’un village où les hommes vivent encore comme aux tout premiers siècles. Il reste une place dans le badjadj. Nous demandons aux garçons, qui souhaite nous accompagner, et je suis surprise par l’attention des hommes qui préfèrent que personne ne s’y rende pour ne pas faire de jaloux. Manda leur demande de choisir ensemble tout de même quelqu’un, ce serait trop dommage de passer à côté de cette occasion de voyage, chose qu’ils ne s’offrent jamais. Sidney vient alors avec nous. Il connaît bien le village et nous servira de guide.
 
@@ -93,9 +87,7 @@ Mais déjà la nuit tombe, il nous faut redescendre.
 
 Les femmes préparent du « tela », sorte de bière locale qu’elles font mijoter dans un tonneau en bois. Demain commencera la fête. Toute la nuit, des gens arrivent et s’invitent dans la pièce pour se reposer de leur voyage. Quand je me lève le matin, il y a deux nouvelles femmes et un jeune garçon dont j’ignore les prénoms endormis sur mon coussin.
 
-**Dimanche**
-
-Je me lève en silence pour retrouver Manda. Ce matin, nous partons à six heures accompagner une foule de fidèles orthodoxes venus de la vallée pour rejoindre en pèlerinage le monastère Zigiti Abune Gebremenfes Kidus à l’occasion de la saint Pierre et Paul. Dans le car, les gens chantent des chansons religieuses. Des flics nous arrêtent à peu près tous les trois kilomètres pour nous demander combien nous avons payé nos places. Du fait de la fête, les chauffeurs en ont tous profité pour doubler les prix de la montée. Mais comme tout le monde est pressé d’arriver à l’église, personne ne dit rien et le chauffeur s’en remet plein les poches.
+Je me lève en silence pour rejoindre Manda. Ce matin, nous partons à six heures rejoindre une foule de fidèles orthodoxes venus de la vallée pour rejoindre en pèlerinage le monastère Zigiti Abune Gebremenfes Kidus à l’occasion de la saint Pierre et Paul. Dans le car, les gens chantent des chansons religieuses. Des flics nous arrêtent à peu près tous les trois kilomètres pour nous demander combien nous avons payé nos places. Du fait de la fête, les chauffeurs en ont tous profité pour doubler les prix de la montée. Mais comme tout le monde est pressé d’arriver à l’église, personne ne dit rien et le chauffeur s’en remet plein les poches.
 
 Arrivés au sommet, il y a beaucoup trop de monde pour accéder à l’église. Nous sommes des milliers. La liturgie est magnifique, pleine de ces bougies de cire orange et de voiles en coton blanc. Je me laisse bercer par les chants monocordes… Aussi, nous nous trouvons dans le village d’enfance d’Aboulé. Il m’emmène sur le lieu de sa naissance et nous rendons visite à son oncle qui possède l’unique boucherie du village. Sa tante tient une taverne où nous nous réfugions pour manger une assiette de bœuf cru mijoté dans du beurre.
 
@@ -112,8 +104,6 @@ Au début de la nuit, Mamuyé, le papa de Manda, se plaint de douleurs fortes au
 La fête ne s’est pas arrêtée. À notre retour, chacun défile pour offrir à Manda des cadeaux. La nuit se poursuit auprès de ses plus chers amis avec qui j’échange sur la persévérance et la confiance en l’avenir.
 
 Ayantu vient me récupérer au petit matin, elle n’arrivait pas à s’endormir me sachant dehors avec les hommes.
-
-**Lundi**
 
 Le lendemain, les garçons se sont levés à cinq heures pour démonter les tentes. Nous rangeons la maison. Le sol est recouvert de déchets et de carcasses de viande. Ayantu a accepté qu’une ribambelle de gamins viennent finir les restes du repas, en échange de la vaisselle. Ils s’exécutent sans ronchonner. Le plus grand doit avoir neuf ans. Ayantu se repose enfin, elle s’endort le bébé au sein, sur le canapé du salon qui a été déposé au milieu du jardin pour nettoyer la maison.
 
@@ -133,4 +123,4 @@ Mandéfrot dessine, il me raconte qu’il a dû travailler pendant trois jours s
 
 Voilà donc les aventures qui ont accompagné ces derniers jours.
 
-Avec les enfants, nous nous sommes retrouvés comme si nous faisions partie de la même famille. Beaucoup de nouveaux sont arrivés pendant mon absence. Il y a du travail. Mais la semaine prochaine, je repars déjà pour une nouvelle mission dans un petit village au Sud, avec les frères de St Jean.
+Avec les enfants, nous nous sommes retrouvés comme si nous faisions partie de la même famille. Beaucoup de nouveaux sont arrivés pendant mon absence. Il y a du travail. Mais la semaine prochaine, je repars déjà pour une nouvelle mission dans un petit village au sud, avec les frères de St Jean.

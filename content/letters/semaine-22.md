@@ -4,7 +4,7 @@ date: "2026-03-29"
 location: "Addis-Abeba"
 heroImage: "/images/semaine-22/IMG_1928.JPG"
 heroPosition: "center 50%"
-excerpt: "C'est de nouveau la même pluie que je t'ai si souvent décrite..."
+excerpt: "Par leur simplicité, les filles me rappellent combien le temps est un cadeau."
 ---
 
 
@@ -12,7 +12,7 @@ Cette nouvelle semaine a commencé sur un ton bien joyeux. Les responsables des 
 
 Mais voilà le récit de la semaine dernière. 
 
-« C’est de nouveau la même pluie que je t’ai si souvent décrite, comme si le ciel avait un instant levé un clair regard pour aussitôt reprendre sa lecture dans les lignes égales que tracent les gouttes. » Cette phrase lue lundi soir juste avant de me coucher dans « Les lettres sur Cézanne » de Rilke, me semble bien à propos pour illustrer le climat de la semaine.
+« *C’est de nouveau la même pluie que je t’ai si souvent décrite, comme si le ciel avait un instant levé un clair regard pour aussitôt reprendre sa lecture dans les lignes égales que tracent les gouttes.* » Cette phrase lue lundi soir juste avant de me coucher dans « Les lettres sur Cézanne » de Rilke, me semble bien à propos pour illustrer le climat de la semaine.
 
 Les larmes des nuages ont emporté avec elles les chagrins de la petite chatte. lundi soir, elle ne voulait pas que je la quitte. Elle s’agrippait à mes chaussettes et gémissait d’angoisse. Je l’ai retrouvée le lendemain, blottie sous un sac de farine où elle s’était laissée mourir. 
 

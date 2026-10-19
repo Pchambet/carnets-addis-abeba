@@ -2,7 +2,7 @@
 title: "Nouvelles d'un exil au Kenya"
 date: "2025-12-21"
 location: "Nairobi, Kenya"
-excerpt: "un voyage imprévu"
+excerpt: "Comme rêvé, je vous écris depuis Nairobi."
 ---
 
 

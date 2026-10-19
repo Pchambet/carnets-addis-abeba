@@ -2,8 +2,8 @@
 title: "L'émerveillement du simple"
 date: "2025-11-09"
 location: "Addis-Abeba"
-excerpt: "Certains jours, la beauté se glisse là où on ne l'attendait pas."
-heroImage: "/images/semaine-02/emerveillement-du-simple.png"
+excerpt: "Mais à côté de cette vigilance, je garde le cœur ouvert aux émerveillements."
+heroImage: "/images/semaine-02/IMG-20251108-WA0059_Original.JPG"
 heroPosition: "center 20%"
 ---
 
@@ -36,6 +36,7 @@ Je croise aussi souvent des femmes qui portent d’énormes fagots d’eucalyptu
  Les immeubles poussent comme des champignons et tout se modernise, encouragé notamment par l’ingénierie chinoise. Chaque jour de nouvelles familles se font expulser de chez elles. Si leur maison n’est pas aux normes, et les normes changent tous les jours, leur habitation est rasée en échange d’une somme d’argent ridicule. Elles se retrouvent repoussées aux pourtours de la ville, dans des maisons sans eau ni électricité, devant mendier leur pain ou nettoyer les chaussures des passants pour survivre. Certains hommes partent aussi chaque jour trouver du travail sur ces chantiers chinois qui ont vu démolir leur famille. Au sommet de leurs échafaudages en bois, sans casque et sans attache, ils sont à l’ouvrage, suspendus comme des singes sur ces squelettes de bois à 300 mètres au-dessus du sol et sous un soleil blanc. 
 
  Samedi dernier, je suis venue rendre visite aux Petites sœurs de Jésus. Ce sont des sœurs toutes simples qui vivent au beau milieu du monde. Elles ont comme vocation de porter la joie du Christ au cœur de leur travail. Certaines sont cuisinières, d’autres de simples femmes de ménage. Elles vivaient depuis 30 ans dans une très jolie maison au milieu de la ville. Il y a huit mois, une pelleteuse est venue dévorer leur petit paradis. Aujourd’hui, elles ont trouvé refuge à côté d’un bidonville dans la périphérie d’Addis. Leur mère supérieure qui est une Française, en a eu le cœur si brisé qu’elle a perdu la mémoire. Au creux de son petit fauteuil bleu, je découvre le regard vif d’une femme qui a construit de grandes choses. 
+
 Elle ne dit presque rien. Alzheimer a effacé son histoire, mais son regard et son rire qui ne l’ont pas quittée, racontent assez d’elle pour que l’on y devine le courage et la force qui l’ont portée au cours de sa longue vie. C’est sœur Monique. Elle est arrivée en Ethiopie à 25 ans, conduisant les sœurs à donner le meilleur d’elles-mêmes pour recevoir les pauvres.
 
  C’était une femme d’une volonté absolument extraordinaire et qui me laisse, ce samedi-là, le désir de pouvoir rendre au monde moi aussi, le meilleur de moi-même. 

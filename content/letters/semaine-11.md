@@ -4,7 +4,7 @@ date: "2026-01-11"
 location: "Addis-Abeba"
 heroImage: "/images/semaine-11/DSCF1198.JPG"
 heroPosition: "center 25%"
-excerpt: "L’Éthiopie se prépare à recevoir une nouvelle jeunesse par le souvenir de son Dieu fait enfant"
+excerpt: "Je ne sais pas si c’est le tella, le marc ou leur amour qui me donne le sourire, mais ce soir, la vie me semble bien légère."
 ---
 
 La neige semble vous envelopper de sa fraîcheur nouvelle, et cet air pur me manque infiniment. 

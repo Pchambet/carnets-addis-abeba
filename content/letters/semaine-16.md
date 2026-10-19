@@ -7,7 +7,7 @@ heroPosition: "center 60%"
 excerpt: "Depuis la cime de cet arbre, les couleurs du jour naissant viennent caresser mon regard, c’est toujours beau une ville qui se réveille"
 ---
 
-> PQ: Je vous écris à la fin d’une semaine d’une profonde intensité. Le carême s’annonce avec son lot d’épreuves et de grâces.
+> PQ: Je vous écris à la fin d’une semaine d’une profonde intensité.
 
 Je vous écris à la fin d’une semaine d’une profonde intensité. Une nouvelle guerre se prépare au Tigré et le travail s’intensifie avec l’arrivée prévue de 20 nouveaux enfants. Le carême s’annonce avec son lot d’épreuves et de grâces. 
 

@@ -4,7 +4,7 @@
 title: "Étoiles et poussières d'Addis"
 date: "2025-11-02"
 location: "Addis-Abeba"
-excerpt: "Comment vous portez-vous depuis là-bas ? De mon côté, la vie s'installe, doucement."
+excerpt: "Après trois journées folles que je vous ai décrites il y a déjà huit jours, voilà le récit de cette première semaine qui me transporte déjà au delà des illusions."
 
 
 ---
