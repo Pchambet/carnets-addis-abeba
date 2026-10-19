@@ -31,20 +31,15 @@ export default async function Home() {
                     blurDataURL={heroBlurDataURL}
                     style={{ objectFit: 'cover' }}
                 />
-                <div
-                    className="absolute inset-0 z-[1]"
-                    style={{
-                        background: 'linear-gradient(to bottom, rgba(18,12,8,0.6) 0%, rgba(18,12,8,0.25) 14%, transparent 30%), linear-gradient(to top, rgba(18,12,8,0.85) 0%, rgba(18,12,8,0.5) 30%, rgba(18,12,8,0.15) 55%, transparent 72%)',
-                    }}
-                />
+                <div className="hero-scrim" aria-hidden />
                 <div className="hero-letter-content site-container">
-                    <h1 className="text-3xl sm:text-5xl md:text-6xl font-light leading-tight mb-6 max-w-3xl" style={{ color: '#FDFAF6', textShadow: '0 2px 4px rgba(0,0,0,0.5), 0 4px 24px rgba(0,0,0,0.55)' }}>
+                    <h1 className="hero-letter-fade-in text-3xl sm:text-5xl md:text-6xl font-light leading-tight mb-6 max-w-3xl" style={{ color: '#FDFAF6', textShadow: '0 2px 4px rgba(0,0,0,0.5), 0 4px 24px rgba(0,0,0,0.55)' }}>
                         Nouvelles hebdomadaires<br />
                         <em className="text-[var(--gold)]">depuis la Nouvelle Fleur</em>
                     </h1>
                     {letters.length > 0 && (
                         <p className="text-base sm:text-lg max-w-prose leading-loose font-[family-name:var(--font-lora)] opacity-90" style={{ color: '#FDFAF6' }}>
-                            {letters.length} lettres d’Addis-Abéba, {journeySpan(letters)}.
+                            {letters.length} lettres d’<span className="whitespace-nowrap">Addis-Abéba</span>, {journeySpan(letters)}.
                         </p>
                     )}
                     <a href="#lettres" className="hero-letter-back caption inline-block mt-10 no-underline transition-colors duration-250">

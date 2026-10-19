@@ -11,6 +11,12 @@ export interface ImageData {
 // Cache complet
 const imageCache = new Map<string, ImageData>();
 
+/** Dimensions affichées (orientation EXIF comprise), sans calcul d'aperçu : métadonnées seules */
+export async function getImageSize(imagePath: string): Promise<ImageData> {
+    const { width, height, orientation = 1 } = await sharp(path.join(process.cwd(), 'public', imagePath)).metadata();
+    return orientation >= 5 ? { width: height, height: width } : { width, height };
+}
+
 /**
  * Lit une image locale et génère sa miniature base64 et extrait ses dimensions
  */
@@ -28,28 +34,13 @@ export async function getImageData(imagePath: string | null | undefined): Promis
             return {};
         }
 
-        const buffer = await fs.promises.readFile(fullPath);
-        const image = sharp(buffer);
-        
-        const metadata = await image.metadata();
-        
-        // Swap width and height if EXIF orientation is 5, 6, 7, or 8
-        const orientation = metadata.orientation || 1;
-        const isSwapped = orientation >= 5;
-        const visualWidth = isSwapped ? metadata.height : metadata.width;
-        const visualHeight = isSwapped ? metadata.width : metadata.height;
+        // rotate() : l'aperçu perd l'EXIF, il doit donc être tourné comme la photo affichée
+        const [size, preview] = await Promise.all([
+            getImageSize(imagePath),
+            sharp(fullPath).rotate().resize(10).jpeg({ quality: 20 }).toBuffer(),
+        ]);
+        const data: ImageData = { blurDataURL: `data:image/jpeg;base64,${preview.toString('base64')}`, ...size };
 
-        const resizedBuffer = await image
-            .resize(10)
-            .jpeg({ quality: 20 })
-            .toBuffer();
-            
-        const data: ImageData = {
-            blurDataURL: `data:image/jpeg;base64,${resizedBuffer.toString('base64')}`,
-            width: visualWidth,
-            height: visualHeight
-        };
-        
         imageCache.set(imagePath, data);
         return data;
     } catch (error) {

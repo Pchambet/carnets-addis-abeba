@@ -19,6 +19,22 @@ Décisions de Pierre : pas de YouTube (le « cassé » était la CI) ; Supabase 
 | 8 — Documentation | ✅ README, `PROCEDURE.md`, `SUPABASE-LIVRE-OR.md` |
 | 9 — Design (revue UI/UX) | ✅ menu mobile (débordait), grille commune (en-tête, titres, pied de page), accueil avec photo et semaine en amharique par lettre, lettre précédente/suivante, carte cadrée sur tous les lieux, sommaire de la galerie, contrastes et noms accessibles (axe en prod, mobile : 0 violation sur les 8 écrans), typographie française dans le Jardin |
 
+## Audit du 2026-10-19
+
+Sept audits (code, performance, sécurité, interface et accessibilité, contenu, animations, règles `ui-ux-pro-max`), chaque constat vérifié avant correction.
+
+| Domaine | Fait |
+|---|---|
+| Livre d'or | Réponses refusées par la règle de 004 (`p.parent_id` au lieu de la nouvelle ligne) → migration 005, plafond 10/heure et 40/jour ; messages d'erreur en français et annoncés, `maxLength`, id uniques, libellé de l'email honnête ; SDK Supabase remplacé par deux `fetch` (`src/lib/comments.ts`) ; deux messages de test masqués (`approved = false`) |
+| Sécurité | Secret du webhook comparé en temps constant, `letter_id` validé, heure de Paris dans l'email ; en-têtes `nosniff`, `Referrer-Policy`, `X-Frame-Options`, `Permissions-Policy`, `X-Robots-Tag` (photos comprises) ; Next 16.4.2 (plus de faille critique) ; `.gitignore` et CI durcis |
+| Performance | Optimiseur Vercel pour les images principales et les vignettes de l'accueil seulement (quota Hobby : 5 000 transformations/mois) ; police éthiopienne réduite à « ሳምንት » (2 Ko au lieu de 198 Ko) ; plus d'aperçus base64 dans la galerie ; cache 7 jours sur `/images` ; vidéos en `preload="none"`, encodage 1280 px ; 43 photos > 1 Mo ré-encodées (−51 %) ; contenu rendu par le serveur (le code d'accès ne bloque plus l'affichage) |
+| Interface | Voile des photos d'en-tête renforcé (contraste ≥ 4,5:1) ; Jardin au clavier (focus, une vue à la fois) ; typographie française (insécables) dans les lettres et l'interface ; colonne de lecture mobile 278 → 318 px ; visionneuse et carte en français ; 404 française, titres d'onglet, favicon ; `prefers-reduced-motion` respecté |
+| Contenu | 147 légendes retrouvées (lettres 24 à 33) ; 21 photos en double retirées ; vidéo « Confitures » (32-33) ajoutée ; aperçus flous dans le bon sens ; compteurs du Jardin = lettres atteignables |
+
+Reste à décider :
+- **Fidélité du texte** (comparaison mot à mot avec les sources) : fin réécrite en 06 (`b38b010`) ; « she » pour « elle » en 14 ; « rejoindre » remplacé en 37-38 (`cb7edce`) ; en-têtes de jour inventés et phrases réécrites pour les créer en 25, 31, 32-33, 36, 37-38 ; grammaire retouchée en 17, 23, 26 ; 16 extraits (01 à 20) qui ne sont pas les mots de Claire mais s'affichent entre guillemets ; pas de source pour 34-35.
+- **Envoi des emails** : sans domaine vérifié chez Resend (`RESEND_FROM`), l'email n'arrive qu'à l'adresse du compte Resend.
+
 ## Ce qu'est le projet
 
 Site Next.js 16 (App Router, Tailwind 4) qui publie les lettres hebdomadaires de Claire depuis Addis-Abeba : 37 lettres Markdown (`content/letters/`), ~800 photos et 17 vidéos (`public/images/semaine-XX/`), galerie, carte (Leaflet), « Jardin » thématique, livre d'or (Supabase + email Resend).

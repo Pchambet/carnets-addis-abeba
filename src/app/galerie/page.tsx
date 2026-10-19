@@ -1,9 +1,13 @@
+import type { Metadata } from 'next';
 import { getSortedLettersData } from '@/lib/letters';
 import { getPhotosForLetter, type Photo } from '@/lib/photos';
 import Link from 'next/link';
 import TibebDivider from '@/components/UI/TibebDivider';
 import PageHeader from '@/components/Layout/PageHeader';
 import LightboxGallery from '@/components/Reading/LightboxGallery';
+import ClientOnly from '@/components/UI/ClientOnly';
+
+export const metadata: Metadata = { title: 'La galerie' };
 
 interface LetterWithPhotos {
     id: string;
@@ -17,7 +21,8 @@ export default async function GalleriePage() {
     const letters = getSortedLettersData();
 
     const lettersWithPhotosRaw = await Promise.all(
-        letters.map(async (l) => ({ ...l, photos: await getPhotosForLetter(l.id) }))
+        // Sans aperçu flou : sur ~900 photos, le base64 pesait la moitié du HTML
+        letters.map(async (l) => ({ ...l, photos: await getPhotosForLetter(l.id, { blur: false }) }))
     );
     const lettersWithPhotos: LetterWithPhotos[] = lettersWithPhotosRaw.filter(l => l.photos.length > 0);
 
@@ -48,6 +53,7 @@ export default async function GalleriePage() {
             </nav>
 
             {/* ── Per-semaine galleries ── */}
+            <ClientOnly scrollToHash>
             <div className="site-container py-12 sm:py-16 md:py-20 space-y-16 sm:space-y-24">
                 {lettersWithPhotos.map(letter => {
                     const formattedDate = new Date(letter.date).toLocaleDateString('fr-FR', {
@@ -57,18 +63,19 @@ export default async function GalleriePage() {
                         <section key={letter.id} id={letter.id} className="scroll-mt-28">
                             {/* Week header */}
                             <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-6 gap-2 mb-8 pb-4 border-b border-[var(--border)]">
-                                <Link
-                                    href={`/letters/${letter.id}`}
-                                    className="text-xl sm:text-2xl md:text-3xl font-light text-[var(--ink)] hover:text-[var(--ochre)] transition-colors duration-400 no-underline"
-                                    style={{ fontFamily: 'var(--font-cormorant), serif' }}
-                                >
-                                    {letter.title}
-                                </Link>
+                                <h2 className="text-xl sm:text-2xl md:text-3xl font-light" style={{ fontFamily: 'var(--font-cormorant), serif' }}>
+                                    <Link
+                                        href={`/letters/${letter.id}`}
+                                        className="text-[var(--ink)] hover:text-[var(--ochre)] transition-colors duration-200 no-underline"
+                                    >
+                                        {letter.title}
+                                    </Link>
+                                </h2>
                                 <div className="flex gap-4 flex-shrink-0">
                                     {letter.location && (
                                         <span className="caption text-[var(--red)]">{letter.location}</span>
                                     )}
-                                    <time className="caption text-[var(--ink-light)]">{formattedDate}</time>
+                                    <time className="caption text-[var(--ink-light)]" dateTime={letter.date}>{formattedDate}</time>
                                 </div>
                             </div>
 
@@ -78,6 +85,7 @@ export default async function GalleriePage() {
                     );
                 })}
             </div>
+            </ClientOnly>
 
             <TibebDivider />
         </div>

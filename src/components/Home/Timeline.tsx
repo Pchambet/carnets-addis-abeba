@@ -56,7 +56,7 @@ export default function Timeline({ letters }: TimelineProps) {
                             </div>
 
                             <div className="min-w-0">
-                                <h2 className="text-2xl md:text-3xl font-light text-[var(--ink)] group-hover:text-[var(--ochre)] transition-colors duration-300 mb-4">
+                                <h2 className="text-2xl md:text-3xl font-light text-balance text-[var(--ink)] group-hover:text-[var(--ochre)] transition-colors duration-300 mb-4">
                                     {title}
                                 </h2>
                                 {excerpt && (
@@ -76,7 +76,7 @@ export default function Timeline({ letters }: TimelineProps) {
                                         alt=""
                                         fill
                                         sizes="(min-width: 768px) 13rem, 100vw"
-                                        className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                                        className="object-cover transition-transform duration-700 motion-safe:group-hover:scale-[1.03]"
                                         style={{ filter: 'contrast(1.02) saturate(0.93)' }}
                                     />
                                 </div>

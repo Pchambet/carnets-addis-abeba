@@ -10,9 +10,12 @@ node_modules/
 /out/
 /build
 
-# Env files
-.env
-.env*.local
+# Env files (sauf l'exemple)
+.env*
+!.env.example
+
+# Vercel CLI
+.vercel
 
 # macOS
 .DS_Store

@@ -9,11 +9,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  try {
-    return THEMES.map((t) => ({ theme: t.slug }));
-  } catch {
-    return [];
-  }
+  return THEMES.map((t) => ({ theme: t.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -41,7 +37,7 @@ export default async function ThemePage({ params }: PageProps) {
         <div className="max-w-3xl mx-auto relative z-10">
           <Link
             href="/jardin"
-            className="caption text-[var(--ochre)] hover:underline inline-block mb-12 transition-all duration-250"
+            className="caption text-[var(--ochre)] hover:underline inline-block mb-12 transition-colors duration-200"
           >
             ← Retour au jardin clos
           </Link>

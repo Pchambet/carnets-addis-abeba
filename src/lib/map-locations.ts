@@ -8,7 +8,6 @@ export interface MapLocation {
   name: string;
   lat: number;
   lng: number;
-  zoom: number;
 }
 
 export interface LocationWithLetters extends MapLocation {
@@ -16,20 +15,26 @@ export interface LocationWithLetters extends MapLocation {
 }
 
 const LOCATIONS: Record<string, MapLocation> = {
-  'Addis-Abeba': { name: 'Addis-Abéba', lat: 9.032, lng: 38.747, zoom: 11 },
-  'Nairobi, Kenya': { name: 'Nairobi', lat: -1.292, lng: 36.822, zoom: 10 },
-  'Arba-Minch': { name: 'Arba Minch', lat: 6.033, lng: 37.55, zoom: 11 },
-  'Hawassa': { name: 'Hawassa', lat: 7.062, lng: 38.476, zoom: 11 },
-  'Miki': { name: 'Meki', lat: 8.15, lng: 38.817, zoom: 11 },
-  'Mont Hambaricho': { name: 'Mont Hambaricho', lat: 7.27, lng: 37.86, zoom: 11 },
-  'Shishinda': { name: 'Shishinda', lat: 7.283, lng: 35.867, zoom: 11 },
-  'Pays gouragué': { name: 'Pays gouragué', lat: 8.0, lng: 37.915, zoom: 11 },
-  'Annecy': { name: 'Annecy (Maison de Claire)', lat: 45.8992, lng: 6.1294, zoom: 11 },
+  'Addis-Abeba': { name: 'Addis-Abéba', lat: 9.032, lng: 38.747 },
+  'Nairobi, Kenya': { name: 'Nairobi', lat: -1.292, lng: 36.822 },
+  'Arba-Minch': { name: 'Arba Minch', lat: 6.033, lng: 37.55 },
+  'Hawassa': { name: 'Hawassa', lat: 7.062, lng: 38.476 },
+  'Miki': { name: 'Meki', lat: 8.15, lng: 38.817 },
+  'Mont Hambaricho': { name: 'Mont Hambaricho', lat: 7.27, lng: 37.86 },
+  'Shishinda': { name: 'Shishinda', lat: 7.283, lng: 35.867 },
+  'Pays gouragué': { name: 'Pays gouragué', lat: 8.0, lng: 37.915 },
+  'Annecy': { name: 'Annecy (Maison de Claire)', lat: 45.8992, lng: 6.1294 },
 };
 
 /** Lieux cités par une lettre : "Hawassa & Miki" → ["Hawassa", "Miki"] */
 export function splitLocation(location: string | undefined): string[] {
   return (location ?? '').split('&').map((l) => l.trim()).filter(Boolean);
+}
+
+/** Ancre de la liste des lettres d'un lieu, sous la carte : « Addis-Abéba » → « lieu-addis-abeba » */
+export function locationAnchor(name: string): string {
+  const slug = name.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return `lieu-${slug}`;
 }
 
 export function isKnownLocation(place: string): boolean {

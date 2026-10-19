@@ -34,6 +34,24 @@ interface LightboxGalleryProps {
     photos: Photo[];
 }
 
+const LABELS = {
+    Previous: 'Photo précédente',
+    Next: 'Photo suivante',
+    Close: 'Fermer',
+    Lightbox: 'Visionneuse photo',
+    Carousel: 'Photos',
+    Slide: 'Photo',
+    Caption: 'Légende',
+    'Photo gallery': 'Galerie photo',
+    '{index} of {total}': '{index} sur {total}',
+    'Zoom in': 'Agrandir',
+    'Zoom out': 'Réduire',
+    'Enter Fullscreen': 'Plein écran',
+    'Exit Fullscreen': 'Quitter le plein écran',
+    Play: 'Diaporama',
+    Pause: 'Pause',
+};
+
 // react-photo-album wraps each image in a <button> carrying the click and keyboard handling.
 function NextJsImage(
     { alt = "", title, sizes, className, style }: RenderImageProps,
@@ -44,13 +62,15 @@ function NextJsImage(
             style={{ width: "100%", position: "relative", aspectRatio: `${width} / ${height}` }}
             className="group cursor-zoom-in"
         >
+            {/* Miniatures déjà générées (scripts/media.mjs) : pas d'optimiseur Vercel, son quota est limité */}
             <Image
                 fill
+                unoptimized
                 src={photo.thumbSrc || photo.src}
                 alt={alt}
                 title={title}
                 sizes={sizes}
-                className={`object-cover ${className} transition-transform duration-700 group-hover:scale-[1.02]`}
+                className={`object-cover ${className} transition-transform duration-700 motion-safe:group-hover:scale-[1.02]`}
                 placeholder={photo.blurDataURL ? "blur" : "empty"}
                 blurDataURL={photo.blurDataURL}
                 style={{ ...style, filter: 'contrast(1.02) saturate(0.93)' }}
@@ -85,7 +105,7 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
                 render={{
                     image: NextJsImage,
                     button: (props, { photo, index }) => (
-                        <button {...props} aria-label={photo.alt ? `Agrandir : ${photo.alt}` : `Agrandir la photo ${index + 1}`} />
+                        <button {...props} aria-label={photo.alt ? `Agrandir\u00a0: ${photo.alt}` : `Agrandir la photo ${index + 1} sur ${galleryPhotos.length}`} />
                     ),
                 }}
                 targetRowHeight={300}
@@ -98,6 +118,7 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
                 open={index >= 0}
                 index={index}
                 close={() => setIndex(-1)}
+                labels={LABELS}
                 // On a retiré le plugin Thumbnails
                 plugins={[Fullscreen, Slideshow, Zoom, Captions]}
                 animation={{ fade: 300, swipe: 250 }}
@@ -108,6 +129,7 @@ export default function LightboxGallery({ photos }: LightboxGalleryProps) {
                             <div style={{ position: "relative", width: "100%", height: "100%" }}>
                                 <Image
                                     fill
+                                    unoptimized
                                     alt={slide.alt || ""}
                                     src={slide.src}
                                     sizes={`${Math.ceil((rect.width / window.innerWidth) * 100)}vw`}

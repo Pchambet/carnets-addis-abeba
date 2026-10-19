@@ -25,8 +25,15 @@
 /* ─── Base Layer ─────────────────────────────── */
 @layer base {
   html {
-    scroll-behavior: smooth;
     font-size: 16px;
+  }
+
+  /* Défilement doux pour les ancres seulement (data-scroll-behavior sur <html> : Next le
+     coupe pendant les changements de page) et jamais si le mouvement réduit est demandé */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
   @media (min-width: 640px) {
@@ -124,23 +131,31 @@
     color: var(--ochre);
   }
 
-  /* Liens sans soulignement par défaut : soulignement au hover */
-  a.hover-underline:hover {
-    text-decoration: underline;
-  }
-
   /* Focus visible (accessibilité clavier) — ne s'affiche qu'au focus clavier */
   a:focus-visible,
-  button:focus-visible {
+  button:focus-visible,
+  summary:focus-visible,
+  [tabindex]:focus-visible {
     outline: 2px solid var(--ochre);
     outline-offset: 3px;
   }
+
 
   /* Éviter le focus ring au clic souris (focus-visible le gère) */
   a:focus:not(:focus-visible),
   button:focus:not(:focus-visible) {
     outline: none;
   }
+}
+
+/* ─── Code d'accès : le formulaire ou le contenu, jamais les deux (voir src/lib/access.ts) ── */
+.access-content {
+  display: contents;
+}
+
+html[data-access="open"] .access-gate,
+html:not([data-access="open"]) .access-content {
+  display: none;
 }
 
 /* ─── Composants (sous les utilitaires Tailwind : une classe utilitaire les surcharge) ── */
@@ -216,22 +231,16 @@
     }
   }
 
-  /* Slow fade-in on scroll */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.9s ease, transform 0.9s ease;
-  }
-
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
   /* ── Letter body: texture manuscrite (évocation papier/carnet) ── */
   .letter-body {
     position: relative;
-    padding: 2.5rem 2rem;
+    padding: 2rem 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .letter-body {
+      padding: 2.5rem 2rem;
+    }
   }
 
   .letter-body::before {
@@ -276,42 +285,18 @@
     text-align: center;
   }
 
-  /* ── Photo Credit & Caption (NatGeo) ──── */
-  .photo-figure {
-    margin: 2rem 0;
-  }
-
-  .photo-caption {
-    font-size: 0.82rem;
-    font-style: italic;
-    color: var(--ink-light);
-    margin-top: 0.5rem;
-    line-height: 1.5;
-  }
-
-  .photo-credit {
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    text-align: right;
-    margin-top: 0.2rem;
-    opacity: 0.65;
-  }
-
   /* ── Reading Progress Bar ─────────────── */
   #reading-progress {
     position: fixed;
     top: 0;
     left: 0;
     height: 2px;
-    width: 0%;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
     background: linear-gradient(to right, var(--ochre), var(--red));
     z-index: 100;
-    transition: width 0.15s ease-out;
   }
-
-  /* ── Read Time Badge ──────────────────── */
 
   /* ── Hero Full-Bleed (Time/NatGeo) ────── */
   .hero-letter {
@@ -389,8 +374,33 @@
   }
 
   .hero-letter-fade-in {
-    opacity: 0;
-    animation: heroLetterFadeIn 0.5s ease-out forwards;
+    animation: heroLetterFadeIn 0.5s cubic-bezier(0.23, 1, 0.32, 1) backwards;
+  }
+
+  /* Jardin : la vue qui apparaît (question ou réponse) */
+  @keyframes journeyIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+
+  .journey-view {
+    animation: journeyIn 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  /* Mouvement réduit : les fondus restent, sans déplacement */
+  @keyframes fadeOnly {
+    from {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-letter-fade-in,
+    .journey-view {
+      animation-name: fadeOnly;
+    }
   }
 
   .hero-letter-meta.hero-letter-fade-in {
@@ -403,6 +413,27 @@
 
   .hero-letter-excerpt.hero-letter-fade-in {
     animation-delay: 0.2s;
+  }
+
+  /* Voiles des photos plein écran (accueil, lettres) : en haut pour l'en-tête transparent,
+     en bas pour la semaine, la date et le titre (contraste ≥ 4,5:1 mesuré sur les photos
+     les plus claires) ; le haut du centre de la photo reste intact */
+  .hero-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(to bottom, rgba(18, 12, 8, 0.75) 0%, rgba(18, 12, 8, 0.4) 12%, transparent 26%),
+      linear-gradient(to top, rgba(18, 12, 8, 0.9) 0%, rgba(18, 12, 8, 0.72) 40%, rgba(18, 12, 8, 0.4) 62%, transparent 80%);
+  }
+
+  .hero-letter-back.hero-letter-fade-in {
+    animation-delay: 0.3s;
+  }
+
+  /* Titres longs : pas de mot seul sur la dernière ligne (« ( la vie est douce ) ») */
+  .hero-letter-title {
+    text-wrap: balance;
   }
 
   /* Lien retour dans le hero — coin haut-gauche */
@@ -470,45 +501,6 @@
     .hero-letter-date-row {
       font-size: 1.02rem;
     }
-  }
-
-  /* ── Scrollytelling Panel (Snow Fall) ─── */
-  .scroll-scene {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 100vh;
-  }
-
-  @media (max-width: 768px) {
-    .scroll-scene {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .sticky-col {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .sticky-col img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .scroll-text-col {
-    padding: 6rem 3rem;
-    background: var(--white);
-  }
-
-  .scroll-text-col p {
-    font-size: 1.05rem;
-    line-height: 2;
-    color: var(--ink);
-    font-family: var(--font-lora), serif;
-    margin-bottom: 2.5rem;
   }
 
   /* ── Day Section (Journey through the week) ── */
@@ -605,11 +597,6 @@
     margin-bottom: 0.75rem;
   }
 
-  /* About page : Claire en Times New Roman */
-  .signature-tnr {
-    font-family: 'Times New Roman', Times, serif;
-  }
-
   /* ── Livre d'or premium ── */
   .livre-dor {
     background: var(--white);
@@ -633,19 +620,12 @@
     margin-bottom: 0.5rem;
   }
 
-  .livre-dor-subtitle {
-    font-size: 0.8rem;
-    color: var(--ink-light);
-    letter-spacing: 0.06em;
-    margin-bottom: 2rem;
-  }
-
   .livre-dor-form-input {
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
   }
 
   .livre-dor-form-input:focus {
-    box-shadow: 0 0 0 1px var(--ochre);
+    box-shadow: 0 0 0 2px var(--ochre);
   }
 
   .livre-dor-btn {
@@ -661,14 +641,6 @@
     background: linear-gradient(to right, var(--ochre), var(--border), transparent);
     opacity: 0.4;
     margin: 2.5rem 0 1.5rem;
-  }
-
-  .livre-dor-comment {
-    transition: opacity 0.2s ease;
-  }
-
-  .livre-dor-avatar {
-    transition: transform 0.2s ease;
   }
 
   .livre-dor-reply-btn {
@@ -702,6 +674,25 @@ body:has([data-immersive-hero]) header[data-transparent="true"] {
   backdrop-filter: none;
 }
 
+/* Passage transparent → plein : textes et fond changent au même rythme */
+header :is(a, button, span, em) {
+  transition: color 300ms cubic-bezier(0.23, 1, 0.32, 1), text-shadow 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 250ms ease;
+}
+
+/* Menu mobile : il glisse doucement à l'ouverture */
+@media (max-width: 639px) and (prefers-reduced-motion: no-preference) {
+  #site-menu {
+    transition: opacity 200ms ease, translate 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  @starting-style {
+    #site-menu {
+      opacity: 0;
+      translate: 0 -4px;
+    }
+  }
+}
+
 body:has([data-immersive-hero]) header[data-transparent="true"] :is(a, button, span, em) {
   color: #FDFAF6;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65);
@@ -709,4 +700,11 @@ body:has([data-immersive-hero]) header[data-transparent="true"] :is(a, button, s
 
 body:has([data-immersive-hero]) header[data-transparent="true"] [aria-current="page"] > span {
   background-color: #FDFAF6;
+}
+
+/* Visionneuse photo : boutons blancs sur fond noir. Hors couche, comme le CSS de la
+   bibliothèque, qui l'emporterait sinon sur toute règle placée dans une @layer */
+.yarl__button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -4px;
 }

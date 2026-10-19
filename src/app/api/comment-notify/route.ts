@@ -1,8 +1,14 @@
+import { createHash, timingSafeEqual } from 'crypto';
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { escapeHtml } from '@/lib/html';
+import { SITE_URL } from '@/lib/site';
+
+// Même règle que la table (supabase/migrations/004_harden_comments.sql)
+const LETTER_ID = /^semaine-\d{2}(-\d{2})?$/;
 
 type SupabaseInsertPayload = {
   type: 'INSERT';
@@ -25,7 +31,7 @@ type SupabaseInsertPayload = {
 export async function POST(request: NextRequest) {
   const webhookSecret = process.env.COMMENT_WEBHOOK_SECRET;
   const token = request.headers.get('authorization')?.replace(/^Bearer\s+/i, '');
-  if (!webhookSecret || token !== webhookSecret) {
+  if (!webhookSecret || !token || !sameSecret(token, webhookSecret)) {
     return NextResponse.json(
       { error: 'Unauthorized' },
       { status: 401 }
@@ -53,7 +59,8 @@ export async function POST(request: NextRequest) {
   if (
     payload?.type !== 'INSERT' ||
     payload?.table !== 'comments' ||
-    !payload?.record
+    !payload?.record ||
+    !LETTER_ID.test(String(payload.record.letter_id))
   ) {
     return NextResponse.json(
       { error: 'Invalid webhook payload' },
@@ -63,9 +70,7 @@ export async function POST(request: NextRequest) {
 
   const { record } = payload;
   const letterId = record.letter_id;
-  const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://carnets-addis-abeba.vercel.app';
-  const letterUrl = `${siteUrl}/letters/${letterId}/`;
+  const letterUrl = `${SITE_URL}/letters/${letterId}/`;
   const letterTitle = getLetterTitle(letterId);
 
   const isReply = !!record.parent_id;
@@ -73,11 +78,7 @@ export async function POST(request: NextRequest) {
     ? `Réponse sur « ${letterTitle} » — Carnets d'Addis-Abeba`
     : `Nouveau message sur « ${letterTitle} » — Carnets d'Addis-Abeba`;
 
-  const contentEscaped = record.content
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/\n/g, '<br>');
+  const contentEscaped = escapeHtml(record.content).replace(/\n/g, '<br>');
 
   const html = `
 <!DOCTYPE html>
@@ -96,7 +97,7 @@ export async function POST(request: NextRequest) {
   <p class="meta">
     ${isReply ? 'Réponse de' : 'Message de'} <strong>${escapeHtml(record.author)}</strong>
     ${record.email ? ` (${escapeHtml(record.email)})` : ''}
-    — ${new Date(record.created_at).toLocaleString('fr-FR')}
+    — ${new Date(record.created_at).toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}
   </p>
   <p class="content">${contentEscaped}</p>
   <a href="${letterUrl}" class="btn">Voir la lettre et répondre</a>
@@ -126,17 +127,14 @@ export async function POST(request: NextRequest) {
 
 /** Title from the letter's frontmatter, falling back to its id. */
 function getLetterTitle(letterId: string): string {
-  if (!/^semaine-[\d-]+$/.test(letterId)) return letterId;
   const file = path.join(process.cwd(), 'content', 'letters', `${letterId}.md`);
   if (!fs.existsSync(file)) return letterId;
   const { title } = matter(fs.readFileSync(file, 'utf8')).data as { title?: string };
   return title || letterId;
 }
 
-function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+/** Comparaison en temps constant : la durée ne révèle rien du secret. */
+function sameSecret(a: string, b: string): boolean {
+  const digest = (s: string) => createHash('sha256').update(s).digest();
+  return timingSafeEqual(digest(a), digest(b));
 }

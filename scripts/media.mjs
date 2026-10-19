@@ -69,10 +69,10 @@ async function writeImage(input, output, resize) {
 function transcodeVideo(input, output) {
   run('ffmpeg', [
     '-y', '-loglevel', 'error', '-i', input,
-    // Côté le plus long ≤ 1920 px, dimensions paires (exigées par yuv420p)
-    '-vf', "scale='if(gt(iw,ih),trunc(min(1920,iw)/2)*2,-2)':'if(gt(iw,ih),-2,trunc(min(1920,ih)/2)*2)'",
-    // Débit plafonné à 5 Mb/s : un plan agité filmé à la main doublait le poids, sans gain visible
-    '-c:v', 'libx264', '-crf', '23', '-maxrate', '5M', '-bufsize', '10M', '-preset', 'slow', '-pix_fmt', 'yuv420p',
+    // Côté le plus long ≤ 1280 px (cadre d'au plus 768 px sur le site), dimensions paires (yuv420p)
+    '-vf', "scale='if(gt(iw,ih),trunc(min(1280,iw)/2)*2,-2)':'if(gt(iw,ih),-2,trunc(min(1280,ih)/2)*2)'",
+    // Débit plafonné : un plan agité filmé à la main faisait exploser le poids, sans gain visible
+    '-c:v', 'libx264', '-crf', '26', '-maxrate', '5M', '-bufsize', '10M', '-preset', 'slow', '-pix_fmt', 'yuv420p',
     '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', output,
   ]);
 }
@@ -124,8 +124,12 @@ async function deriveLetter(id) {
       log(`faststart ${id}/${f}`);
       if (!dryRun) {
         const tmp = tmpPath(file, 'faststart');
-        run('ffmpeg', ['-y', '-loglevel', 'error', '-i', file, '-c', 'copy', '-movflags', '+faststart', tmp]);
-        fs.renameSync(tmp, file);
+        try {
+          run('ffmpeg', ['-y', '-loglevel', 'error', '-i', file, '-c', 'copy', '-movflags', '+faststart', tmp]);
+          fs.renameSync(tmp, file);
+        } finally {
+          fs.rmSync(tmp, { force: true });
+        }
       }
     }
     const poster = path.join(dir, `${path.basename(f, path.extname(f))}-poster.jpg`);
@@ -133,9 +137,12 @@ async function deriveLetter(id) {
       log(`poster  ${id}/${path.basename(poster)}`);
       if (!dryRun) {
         const frame = tmpPath(`${poster}.png`, 'frame');
-        run('ffmpeg', ['-y', '-loglevel', 'error', '-ss', '0.5', '-i', file, '-frames:v', '1', frame]);
-        await writeImage(frame, poster, { width: POSTER_SIZE, height: POSTER_SIZE, fit: 'inside', withoutEnlargement: true });
-        fs.rmSync(frame, { force: true });
+        try {
+          run('ffmpeg', ['-y', '-loglevel', 'error', '-ss', '0.5', '-i', file, '-frames:v', '1', frame]);
+          await writeImage(frame, poster, { width: POSTER_SIZE, height: POSTER_SIZE, fit: 'inside', withoutEnlargement: true });
+        } finally {
+          fs.rmSync(frame, { force: true });
+        }
       }
     }
   }
@@ -159,7 +166,8 @@ async function importLetter(sourceArg, id) {
     const ext = path.extname(file);
     const base = path.basename(file, ext);
     const isVideo = VIDEO.test(file);
-    const target = `${base}${isVideo ? '.mp4' : /heic/i.test(ext) ? '.jpg' : ext}`;
+    // NFC comme les chemins de git (le Mac écrit souvent ses noms en NFD)
+    const target = `${base}${isVideo ? '.mp4' : /heic/i.test(ext) ? '.jpg' : ext}`.normalize('NFC');
     if (claimed.has(target)) {
       console.warn(`⚠ ignoré : ${path.relative(source, file)} (même nom que ${path.relative(source, claimed.get(target))}) — renommer l'un des deux`);
       continue;
@@ -174,8 +182,12 @@ async function importLetter(sourceArg, id) {
     if (dryRun) continue;
     if (isVideo) {
       const tmp = tmpPath(out, 'video');
-      transcodeVideo(file, tmp);
-      fs.renameSync(tmp, out);
+      try {
+        transcodeVideo(file, tmp);
+        fs.renameSync(tmp, out);
+      } finally {
+        fs.rmSync(tmp, { force: true });
+      }
     } else if (/heic/i.test(ext)) {
       const tmp = tmpPath(out, 'heic');
       try {

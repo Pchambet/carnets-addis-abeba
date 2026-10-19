@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, Lora, Noto_Sans_Ethiopic, Sacramento } from 'next/font/google';
+import { Cormorant_Garamond, Lora, Sacramento } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import PasswordGate from '@/components/PasswordGate';
 import SiteHeader from '@/components/Layout/SiteHeader';
+import { ACCESS_SCRIPT, HAS_GATE } from '@/lib/access';
+import { SITE_URL } from '@/lib/site';
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -20,9 +23,10 @@ const lora = Lora({
   display: 'swap',
 });
 
-const ethiopic = Noto_Sans_Ethiopic({
-  subsets: ['ethiopic'],
-  weight: ['300', '400', '700'],
+// Noto Sans Ethiopic réduite aux lettres de « ሳምንት » (fonts.googleapis.com/css2?…&text=ሳምንት) :
+// 2 Ko au lieu de 198 Ko préchargés sur chaque page. Licence SIL OFL 1.1.
+const ethiopic = localFont({
+  src: [{ path: '../fonts/noto-sans-ethiopic-semaine.woff2', weight: '300 400' }],
   variable: '--font-ethiopic',
   display: 'swap',
 });
@@ -32,24 +36,25 @@ const signature = Sacramento({
   weight: ['400'],
   variable: '--font-signature',
   display: 'swap',
+  // Signature en fin de lettre seulement : inutile de la précharger partout
+  preload: false,
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://carnets-addis-abeba.vercel.app';
 
 export const metadata: Metadata = {
   title: {
     default: 'La Parenthèse du dimanche soir',
     template: '%s — La Parenthèse du dimanche soir',
   },
-  description: 'Une lettre par semaine depuis Addis-Abéba — Nouvelles hebdomadaires d\'un voyage en Éthiopie.',
-  metadataBase: new URL(siteUrl),
+  description: 'Une lettre par semaine depuis Addis-Abéba — Nouvelles hebdomadaires d’un voyage en Éthiopie.',
+  metadataBase: new URL(SITE_URL),
   // Site personnel partagé par lien : pas d'indexation par les moteurs de recherche
   robots: { index: false, follow: false },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
     siteName: 'La Parenthèse du dimanche soir',
-    images: [{ url: '/images/home-hero.jpg', width: 2000, height: 1500, alt: 'Addis-Abéba — La Nouvelle Fleur' }],
+    images: [{ url: '/images/home-hero.jpg', alt: 'Addis-Abéba — La Nouvelle Fleur' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -58,7 +63,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${cormorant.variable} ${lora.variable} ${ethiopic.variable} ${signature.variable}`}>
+    // suppressHydrationWarning : data-access est posé par ACCESS_SCRIPT avant React
+    <html lang="fr" data-scroll-behavior="smooth" suppressHydrationWarning className={`${cormorant.variable} ${lora.variable} ${ethiopic.variable} ${signature.variable}`}>
+      {HAS_GATE && (
+        <head>
+          <script dangerouslySetInnerHTML={{ __html: ACCESS_SCRIPT }} />
+        </head>
+      )}
       <body className="min-h-screen flex flex-col">
         <PasswordGate>
         {/* Lien d'évitement — accessibilité clavier */}

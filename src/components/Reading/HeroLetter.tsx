@@ -26,7 +26,7 @@ export default function HeroLetter({
             {/* Background image — full bleed, darkened */}
             <Image
                 src={heroImage}
-                alt={`Photo d'illustration pour "${title}"`}
+                alt={`Photo d’illustration pour «\u00a0${title}\u00a0»`}
                 fill
                 className="hero-letter-bg"
                 priority
@@ -39,13 +39,7 @@ export default function HeroLetter({
                 }}
             />
 
-            {/* Voiles : en haut pour l'en-tête transparent, en bas pour le titre ; le centre de la photo reste intact */}
-            <div
-                className="absolute inset-0 z-[1]"
-                style={{
-                    background: 'linear-gradient(to bottom, rgba(18,12,8,0.6) 0%, rgba(18,12,8,0.25) 14%, transparent 30%), linear-gradient(to top, rgba(18,12,8,0.88) 0%, rgba(18,12,8,0.6) 30%, rgba(18,12,8,0.2) 55%, transparent 72%)',
-                }}
-            />
+            <div className="hero-scrim" aria-hidden />
 
             {/* Content */}
             <div className="hero-letter-content site-container">
@@ -74,7 +68,7 @@ export default function HeroLetter({
                     </p>
                 )}
 
-                <a href="#lettre" className="hero-letter-back caption inline-block mt-10 no-underline transition-colors duration-250">
+                <a href="#lettre" className="hero-letter-back hero-letter-fade-in caption inline-block mt-10 no-underline transition-colors duration-250">
                     Commencer la lecture ↓
                 </a>
             </div>

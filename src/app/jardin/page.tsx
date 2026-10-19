@@ -1,6 +1,9 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { THEMES } from '@/lib/themes';
 import { getThemeLetterCounts } from '@/lib/jardin';
+
+export const metadata: Metadata = { title: 'Le jardin' };
 
 export default function JardinPage() {
   const counts = getThemeLetterCounts();
@@ -19,13 +22,13 @@ export default function JardinPage() {
           Invitation à la promenade au jardin intérieur. 
           Choisissez une allée, ouvrez vos sens à l’émerveillement en vous interrogeant.
         </p>
-        <div className="mt-16 animate-bounce">
-          <span className="text-[var(--ochre)] opacity-60">↓</span>
-        </div>
+        <a href="#allees" className="mt-16 text-[var(--ochre)] opacity-60 hover:opacity-100 no-underline" aria-label="Aller aux allées du jardin">
+          ↓
+        </a>
       </section>
 
       {/* ── Les Allées (Navigation organique) ── */}
-      <section className="max-w-4xl mx-auto px-6 md:px-12 pb-32">
+      <section id="allees" className="max-w-4xl mx-auto px-6 md:px-12 pb-32 scroll-mt-[var(--header-offset)]">
         <div className="flex flex-col gap-16 md:gap-24">
           {THEMES.map((theme, i) => {
             const n = counts[theme.slug] ?? 0;
@@ -46,9 +49,9 @@ export default function JardinPage() {
                   <p className="text-lg text-[var(--ink-light)] font-[family-name:var(--font-lora)] leading-relaxed mb-6">
                     {theme.description}
                   </p>
-                  <div className="flex items-center gap-4 transition-all duration-500 group-hover:gap-6">
+                  <div className="flex items-center gap-4">
                     <span className="w-12 h-[1px] bg-[var(--ochre)] opacity-40"></span>
-                    <span className="caption text-[var(--ochre)] tracking-widest">
+                    <span className="caption text-[var(--ochre)] tracking-widest transition-transform duration-300 group-hover:translate-x-2">
                       {n} lettre{n > 1 ? 's' : ''}
                     </span>
                   </div>

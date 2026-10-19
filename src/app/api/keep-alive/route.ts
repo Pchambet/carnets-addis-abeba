@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
 
 /**
  * Appelé chaque jour par le cron Vercel (vercel.json) : une lecture légère
@@ -14,12 +13,13 @@ export async function GET() {
     return NextResponse.json({ ok: false, error: 'Supabase not configured' }, { status: 500 });
   }
 
-  const { count, error } = await createClient(url, key)
-    .from('comments')
-    .select('id', { count: 'exact', head: true });
-  if (error) {
-    console.error('Keep-alive Supabase error:', error);
+  const res = await fetch(`${url}/rest/v1/comments?select=id&limit=1`, {
+    headers: { apikey: key, Authorization: `Bearer ${key}` },
+    cache: 'no-store',
+  });
+  if (!res.ok) {
+    console.error('Keep-alive Supabase error:', res.status, await res.text());
     return NextResponse.json({ ok: false }, { status: 502 });
   }
-  return NextResponse.json({ ok: true, comments: count });
+  return NextResponse.json({ ok: true });
 }

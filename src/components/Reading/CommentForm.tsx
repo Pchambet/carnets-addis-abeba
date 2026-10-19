@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { supabase } from '@/lib/supabase';
+import { useId, useState } from 'react';
+import { commentErrorMessage, postComment } from '@/lib/comments';
 
 interface CommentFormProps {
     letterId: string;
@@ -23,8 +23,10 @@ export default function CommentForm({
     const [content, setContent] = useState('');
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [errorMsg, setErrorMsg] = useState('');
+    // Plusieurs formulaires sur la page (réponses) : des id uniques pour les labels
+    const id = useId();
 
-    async function handleSubmit(e: React.FormEvent) {
+    async function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
         e.preventDefault();
         if (!author.trim() || !content.trim()) {
             setErrorMsg('Pseudonyme et commentaire requis.');
@@ -33,7 +35,7 @@ export default function CommentForm({
         setStatus('loading');
         setErrorMsg('');
 
-        const { error } = await supabase.from('comments').insert({
+        const error = await postComment({
             letter_id: letterId,
             parent_id: parentId || null,
             author: author.trim(),
@@ -43,7 +45,7 @@ export default function CommentForm({
 
         if (error) {
             setStatus('error');
-            setErrorMsg(error.message || 'Erreur lors de l\'envoi.');
+            setErrorMsg(commentErrorMessage(error));
             return;
         }
 
@@ -56,8 +58,8 @@ export default function CommentForm({
 
     if (status === 'success') {
         return (
-            <p className="livre-dor-success text-[var(--ochre)] italic font-[family-name:var(--font-lora)]">
-                Merci ! Votre message est publié.
+            <p role="status" className="livre-dor-success text-[var(--ochre)] italic font-[family-name:var(--font-lora)]">
+                Merci&nbsp;! Votre message est publié.
             </p>
         );
     }
@@ -65,16 +67,17 @@ export default function CommentForm({
     return (
         <form onSubmit={handleSubmit} className="space-y-5">
             {errorMsg && (
-                <p className="text-sm text-[var(--red)] font-[family-name:var(--font-lora)]">{errorMsg}</p>
+                <p role="alert" className="text-sm text-[var(--red)] font-[family-name:var(--font-lora)]">{errorMsg}</p>
             )}
             <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                    <label htmlFor="author" className="block caption text-[var(--ink-light)] mb-2">
+                    <label htmlFor={`${id}-author`} className="block caption text-[var(--ink-light)] mb-2">
                         Pseudonyme
                     </label>
                     <input
-                        id="author"
+                        id={`${id}-author`}
                         type="text"
+                        maxLength={80}
                         value={author}
                         onChange={(e) => setAuthor(e.target.value)}
                         placeholder="Votre nom ou pseudo"
@@ -84,27 +87,29 @@ export default function CommentForm({
                     />
                 </div>
                 <div>
-                    <label htmlFor="email" className="block caption text-[var(--ink-light)] mb-2">
-                        Email <span className="normal-case">(facultatif)</span>
+                    <label htmlFor={`${id}-email`} className="block caption text-[var(--ink-light)] mb-2">
+                        Email <span className="normal-case">(facultatif, jamais affiché)</span>
                     </label>
                     <input
-                        id="email"
+                        id={`${id}-email`}
                         type="email"
+                        maxLength={254}
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="pour les notifications"
+                        placeholder="pour que Claire puisse vous répondre"
                         className="livre-dor-form-input w-full px-4 py-3.5 border border-[var(--border)] bg-[var(--white)] text-[var(--ink)] font-[family-name:var(--font-lora)] rounded-sm focus:outline-none"
                         disabled={status === 'loading'}
                     />
                 </div>
             </div>
             <div>
-                <label htmlFor="content" className="block caption text-[var(--ink-light)] mb-2">
+                <label htmlFor={`${id}-content`} className="block caption text-[var(--ink-light)] mb-2">
                     Commentaire
                 </label>
                 <textarea
-                    id="content"
+                    id={`${id}-content`}
                     value={content}
+                    maxLength={5000}
                     onChange={(e) => setContent(e.target.value)}
                     placeholder={isReply ? 'Répondre…' : 'Écrivez votre message…'}
                     rows={isReply ? 2 : 4}
@@ -113,11 +118,11 @@ export default function CommentForm({
                     disabled={status === 'loading'}
                 />
             </div>
-            <div className="flex gap-3 pt-1">
+            <div className="flex flex-wrap gap-3 pt-1">
                 <button
                     type="submit"
                     disabled={status === 'loading'}
-                    className="livre-dor-btn px-8 py-3 bg-[var(--ochre)] enabled:hover:bg-[#7A4522] text-[var(--white)] caption tracking-wider disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="livre-dor-btn px-6 sm:px-8 py-3 bg-[var(--ochre)] enabled:hover:bg-[#7A4522] text-[var(--white)] caption tracking-wider disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     {status === 'loading' ? 'Envoi…' : isReply ? 'Répondre' : 'Publier'}
                 </button>
@@ -125,7 +130,7 @@ export default function CommentForm({
                     <button
                         type="button"
                         onClick={onCancel}
-                        className="px-6 py-3 caption text-[var(--ink-light)] hover:text-[var(--ink)] transition-colors duration-200"
+                        className="px-4 sm:px-6 py-3 caption text-[var(--ink-light)] hover:text-[var(--ink)] transition-colors duration-200"
                     >
                         Annuler
                     </button>

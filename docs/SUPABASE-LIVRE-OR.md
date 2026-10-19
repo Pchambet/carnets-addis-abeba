@@ -4,7 +4,7 @@ Projet Supabase `carnets-addis-abeba` (offre gratuite, région eu-west-1). Une s
 
 ## Comment ça marche
 
-1. Le formulaire d'une lettre insère un commentaire avec la clé publique (anon) : `letter_id`, `parent_id`, `author`, `email` (optionnel), `content`. Rien d'autre n'est modifiable depuis le navigateur : `is_claire` vaut `false` et `approved` vaut `true` par défaut.
+1. Le formulaire d'une lettre insère un commentaire avec la clé publique (anon), par l'API REST de Supabase (`src/lib/comments.ts`, deux `fetch`, sans le SDK) : `letter_id`, `parent_id`, `author`, `email` (optionnel), `content`. Rien d'autre n'est modifiable depuis le navigateur : `is_claire` vaut `false` et `approved` vaut `true` par défaut.
 2. Le site relit les commentaires approuvés **sans la colonne `email`**, qui n'est jamais lisible depuis le navigateur.
 3. Le webhook `comment-notify` (Database → Webhooks) appelle `https://carnets-addis-abeba.vercel.app/api/comment-notify/` (**avec le slash final**, sinon redirection 308 non suivie) en envoyant le secret dans l'en-tête `Authorization`. La route envoie un email à Claire via Resend.
 4. Un cron Vercel quotidien (`vercel.json` → `/api/keep-alive/`) fait une lecture légère pour que le projet gratuit ne soit plus mis en pause pour inactivité (c'était arrivé en 2026 : livre d'or hors service).
@@ -17,6 +17,7 @@ Projet Supabase `carnets-addis-abeba` (offre gratuite, région eu-west-1). Une s
 | `002_comment_webhook.sql` | Alternative pg_net (non utilisée en prod : le webhook a été créé depuis le Dashboard) |
 | `003_approved_by_default.sql` | Publication directe |
 | `004_harden_comments.sql` | Droits par colonne (email illisible, `is_claire`/`approved` non modifiables), longueurs bornées, URL du webhook corrigée |
+| `005_fix_replies_rate_limit.sql` | Réponses de nouveau possibles (la règle de 004 les refusait toutes), plafond anti-inondation : 10 messages par heure et 40 par jour sur tout le site |
 
 À appliquer dans l'ordre (SQL Editor, ou MCP Supabase).
 

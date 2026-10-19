@@ -27,6 +27,15 @@ describe('remarkDayHeaders', () => {
     expect(out).toContain('data-day="2"');
   });
 
+  it.each([
+    ['**Mercredi 12**', '12'],
+    ['**Mardi 28 octobre**', '28 octobre'],
+  ])('reads a date alone after the day (%s) as the date, not a description', async (md, date) => {
+    const out = await process(`${md}\n\nSuite.`);
+    expect(out).toContain(`day-date">${date}</span>`);
+    expect(out).not.toContain('day-desc');
+  });
+
   it('handles all weekdays with correct data-day index', async () => {
     const days = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
     for (let i = 0; i < days.length; i++) {

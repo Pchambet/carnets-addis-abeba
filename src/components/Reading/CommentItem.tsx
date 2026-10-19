@@ -1,9 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { formatDistanceToNow } from 'date-fns';
-import { fr } from 'date-fns/locale';
 import type { Comment } from '@/types/comment';
+import { relativeTime } from '@/lib/comments';
 import CommentForm from './CommentForm';
 
 interface CommentItemProps {
@@ -24,15 +23,11 @@ export default function CommentItem({
     const [showReplyForm, setShowReplyForm] = useState(false);
     const isClaire = comment.is_claire;
     const initial = getInitial(comment.author);
-    const dateStr = formatDistanceToNow(new Date(comment.created_at), {
-        addSuffix: true,
-        locale: fr,
-    });
 
     return (
-        <div className="livre-dor-comment flex gap-5 py-4 first:pt-0">
+        <div className="flex gap-3 sm:gap-5 py-4 first:pt-0">
             <div
-                className={`livre-dor-avatar flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center text-sm font-[family-name:var(--font-cormorant)] font-medium ${
+                className={`flex-shrink-0 w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-sm font-[family-name:var(--font-cormorant)] font-medium ${
                     isClaire ? 'bg-[var(--ochre)] text-[var(--white)]' : 'bg-[var(--border)] text-[var(--ink-light)]'
                 }`}
             >
@@ -50,7 +45,9 @@ export default function CommentItem({
                     {isClaire && (
                         <span className="text-xs text-[var(--gold)] font-medium tracking-wider">Claire</span>
                     )}
-                    <span className="caption text-[var(--ink-light)]">{dateStr}</span>
+                    <time className="caption text-[var(--ink-light)]" dateTime={comment.created_at}>
+                        {relativeTime(comment.created_at)}
+                    </time>
                 </div>
                 <p className="font-[family-name:var(--font-lora)] text-[var(--ink)] leading-[1.75] mb-4">
                     {comment.content}
@@ -64,7 +61,7 @@ export default function CommentItem({
                         Répondre
                     </button>
                 ) : (
-                    <div className="mt-3 pl-5 livre-dor-reply-border">
+                    <div className="mt-3 pl-3 sm:pl-5 livre-dor-reply-border">
                         <CommentForm
                             letterId={letterId}
                             parentId={comment.id}
@@ -78,7 +75,7 @@ export default function CommentItem({
                     </div>
                 )}
                 {comment.replies && comment.replies.length > 0 && (
-                    <div className="mt-5 space-y-5 pl-5 livre-dor-reply-border">
+                    <div className="mt-5 space-y-5 pl-3 sm:pl-5 livre-dor-reply-border">
                         {comment.replies.map((reply) => (
                             <CommentItem
                                 key={reply.id}

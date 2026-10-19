@@ -12,7 +12,6 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    "scripts/**", // Node scripts with CommonJS (sync-docx, compare-docx, etc.)
   ]),
 ]);
 

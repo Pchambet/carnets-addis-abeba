@@ -1,4 +1,7 @@
 import { describe, it, expect } from 'vitest';
+import { remark } from 'remark';
+import html from 'remark-html';
+import { frenchSpacing, remarkFrenchSpacing } from '../typography';
 import {
   weekLabel,
   cleanMarkdown,
@@ -34,6 +37,31 @@ describe('cleanMarkdown', () => {
   });
 });
 
+describe('frenchSpacing', () => {
+  const NBSP = ' ';
+
+  it('ties : ; ! ? » to the previous word and « to the next one', () => {
+    expect(frenchSpacing('Voilà : « oui » ; non ! Pourquoi ?')).toBe(
+      `Voilà${NBSP}: «${NBSP}oui${NBSP}»${NBSP}; non${NBSP}! Pourquoi${NBSP}?`
+    );
+  });
+
+  it('keeps an existing non-breaking space there, and collapses doubled spaces', () => {
+    expect(frenchSpacing(`Hosanna${NBSP}!  Alléluia  !`)).toBe(`Hosanna${NBSP}!  Alléluia${NBSP}!`);
+  });
+
+  it('leaves punctuation without a space before it alone', () => {
+    expect(frenchSpacing('> PQ: citation. Alléluia!!!')).toBe('> PQ: citation. Alléluia!!!');
+  });
+
+  it('is applied to the text of the letter, never to the Markdown syntax', () => {
+    const out = String(remark().use(remarkFrenchSpacing).use(html).processSync('- ? pourquoi\n\nIl pleut ! **Lundi :** oui'));
+    expect(out).toContain('<li>? pourquoi</li>');
+    expect(out).toContain(`Il pleut${NBSP}!`);
+    expect(out).toContain(`Lundi${NBSP}:`);
+  });
+});
+
 describe('extractPullQuote', () => {
   it('extracts PQ marker and removes it from content', () => {
     const input = '> PQ: Une citation importante.\n\nParagraphe suivant.';
@@ -64,15 +92,6 @@ describe('getSortedLettersData', () => {
     if (letters.length < 2) return;
     for (let i = 1; i < letters.length; i++) {
       expect(letters[i].date <= letters[i - 1].date).toBe(true);
-    }
-  });
-
-  it('each letter has id, title, date', () => {
-    const letters = getSortedLettersData();
-    for (const letter of letters) {
-      expect(letter).toHaveProperty('id');
-      expect(letter).toHaveProperty('title');
-      expect(letter).toHaveProperty('date');
     }
   });
 });

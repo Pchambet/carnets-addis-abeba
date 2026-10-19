@@ -1,19 +1,12 @@
 import { visit } from 'unist-util-visit';
 import type { Root, Paragraph, Text } from 'mdast';
-
-/** Escape HTML special chars to prevent XSS when inserting user content */
-function escapeHtml(s: string): string {
-    return s
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-}
+import { escapeHtml } from './html';
 
 // Day names in French + their English/index mapping
 const DAY_NAMES = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
 const DAY_RE = new RegExp(`^((?:${DAY_NAMES.join('|')})(?:\\s+et\\s+[a-zA-Zéû]+)?)(.*)?$`);
+/** « 12 », « 28 octobre », « 28 octobre 2025 » */
+const DATE_ONLY = /^\d{1,2}(\s+[a-zéû]+)?(\s+\d{4})?$/i;
 
 /**
  * remarkDayHeaders — Remark plugin
@@ -48,8 +41,10 @@ export function remarkDayHeaders() {
 
             // Parse date part before ~ if present
             const tildeIdx = rest.indexOf('~');
-            const datePart = tildeIdx > -1 ? rest.slice(0, tildeIdx).trim() : '';
-            const descPart = tildeIdx > -1 ? rest.slice(tildeIdx + 1).trim() : rest;
+            // Sans « ~ », une date seule (« Mercredi 12 », « Mardi 28 octobre ») reste une date
+            const dateOnly = tildeIdx === -1 && DATE_ONLY.test(rest);
+            const datePart = tildeIdx > -1 ? rest.slice(0, tildeIdx).trim() : dateOnly ? rest : '';
+            const descPart = tildeIdx > -1 ? rest.slice(tildeIdx + 1).trim() : dateOnly ? '' : rest;
 
             // Compute day index from the first word (e.g. "Jeudi" from "Jeudi et vendredi")
             const firstDay = dayName.split(' ')[0];

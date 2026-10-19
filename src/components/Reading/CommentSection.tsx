@@ -1,8 +1,8 @@
 'use client';
 
 import { useEffect, useState, useCallback } from 'react';
-import { supabase } from '@/lib/supabase';
 import type { Comment } from '@/types/comment';
+import { buildCommentTree, fetchComments } from '@/lib/comments';
 import CommentItem from './CommentItem';
 import CommentForm from './CommentForm';
 
@@ -10,76 +10,27 @@ interface CommentSectionProps {
     letterId: string;
 }
 
-function buildCommentTree(comments: Comment[]): Comment[] {
-    const byId = new Map<string, Comment & { replies?: Comment[] }>();
-    comments.forEach((c) => byId.set(c.id, { ...c, replies: [] }));
-
-    const roots: Comment[] = [];
-    comments.forEach((c) => {
-        const node = byId.get(c.id)!;
-        if (!c.parent_id) {
-            roots.push(node);
-        } else {
-            const parent = byId.get(c.parent_id);
-            if (parent) {
-                parent.replies = parent.replies || [];
-                parent.replies.push(node);
-            } else {
-                roots.push(node);
-            }
-        }
-    });
-
-    roots.sort(
-        (a, b) =>
-            new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
-    );
-    (roots as (Comment & { replies?: Comment[] })[]).forEach((r) => {
-        if (r.replies?.length) {
-            r.replies.sort(
-                (a, b) =>
-                    new Date(a.created_at).getTime() -
-                    new Date(b.created_at).getTime()
-            );
-        }
-    });
-    return roots;
-}
-
-/** Public columns only: commenters' emails are never readable from the browser. */
-const PUBLIC_COLUMNS = 'id, letter_id, parent_id, author, content, is_claire, approved, created_at';
-
-function loadComments(letterId: string) {
-    return supabase
-        .from('comments')
-        .select(PUBLIC_COLUMNS)
-        .eq('letter_id', letterId)
-        .eq('approved', true)
-        .order('created_at', { ascending: true })
-        .returns<Comment[]>();
-}
-
 export default function CommentSection({ letterId }: CommentSectionProps) {
     const [comments, setComments] = useState<Comment[]>([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+    const [failed, setFailed] = useState(false);
 
-    const applyResult = useCallback((data: Comment[] | null, err: { message: string } | null) => {
-        setError(err ? err.message : null);
+    const applyResult = useCallback((data: Comment[] | null, err: unknown) => {
+        setFailed(Boolean(err));
         setComments(err ? [] : data ?? []);
         setLoading(false);
     }, []);
 
-    const fetchComments = useCallback(async () => {
-        const { data, error: err } = await loadComments(letterId);
-        applyResult(data, err);
+    const reload = useCallback(() => {
+        fetchComments(letterId).then((data) => applyResult(data, null), (err) => applyResult(null, err));
     }, [letterId, applyResult]);
 
     useEffect(() => {
         let cancelled = false;
-        void loadComments(letterId).then(({ data, error: err }) => {
-            if (!cancelled) applyResult(data, err);
-        });
+        fetchComments(letterId).then(
+            (data) => !cancelled && applyResult(data, null),
+            (err) => !cancelled && applyResult(null, err),
+        );
         return () => {
             cancelled = true;
         };
@@ -94,22 +45,24 @@ export default function CommentSection({ letterId }: CommentSectionProps) {
                     Correspondance
                 </h2>
 
-                <CommentForm letterId={letterId} onSuccess={fetchComments} />
+                <CommentForm letterId={letterId} onSuccess={reload} />
 
                 <div className="livre-dor-divider" />
 
                 <h3 className="caption text-[var(--ink-light)] mb-6">
-                    {comments.length} message{comments.length !== 1 ? 's' : ''}
+                    {loading || failed ? 'Messages' : `${comments.length} message${comments.length > 1 ? 's' : ''}`}
                 </h3>
                 {loading ? (
                     <p className="caption text-[var(--ink-light)]">
                         Chargement…
                     </p>
-                ) : error ? (
-                    <p className="text-sm text-[var(--red)]">{error}</p>
+                ) : failed ? (
+                    <p role="alert" className="text-sm text-[var(--red)]">
+                        Les messages n’ont pas pu être chargés. Réessayez plus tard.
+                    </p>
                 ) : tree.length === 0 ? (
                     <p className="caption text-[var(--ink-light)] italic">
-                        Aucun message pour le moment. Soyez le premier à écrire !
+                        Aucun message pour le moment. Soyez le premier à écrire&nbsp;!
                     </p>
                 ) : (
                     <div className="space-y-6">
@@ -118,7 +71,7 @@ export default function CommentSection({ letterId }: CommentSectionProps) {
                                 key={comment.id}
                                 comment={comment}
                                 letterId={letterId}
-                                onReplySuccess={fetchComments}
+                                onReplySuccess={reload}
                             />
                         ))}
                     </div>

@@ -22,13 +22,17 @@ export default function SiteHeader() {
     const [isAtTop, setIsAtTop] = useState(true);
     const [menuOpen, setMenuOpen] = useState(false);
     const lastScrollY = useRef(0);
+    const menuButton = useRef<HTMLButtonElement>(null);
 
     // Masqué en descendant, réaffiché en remontant
     useEffect(() => {
         const onScroll = () => {
             const y = window.scrollY;
             setIsAtTop(y < 10);
-            setIsVisible(y <= lastScrollY.current || y <= 100);
+            const delta = y - lastScrollY.current;
+            // Les micro-mouvements (inertie, rebond) ne font pas clignoter l'en-tête
+            if (Math.abs(delta) < 8 && y > 100) return;
+            setIsVisible(delta < 0 || y <= 100);
             lastScrollY.current = y;
         };
         window.addEventListener('scroll', onScroll, { passive: true });
@@ -36,10 +40,14 @@ export default function SiteHeader() {
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
-    // Menu mobile : se ferme avec Échap ou au choix d'un lien
+    // Menu mobile : se ferme avec Échap (le focus revient au bouton), au choix d'un lien ou en le quittant au clavier
     useEffect(() => {
         if (!menuOpen) return;
-        const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setMenuOpen(false);
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key !== 'Escape') return;
+            setMenuOpen(false);
+            menuButton.current?.focus();
+        };
         window.addEventListener('keydown', onKey);
         return () => window.removeEventListener('keydown', onKey);
     }, [menuOpen]);
@@ -49,11 +57,11 @@ export default function SiteHeader() {
     return (
         <header
             data-transparent={isAtTop && !menuOpen}
-            className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ease-in-out ${
+            className={`fixed top-0 left-0 right-0 z-50 border-b transition-[translate,background-color,border-color,box-shadow] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] has-[:focus-visible]:translate-y-0 ${
                 isVisible || menuOpen ? 'translate-y-0' : '-translate-y-full'
             } ${
                 solid
-                    ? 'bg-[var(--white)]/90 backdrop-blur-md border-[var(--border)] shadow-sm'
+                    ? 'bg-[var(--white)]/90 border-[var(--border)] shadow-sm'
                     : 'bg-[var(--white)]/90 border-[var(--border)] sm:bg-transparent sm:border-transparent'
             }`}
         >
@@ -65,8 +73,14 @@ export default function SiteHeader() {
                     </span>
                 </Link>
 
-                <nav aria-label="Navigation principale">
+                <nav
+                    aria-label="Navigation principale"
+                    onBlur={(e) => {
+                        if (!e.currentTarget.contains(e.relatedTarget)) setMenuOpen(false);
+                    }}
+                >
                     <button
+                        ref={menuButton}
                         type="button"
                         className="sm:hidden caption text-[var(--ink)] px-3 py-2 -mr-3"
                         aria-expanded={menuOpen}

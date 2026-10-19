@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 import { remarkDayHeaders } from './remarkDayHeaders';
+import { frenchSpacing, remarkFrenchSpacing } from './typography';
 import { getBlurDataURL } from './blur';
 
 const lettersDirectory = path.join(process.cwd(), 'content/letters');
@@ -47,7 +48,7 @@ export function getSortedLettersData() {
             const fileContents = fs.readFileSync(fullPath, 'utf8');
             const matterResult = matter(fileContents);
             return {
-                ...(matterResult.data as LetterFrontmatter),
+                ...typeset(matterResult.data as LetterFrontmatter),
                 id,
             };
         })
@@ -59,14 +60,21 @@ export function cleanMarkdown(raw: string): string {
     return raw
         // RTL / LTR marks from .docx
         .replace(/[\u200e\u200f]/g, '')
-        // Non-breaking spaces → regular space
+        // Non-breaking spaces from .docx (between words too) → regular space
         .replace(/\u00a0/g, ' ')
-        // Curly apostrophes → straight (for code consistency)
-        // Keep curly quotes in text — they're beautiful
         // Multiple blank lines → max 2
         .replace(/\n{3,}/g, '\n\n')
         // Trailing spaces on lines
         .replace(/ +$/gm, '');
+}
+
+/** Titre et extrait passent aussi par la typographie française */
+function typeset(data: LetterFrontmatter): LetterFrontmatter {
+    return {
+        ...data,
+        title: frenchSpacing(data.title),
+        ...(data.excerpt && { excerpt: frenchSpacing(data.excerpt) }),
+    };
 }
 
 /** Extract "> PQ: …" pull quote marker from content */
@@ -91,18 +99,19 @@ export async function getLetterData(id: string): Promise<LetterData> {
 
     // 3. Render Markdown → HTML (with day-header plugin)
     const processedContent = await remark()
+        .use(remarkFrenchSpacing) // espaces insécables de la typographie française
         .use(remarkDayHeaders)   // ← transforms **Lundi** etc. into day-section HTML
         .use(html, { sanitize: false }) // sanitize:false to allow the custom HTML
         .process(cleanContent);
     const contentHtml = processedContent.toString();
 
-    const data = matterResult.data as LetterFrontmatter;
+    const data = typeset(matterResult.data as LetterFrontmatter);
 
     return {
         ...data,
         id,
         contentHtml,
-        pullQuote,
+        pullQuote: pullQuote && frenchSpacing(pullQuote),
         heroBlurDataURL: await getBlurDataURL(data.heroImage),
     };
 }

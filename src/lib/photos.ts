@@ -1,39 +1,34 @@
 import fs from 'fs';
 import path from 'path';
-import { getImageData } from './blur';
+import { getImageData, getImageSize } from './blur';
 
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
 const IMAGES_DIR = path.join(PUBLIC_DIR, 'images');
 
-export interface PhotoCaption {
-    caption?: string;
-}
+const PHOTO = /\.(jpe?g|png|webp)$/i;
+const VIDEO = /\.(mov|mp4|webm)$/i;
+/** Dérivés générés par scripts/media.mjs : miniatures et affiches vidéo */
+const DERIVED = /-(thumb|poster)\.[^.]+$/i;
 
 export interface Photo {
     src: string;
     thumbSrc?: string;
-    name: string;
     caption?: string;
     blurDataURL?: string;
     width?: number;
     height?: number;
 }
 
-function getPhotoCaptions(letterId: string): Record<string, PhotoCaption> {
-    const file = path.join(IMAGES_DIR, letterId, 'captions.json');
-    if (!fs.existsSync(file)) return {};
-    try {
-        return JSON.parse(fs.readFileSync(file, 'utf8')) as Record<string, PhotoCaption>;
-    } catch {
-        return {};
-    }
+export interface Video {
+    src: string;
+    poster?: string;
+    caption?: string;
 }
 
-export interface Video {
-  src: string;
-  poster?: string;
-  name: string;
-  caption?: string;
+/** Légendes écrites par scripts/media.mjs (clés NFC). Un fichier illisible fait échouer le build. */
+function getCaptions(letterId: string): Record<string, { caption?: string }> {
+    const file = path.join(IMAGES_DIR, letterId, 'captions.json');
+    return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};
 }
 
 /**
@@ -45,6 +40,13 @@ export function listFiles(dir: string): Map<string, string> {
     return new Map(fs.readdirSync(dir).map((f) => [f.normalize('NFC'), f]));
 }
 
+/** Médias d'une lettre (hors dérivés), dans l'ordre d'affichage : alphabétique */
+export function listMedia(files: Map<string, string>, kind: RegExp = PHOTO): string[] {
+    return [...files.values()]
+        .filter((f) => kind.test(f) && !DERIVED.test(f))
+        .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+}
+
 /** Miniature générée par scripts/media.mjs : même extension que l'original, ou .jpg */
 export function findThumb(files: Map<string, string>, filename: string): string | undefined {
     const ext = path.extname(filename);
@@ -54,59 +56,31 @@ export function findThumb(files: Map<string, string>, filename: string): string 
         .find(Boolean);
 }
 
-/** Returns videos for a letter (mov, mp4, webm in public/images/{id}/) */
 export function getVideosForLetter(id: string): Video[] {
-  const dir = path.join(IMAGES_DIR, id);
-  if (!fs.existsSync(dir)) return [];
-
-  const captions = getPhotoCaptions(id);
-  const names = listFiles(dir);
-  const files = [...names.values()]
-    .filter((f) => /\.(mov|mp4|webm)$/i.test(f))
-    .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
-
-  return files.map((f) => {
-    const meta = captions[f] || captions[f.toLowerCase()];
-    const poster = names.get(`${f.replace(/\.[^.]+$/, '')}-poster.jpg`.normalize('NFC'));
-    return {
-      src: `/images/${id}/${f}`,
-      poster: poster ? `/images/${id}/${poster}` : undefined,
-      name: meta?.caption ?? f.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' '),
-      caption: meta?.caption,
-    };
-  });
-}
-
-/** Returns photos for a letter, with caption metadata from captions.json */
-export async function getPhotosForLetter(id: string): Promise<Photo[]> {
-    const dir = path.join(IMAGES_DIR, id);
-    if (!fs.existsSync(dir)) return [];
-
-    const captions = getPhotoCaptions(id);
-    const names = listFiles(dir);
-    const files = [...names.values()]
-        .filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f) && !/-(thumb|poster)\.(jpg|jpeg|png|webp)$/i.test(f))
-        .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
-
-    const photos = files.map((f) => {
-        const meta = captions[f] || captions[f.toLowerCase()];
-        const thumbFilename = findThumb(names, f);
-
+    const names = listFiles(path.join(IMAGES_DIR, id));
+    const captions = getCaptions(id);
+    return listMedia(names, VIDEO).map((f) => {
+        const poster = names.get(`${f.replace(/\.[^.]+$/, '')}-poster.jpg`.normalize('NFC'));
         return {
             src: `/images/${id}/${f}`,
-            thumbSrc: thumbFilename ? `/images/${id}/${thumbFilename}` : undefined,
-            name: meta?.caption ?? f.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' '),
-            caption: meta?.caption,
+            poster: poster ? `/images/${id}/${poster}` : undefined,
+            caption: captions[f.normalize('NFC')]?.caption,
         };
     });
+}
 
-    return Promise.all(photos.map(async (photo) => {
-        const data = await getImageData(photo.src);
+/** blur: false pour les longues listes (galerie) : dimensions seules, sans aperçu flou */
+export async function getPhotosForLetter(id: string, { blur = true } = {}): Promise<Photo[]> {
+    const names = listFiles(path.join(IMAGES_DIR, id));
+    const captions = getCaptions(id);
+    return Promise.all(listMedia(names).map(async (f) => {
+        const src = `/images/${id}/${f}`;
+        const thumb = findThumb(names, f);
         return {
-            ...photo,
-            blurDataURL: data.blurDataURL,
-            width: data.width,
-            height: data.height
+            src,
+            thumbSrc: thumb ? `/images/${id}/${thumb}` : undefined,
+            caption: captions[f.normalize('NFC')]?.caption,
+            ...(await (blur ? getImageData(src) : getImageSize(src))),
         };
     }));
 }
@@ -115,13 +89,7 @@ export async function getPhotosForLetter(id: string): Promise<Photo[]> {
  * Vignette d'une lettre pour les listes : miniature de l'image hero, sinon de la première photo.
  */
 export function getLetterCover(id: string, heroImage?: string): string | undefined {
-    let src = heroImage;
-    if (!src) {
-        const first = [...listFiles(path.join(IMAGES_DIR, id)).values()]
-            .filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f) && !/-(thumb|poster)\./i.test(f))
-            .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))[0];
-        if (first) src = `/images/${id}/${first}`;
-    }
+    const src = heroImage ?? listMedia(listFiles(path.join(IMAGES_DIR, id))).map((f) => `/images/${id}/${f}`)[0];
     if (!src) return undefined;
 
     const dir = path.dirname(src);

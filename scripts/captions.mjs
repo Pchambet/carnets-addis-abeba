@@ -8,7 +8,13 @@ const TECHNICAL_NAME = /^(IMG[-_]?\d+|DSCF?\d+|motion_photo_\d+|IMG-\d{8}-WA\d+|
 
 /** Légende tirée d'un nom de fichier sans extension, ou null pour un nom technique. */
 export function captionFrom(base) {
-  if (TECHNICAL_NAME.test(base)) return null;
-  const caption = base.replace(/[_\s]+$/, '').replace(/\s+/g, ' ').trim();
+  const caption = base
+    .replace(/[❤♥]️?/g, '') // ❤️ : marque de la photo principale
+    .replace(/[_\s]*\(\d+\)$/, '') // « Concert_(1) » : suffixe de copie de macOS
+    .replace(/[_\s]+$/, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  // Testé après nettoyage : « ❤️ IMG_1234 » reste un nom d'appareil
+  if (TECHNICAL_NAME.test(caption)) return null;
   return caption.length > 1 ? caption : null;
 }

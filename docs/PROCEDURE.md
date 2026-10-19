@@ -4,7 +4,7 @@
 
 Un dossier source à côté du projet (`../`), quel que soit son nom (`Semaine_12`, `Semaine 41 à 43`, `Avant dernière lettre `…), contenant :
 - le `.docx` de la lettre ;
-- les photos (JPG, PNG, HEIC) et vidéos (MOV, MP4), éventuellement dans des sous-dossiers. **Le nom de fichier donné par Claire devient la légende** (les noms d'appareil comme `IMG_1234` n'en donnent pas).
+- les photos (JPG, PNG, HEIC) et vidéos (MOV, MP4), éventuellement dans des sous-dossiers. **Le nom de fichier donné par Claire devient la légende** (`scripts/captions.mjs` : les noms d'appareil comme `IMG_1234`, `20260927_172943` ou un UUID n'en donnent pas ; le ❤️ et les suffixes de copie `(1)` sont retirés). Une photo nommée ❤️ est celle que Claire choisit comme image principale.
 
 ## Les étapes
 
@@ -12,7 +12,7 @@ Un dossier source à côté du projet (`../`), quel que soit son nom (`Semaine_1
    ```bash
    npm run add-letter -- "Semaine 45" semaine-45
    ```
-   - Photos : HEIC → JPEG, 2000 px max, miniature 600 px ; vidéos : MP4 H.264 (1920 px max) + affiche ; légendes dans `captions.json`.
+   - Photos : HEIC → JPEG, 2000 px max, miniature 600 px ; vidéos : MP4 H.264 (1280 px max, débit plafonné) + affiche ; légendes dans `captions.json`.
    - Crée `content/letters/semaine-45.md` avec le texte **brut** du docx si la lettre n'existe pas encore.
    - Relançable sans risque : ce qui existe déjà n'est jamais réécrit.
 

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
 import { getLetterData, getSortedLettersData } from '@/lib/letters';
 import { getPhotosForLetter, getVideosForLetter } from '@/lib/photos';
 import HeroLetter from '@/components/Reading/HeroLetter';
@@ -10,52 +9,41 @@ import PullQuote from '@/components/Reading/PullQuote';
 import ReadingProgress from '@/components/Reading/ReadingProgress';
 import CommentSection from '@/components/Reading/CommentSection';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/site';
 
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-    try {
-        const letters = getSortedLettersData();
-        return letters.map((letter) => ({ id: letter.id }));
-    } catch {
-        return [];
-    }
+    return getSortedLettersData().map((letter) => ({ id: letter.id }));
 }
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://carnets-addis-abeba.vercel.app';
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
     const { id } = await params;
-    try {
-        const letter = await getLetterData(id);
-        const photos = await getPhotosForLetter(id);
-        const ogImagePath = letter.heroImage ?? (photos.length > 0 ? photos[0].src : undefined);
-        const ogImageUrl = ogImagePath ? (ogImagePath.startsWith('http') ? ogImagePath : `${SITE_URL}${ogImagePath}`) : undefined;
-        const description = letter.excerpt ?? letter.pullQuote ?? `${letter.title} — lettre depuis Addis-Abéba`;
+    const letter = await getLetterData(id);
+    const photos = await getPhotosForLetter(id);
+    const ogImagePath = letter.heroImage ?? (photos.length > 0 ? photos[0].src : undefined);
+    const ogImageUrl = ogImagePath ? (ogImagePath.startsWith('http') ? ogImagePath : `${SITE_URL}${ogImagePath}`) : undefined;
+    const description = letter.excerpt ?? letter.pullQuote ?? `${letter.title} — lettre depuis Addis-Abéba`;
 
-        return {
+    return {
+        title: letter.title,
+        description,
+        openGraph: {
             title: letter.title,
             description,
-            openGraph: {
-                title: letter.title,
-                description,
-                type: 'article',
-                publishedTime: letter.date,
-                locale: 'fr_FR',
-                ...(ogImageUrl && {
-                    images: [{ url: ogImageUrl, width: 1200, height: 630, alt: letter.title }],
-                }),
-            },
-            twitter: {
-                card: 'summary_large_image',
-                title: letter.title,
-                description,
-                ...(ogImageUrl && { images: [ogImageUrl] }),
-            },
-        };
-    } catch {
-        return { title: 'Lettre' };
-    }
+            type: 'article',
+            publishedTime: letter.date,
+            locale: 'fr_FR',
+            ...(ogImageUrl && { images: [{ url: ogImageUrl, alt: letter.title }] }),
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: letter.title,
+            description,
+            ...(ogImageUrl && { images: [ogImageUrl] }),
+        },
+    };
 }
 
 /** Format "Claire" signature at the end of the content */
@@ -70,12 +58,8 @@ function formatSignature(contentHtml: string): string {
 
 export default async function LetterPage({ params }: { params: Promise<{ id: string }> }) {
     const resolvedParams = await params;
-    let letter;
-    try {
-        letter = await getLetterData(resolvedParams.id);
-    } catch {
-        notFound();
-    }
+    // dynamicParams = false : seuls les identifiants de generateStaticParams arrivent ici
+    const letter = await getLetterData(resolvedParams.id);
     const photos = await getPhotosForLetter(resolvedParams.id);
     const videos = getVideosForLetter(resolvedParams.id);
 
@@ -125,7 +109,7 @@ export default async function LetterPage({ params }: { params: Promise<{ id: str
             <TibebDivider />
 
             {/* ── 2. Letter body with drop cap + pull quote (Priorité 1) ── */}
-            <div id="lettre" className="px-6 md:px-12 pb-12 scroll-mt-8">
+            <div id="lettre" className="px-4 sm:px-6 md:px-12 pb-12 scroll-mt-8">
                 <div className="reading-width mx-auto">
                     {letter.pullQuote && <PullQuote text={letter.pullQuote} />}
 

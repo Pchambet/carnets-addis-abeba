@@ -9,12 +9,7 @@ export type LetterThemeMap = Record<string, string[]>;
 
 export function getLetterThemeMap(): LetterThemeMap {
   if (!fs.existsSync(themesPath)) return {};
-  const raw = fs.readFileSync(themesPath, 'utf8');
-  try {
-    return JSON.parse(raw) as LetterThemeMap;
-  } catch {
-    return {};
-  }
+  return JSON.parse(fs.readFileSync(themesPath, 'utf8')) as LetterThemeMap;
 }
 
 export function getLettersForTheme(themeSlug: string): ReturnType<typeof getSortedLettersData> {
@@ -26,16 +21,6 @@ export function getLettersForTheme(themeSlug: string): ReturnType<typeof getSort
   return letters.filter((l) => ids.includes(l.id));
 }
 
-export function getThemeLetterCounts(): Record<string, number> {
-  const map = getLetterThemeMap();
-  const counts: Record<string, number> = {};
-  for (const themes of Object.values(map)) {
-    for (const t of themes) {
-      counts[t] = (counts[t] ?? 0) + 1;
-    }
-  }
-  return counts;
-}
 
 export interface JourneyQuestion {
   id: string;
@@ -53,4 +38,13 @@ export function getJourneyQuestions(themeSlug: string): JourneyQuestion[] {
   if (!fs.existsSync(journeyPath)) return [];
   const journeys = JSON.parse(fs.readFileSync(journeyPath, 'utf8')) as ThemeJourney[];
   return journeys.find((j) => j.theme === themeSlug)?.questions ?? [];
+}
+
+/** Lettres que l'on peut atteindre depuis la page d'un thème : celles de ses questions. */
+export function getThemeLetterCounts(): Record<string, number> {
+  if (!fs.existsSync(journeyPath)) return {};
+  const journeys = JSON.parse(fs.readFileSync(journeyPath, 'utf8')) as ThemeJourney[];
+  return Object.fromEntries(
+    journeys.map((j) => [j.theme, new Set(j.questions.flatMap((q) => q.letters)).size])
+  );
 }

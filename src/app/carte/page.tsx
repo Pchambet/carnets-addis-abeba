@@ -1,8 +1,11 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getSortedLettersData } from '@/lib/letters';
-import { getLocationsWithLetters } from '@/lib/map-locations';
+import { getLocationsWithLetters, locationAnchor } from '@/lib/map-locations';
 import LetterMapWrapper from '@/components/Map/LetterMapWrapper';
 import PageHeader from '@/components/Layout/PageHeader';
+
+export const metadata: Metadata = { title: 'La carte' };
 
 export default function CartePage() {
   const letters = getSortedLettersData();
@@ -15,7 +18,6 @@ export default function CartePage() {
       name: "Paris (Pierre)",
       lat: 48.8566,
       lng: 2.3522,
-      zoom: 11,
       letterIds: [],
     },
   ];
@@ -23,7 +25,7 @@ export default function CartePage() {
   return (
     <div>
       <PageHeader title="La carte">
-        <p>Où les lettres ont été écrites, d’Addis-Abéba aux routes du Sud, jusqu’au retour à Annecy.</p>
+        <p>Où les lettres ont été écrites, d’<span className="whitespace-nowrap">Addis-Abéba</span> aux routes du Sud, jusqu’au retour à Annecy.</p>
       </PageHeader>
 
       <section className="site-container py-16">
@@ -32,7 +34,7 @@ export default function CartePage() {
         {locations.length > 0 && (
           <div className="mt-12 space-y-6">
             {locations.map((loc) => (
-              <div key={loc.name} className="border-b border-[var(--border)] last:border-b-0 pb-6">
+              <div key={loc.name} id={locationAnchor(loc.name)} className="scroll-mt-[var(--header-offset)] border-b border-[var(--border)] last:border-b-0 pb-6">
                 <h2 className="text-xl font-[family-name:var(--font-cormorant)] font-light text-[var(--ink)] mb-3">
                   {loc.name}
                 </h2>

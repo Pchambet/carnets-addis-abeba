@@ -1,5 +1,3 @@
-'use client';
-
 import type { Video } from '@/lib/photos';
 
 interface VideoSectionProps {
@@ -18,15 +16,15 @@ export default function VideoSection({ videos }: VideoSectionProps) {
       <div
         className={`grid gap-6 md:gap-8 ${isMulti ? gridCols : 'max-w-3xl mx-auto'}`}
       >
-        {videos.map((video, i) => (
-          <figure key={i} className={isMulti ? 'min-w-0' : undefined}>
+        {videos.map((video) => (
+          <figure key={video.src} className={isMulti ? 'min-w-0' : undefined}>
             <video
               src={video.src}
               poster={video.poster}
               controls
               playsInline
               className="w-full rounded-lg border border-[var(--border)] bg-black/5 aspect-video object-contain"
-              preload="metadata"
+              preload="none"
             >
               Votre navigateur ne supporte pas la lecture de vidéos.
             </video>
