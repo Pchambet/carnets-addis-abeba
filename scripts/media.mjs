@@ -19,6 +19,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import sharp from 'sharp';
 import mammoth from 'mammoth';
+import { captionFrom } from './captions.mjs';
 
 const ROOT = process.cwd();
 const IMAGES_DIR = path.join(ROOT, 'public', 'images');
@@ -30,8 +31,6 @@ const POSTER_SIZE = 960;
 const IMAGE = /\.(jpe?g|png|webp|heic)$/i;
 const VIDEO = /\.(mov|mp4|m4v)$/i;
 const DERIVED = /-(thumb|poster)\.[^.]+$/i;
-// Noms d'appareil (pas des légendes de Claire)
-const TECHNICAL_NAME = /^(IMG[-_]?\d+|DSCF?\d+|motion_photo_\d+|IMG-\d{8}-WA\d+|VID[-_]|IMG_\d{8}_\d+|PXL_|\d+$)/i;
 
 const dryRun = process.argv.includes('--dry-run');
 const log = (msg) => console.log(dryRun ? `[dry-run] ${msg}` : msg);
@@ -46,12 +45,6 @@ function walk(dir) {
     if (e.name.startsWith('.')) return [];
     return e.isDirectory() ? walk(p) : [p];
   });
-}
-
-function captionFrom(base) {
-  if (TECHNICAL_NAME.test(base)) return null;
-  const caption = base.replace(/[_\s]+$/, '').replace(/\s+/g, ' ').trim();
-  return caption.length > 1 ? caption : null;
 }
 
 function encoder(file) {
@@ -78,7 +71,8 @@ function transcodeVideo(input, output) {
     '-y', '-loglevel', 'error', '-i', input,
     // Côté le plus long ≤ 1920 px, dimensions paires (exigées par yuv420p)
     '-vf', "scale='if(gt(iw,ih),trunc(min(1920,iw)/2)*2,-2)':'if(gt(iw,ih),-2,trunc(min(1920,ih)/2)*2)'",
-    '-c:v', 'libx264', '-crf', '23', '-preset', 'slow', '-pix_fmt', 'yuv420p',
+    // Débit plafonné à 5 Mb/s : un plan agité filmé à la main doublait le poids, sans gain visible
+    '-c:v', 'libx264', '-crf', '23', '-maxrate', '5M', '-bufsize', '10M', '-preset', 'slow', '-pix_fmt', 'yuv420p',
     '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', output,
   ]);
 }

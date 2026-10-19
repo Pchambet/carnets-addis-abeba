@@ -38,6 +38,7 @@ public/images/semaine-XX/ photos (+ -thumb), vidéos (+ -poster), captions.json
 src/app/                  pages : accueil, lettres, galerie, jardin, carte, à propos ; api/comment-notify, api/keep-alive
 src/lib/                  lettres, photos, jardin, thèmes, lieux de la carte
 scripts/media.mjs         import et dérivés des médias
+scripts/captions.mjs      légendes tirées des noms de fichiers
 supabase/migrations/      schéma et règles du livre d'or
 ```
 
