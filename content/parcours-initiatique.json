@@ -18,7 +18,7 @@
         "id": "q3",
         "question": "Avez-vous déjà ressenti l’irruption de la grâce au cœur de l’aridité ou de l’attente ?",
         "reponse": "La grâce ne prévient pas. Elle surgit souvent là où l’on n’a plus rien à offrir, transfigurant un instant de fatigue en une éternité joyeuse.",
-        "letters": ["semaine-11", "semaine-18", "semaine-24"]
+        "letters": ["semaine-11", "semaine-18", "semaine-24", "semaine-46"]
       },
       {
         "id": "q16",
@@ -94,7 +94,7 @@
         "id": "q9",
         "question": "Que vous reste-t-il de plus précieux lorsque vous ne pouvez plus « faire », mais seulement « être » ?",
         "reponse": "La maladie ou l’incompréhension nous condamnent parfois à l’inaction. Reste alors la simple présence, silencieuse et aimante, qui accomplit l’essentiel.",
-        "letters": ["semaine-04", "semaine-10", "semaine-26", "semaine-28"]
+        "letters": ["semaine-04", "semaine-10", "semaine-26", "semaine-28", "semaine-46"]
       },
       {
         "id": "q21",
@@ -147,7 +147,7 @@
         "id": "q25",
         "question": "Que faites-vous des dons que vous avez reçus ?",
         "reponse": "Se savoir profondément aimé révèle que l’on a quelque chose d’unique à apporter au monde. Cultiver ce que l’on a reçu et le faire fructifier devient alors une responsabilité, à vivre humblement.",
-        "letters": ["semaine-39-40"]
+        "letters": ["semaine-39-40", "semaine-46"]
       }
     ]
   },

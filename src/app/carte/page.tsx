@@ -8,16 +8,9 @@ export default function CartePage() {
   const letters = getSortedLettersData();
   const locations = getLocationsWithLetters(letters);
 
-  // Ajout des points fixes
+  // Point fixe, sans lettre
   const allLocations = [
     ...locations,
-    {
-      name: "Annecy (Maison de Claire)",
-      lat: 45.8992,
-      lng: 6.1294,
-      zoom: 11,
-      letterIds: [],
-    },
     {
       name: "Paris (Pierre)",
       lat: 48.8566,
@@ -30,7 +23,7 @@ export default function CartePage() {
   return (
     <div>
       <PageHeader title="La carte">
-        <p>Où les lettres ont été écrites, d’Addis-Abéba aux routes du Sud.</p>
+        <p>Où les lettres ont été écrites, d’Addis-Abéba aux routes du Sud, jusqu’au retour à Annecy.</p>
       </PageHeader>
 
       <section className="site-container py-16">

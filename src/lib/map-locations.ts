@@ -24,6 +24,7 @@ const LOCATIONS: Record<string, MapLocation> = {
   'Mont Hambaricho': { name: 'Mont Hambaricho', lat: 7.27, lng: 37.86, zoom: 11 },
   'Shishinda': { name: 'Shishinda', lat: 7.283, lng: 35.867, zoom: 11 },
   'Pays gouragué': { name: 'Pays gouragué', lat: 8.0, lng: 37.915, zoom: 11 },
+  'Annecy': { name: 'Annecy (Maison de Claire)', lat: 45.8992, lng: 6.1294, zoom: 11 },
 };
 
 /** Lieux cités par une lettre : "Hawassa & Miki" → ["Hawassa", "Miki"] */
