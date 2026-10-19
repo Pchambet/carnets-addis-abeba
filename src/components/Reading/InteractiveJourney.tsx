@@ -92,7 +92,7 @@ export default function InteractiveJourney({ questions, letters }: InteractiveJo
 
             <div className="mb-16">
               <h2 className="text-3xl md:text-4xl font-[family-name:var(--font-cormorant)] font-light italic text-[var(--ochre)] leading-snug mb-8">
-                « {activeQuestion.question} »
+                «&nbsp;{activeQuestion.question}&nbsp;»
               </h2>
               
               <div className="pl-6 border-l border-[var(--ochre)]/30">
@@ -136,7 +136,7 @@ export default function InteractiveJourney({ questions, letters }: InteractiveJo
                         </div>
                         {letter.excerpt && (
                           <p className="text-[var(--ink-light)] font-[family-name:var(--font-lora)] leading-relaxed italic md:pl-[calc(4rem+1vw)]">
-                            « {letter.excerpt} »
+                            «&nbsp;{letter.excerpt}&nbsp;»
                           </p>
                         )}
                       </Link>

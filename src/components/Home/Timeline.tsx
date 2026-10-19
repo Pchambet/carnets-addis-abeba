@@ -61,7 +61,7 @@ export default function Timeline({ letters }: TimelineProps) {
                                 </h2>
                                 {excerpt && (
                                     <p className="text-[var(--ink-light)] font-[family-name:var(--font-lora)] italic leading-relaxed">
-                                        « {excerpt} »
+                                        «&nbsp;{excerpt}&nbsp;»
                                     </p>
                                 )}
                                 <span className="caption text-[var(--ochre)] mt-6 inline-block group-hover:underline underline-offset-4">
