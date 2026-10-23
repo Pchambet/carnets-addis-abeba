@@ -1,5 +1,5 @@
 ---
-title: "Meskel, au pied de la croix"
+title: "Meskel, au pied de la Croix"
 date: "2026-09-27"
 location: "Pays gouragué"
 excerpt: "Mercredi matin, le soleil laisse pointer le bout de son nez doré à travers les vapeurs de la nuit qui a été pluvieuse."
