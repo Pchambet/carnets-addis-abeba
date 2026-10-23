@@ -18,3 +18,4 @@ CI : `.github/workflows/ci.yml` (mêmes commandes, sans variables d'environnemen
 - Sources brutes (docx, photos, vidéos) : dossiers voisins `../Semaine_XX`, `../Semaine 41 à 43`, etc. Ne jamais les modifier.
 - Ajouter une lettre : `docs/PROCEDURE.md`.
 - Plan d'amélioration en cours : `docs/PLAN.md`.
+- Livre papier (PDF BoD, `npm run book`, Typst) : `docs/LIVRE.md`. Même texte que le site : corriger une lettre dans `content/letters/` corrige aussi le livre.

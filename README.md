@@ -25,6 +25,7 @@ npm run dev                  # http://localhost:3000
 | `npm run lint`, `npm test` | ESLint, Vitest (code + cohérence du contenu) |
 | `npm run add-letter -- "<dossier source>" semaine-XX` | Importe photos, vidéos et texte d'une lettre |
 | `npm run media` | Crée miniatures et affiches manquantes |
+| `npm run book` | Livre papier (PDF d'impression BoD, Typst requis) : `docs/LIVRE.md` |
 
 Définition de fini : `npm run lint && npm test && npm run build` (c'est aussi la CI GitHub).
 
@@ -39,6 +40,8 @@ src/app/                  pages : accueil, lettres, galerie, jardin, carte, à p
 src/lib/                  lettres, photos, jardin, thèmes, lieux de la carte
 scripts/media.mjs         import et dérivés des médias
 scripts/captions.mjs      légendes tirées des noms de fichiers
+scripts/book.ts           livre papier : données pour book/book.typ (mise en page Typst)
+book/                     gabarit Typst, introduction, polices du livre
 supabase/migrations/      schéma et règles du livre d'or
 ```
 
@@ -55,3 +58,4 @@ Variables d'environnement : voir `.env.example` et `docs/SUPABASE-LIVRE-OR.md`.
 - `docs/SUPABASE-LIVRE-OR.md` — livre d'or et notifications
 - `docs/DIRECTION-ARTISTIQUE.md` — palette, ton, piliers visuels
 - `docs/PLAN.md` — plan d'amélioration (octobre 2026)
+- `docs/LIVRE.md` — livre papier (impression BoD)

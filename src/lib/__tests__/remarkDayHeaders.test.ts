@@ -55,6 +55,12 @@ describe('remarkDayHeaders', () => {
     expect(out).toContain('<strong>Important</strong>');
   });
 
+  it('keeps a bold line with italics inside as text rather than dropping words', async () => {
+    const out = await process('**Mardi ~ visite au *marché* central**\n\nSuite.');
+    expect(out).not.toContain('day-section');
+    expect(out).toContain('central');
+  });
+
   it('does NOT transform paragraph with multiple children', async () => {
     const out = await process('**Lundi** et autre texte\n\nSuite.');
     expect(out).not.toContain('day-section');
