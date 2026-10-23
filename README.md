@@ -41,7 +41,7 @@ src/lib/                  lettres, photos, jardin, thèmes, lieux de la carte
 scripts/media.mjs         import et dérivés des médias
 scripts/captions.mjs      légendes tirées des noms de fichiers
 scripts/book.ts           livre papier : données pour book/book.typ (mise en page Typst)
-book/                     gabarit Typst, introduction, polices du livre
+book/                     gabarit Typst, introduction, choix des photos (layout.json), polices du livre
 supabase/migrations/      schéma et règles du livre d'or
 ```
 

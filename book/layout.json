@@ -1,0 +1,86 @@
+{
+  "semaine-00": {
+    "hero": "Partage.jpg",
+    "focus": "50% 50%",
+    "pages": [
+      {
+        "layout": "single",
+        "photos": [
+          "IMG_0929.PNG"
+        ]
+      },
+      {
+        "layout": "pair",
+        "photos": [
+          "IMG_0936.PNG",
+          "IMG_0934.PNG"
+        ]
+      },
+      {
+        "layout": "trio",
+        "photos": [
+          "Rencontre avec les sœurs.jpg",
+          "Apprivoisements.jpg",
+          "Libertes.jpg"
+        ]
+      }
+    ],
+    "spare": "IMG_0932.PNG",
+    "fit": "loose"
+  },
+  "semaine-01": {
+    "hero": "IMG_0962.jpg",
+    "focus": "50% 70%",
+    "pages": [
+      {
+        "layout": "trio",
+        "photos": [
+          "IMG_20251028_173110_165_Original.JPG",
+          "IMG_20251028_173238_568_Original.JPG",
+          "IMG_20251028_173132_554_Original.JPG"
+        ]
+      },
+      {
+        "layout": "single",
+        "photos": [
+          "IMG_0983.PNG"
+        ]
+      },
+      {
+        "layout": "full",
+        "photos": [
+          "IMG_0977.jpg"
+        ],
+        "focus": "50% 30%"
+      }
+    ],
+    "spare": "IMG_0974.jpg",
+    "fit": "loose"
+  },
+  "semaine-46": {
+    "hero": "IMG_4081.JPG",
+    "focus": "50% 30%",
+    "pages": [
+      {
+        "layout": "pair",
+        "photos": [
+          "IMG_4147.JPG",
+          "IMG_4151.JPG"
+        ]
+      },
+      {
+        "layout": "single",
+        "photos": [
+          "IMG_4171.jpg"
+        ]
+      },
+      {
+        "layout": "full",
+        "photos": [
+          "IMG_4165.JPG"
+        ],
+        "focus": "50% 45%"
+      }
+    ]
+  }
+}

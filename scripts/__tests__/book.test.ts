@@ -3,7 +3,7 @@ import path from 'path';
 import { describe, expect, it } from 'vitest';
 import matter from 'gray-matter';
 import { cleanMarkdown, extractPullQuote } from '@/lib/letters';
-import { bookTypography, choosePhotos, dateLabel, heroFrame, layoutRows, paginate, toBlocks } from '../book-data';
+import { arrange, bookTypography, cover, dateLabel, editPhotos, pageFillers, toBlocks } from '../book-data';
 
 describe('bookTypography', () => {
   it.each([
@@ -114,107 +114,175 @@ describe('dateLabel', () => {
   });
 });
 
-describe('layoutRows', () => {
-  const photo = (w: number, h: number, caption?: string) => ({ src: `${w}x${h}`, width: w, height: h, caption });
-  const opts = { width: 160, gap: 3, target: 50, maxPerRow: 3 };
+describe('cover', () => {
+  const page = { width: 220, height: 220 };
 
-  it('fills the width exactly, gaps included, without cropping', () => {
-    const rows = layoutRows([photo(1500, 1000), photo(1500, 1000), photo(1000, 1500), photo(1500, 1000)], opts);
-    for (const row of rows.slice(0, -1)) {
-      const used = row.items.reduce((s, it) => s + it.w, 0) + opts.gap * (row.items.length - 1);
-      expect(used).toBeCloseTo(opts.width, 6);
-      for (const it of row.items) {
-        const p = photo(...(it.src.split('x').map(Number) as [number, number]));
-        expect(it.w / row.h).toBeCloseTo(p.width / p.height, 6);
-      }
+  it('fills the box and shows the requested part of a tall photo', () => {
+    expect(cover({ width: 1000, height: 1500 }, page, 'center bottom')).toEqual({ w: 220, h: 330, dx: 0, dy: -110 });
+    expect(cover({ width: 1000, height: 1500 }, page, '50% 10%').dy).toBeCloseTo(-11, 6);
+    expect(cover({ width: 1000, height: 1500 }, page).dy).toBeCloseTo(-55, 6);
+  });
+
+  it('keeps the requested side of a wide photo', () => {
+    expect(cover({ width: 1500, height: 1000 }, page, '0% 50%')).toMatchObject({ w: 330, h: 220, dy: 0 });
+    expect(cover({ width: 1500, height: 1000 }, page, '0% 50%').dx).toBeCloseTo(0, 6);
+    expect(cover({ width: 1500, height: 1000 }, page, '75% 20%').dx).toBeCloseTo(-82.5, 6);
+    expect(cover({ width: 1500, height: 1000 }, page, 'right').dx).toBeCloseTo(-110, 6);
+  });
+
+  it('reads the site’s CSS positions and refuses the others', () => {
+    expect(cover({ width: 1000, height: 1500 }, page, 'bottom').dy).toBeCloseTo(-110, 6);
+    expect(cover({ width: 1000, height: 1500 }, page, 'center 20%').dy).toBeCloseTo(-22, 6);
+    expect(() => cover({ width: 1000, height: 1500 }, page, 'haut')).toThrow(/haut/);
+    expect(() => cover({ width: 1000, height: 1500 }, page, 'constructor')).toThrow(/constructor/);
+  });
+});
+
+describe('arrange', () => {
+  const box = { width: 160, height: 150 };
+  const opts = { gap: 4, caption: { first: 5, line: 3.5, charWidth: 1.2 } };
+  const photo = (width: number, height: number, caption?: string) => ({ src: `${width}x${height}`, width, height, caption });
+  const portrait = photo(1000, 1500);
+  const landscape = photo(1500, 1000);
+
+  const checkFits = (group: ReturnType<typeof arrange>, photos: ReturnType<typeof photo>[]) => {
+    expect(group.width).toBeLessThanOrEqual(box.width + 1e-6);
+    expect(group.height).toBeLessThanOrEqual(box.height + 1e-6);
+    group.cells.forEach((c, i) => {
+      expect(c.src).toBe(photos[i].src);
+      expect(c.w / c.h).toBeCloseTo(photos[i].width / photos[i].height, 6);
+      expect(c.x).toBeGreaterThanOrEqual(-1e-6);
+      expect(c.x + c.w).toBeLessThanOrEqual(group.width + 1e-6);
+      group.cells.slice(i + 1).forEach((d) => {
+        const apart = c.x + c.w <= d.x + 1e-6 || d.x + d.w <= c.x + 1e-6 || c.y + c.h <= d.y + 1e-6 || d.y + d.h <= c.y + 1e-6;
+        expect(apart).toBe(true);
+      });
+    });
+  };
+
+  it('prints a single photo as large as the box allows, uncropped', () => {
+    expect(arrange([landscape], box, opts)).toMatchObject({ width: 160, cells: [{ w: 160 }] });
+    const tall = arrange([portrait], box, opts);
+    expect(tall.height).toBeCloseTo(150, 6);
+    expect(tall.cells[0].h).toBeCloseTo(150, 6);
+  });
+
+  it('sets two portraits side by side and stacks two landscapes', () => {
+    const portraits = arrange([portrait, portrait], box, opts);
+    expect(portraits.cells[0].y).toBe(portraits.cells[1].y);
+    const landscapes = arrange([landscape, landscape], box, opts);
+    expect(landscapes.cells[0].x).toBe(landscapes.cells[1].x);
+    checkFits(portraits, [portrait, portrait]);
+    checkFits(landscapes, [landscape, landscape]);
+  });
+
+  it('gives three photos the arrangement that prints them largest, first photo the biggest', () => {
+    for (const trio of [[landscape, portrait, portrait], [portrait, landscape, landscape], [landscape, landscape, landscape], [portrait, portrait, portrait]]) {
+      const group = arrange(trio, box, opts);
+      checkFits(group, trio);
+      const areas = group.cells.map((c) => c.w * c.h);
+      expect(areas[0]).toBeGreaterThanOrEqual(Math.max(...areas.slice(1)) - 1e-6);
+      // A plain row or column never beats it
+      const row = (box.width - 2 * opts.gap) / trio.reduce((s, p) => s + p.width / p.height, 0);
+      expect(areas.reduce((s, a) => s + a, 0)).toBeGreaterThanOrEqual(trio.reduce((s, p) => s + row * row * (p.width / p.height), 0) - 1e-6);
     }
   });
 
-  it('keeps every photo, in order, with its caption', () => {
-    const photos = [photo(1500, 1000, 'Le marché'), photo(1000, 1500), photo(1500, 1000), photo(1500, 1000), photo(1000, 1000)];
-    const items = layoutRows(photos, opts).flatMap((r) => r.items);
-    expect(items.map((i) => i.src)).toEqual(photos.map((p) => p.src));
-    expect(items[0].caption).toBe('Le marché');
+  it('keeps room under each image for its caption, on several lines if needed', () => {
+    const long = 'Les sœurs et les jeunes filles du foyer, un soir de fête, autour de la table du réfectoire';
+    const photos = [photo(1500, 1000, 'Partage'), photo(1500, 1000, long)];
+    const group = arrange(photos, box, opts);
+    checkFits(group, photos);
+    const [first, second] = group.cells;
+    expect(second.y - (first.y + first.h)).toBeGreaterThanOrEqual(opts.caption.first + opts.gap - 1e-6);
+    const lines = Math.ceil((long.length * opts.caption.charWidth) / second.w);
+    expect(lines).toBeGreaterThan(1);
+    expect(group.height - (second.y + second.h)).toBeCloseTo(opts.caption.first + (lines - 1) * opts.caption.line, 6);
   });
 
-  it('does not blow up a lone last photo to the full width', () => {
-    const rows = layoutRows([photo(1500, 1000), photo(1500, 1000), photo(1000, 1500)], { ...opts, maxPerRow: 2 });
-    const last = rows.at(-1)!;
-    expect(last.items).toHaveLength(1);
-    expect(last.h).toBeLessThanOrEqual(opts.target);
-    expect(last.items[0].w).toBeLessThan(opts.width);
+  it('widens the gutters between columns to match those that hold captions', () => {
+    // Sans légende : la paire de portraits sous le paysage reste à l'écart ordinaire
+    const plain = arrange([landscape, portrait, portrait], box, opts).cells;
+    expect(plain[2].x - (plain[1].x + plain[1].w)).toBeCloseTo(opts.gap, 6);
+    const trio = [photo(1000, 1500, 'Rencontre avec les sœurs'), photo(1500, 1000, 'Apprivoisements'), photo(1500, 1000, 'Libertés')];
+    const [big, top, bottom] = arrange(trio, box, opts).cells;
+    const vertical = bottom.y - (top.y + top.h);
+    expect(top.x - (big.x + big.w)).toBeCloseTo(vertical, 6);
   });
 
-  it('never exceeds the height it is given', () => {
-    const rows = layoutRows([photo(1000, 3000)], { ...opts, target: 200, maxHeight: 120 });
-    expect(rows[0].h).toBeLessThanOrEqual(120);
-  });
-});
-
-describe('paginate', () => {
-  const row = (h: number, caption?: string) => ({ h, items: [{ src: `${h}`, w: 50, ...(caption && { caption }) }] });
-  const opts = { height: 160, gap: 6, caption: { first: 4, line: 3.5, charWidth: 1.2 } };
-
-  it('fills each page as far as the rows fit, in order', () => {
-    const rows = [row(48), row(48), row(48), row(48), row(70)];
-    expect(paginate(rows, opts).map((page) => page.map((r) => r.h))).toEqual([[48, 48, 48], [48, 70]]);
-  });
-
-  it('shrinks a page a little rather than leave a row alone', () => {
-    const [page, ...rest] = paginate([row(80), row(80)], opts);
-    expect(rest).toEqual([]);
-    const s = (160 - 6) / 160;
-    expect(page.map((r) => r.h)).toEqual([80 * s, 80 * s]);
-    expect(page[0].items[0].w).toBeCloseTo(50 * s, 6);
-  });
-
-  it('counts the room taken by captions, long ones on several lines', () => {
-    const long = 'Après la folie des américains, le regard perdu dans le vide, il attend que la fête recommence. '.repeat(2);
-    expect(paginate([row(50), row(50), row(50)], opts)).toHaveLength(1);
-    expect(paginate([row(50, long), row(50, long), row(50)], opts).map((page) => page.length)).toEqual([2, 1]);
+  it('aligns the images of a row even when only one has a caption', () => {
+    const photos = [photo(1000, 1500, 'Libertés'), photo(1000, 1500)];
+    const [a, b] = arrange(photos, box, opts).cells;
+    expect(a.h).toBeCloseTo(b.h, 6);
   });
 });
 
-describe('choosePhotos', () => {
-  const photos = ['/images/s/a.jpg', '/images/s/b.jpg', '/images/s/c.jpg', '/images/s/d.jpg'].map((src) => ({ src }));
-  const srcs = (list: { src: string }[]) => list.map((p) => p.src.slice(-5));
+describe('editPhotos', () => {
+  const photo = (file: string, width = 1500, height = 1000) => ({ src: `/images/s/${file}`, width, height });
+  const photos = [photo('a.jpg'), photo('b.jpg', 1000, 1500), photo('c.jpg', 1000, 1500), photo('d.jpg'), photo('é.jpg')];
+  const names = (list: { src: string }[]) => list.map((p) => p.src.split('/').at(-1));
 
-  it('opens on the hero image and lays out the others', () => {
-    const { hero, grid } = choosePhotos(photos, { hero: '/images/s/c.jpg' });
-    expect(hero?.src).toBe('/images/s/c.jpg');
-    expect(srcs(grid)).toEqual(['a.jpg', 'b.jpg', 'd.jpg']);
+  it('follows the editor’s plan: hero, pages in order, spare', () => {
+    const edit = editPhotos(photos, {
+      hero: 'd.jpg',
+      focus: '30% 50%',
+      pages: [{ layout: 'pair', photos: ['b.jpg', 'c.jpg'] }, { layout: 'single', size: 'small', photos: ['a.jpg'] }],
+      spare: 'é.jpg',
+    }, {});
+    expect(edit.hero).toEqual({ photo: photos[3], focus: '30% 50%' });
+    expect(edit.pages.map((p) => [p.layout, p.size, names(p.photos)])).toEqual([['pair', undefined, ['b.jpg', 'c.jpg']], ['single', 'small', ['a.jpg']]]);
+    expect(edit.spare).toBe(photos[4]);
   });
 
-  it('opens on the first photo when the letter has no hero image', () => {
-    const { hero, grid } = choosePhotos(photos, {});
-    expect(hero?.src).toBe('/images/s/a.jpg');
-    expect(srcs(grid)).toEqual(['b.jpg', 'c.jpg', 'd.jpg']);
+  it('opens on the site’s hero image when the plan does not name one', () => {
+    const edit = editPhotos(photos, { pages: [] }, { hero: '/images/s/c.jpg', focus: 'center 20%' });
+    expect(edit.hero).toEqual({ photo: photos[2], focus: 'center 20%' });
   });
 
-  it('keeps only the chosen photos, in the chosen order, never the hero twice', () => {
-    expect(srcs(choosePhotos(photos, { hero: '/images/s/c.jpg', chosen: ['d.jpg', 'c.jpg', 'a.jpg'] }).grid)).toEqual(['d.jpg', 'a.jpg']);
-    const { hero, grid } = choosePhotos(photos, { chosen: ['d.jpg', 'b.jpg'] });
-    expect(hero?.src).toBe('/images/s/d.jpg');
-    expect(srcs(grid)).toEqual(['b.jpg']);
+  it('without a plan, keeps every photo once: pairs of the same orientation, otherwise singles', () => {
+    const edit = editPhotos(photos, undefined, { hero: '/images/s/a.jpg' });
+    expect(names([edit.hero!.photo])).toEqual(['a.jpg']);
+    expect(edit.pages.map((p) => [p.layout, names(p.photos)])).toEqual([['pair', ['b.jpg', 'c.jpg']], ['pair', ['d.jpg', 'é.jpg']]]);
+    expect(editPhotos(photos, undefined, {}).hero!.photo).toBe(photos[0]);
   });
 
-  it('names what it cannot find', () => {
-    expect(() => choosePhotos(photos, { chosen: ['e.jpg'] })).toThrow(/e\.jpg/);
-    expect(() => choosePhotos(photos, { hero: '/images/s/e.jpg' })).toThrow(/e\.jpg/);
+  it('refuses a plan it cannot print as written', () => {
+    const plan = (pages: unknown, extra = {}) => ({ hero: 'a.jpg', pages, ...extra }) as Parameters<typeof editPhotos>[1];
+    expect(() => editPhotos(photos, plan([{ layout: 'single', photos: ['z.jpg'] }]), {})).toThrow(/z\.jpg/);
+    expect(() => editPhotos(photos, plan([{ layout: 'pair', photos: ['b.jpg'] }]), {})).toThrow(/pair/);
+    expect(() => editPhotos(photos, plan([{ layout: 'mosaic', photos: ['b.jpg'] }]), {})).toThrow(/mosaic/);
+    expect(() => editPhotos(photos, plan([{ layout: 'toString', photos: ['b.jpg'] }]), {})).toThrow(/inconnue : toString/);
+    expect(() => editPhotos(photos, plan([{ layout: 'single', photos: ['a.jpg'] }]), {})).toThrow(/a\.jpg/);
+    expect(() => editPhotos(photos, plan([], { spare: 'a.jpg' }), {})).toThrow(/a\.jpg/);
   });
 });
 
-describe('heroFrame', () => {
-  const box = { width: 220, height: 100 };
+describe('pageFillers', () => {
+  // Mise en page sans intercalaire : page de partie p. 9, dernière page de chaque lettre
+  const letter = (id: string, end: number, hero = true) => ({ id, end, hero });
 
-  it('fills the width and shows the requested part of a tall photo', () => {
-    expect(heroFrame({ width: 1000, height: 1500 }, box, 'bottom')).toEqual({ w: 220, h: 330, dx: 0, dy: -(330 - 100) });
-    expect(heroFrame({ width: 1000, height: 1500 }, box, 'center 10%').dy).toBeCloseTo(-(330 - 100) * 0.1, 6);
-    expect(heroFrame({ width: 1000, height: 1500 }, box, undefined).dy).toBeCloseTo(-(330 - 100) / 2, 6);
+  it('adds nothing when every letter already opens on a left page', () => {
+    expect(pageFillers([letter('a', 15), letter('b', 26)], 9)).toEqual({ fillers: [], offsets: { a: 0, b: 0 }, closing: false });
   });
 
-  it('fills the height and centres a very wide photo', () => {
-    const frame = heroFrame({ width: 4000, height: 1000 }, box, 'center');
-    expect(frame).toEqual({ w: 400, h: 100, dx: -90, dy: 0 });
+  it('adds a page before a letter whose predecessor ends on a left page, and shifts what follows', () => {
+    // a finit p. 16 : b s'ouvrirait p. 17, à droite → intercalaire ; b passe de 17-26 à 18-27,
+    // et c, qui s'ouvrait p. 27 (à droite), s'ouvre désormais p. 28 sans autre intercalaire
+    const plan = pageFillers([letter('a', 16), letter('b', 26), letter('c', 31)], 9);
+    expect(plan.fillers).toEqual(['b']);
+    expect(plan.offsets).toEqual({ a: 0, b: 1, c: 1 });
+    // c finit p. 32 : le total est pair
+    expect(plan.closing).toBe(false);
+  });
+
+  it('opens a letter without hero photo on a right page', () => {
+    expect(pageFillers([letter('a', 15), letter('b', 20, false)], 9).fillers).toEqual(['b']);
+    expect(pageFillers([letter('a', 16), letter('b', 21, false)], 9).fillers).toEqual([]);
+    expect(pageFillers([letter('a', 12, false)], 9).fillers).toEqual(['a']);
+  });
+
+  it('closes the book on an even page', () => {
+    expect(pageFillers([letter('a', 15)], 9).closing).toBe(true);
+    expect(pageFillers([letter('a', 16), letter('b', 24)], 9)).toMatchObject({ fillers: ['b'], closing: true });
   });
 });
